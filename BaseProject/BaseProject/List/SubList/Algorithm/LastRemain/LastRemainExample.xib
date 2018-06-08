@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LastRemainExample">
+            <connections>
+                <outlet property="mText" destination="tCh-qE-kLE" id="eE3-c3-DZ5"/>
+                <outlet property="nText" destination="1VT-0t-MJc" id="IDY-iy-vpF"/>
+                <outlet property="resultLabel" destination="5CD-Fv-u2A" id="26U-dk-HCd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-Fu-N6y">
+                    <rect key="frame" x="156.5" y="254.5" width="62" height="30"/>
+                    <state key="normal" title="计算结果"/>
+                    <connections>
+                        <action selector="codeAction:" destination="-1" eventType="touchUpInside" id="5e7-UO-H1W"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CD-Fv-u2A">
+                    <rect key="frame" x="170" y="332.5" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.98727482560000002" green="0.2144777179" blue="0.014838830569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="n" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1VT-0t-MJc">
+                    <rect key="frame" x="137.5" y="203.5" width="100" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ani-nx-jqE">
+                    <rect key="frame" x="112.5" y="170" width="15" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPY-Vy-HUV">
+                    <rect key="frame" x="115" y="208.5" width="10" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="题目：n个数字（0,1,…,n-1）形成一个圆圈，从数字0开始， 每次从这个圆圈中删除第m个数字（第一个为当前数字本身，第二个为当前数字的下一个数字）。 当一个数字删除后，从被删除数字的下一个继续删除第m个数字。 求出在这个圆圈中剩下的最后一个数字。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETa-Qf-Adu">
+                    <rect key="frame" x="41" y="10" width="293" height="125.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.060833464410000003" green="0.38592560279999999" blue="0.065268646520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="m" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tCh-qE-kLE">
+                    <rect key="frame" x="137.5" y="165.5" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="dhq-ii-Cxc"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.90196078430000004" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ETa-Qf-Adu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="4d7-91-lBX"/>
+                <constraint firstItem="5CD-Fv-u2A" firstAttribute="top" secondItem="v1N-Fu-N6y" secondAttribute="bottom" constant="48" id="8gi-2g-QDc"/>
+                <constraint firstItem="RPY-Vy-HUV" firstAttribute="centerX" secondItem="Ani-nx-jqE" secondAttribute="centerX" id="8s1-DT-g3B"/>
+                <constraint firstItem="ETa-Qf-Adu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="41" id="OIA-nG-9o3"/>
+                <constraint firstItem="1VT-0t-MJc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OQZ-r2-yw8"/>
+                <constraint firstItem="tCh-qE-kLE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U0N-na-m1w"/>
+                <constraint firstItem="ETa-Qf-Adu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vni-yo-23a"/>
+                <constraint firstItem="v1N-Fu-N6y" firstAttribute="centerX" secondItem="1VT-0t-MJc" secondAttribute="centerX" id="W1c-sU-WkG"/>
+                <constraint firstItem="5CD-Fv-u2A" firstAttribute="centerX" secondItem="v1N-Fu-N6y" secondAttribute="centerX" id="WCs-Qk-lWK"/>
+                <constraint firstItem="v1N-Fu-N6y" firstAttribute="top" secondItem="1VT-0t-MJc" secondAttribute="bottom" constant="21" id="e3B-PI-MLs"/>
+                <constraint firstItem="1VT-0t-MJc" firstAttribute="top" secondItem="tCh-qE-kLE" secondAttribute="bottom" constant="8" id="ezB-Mx-0c7"/>
+                <constraint firstItem="tCh-qE-kLE" firstAttribute="top" secondItem="ETa-Qf-Adu" secondAttribute="bottom" constant="30" id="gy6-3Y-mIO"/>
+                <constraint firstItem="tCh-qE-kLE" firstAttribute="leading" secondItem="Ani-nx-jqE" secondAttribute="trailing" constant="10" id="jr5-us-hUA"/>
+                <constraint firstItem="Ani-nx-jqE" firstAttribute="centerY" secondItem="tCh-qE-kLE" secondAttribute="centerY" id="r0g-x1-TC0"/>
+                <constraint firstItem="RPY-Vy-HUV" firstAttribute="centerY" secondItem="1VT-0t-MJc" secondAttribute="centerY" id="rHf-uC-CWM"/>
+                <constraint firstItem="1VT-0t-MJc" firstAttribute="width" secondItem="tCh-qE-kLE" secondAttribute="width" id="zXp-4D-o1E"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="97.5"/>
+        </view>
+    </objects>
+</document>

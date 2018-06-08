@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CanNotAddSelfAsSubView">
+            <connections>
+                <outlet property="textView" destination="tQe-tI-CuY" id="N5f-f7-y8g"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tQe-tI-CuY">
+                    <rect key="frame" x="10" y="10" width="355" height="150"/>
+                    <color key="backgroundColor" red="0.90196078430000004" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="128-yC-ndM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="self addSubView self.png" translatesAutoresizingMaskIntoConstraints="NO" id="o3J-VF-k2u">
+                    <rect key="frame" x="20" y="180" width="335" height="447"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="o3J-VF-k2u" secondAttribute="bottom" constant="40" id="Ntn-t7-Qut"/>
+                <constraint firstItem="tQe-tI-CuY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Z31-rj-kvp"/>
+                <constraint firstItem="tQe-tI-CuY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aCy-RB-FtJ"/>
+                <constraint firstItem="o3J-VF-k2u" firstAttribute="top" secondItem="tQe-tI-CuY" secondAttribute="bottom" constant="20" id="auR-I6-r8L"/>
+                <constraint firstAttribute="trailing" secondItem="o3J-VF-k2u" secondAttribute="trailing" constant="20" id="x5Z-7C-NVu"/>
+                <constraint firstItem="o3J-VF-k2u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="yi0-Am-Abv"/>
+                <constraint firstAttribute="trailing" secondItem="tQe-tI-CuY" secondAttribute="trailing" constant="10" id="zid-Lh-hyV"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="self addSubView self.png" width="796" height="704"/>
+    </resources>
+</document>

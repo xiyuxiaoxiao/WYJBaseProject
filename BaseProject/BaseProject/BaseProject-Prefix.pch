@@ -1,0 +1,56 @@
+
+
+
+/*
+ 
+ SourceCode 为 编译后 .app 包内容下的目录
+ SourceCode下面包含的是 Dom目录下的 .m文件 之所以可以这样copy
+    是因为在Build Phase下，添加了一个 New Run Script Phase （添加了一个shell脚本）
+ ---------------------------------------------------------------------------------------
+ #!/bin/sh
+ set -e
+ 
+ to_path="${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SourceCode"
+ 
+ 
+ #rm -rf "${to_path}"
+ #mkdir "${to_path}"
+ 
+ echo $to_path
+ 
+ rsync -arc --delete ./BaseProject/Dom/*.m "${to_path}"
+ ---------------------------------------------------------------------------------------
+
+ 其中  ./BaseProject/Dom/*.m 需要保存在SourceCode目录下面的 文件路径 以及 类型
+ 
+ */
+
+// 不能写在category 中 __FILE__会识别为 category中的文件位置 而不是类／对象
+
+// 只是用与模拟器
+//#define SourcePath [NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding]
+
+#define SourcePath [[NSBundle mainBundle] pathForResource:[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lastPathComponent] ofType:nil inDirectory:@"SourceCode"]
+
+// 每个类需要添加此方法 （只要添加宏即可）
+#define MakeSourcePath +(NSString*)sourcePath{return SourcePath;}
+
+#define SourcePathInterface +(NSString*)sourcePath;
+
+// 供调用
+#define SourcePathByClassName(calssName) [NSObject sourcePathByClassName:calssName]
+
+
+
+#ifdef __OBJC__
+
+//  需要将引用的文件 放在此处 否则报错
+
+#import "NSObject+SourcePathGroup.h"
+#import "SourceViewController.h"
+#import "InfoValidator.h"
+#import "WYJDate.h"
+#import "ChartDatabaseManager.h"
+#import "CurrentUserManager.h"
+#endif
+
