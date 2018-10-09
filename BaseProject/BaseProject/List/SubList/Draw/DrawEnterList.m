@@ -24,6 +24,8 @@
     
     [self.dataArray addObject:@{TitleKey:@"UIBezierPath学习",
                                 CN_Key:@"BezierPathVC"}];
+    [self.dataArray addObject:@{TitleKey:@"下啦展示眼睛动画",
+                                CN_Key:@"PullEyesController"}];
     
     [self.dataArray addObject:@{TitleKey:@"画圆圈 扇形",
                                 CN_Key:@"DrawCircleController"}];
@@ -42,6 +44,9 @@
     
     [self.dataArray addObject:@{TitleKey:@"饼状图（其中计算文字位置还需要计算）",
                                 CN_Key:@"PieChartVC"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"颜色渐变",
+                                CN_Key:@"GradientColorController"}];
     
 }
 

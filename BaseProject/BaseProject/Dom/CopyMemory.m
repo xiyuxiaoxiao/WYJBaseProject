@@ -236,6 +236,51 @@
     //  retainCount: 1 新的地址
 }
 
+
+/*
+    strong 与 copy
+    1.对于不可变对象来说 不可变string NSArray 等，strong与copy是一样的 都是浅copy，其地址都是指向同一个
+    2.对于可变对象来说，strong是浅copy 而copy是是深copy
+ */
+
+// ----------------------
+
+/* NSArray 使用copy修饰  如果使用strong修饰 可能出现的问题
+ @property (nonatomic, strong) NSMutableArray *mutableArray;
+ @property (nonatomic, copy) NSArray *array;
+ 
+- (void)arrayCopy {
+    self.mutableArray = [NSMutableArray array];
+    self.array = [NSArray array];
+    Person *p1 = [[Person alloc] init];
+    p1.name = @"张三";
+    Person *p2 = [[Person alloc] init];
+    p2.name = @"李四";
+    
+    [self.mutableArray addObject:p1];
+    self.array = self.mutableArray;
+    [self.mutableArray addObject:p2];
+    
+    
+    Person *pp = self.mutableArray[0];
+    pp.name = @"王五";
+    
+    for (Person *person in self.array) {
+        NSLog(@"%@",person.name);
+    }
+    for (Person *person in self.mutableArray) {
+        NSLog(@"%@",person.name);
+    }
+    array 打印 “王五”
+    mutableArray 打印 “王五”、“李四”
+ 
+    如果array使用strong修饰 则最后打印结果实际与mutableArray 一致 实际对mutableArray进行了strong引用
+ 
+}
+*/
+
+//------------------------
+
 MakeSourcePath
 @end
 

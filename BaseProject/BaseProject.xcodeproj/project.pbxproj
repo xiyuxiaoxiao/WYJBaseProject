@@ -79,6 +79,7 @@
 		836630801EE177370029AD91 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307B1EE177370029AD91 /* CollectionViewCell.m */; };
 		836630811EE177370029AD91 /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307D1EE177370029AD91 /* CustomLayout.m */; };
 		836630821EE177370029AD91 /* CustomLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307F1EE177370029AD91 /* CustomLayoutAttributes.m */; };
+		83669BCA211C2B6F0096EAB9 /* GradientColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83669BC9211C2B6F0096EAB9 /* GradientColorController.m */; };
 		836AE1C71F1F018600101A8D /* CommonBugEnter.m in Sources */ = {isa = PBXBuildFile; fileRef = 836AE1C61F1F018600101A8D /* CommonBugEnter.m */; };
 		836C56B41F185ABF00E7C84E /* TechnicalPointEnterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C56B31F185ABF00E7C84E /* TechnicalPointEnterList.m */; };
 		837151051EE01D10009E7ECF /* EnterListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837151031EE01D10009E7ECF /* EnterListController.m */; };
@@ -121,6 +122,8 @@
 		8388691B20BC0183006619B9 /* ChatFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8388691320BC0183006619B9 /* ChatFriendCell.xib */; };
 		8388691C20BC0183006619B9 /* ChatMyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388691520BC0183006619B9 /* ChatMyCell.m */; };
 		8388691D20BC0183006619B9 /* ChatMyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8388691620BC0183006619B9 /* ChatMyCell.xib */; };
+		8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D806216C8A9500DBBFD6 /* PullEyesController.m */; };
+		8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D80B216C8EB300DBBFD6 /* WXPullView.m */; };
 		8399B20F1E9B52AF0059B797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B20E1E9B52AF0059B797 /* main.m */; };
 		8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2111E9B52AF0059B797 /* AppDelegate.m */; };
 		8399B2151E9B52AF0059B797 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2141E9B52AF0059B797 /* ViewController.m */; };
@@ -363,6 +366,8 @@
 		8366307D1EE177370029AD91 /* CustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayout.m; sourceTree = "<group>"; };
 		8366307E1EE177370029AD91 /* CustomLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayoutAttributes.h; sourceTree = "<group>"; };
 		8366307F1EE177370029AD91 /* CustomLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayoutAttributes.m; sourceTree = "<group>"; };
+		83669BC8211C2B6F0096EAB9 /* GradientColorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientColorController.h; sourceTree = "<group>"; };
+		83669BC9211C2B6F0096EAB9 /* GradientColorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientColorController.m; sourceTree = "<group>"; };
 		836AE1C51F1F018600101A8D /* CommonBugEnter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonBugEnter.h; sourceTree = "<group>"; };
 		836AE1C61F1F018600101A8D /* CommonBugEnter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonBugEnter.m; sourceTree = "<group>"; };
 		836C56B21F185ABF00E7C84E /* TechnicalPointEnterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TechnicalPointEnterList.h; sourceTree = "<group>"; };
@@ -431,6 +436,15 @@
 		8388691420BC0183006619B9 /* ChatMyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMyCell.h; sourceTree = "<group>"; };
 		8388691520BC0183006619B9 /* ChatMyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMyCell.m; sourceTree = "<group>"; };
 		8388691620BC0183006619B9 /* ChatMyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMyCell.xib; sourceTree = "<group>"; };
+		83905975211D250B00A61241 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		83905977211D251600A61241 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		83905979211D252000A61241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8390597B211D252900A61241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8390597D211D253400A61241 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8398D805216C8A9500DBBFD6 /* PullEyesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullEyesController.h; sourceTree = "<group>"; };
+		8398D806216C8A9500DBBFD6 /* PullEyesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullEyesController.m; sourceTree = "<group>"; };
+		8398D80B216C8EB300DBBFD6 /* WXPullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPullView.m; sourceTree = "<group>"; };
+		8398D80C216C8EB300DBBFD6 /* WXPullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPullView.h; sourceTree = "<group>"; };
 		8399B20A1E9B52AF0059B797 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8399B20E1E9B52AF0059B797 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8399B2101E9B52AF0059B797 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -654,6 +668,8 @@
 				831E240620592A2E00557A96 /* SortRecursive.m */,
 				83735273205A4D47002F1824 /* CopyMemory.m */,
 				83735276205A7A6B002F1824 /* BlockPoint.m */,
+				8398D80C216C8EB300DBBFD6 /* WXPullView.h */,
+				8398D80B216C8EB300DBBFD6 /* WXPullView.m */,
 			);
 			path = Dom;
 			sourceTree = "<group>";
@@ -986,6 +1002,15 @@
 			path = WaterFall;
 			sourceTree = "<group>";
 		};
+		83669BC7211C2B2E0096EAB9 /* GradientColor */ = {
+			isa = PBXGroup;
+			children = (
+				83669BC8211C2B6F0096EAB9 /* GradientColorController.h */,
+				83669BC9211C2B6F0096EAB9 /* GradientColorController.m */,
+			);
+			path = GradientColor;
+			sourceTree = "<group>";
+		};
 		836AE1C41F1EFF4E00101A8D /* CommonBug */ = {
 			isa = PBXGroup;
 			children = (
@@ -1071,6 +1096,7 @@
 				83751D5E1EFA0FC5004F2D49 /* DrawEnterList.h */,
 				83751D5F1EFA0FC5004F2D49 /* DrawEnterList.m */,
 				839A2017208DE3CA00024279 /* BezierPathExplain */,
+				8398D804216C8A1F00DBBFD6 /* PullEyes */,
 				83751D611EFA0FCB004F2D49 /* DrawCircle */,
 				833530421F459FFE00596581 /* ArcEqualVC */,
 				833530481F459FFE00596581 /* DashLine */,
@@ -1079,6 +1105,7 @@
 				8335306A1F45A29E00596581 /* ChatDrawAndSave */,
 				833222AA1F5562BB006627A5 /* LineAnimation */,
 				83367D952089F30500A5571F /* PieChart */,
+				83669BC7211C2B2E0096EAB9 /* GradientColor */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -1184,6 +1211,15 @@
 				8388691620BC0183006619B9 /* ChatMyCell.xib */,
 			);
 			path = ChatController;
+			sourceTree = "<group>";
+		};
+		8398D804216C8A1F00DBBFD6 /* PullEyes */ = {
+			isa = PBXGroup;
+			children = (
+				8398D805216C8A9500DBBFD6 /* PullEyesController.h */,
+				8398D806216C8A9500DBBFD6 /* PullEyesController.m */,
+			);
+			path = PullEyes;
 			sourceTree = "<group>";
 		};
 		8399B2011E9B52AF0059B797 = {
@@ -1451,6 +1487,11 @@
 		8399B2B91E9B52F30059B797 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8390597D211D253400A61241 /* QuartzCore.framework */,
+				8390597B211D252900A61241 /* AVFoundation.framework */,
+				83905979211D252000A61241 /* OpenGLES.framework */,
+				83905977211D251600A61241 /* CoreVideo.framework */,
+				83905975211D250B00A61241 /* CoreMedia.framework */,
 				8399B2BA1E9B52F30059B797 /* libsqlite3.tbd */,
 				2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */,
 			);
@@ -1695,7 +1736,6 @@
 				8399B2061E9B52AF0059B797 /* Sources */,
 				8399B2071E9B52AF0059B797 /* Frameworks */,
 				8399B2081E9B52AF0059B797 /* Resources */,
-				157C761901CFE5A91A76C947 /* [CP] Embed Pods Frameworks */,
 				DEB3DD41A9D3B0CB3D7E004B /* [CP] Copy Pods Resources */,
 				831E23F02059011500557A96 /* Copy Source Code Files */,
 			);
@@ -1880,34 +1920,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		157C761901CFE5A91A76C947 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		33D9E0AB364A4CE5424C5B61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaseProject-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		831E23F02059011500557A96 /* Copy Source Code Files */ = {
@@ -1930,9 +1958,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2011,6 +2052,7 @@
 				83C887811F444FC0006B9A72 /* ButtonProgress.m in Sources */,
 				83C887841F444FC0006B9A72 /* CustomViewEnterList.m in Sources */,
 				8365073D1F70EFB2008F1B6F /* JSOC_Object.m in Sources */,
+				83669BCA211C2B6F0096EAB9 /* GradientColorController.m in Sources */,
 				8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */,
 				83B14D6D1EFD0FAA00EF24A9 /* MapController.m in Sources */,
 				836C56B41F185ABF00E7C84E /* TechnicalPointEnterList.m in Sources */,
@@ -2063,7 +2105,9 @@
 				83C8878D1F445041006B9A72 /* SortFunction.c in Sources */,
 				83735277205A7A6B002F1824 /* BlockPoint.m in Sources */,
 				83359AE11F4BC051007D3EB7 /* MinInsertExample.m in Sources */,
+				8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */,
 				839A6F6E20C00178001EF130 /* NewBaseKeyboardController.m in Sources */,
+				8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */,
 				83367D992089F32900A5571F /* PieChartVC.m in Sources */,
 				8399B2AA1E9B52CF0059B797 /* AFURLResponseSerialization.m in Sources */,
 				836AE1C71F1F018600101A8D /* CommonBugEnter.m in Sources */,
@@ -2247,9 +2291,51 @@
 				DEVELOPMENT_TEAM = 5TL7L83CUD;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "BaseProject/BaseProject-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AMap3DMap\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapLocation\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapSearch\"",
+				);
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyj.www.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2267,9 +2353,51 @@
 				DEVELOPMENT_TEAM = 5TL7L83CUD;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "BaseProject/BaseProject-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AMap3DMap\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapLocation\"",
+					"\"${PODS_ROOT}/Headers/Public/AMapSearch\"",
+				);
 				INFOPLIST_FILE = BaseProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyj.www.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
