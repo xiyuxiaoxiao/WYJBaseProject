@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edV-fW-tpF">
+                    <rect key="frame" x="285" y="40" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="   动画一   "/>
+                    <connections>
+                        <action selector="animation1:" destination="-1" eventType="touchUpInside" id="QGf-pj-GYZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-oJ-TYk">
+                    <rect key="frame" x="285" y="90" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="   动画二   "/>
+                    <connections>
+                        <action selector="animation2:" destination="-1" eventType="touchUpInside" id="nAC-Qz-saD"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.90196078430000004" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="top" secondItem="edV-fW-tpF" secondAttribute="bottom" constant="20" id="1Qb-BV-2Mb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="edV-fW-tpF" secondAttribute="trailing" constant="20" id="Kw2-p6-9pf"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="right" secondItem="edV-fW-tpF" secondAttribute="right" id="YpU-6j-qAR"/>
+                <constraint firstItem="edV-fW-tpF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="gyI-0o-RGh"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
     </objects>

@@ -91,6 +91,9 @@
     [self.dataArray addObject:@{TitleKey:@"Web",
                                 CN_Key:@"WebEnter"}];
     
+    [self.dataArray addObject:@{TitleKey:@"动画效果封装",
+                                CN_Key:@"AnimationEncapsulation"}];
+    
     
 }
 @end

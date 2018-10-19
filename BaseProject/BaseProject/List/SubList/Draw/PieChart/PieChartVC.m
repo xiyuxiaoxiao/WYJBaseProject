@@ -8,7 +8,6 @@
 
 #import "PieChartVC.h"
 #import "PicView.h"
-#import "PicView2.h"
 
 @interface PieChartVC ()
 {
@@ -23,27 +22,6 @@
     
     [self addPicView];
     
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(80, 300, 200, 200)];
-    [self.view addSubview:view2];
-    view2.backgroundColor = [UIColor greenColor];
-    
-    [self addPiceView2];
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(80, 0, 100, 100)];
-    [self.view addSubview:view];
-    view.backgroundColor = [UIColor greenColor];
-    
-    
-}
-
-- (void)addPiceView2 {
-    PicView2 *pieView = [[PicView2 alloc] initWithFrame:CGRectMake(80, 300, 200, 200)];
-//    pieView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:pieView];
-    
-    [pieView setDatas:[self getDatas] colors:@[[UIColor redColor],[UIColor purpleColor]]];
-    [pieView stroke];
-    
 }
 
 - (void)addPicView {
@@ -51,21 +29,21 @@
     [self.view addSubview:pieView];
     
     [pieView setDatas:[self getDatas] colors:@[[UIColor redColor],[UIColor purpleColor]]];
-    [pieView stroke];
+    [pieView updateAnimationType:(PieLayerAnimationTypeStrokeEach)];
     
-    pieView.backgroundColor = [UIColor yellowColor];
+    pieView.backgroundColor = [UIColor greenColor];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    [pieView setDatas:[self getDatas] colors:@[[UIColor redColor],[UIColor purpleColor]]];
-    [pieView stroke];
+- (IBAction)animation1:(id)sender {
+    [pieView updateAnimationType:(PieLayerAnimationTypeStrokeEach)];
+}
+- (IBAction)animation2:(id)sender {
+    [pieView updateAnimationType:(PieLayerAnimationTypeStrokeBeginToEnd)];
 }
 
 - (NSArray *)getDatas{
-    
-//    return @[@(2),@(1),@(1)];
-    return @[@(1),@(2),@(3),@(4)];
+//    return @[@(1),@(2),@(3),@(4)];
+    return @[@(4),@(3),@(2),@(1)];
     
     int cout = arc4random() % 5;
     NSMutableArray *arr = [NSMutableArray array];

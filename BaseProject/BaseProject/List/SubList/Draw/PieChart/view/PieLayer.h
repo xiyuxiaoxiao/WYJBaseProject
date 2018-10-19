@@ -12,9 +12,10 @@
 @property (nonatomic,assign)CGFloat startAngle; //开始角度
 @property (nonatomic,assign)CGFloat endAngle;   //结束角度
 @property (nonatomic,assign)BOOL    isSelected; //是否已经选中
-@property (nonatomic,assign)CGPoint centerPoint;
-
-@property (nonatomic,strong)CATextLayer *textLayer;
-@property (nonatomic,copy) NSString *text;
-
 @end
+
+
+typedef enum : NSUInteger {
+    PieLayerAnimationTypeStrokeBeginToEnd = 1,
+    PieLayerAnimationTypeStrokeEach = 2,
+} PieLayerAnimationType;
