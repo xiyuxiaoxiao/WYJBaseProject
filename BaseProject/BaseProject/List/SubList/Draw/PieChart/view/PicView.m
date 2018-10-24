@@ -81,14 +81,17 @@
         PieLayer *pieLayer = [PieLayer layer];
         pieLayer.strokeColor = NULL;
         [self.layer addSublayer:pieLayer];
-        
     }
     
-    // 可以考虑在上面在加一层layer 将pielayey加载上面 不用subView的Layer 
+    // 可以考虑在上面在加一层layer 将pielayey加载上面 不用subView的Layer 这样可以当点击移动pielayer的时候 不会使得线条和文本移动
     
     for (int i = 0; i < self.layer.sublayers.count; i ++) {
         
         PieLayer *pieLayer = (PieLayer *)self.layer.sublayers[i];
+        // 为了防止点击过了之后 每次在刷新的时候 出现已经选中的状态
+        pieLayer.position = CGPointMake(0, 0);
+        pieLayer.isSelected = NO;
+        
         if (i < newDatas.count) {
             pieLayer.hidden = NO;
             end =  start + (M_PI*2 - _sectorSpace*newDatas.count) *[newDatas[i] floatValue];
@@ -114,6 +117,10 @@
             
             // --- 开始创建layer ---
             pieLayer.path = [pieData pielayerPath].CGPath;
+            
+            
+            // 需要移除之前的layer 然后在添加 或者直接改为属性 然后添加
+            [pieLayer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
             
             NSNumber *numObj = newDatas[i];
             CATextLayer *textLayer = [pieData createTextLayerWithText:[NSString stringWithFormat:@"%.2f%%",numObj.floatValue*100]];

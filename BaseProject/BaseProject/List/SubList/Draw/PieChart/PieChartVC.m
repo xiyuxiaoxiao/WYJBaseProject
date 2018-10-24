@@ -31,7 +31,7 @@
     [pieView setDatas:[self getDatas] colors:@[[UIColor redColor],[UIColor purpleColor]]];
     [pieView updateAnimationType:(PieLayerAnimationTypeStrokeEach)];
     
-    pieView.backgroundColor = [UIColor greenColor];
+//    pieView.backgroundColor = [UIColor greenColor];
 }
 
 - (IBAction)animation1:(id)sender {
@@ -40,6 +40,18 @@
 - (IBAction)animation2:(id)sender {
     [pieView updateAnimationType:(PieLayerAnimationTypeStrokeBeginToEnd)];
 }
+
+- (IBAction)updata1 {
+    NSArray *datas = @[@(3),@(3),@(4)];
+    [pieView setDatas:datas colors:@[[UIColor redColor],[UIColor purpleColor]]];
+    [pieView updateAnimationType:(PieLayerAnimationTypeStrokeEach)];
+}
+- (IBAction)updata2 {
+    NSArray *datas = [self getDatas];
+    [pieView setDatas:datas colors:@[[UIColor redColor],[UIColor purpleColor]]];
+    [pieView updateAnimationType:(PieLayerAnimationTypeStrokeEach)];
+}
+
 
 - (NSArray *)getDatas{
 //    return @[@(1),@(2),@(3),@(4)];

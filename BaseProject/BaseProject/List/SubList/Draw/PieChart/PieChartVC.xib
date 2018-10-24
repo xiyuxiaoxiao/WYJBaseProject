@@ -21,28 +21,52 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edV-fW-tpF">
-                    <rect key="frame" x="285" y="40" width="70" height="30"/>
+                    <rect key="frame" x="15" y="40" width="75" height="30"/>
                     <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="   动画一   "/>
+                    <state key="normal" title="动画1"/>
                     <connections>
                         <action selector="animation1:" destination="-1" eventType="touchUpInside" id="QGf-pj-GYZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-oJ-TYk">
-                    <rect key="frame" x="285" y="90" width="70" height="30"/>
+                    <rect key="frame" x="105" y="40" width="75" height="30"/>
                     <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="   动画二   "/>
+                    <state key="normal" title="动画2"/>
                     <connections>
                         <action selector="animation2:" destination="-1" eventType="touchUpInside" id="nAC-Qz-saD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J9-NF-TAC">
+                    <rect key="frame" x="195" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title=" 数据1 "/>
+                    <connections>
+                        <action selector="updata1" destination="-1" eventType="touchUpInside" id="FAS-zN-fo0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-WG-zad">
+                    <rect key="frame" x="285" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title=" 数据2 "/>
+                    <connections>
+                        <action selector="updata2" destination="-1" eventType="touchUpInside" id="SDK-ca-PQA"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.90196078430000004" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="top" secondItem="edV-fW-tpF" secondAttribute="bottom" constant="20" id="1Qb-BV-2Mb"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="edV-fW-tpF" secondAttribute="trailing" constant="20" id="Kw2-p6-9pf"/>
-                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="right" secondItem="edV-fW-tpF" secondAttribute="right" id="YpU-6j-qAR"/>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="FGd-CF-915"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="Iq7-Ck-aoM"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="I6g-WG-zad" secondAttribute="trailing" constant="15" id="M7U-UC-5WI"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="NvU-5x-Eav"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="leading" secondItem="edV-fW-tpF" secondAttribute="trailing" constant="15" id="VsI-Sw-AI2"/>
+                <constraint firstItem="edV-fW-tpF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="Wcx-JA-veS"/>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="leading" secondItem="y1Q-oJ-TYk" secondAttribute="trailing" constant="15" id="bpa-gC-FOW"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="f33-rJ-8vE"/>
                 <constraint firstItem="edV-fW-tpF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="gyI-0o-RGh"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="m8K-6c-bbR"/>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="sja-OS-65H"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="leading" secondItem="7J9-NF-TAC" secondAttribute="trailing" constant="15" id="wcG-bJ-Ejl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
