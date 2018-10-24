@@ -15,7 +15,7 @@
 
 #define Hollow_Circle_Radius 0 //中间空心圆半径，默认为0实心
 #define KOffsetRadius 10 //偏移距离
-#define KMargin 20 //边缘间距
+#define KMargin 2 //边缘间距
 
 @interface PicView () {
     CGFloat _radius;
@@ -97,6 +97,8 @@
             pieLayer.fillColor = [colors.count > i?colors[i]:kPieRandColor CGColor];
             pieLayer.startAngle = start;
             pieLayer.endAngle = end;
+            pieLayer.lineWidth = 1;
+            pieLayer.strokeColor = [UIColor whiteColor].CGColor;
             
             // --- 设置数据 ---
             PieLayerData *pieData = [[PieLayerData alloc] init];
@@ -113,9 +115,13 @@
             // --- 开始创建layer ---
             pieLayer.path = [pieData pielayerPath].CGPath;
             
-            CATextLayer *textLayer = [pieData createTextLayerWithText:[NSString stringWithFormat:@"%@",newDatas[i]]];
+            NSNumber *numObj = newDatas[i];
+            CATextLayer *textLayer = [pieData createTextLayerWithText:[NSString stringWithFormat:@"%.2f%%",numObj.floatValue*100]];
             [pieLayer addSublayer:textLayer];
-            [pieLayer addSublayer:[pieData leadLineLayer]];
+            
+            CAShapeLayer *leadLineLayer = [pieData leadLineLayer];
+            leadLineLayer.strokeColor = pieLayer.fillColor;
+            [pieLayer addSublayer:leadLineLayer];
             
             pieLayer.mask = [self creatMaskLayer];
             

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ 
+  可以考虑将 pielayer 的 startAngle & endAngle 数据存在在datas或者计算 可以将 PieLayer 删除不用继承
+ */
 
 @interface PieLayerData : NSObject
 

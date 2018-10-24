@@ -15,6 +15,7 @@
     UIBezierPath *piePath = [UIBezierPath bezierPath];
     [piePath moveToPoint:self.centerPoint];
     [piePath addArcWithCenter:self.centerPoint radius:self.radius startAngle:self.startAngle endAngle:self.endAngle clockwise:YES];
+    [piePath closePath];
     return piePath;
 }
 
@@ -46,21 +47,41 @@
 
 - (CATextLayer *)createTextLayerWithText:(NSString *)text {
     
-    CGFloat radiusCenter = self.radius/2;//环形扇形中心对应的半径
-    
     CATextLayer *textLayer = [[CATextLayer alloc] init];
     textLayer.contentsScale = 2;
     textLayer.alignmentMode = @"center";
     textLayer.fontSize = 14;
     textLayer.string = text;
+    textLayer.foregroundColor = [UIColor darkGrayColor].CGColor;
     
     CGSize size = [self.class textSizeWithText:text font:textLayer.fontSize];
     CGFloat w = size.width;
     CGFloat h = size.height;
     
-    textLayer.frame = CGRectMake(self.centerPoint.x + cosf((self.startAngle + self.endAngle) / 2) * radiusCenter - w/2, self.centerPoint.y + sinf((self.startAngle + self.endAngle) / 2) * radiusCenter - h/2, w, h);
+//    textLayer.frame = [self textFrameCenterWithWidth:w height:h];
+    textLayer.frame = [self textFrameLeaderLineWithWidth:w height:h];
     
     return textLayer;
+}
+
+// 创建text在扇形中心的frame
+- (CGRect)textFrameCenterWithWidth:(CGFloat)w height:(CGFloat)h {
+    CGFloat radiusCenter = self.radius/2;//环形扇形中心对应的半径
+    return CGRectMake(self.centerPoint.x + cosf((self.startAngle + self.endAngle) / 2) * radiusCenter - w/2, self.centerPoint.y + sinf((self.startAngle + self.endAngle) / 2) * radiusCenter - h/2, w, h);
+}
+
+// 创建text在引线上的frame
+- (CGRect)textFrameLeaderLineWithWidth:(CGFloat)w height:(CGFloat)h {
+    
+    CGFloat radiusCenter2 = self.radius + self.secondLeadMargin;//环形扇形中心对应的半径
+    CGFloat x2 = self.centerPoint.x + cosf((self.startAngle + self.endAngle) / 2) * radiusCenter2;
+    CGFloat y2 = self.centerPoint.y + sinf((self.startAngle + self.endAngle) / 2) * radiusCenter2;
+    
+    CGFloat textX = x2 >= self.centerPoint.x? x2+10:x2-w-10;
+    CGFloat textY = y2 - h - 2;
+    
+    CGFloat radiusCenter = self.radius/2;//环形扇形中心对应的半径
+    return CGRectMake(textX, textY, w, h);
 }
 
 + (CGSize)textSizeWithText:(NSString *)text font:(CGFloat)font{

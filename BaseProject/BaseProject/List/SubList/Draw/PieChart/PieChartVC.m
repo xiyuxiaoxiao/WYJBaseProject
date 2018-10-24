@@ -43,7 +43,7 @@
 
 - (NSArray *)getDatas{
 //    return @[@(1),@(2),@(3),@(4)];
-    return @[@(4),@(3),@(2),@(1)];
+    return @[@(12),@(12),@(16),@(25),@(32)];
     
     int cout = arc4random() % 5;
     NSMutableArray *arr = [NSMutableArray array];
