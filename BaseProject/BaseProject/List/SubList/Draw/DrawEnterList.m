@@ -44,6 +44,8 @@
     
     [self.dataArray addObject:@{TitleKey:@"饼状图（其中计算文字位置还需要计算）",
                                 CN_Key:@"PieChartVC"}];
+    [self.dataArray addObject:@{TitleKey:@"柱状图",
+                                CN_Key:@"BarChartVC"}];
     
     [self.dataArray addObject:@{TitleKey:@"颜色渐变",
                                 CN_Key:@"GradientColorController"}];

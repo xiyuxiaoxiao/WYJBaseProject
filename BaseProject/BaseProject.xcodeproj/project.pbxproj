@@ -52,6 +52,10 @@
 		83367DA02089F38300A5571F /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 83367D9C2089F38300A5571F /* PieLayer.m */; };
 		83367DA12089F38300A5571F /* PicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83367D9D2089F38300A5571F /* PicView.m */; };
 		8340E4311EA05B88006DC1FF /* WYJDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8340E4301EA05B88006DC1FF /* WYJDate.m */; };
+		8343BE9A21805E0200C2BE0F /* BarChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343BE9821805E0200C2BE0F /* BarChartVC.m */; };
+		8343BE9B21805E0200C2BE0F /* BarChartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8343BE9921805E0200C2BE0F /* BarChartVC.xib */; };
+		8343BE9F218061D100C2BE0F /* BarLayerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343BE9E218061D100C2BE0F /* BarLayerData.m */; };
+		8343BEA22180649B00C2BE0F /* BarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8343BEA12180649B00C2BE0F /* BarChartView.m */; };
 		8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349E2AB1F5D3AFA001FB473 /* SourceViewController.m */; };
 		8349E2C21F5D3F67001FB473 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 8349E2C11F5D3F67001FB473 /* html */; };
 		8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349E2D51F5D56DC001FB473 /* NSObject+SourcePathGroup.m */; };
@@ -323,6 +327,13 @@
 		83367D9F2089F38300A5571F /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieLayer.h; sourceTree = "<group>"; };
 		8340E42F1EA05B88006DC1FF /* WYJDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJDate.h; sourceTree = "<group>"; };
 		8340E4301EA05B88006DC1FF /* WYJDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJDate.m; sourceTree = "<group>"; };
+		8343BE9721805E0200C2BE0F /* BarChartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartVC.h; sourceTree = "<group>"; };
+		8343BE9821805E0200C2BE0F /* BarChartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartVC.m; sourceTree = "<group>"; };
+		8343BE9921805E0200C2BE0F /* BarChartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChartVC.xib; sourceTree = "<group>"; };
+		8343BE9D218061D100C2BE0F /* BarLayerData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarLayerData.h; sourceTree = "<group>"; };
+		8343BE9E218061D100C2BE0F /* BarLayerData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarLayerData.m; sourceTree = "<group>"; };
+		8343BEA02180649B00C2BE0F /* BarChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartView.h; sourceTree = "<group>"; };
+		8343BEA12180649B00C2BE0F /* BarChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartView.m; sourceTree = "<group>"; };
 		8349E2AA1F5D3AFA001FB473 /* SourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceViewController.h; sourceTree = "<group>"; };
 		8349E2AB1F5D3AFA001FB473 /* SourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceViewController.m; sourceTree = "<group>"; };
 		8349E2C11F5D3F67001FB473 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
@@ -873,6 +884,28 @@
 			path = WYJDate;
 			sourceTree = "<group>";
 		};
+		8343BE9621805DD200C2BE0F /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				8343BE9721805E0200C2BE0F /* BarChartVC.h */,
+				8343BE9821805E0200C2BE0F /* BarChartVC.m */,
+				8343BE9921805E0200C2BE0F /* BarChartVC.xib */,
+				8343BE9C21805E0D00C2BE0F /* View */,
+			);
+			path = BarChart;
+			sourceTree = "<group>";
+		};
+		8343BE9C21805E0D00C2BE0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8343BEA02180649B00C2BE0F /* BarChartView.h */,
+				8343BEA12180649B00C2BE0F /* BarChartView.m */,
+				8343BE9D218061D100C2BE0F /* BarLayerData.h */,
+				8343BE9E218061D100C2BE0F /* BarLayerData.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8349E2971F5D3A99001FB473 /* CodeHtml */ = {
 			isa = PBXGroup;
 			children = (
@@ -1127,6 +1160,7 @@
 				8335306A1F45A29E00596581 /* ChatDrawAndSave */,
 				833222AA1F5562BB006627A5 /* LineAnimation */,
 				83367D952089F30500A5571F /* PieChart */,
+				8343BE9621805DD200C2BE0F /* BarChart */,
 				83669BC7211C2B2E0096EAB9 /* GradientColor */,
 			);
 			path = Draw;
@@ -1927,6 +1961,7 @@
 				83B30E9C20CA5A0A0090D264 /* NSOperation.htm in Resources */,
 				83751D6E1EFA444B004F2D49 /* yuanyuan.png in Resources */,
 				8399B21D1E9B52AF0059B797 /* LaunchScreen.storyboard in Resources */,
+				8343BE9B21805E0200C2BE0F /* BarChartVC.xib in Resources */,
 				83BE803B1EF917F100FD588A /* iconfont-fangda.png in Resources */,
 				83C8877F1F444FC0006B9A72 /* btn_icon_loading@2x.png in Resources */,
 				833530681F459FFE00596581 /* YJRippleVC.xib in Resources */,
@@ -2055,6 +2090,7 @@
 				8399B2B41E9B52CF0059B797 /* UIImageView+AFNetworking.m in Sources */,
 				8399B2B61E9B52CF0059B797 /* UIRefreshControl+AFNetworking.m in Sources */,
 				83B5543C206B767900439E66 /* MyTabBar.m in Sources */,
+				8343BE9A21805E0200C2BE0F /* BarChartVC.m in Sources */,
 				83751D601EFA0FC5004F2D49 /* DrawEnterList.m in Sources */,
 				83A7F3B22175E13200CE8BA4 /* XLSlideMenu.m in Sources */,
 				83750D0A1EFB618A0058BC2A /* CustomPinAnnotationView.m in Sources */,
@@ -2088,6 +2124,7 @@
 				8399B2AB1E9B52CF0059B797 /* AFURLSessionManager.m in Sources */,
 				839A6F6520BFCB16001EF130 /* ChartDatabaseMultiDelegate.m in Sources */,
 				8399B2D11E9B893B0059B797 /* AnimationEffect.m in Sources */,
+				8343BEA22180649B00C2BE0F /* BarChartView.m in Sources */,
 				8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */,
 				8335309A1F45AD2700596581 /* MessageController.m in Sources */,
 				83C8878E1F445041006B9A72 /* TaskNumber.m in Sources */,
@@ -2186,6 +2223,7 @@
 				831E240920592A2E00557A96 /* LastRemainObject.m in Sources */,
 				8399B29F1E9B52CF0059B797 /* MBProgressHUD.m in Sources */,
 				839C7E011EE53ECC006CAFDC /* EventStoreManager.m in Sources */,
+				8343BE9F218061D100C2BE0F /* BarLayerData.m in Sources */,
 				83637A9D1E9F783C00EAD984 /* YYDiskCache.m in Sources */,
 				8399B2A21E9B52CF0059B797 /* MBProgressHUD+DIY.m in Sources */,
 				8399B2991E9B52CF0059B797 /* FMDatabaseAdditions.m in Sources */,
