@@ -24,6 +24,11 @@
                                 CN_Key:@"BlockPoint"}];
     [self.dataArray addObject:@{TitleKey:@"copy 内存管理",
                                 CN_Key:@"CopyMemory"}];
+    [self.dataArray addObject:@{TitleKey:@"runtime应用",
+                                CN_Key:@"RuntimePoint"}];
+    [self.dataArray addObject:@{TitleKey:@"动画animation",
+                                CN_Key:@"AnimationRead"
+                                }];
     
     [self.dataArray addObject:@{TitleKey:@"GCD多线程",
                                 @"filePath":@"多线程GCD.htm",
@@ -38,7 +43,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dict = self.dataArray[indexPath.row];
     SourceViewController *vc = [[SourceViewController alloc] init];
-    if (indexPath.row >= 2) {
+    if (indexPath.row >= 4) {
         vc.filePath = [[NSBundle mainBundle] pathForResource:dict[@"filePath"] ofType:nil];
     }else {
         vc.filePath = SourcePathByClassName(dict[CN_Key]);

@@ -19,8 +19,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"左边" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftAction)];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"左边" style:(UIBarButtonItemStylePlain) target:self action:@selector(leftAction)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右边" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightAction)];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:(UIBarButtonItemStylePlain) target:self action:@selector(backAction)];
+    
+    self.navigationItem.leftBarButtonItems = @[leftItem,backItem];
+}
+- (void)backAction {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)leftAction {
