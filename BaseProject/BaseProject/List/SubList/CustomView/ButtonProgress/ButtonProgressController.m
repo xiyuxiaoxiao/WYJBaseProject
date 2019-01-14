@@ -20,6 +20,19 @@
 
 @implementation ButtonProgressController
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self setLabel];
+}
+- (void)setLabel {
+    self.lableTitle.text = @"";
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:7];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    self.lableTitle.text = @"返回是废旧塑料";
+    [UIView commitAnimations];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,19 +59,24 @@
 }
 
 - (void)loginAction {
-    [self.buttonPro startAction];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    self.annomation = !self.annomation;
+    if (self.annomation) {
+        // 禁止当前UI交互  在结束后 在设置当前允许操作
+        //        self.view.userInteractionEnabled = NO;
+        [self.buttonPro startAction];
+    }else {
         [self.buttonPro endActionSuccess:YES message:@"请求成功"];
-    });
+    }
 }
 
 - (void)loginActionByFrame {
     self.annomationByFrame = !self.annomationByFrame;
-    
-    [self.buttonProByFrame startAction];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if (self.annomationByFrame) {
+        // 禁止当前UI交互  在结束后 在设置当前允许操作
+        [self.buttonProByFrame startAction];
+    }else {
         [self.buttonProByFrame endActionSuccess:NO message:@"请求失败"];
-    });
+    }
 }
 
 

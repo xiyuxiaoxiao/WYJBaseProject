@@ -21,12 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view = [[UIView alloc] init];
-    self.view.backgroundColor = [UIColor whiteColor];
     
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self creat];
 }
-
 - (void)creat {
     
     UIViewController *rootVC = [[SlideRootVC alloc] init];
@@ -40,8 +39,6 @@
     slideMenu.rightViewController = rightVC;
     
     [self presentViewController:slideMenu animated:YES completion:nil];
-    
-    [self.navigationController popViewControllerAnimated:NO];
 }
 
 @end

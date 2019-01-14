@@ -126,7 +126,6 @@
 		8388691B20BC0183006619B9 /* ChatFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8388691320BC0183006619B9 /* ChatFriendCell.xib */; };
 		8388691C20BC0183006619B9 /* ChatMyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388691520BC0183006619B9 /* ChatMyCell.m */; };
 		8388691D20BC0183006619B9 /* ChatMyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8388691620BC0183006619B9 /* ChatMyCell.xib */; };
-		8393BDCA21CB96C700FE7053 /* RuntimePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8393BDC921CB96C700FE7053 /* RuntimePoint.m */; };
 		8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D806216C8A9500DBBFD6 /* PullEyesController.m */; };
 		8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D80B216C8EB300DBBFD6 /* WXPullView.m */; };
 		8399B20F1E9B52AF0059B797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B20E1E9B52AF0059B797 /* main.m */; };
@@ -235,7 +234,6 @@
 		83C887991F44512A006B9A72 /* CanNotAddSelfAsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C887921F44512A006B9A72 /* CanNotAddSelfAsSubView.m */; };
 		83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */; };
 		83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C887941F44512A006B9A72 /* self addSubView self.png */; };
-		83CC332E21D2317A00894B09 /* AnimationRead.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CC332D21D2317A00894B09 /* AnimationRead.m */; };
 		E5CB83CF13696E149D5375E5 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
 
@@ -461,7 +459,6 @@
 		83905979211D252000A61241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8390597B211D252900A61241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8390597D211D253400A61241 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8393BDC921CB96C700FE7053 /* RuntimePoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimePoint.m; sourceTree = "<group>"; };
 		8398D805216C8A9500DBBFD6 /* PullEyesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullEyesController.h; sourceTree = "<group>"; };
 		8398D806216C8A9500DBBFD6 /* PullEyesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullEyesController.m; sourceTree = "<group>"; };
 		8398D80B216C8EB300DBBFD6 /* WXPullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPullView.m; sourceTree = "<group>"; };
@@ -656,7 +653,6 @@
 		83C887921F44512A006B9A72 /* CanNotAddSelfAsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanNotAddSelfAsSubView.m; sourceTree = "<group>"; };
 		83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanNotAddSelfAsSubView.xib; sourceTree = "<group>"; };
 		83C887941F44512A006B9A72 /* self addSubView self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self addSubView self.png"; sourceTree = "<group>"; };
-		83CC332D21D2317A00894B09 /* AnimationRead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationRead.m; sourceTree = "<group>"; };
 		8CAE69609FDD1709F9D6DDE3 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 		A35A3FBF8A3B28261E113C8A /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -706,8 +702,6 @@
 				83735276205A7A6B002F1824 /* BlockPoint.m */,
 				8398D80C216C8EB300DBBFD6 /* WXPullView.h */,
 				8398D80B216C8EB300DBBFD6 /* WXPullView.m */,
-				8393BDC921CB96C700FE7053 /* RuntimePoint.m */,
-				83CC332D21D2317A00894B09 /* AnimationRead.m */,
 			);
 			path = Dom;
 			sourceTree = "<group>";
@@ -2087,7 +2081,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83CC332E21D2317A00894B09 /* AnimationRead.m in Sources */,
 				8399B2151E9B52AF0059B797 /* ViewController.m in Sources */,
 				8388690920BC0047006619B9 /* AddressLIstController.m in Sources */,
 				831E240B20592A2E00557A96 /* SortBubble.m in Sources */,
@@ -2132,7 +2125,6 @@
 				839A6F6520BFCB16001EF130 /* ChartDatabaseMultiDelegate.m in Sources */,
 				8399B2D11E9B893B0059B797 /* AnimationEffect.m in Sources */,
 				8343BEA22180649B00C2BE0F /* BarChartView.m in Sources */,
-				8393BDCA21CB96C700FE7053 /* RuntimePoint.m in Sources */,
 				8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */,
 				8335309A1F45AD2700596581 /* MessageController.m in Sources */,
 				83C8878E1F445041006B9A72 /* TaskNumber.m in Sources */,

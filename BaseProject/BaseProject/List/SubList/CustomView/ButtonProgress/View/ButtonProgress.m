@@ -210,14 +210,10 @@
 - (void)buttonScaleUp {
     [self animationsDuration:0.2 animation:^{
         self.button.bounds = boundsOriginal;
-        self.userInteractionEnabled = YES;
     }];
 }
 // 按钮缩小
 - (void)buttonScaleDown {
-    
-    self.userInteractionEnabled = NO;
-    
     boundsOriginal = self.button.bounds;
     CGFloat h = self.button.bounds.size.height;
     [self animationsDuration:0.5 animation:^{
