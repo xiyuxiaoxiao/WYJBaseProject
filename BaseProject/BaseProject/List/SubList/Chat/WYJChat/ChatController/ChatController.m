@@ -91,7 +91,7 @@
     message.toUserId = self.myFriend.userId;
     message.fromUserId = self.currentUser.userId;
     message.content = self.sendMessageTextField.text;
-    message.serverReceiveTime = [self.class serverDate];
+//    message.serverReceiveTime = [self.class serverDate];
     
     [message saveOrUpdate];
 }
@@ -102,7 +102,7 @@
     message.toUserId = self.currentUser.userId;
     message.fromUserId = self.myFriend.userId;
     message.content = self.callBackTextField.text;
-    message.serverReceiveTime = [self.class serverDate];
+//    message.serverReceiveTime = [self.class serverDate];
     
     [message saveOrUpdate];
 }

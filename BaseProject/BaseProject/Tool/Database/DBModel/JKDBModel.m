@@ -647,6 +647,8 @@
  * newColumns 改编后的列表 与columns 一一对应
  *
  * 第一个 用于更细自己的列名称，第二个用于更新表名 和 列名
+ 
+    涉及跨级更新的 需要 根据版本号 i以及以及更新 否则会出现问题
  */
 
 + (void)updateColumns: (NSArray *)columns

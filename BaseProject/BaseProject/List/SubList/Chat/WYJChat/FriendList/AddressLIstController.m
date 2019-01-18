@@ -10,7 +10,6 @@
 #import "AddressList.h"
 #import "ChatController.h"
 #import "MBProgressHUD.h"
-#import "AddressListManager.h"
 #import "MessageList.h"
 
 @interface AddressLIstController ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>
@@ -41,7 +40,14 @@
         [self.textField resignFirstResponder];
         return;
     }
-    [AddressListManager addNewFriend:self.textField.text];
+    
+    AddressList *list = [[AddressList alloc] init];
+    list.userId = [WYJDate getTimeSp:[NSDate date]];
+    list.name = self.textField.text;
+    list.sex = arc4random()%2 == 0 ? @"男":@"女";
+
+    [list saveOrUpdate];
+    
     self.textField.text = nil;
     [self.textField resignFirstResponder];
 }

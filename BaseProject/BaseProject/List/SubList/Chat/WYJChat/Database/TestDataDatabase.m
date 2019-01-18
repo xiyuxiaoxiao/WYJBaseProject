@@ -43,7 +43,7 @@
         [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSDate *inputDate = [inputFormatter dateFromString:@"2018-01-01 00:00:00"];
         NSDate *newDate =  [inputDate dateByAddingTimeInterval:i*60];
-        list.serverReceiveTime = [inputFormatter stringFromDate:newDate];
+//        list.serverReceiveTime = [inputFormatter stringFromDate:newDate];
     }
     
     for (int i = 1; i < 40; i++) {
@@ -75,7 +75,7 @@
         NSDate *inputDate = [inputFormatter dateFromString:@"2018-01-01 00:00:00"];
         NSDate *newDate =  [inputDate dateByAddingTimeInterval:i*60];
         
-        list.serverReceiveTime = [inputFormatter stringFromDate:newDate];
+//        list.serverReceiveTime = [inputFormatter stringFromDate:newDate];
     }
     
     [MessageList saveObjects:array];
