@@ -52,5 +52,6 @@
 #import "WYJDate.h"
 #import "ChartDatabaseManager.h"
 #import "CurrentUserManager.h"
+#import "Masonry.h"
 #endif
 
