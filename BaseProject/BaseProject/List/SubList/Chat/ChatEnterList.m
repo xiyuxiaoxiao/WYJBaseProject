@@ -24,8 +24,8 @@
                                 CN_Key:@"MessageController"}];
     [self.dataArray addObject:@{TitleKey:@"即时通讯-本地数据库（通讯录、聊天记录）",
                                 CN_Key:@"ChartHomeController"}];
-    [self.dataArray addObject:@{TitleKey:@"聊天记录-BGFMDB",
-                                CN_Key:@"WYJAddressListController"}];
+    [self.dataArray addObject:@{TitleKey:@"聊天SDK开发",
+                                CN_Key:@"WYJChartController"}];
     
     
 }

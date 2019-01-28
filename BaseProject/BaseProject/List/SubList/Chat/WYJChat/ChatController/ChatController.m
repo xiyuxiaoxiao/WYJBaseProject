@@ -39,6 +39,8 @@
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedRowHeight = 0;
     
+    
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.currentUser = [CurrentUserManager currentUser];
@@ -164,7 +166,6 @@
             self.tableView.contentOffset = CGPointMake(0, offsetY);
         }];
     }
-    
 }
 
 + (BOOL)scrollViewDidScrollResignFirstResponse {

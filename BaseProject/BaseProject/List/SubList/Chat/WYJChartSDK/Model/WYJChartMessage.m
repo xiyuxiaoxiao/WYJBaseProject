@@ -7,7 +7,13 @@
 //
 
 #import "WYJChartMessage.h"
+#import "WYJChartDefine.h"
 
 @implementation WYJChartMessage
-
+- (void)reSendServer {
+    self.sendStatus = SendStatusSending;
+}
+- (void)sendSuccess {
+    self.sendStatus = SendStatusSuccess;
+}
 @end

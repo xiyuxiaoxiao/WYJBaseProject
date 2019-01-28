@@ -110,9 +110,6 @@
 		83780FCD1F467B41000264E1 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83780FCB1F467B41000264E1 /* MessageCell.xib */; };
 		83781A491EFCA826001A80C9 /* SystemMapAnnotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */; };
 		83781A4C1EFCB4C6001A80C9 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A4B1EFCB4C6001A80C9 /* MyAnnotationView.m */; };
-		8381416821EEDFE400AA21A8 /* WYJAddressListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8381416521EEDFE400AA21A8 /* WYJAddressListController.xib */; };
-		8381416921EEDFE400AA21A8 /* WYJAddressListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381416721EEDFE400AA21A8 /* WYJAddressListController.m */; };
-		8381416C21EEE2B300AA21A8 /* WYJChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8381416B21EEE2B300AA21A8 /* WYJChartManager.m */; };
 		8384E7C61EEA3DD700A61EF8 /* LayoutConstraintCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E7C51EEA3DD700A61EF8 /* LayoutConstraintCodeController.m */; };
 		838868F620BC0004006619B9 /* ChartHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838868F420BC0004006619B9 /* ChartHomeController.m */; };
 		838868F720BC0004006619B9 /* ChartHomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838868F520BC0004006619B9 /* ChartHomeController.xib */; };
@@ -133,8 +130,6 @@
 		83969EAA21EDDC210032EAE7 /* NSCache+BGCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA521EDDC210032EAE7 /* NSCache+BGCache.m */; };
 		83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA621EDDC210032EAE7 /* NSObject+BGModel.m */; };
 		83969EAC21EDDC210032EAE7 /* BGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA721EDDC210032EAE7 /* BGTool.m */; };
-		83969EB021EDF8E30032EAE7 /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EAF21EDF8E30032EAE7 /* WYJChartMessage.m */; };
-		83969EB321EDF9430032EAE7 /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EB221EDF9430032EAE7 /* WYJChartAddress.m */; };
 		8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D806216C8A9500DBBFD6 /* PullEyesController.m */; };
 		8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D80B216C8EB300DBBFD6 /* WXPullView.m */; };
 		8399B20F1E9B52AF0059B797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B20E1E9B52AF0059B797 /* main.m */; };
@@ -202,6 +197,16 @@
 		839C7E011EE53ECC006CAFDC /* EventStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 839C7E001EE53ECC006CAFDC /* EventStoreManager.m */; };
 		839C7E081EE54156006CAFDC /* ES_RemaindControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 839C7E061EE54156006CAFDC /* ES_RemaindControler.m */; };
 		839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839C7E071EE54156006CAFDC /* ES_RemaindControler.xib */; };
+		839D41F821F953FC00130E47 /* WYJChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D41F721F953FC00130E47 /* WYJChatKeyboard.m */; };
+		839D41FA21F9569900130E47 /* Add Chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 839D41F921F9569900130E47 /* Add Chat@2x.png */; };
+		83A4C6FC21F800FA0088359E /* WYJChartBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C6FB21F800FA0088359E /* WYJChartBaseCell.m */; };
+		83A4C6FF21F8011C0088359E /* WYJChartTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C6FE21F8011C0088359E /* WYJChartTextCell.m */; };
+		83A4C70421F836C60088359E /* Text Voice Bubble Outgoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A4C70221F836C60088359E /* Text Voice Bubble Outgoing@2x.png */; };
+		83A4C70521F836C60088359E /* Text Voice Bubble Incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A4C70321F836C60088359E /* Text Voice Bubble Incoming@2x.png */; };
+		83A4C70A21F83A020088359E /* WYJChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C70821F83A020088359E /* WYJChartController.m */; };
+		83A4C70B21F83A020088359E /* WYJChartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A4C70921F83A020088359E /* WYJChartController.xib */; };
+		83A4C71221F862A00088359E /* WYJChartCellTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C71121F862A00088359E /* WYJChartCellTool.m */; };
+		83A4C71421F873890088359E /* Failed To Send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A4C71321F873890088359E /* Failed To Send@2x.png */; };
 		83A7F3722175D29000CE8BA4 /* AnimationEncapsulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7F3712175D29000CE8BA4 /* AnimationEncapsulation.m */; };
 		83A7F37F2175D78800CE8BA4 /* YJSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7F37E2175D78800CE8BA4 /* YJSlideMenu.m */; };
 		83A7F38B2175DB5600CE8BA4 /* SlideLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7F38A2175DB5600CE8BA4 /* SlideLeftVC.m */; };
@@ -252,6 +257,8 @@
 		83C887991F44512A006B9A72 /* CanNotAddSelfAsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C887921F44512A006B9A72 /* CanNotAddSelfAsSubView.m */; };
 		83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */; };
 		83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C887941F44512A006B9A72 /* self addSubView self.png */; };
+		83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */; };
+		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
 		E5CB83CF13696E149D5375E5 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
 
@@ -445,11 +452,6 @@
 		83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMapAnnotationManager.m; sourceTree = "<group>"; };
 		83781A4A1EFCB4C6001A80C9 /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
 		83781A4B1EFCB4C6001A80C9 /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
-		8381416521EEDFE400AA21A8 /* WYJAddressListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYJAddressListController.xib; sourceTree = "<group>"; };
-		8381416621EEDFE400AA21A8 /* WYJAddressListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJAddressListController.h; sourceTree = "<group>"; };
-		8381416721EEDFE400AA21A8 /* WYJAddressListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJAddressListController.m; sourceTree = "<group>"; };
-		8381416A21EEE2B300AA21A8 /* WYJChartManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartManager.h; sourceTree = "<group>"; };
-		8381416B21EEE2B300AA21A8 /* WYJChartManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartManager.m; sourceTree = "<group>"; };
 		8384E7C41EEA3DD700A61EF8 /* LayoutConstraintCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutConstraintCodeController.h; sourceTree = "<group>"; };
 		8384E7C51EEA3DD700A61EF8 /* LayoutConstraintCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintCodeController.m; sourceTree = "<group>"; };
 		838868F320BC0004006619B9 /* ChartHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartHomeController.h; sourceTree = "<group>"; };
@@ -492,10 +494,6 @@
 		83969EA621EDDC210032EAE7 /* NSObject+BGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BGModel.m"; sourceTree = "<group>"; };
 		83969EA721EDDC210032EAE7 /* BGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTool.m; sourceTree = "<group>"; };
 		83969EA821EDDC210032EAE7 /* BGDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDB.h; sourceTree = "<group>"; };
-		83969EAE21EDF8E30032EAE7 /* WYJChartMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartMessage.h; sourceTree = "<group>"; };
-		83969EAF21EDF8E30032EAE7 /* WYJChartMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
-		83969EB121EDF9430032EAE7 /* WYJChartAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartAddress.h; sourceTree = "<group>"; };
-		83969EB221EDF9430032EAE7 /* WYJChartAddress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartAddress.m; sourceTree = "<group>"; };
 		8398D805216C8A9500DBBFD6 /* PullEyesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullEyesController.h; sourceTree = "<group>"; };
 		8398D806216C8A9500DBBFD6 /* PullEyesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullEyesController.m; sourceTree = "<group>"; };
 		8398D80B216C8EB300DBBFD6 /* WXPullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPullView.m; sourceTree = "<group>"; };
@@ -633,6 +631,22 @@
 		839C7E051EE54156006CAFDC /* ES_RemaindControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES_RemaindControler.h; sourceTree = "<group>"; };
 		839C7E061EE54156006CAFDC /* ES_RemaindControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES_RemaindControler.m; sourceTree = "<group>"; };
 		839C7E071EE54156006CAFDC /* ES_RemaindControler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ES_RemaindControler.xib; sourceTree = "<group>"; };
+		839D41F621F953FC00130E47 /* WYJChatKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChatKeyboard.h; sourceTree = "<group>"; };
+		839D41F721F953FC00130E47 /* WYJChatKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChatKeyboard.m; sourceTree = "<group>"; };
+		839D41F921F9569900130E47 /* Add Chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Chat@2x.png"; sourceTree = "<group>"; };
+		83A4C6FA21F800FA0088359E /* WYJChartBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartBaseCell.h; sourceTree = "<group>"; };
+		83A4C6FB21F800FA0088359E /* WYJChartBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartBaseCell.m; sourceTree = "<group>"; };
+		83A4C6FD21F8011C0088359E /* WYJChartTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartTextCell.h; sourceTree = "<group>"; };
+		83A4C6FE21F8011C0088359E /* WYJChartTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartTextCell.m; sourceTree = "<group>"; };
+		83A4C70021F80F950088359E /* WYJChartDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartDefine.h; sourceTree = "<group>"; };
+		83A4C70221F836C60088359E /* Text Voice Bubble Outgoing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text Voice Bubble Outgoing@2x.png"; sourceTree = "<group>"; };
+		83A4C70321F836C60088359E /* Text Voice Bubble Incoming@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text Voice Bubble Incoming@2x.png"; sourceTree = "<group>"; };
+		83A4C70721F83A020088359E /* WYJChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartController.h; sourceTree = "<group>"; };
+		83A4C70821F83A020088359E /* WYJChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartController.m; sourceTree = "<group>"; };
+		83A4C70921F83A020088359E /* WYJChartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYJChartController.xib; sourceTree = "<group>"; };
+		83A4C71021F862A00088359E /* WYJChartCellTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartCellTool.h; sourceTree = "<group>"; };
+		83A4C71121F862A00088359E /* WYJChartCellTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartCellTool.m; sourceTree = "<group>"; };
+		83A4C71321F873890088359E /* Failed To Send@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Failed To Send@2x.png"; sourceTree = "<group>"; };
 		83A7F3702175D29000CE8BA4 /* AnimationEncapsulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationEncapsulation.h; sourceTree = "<group>"; };
 		83A7F3712175D29000CE8BA4 /* AnimationEncapsulation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationEncapsulation.m; sourceTree = "<group>"; };
 		83A7F37D2175D78800CE8BA4 /* YJSlideMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSlideMenu.h; sourceTree = "<group>"; };
@@ -713,6 +727,10 @@
 		83C887921F44512A006B9A72 /* CanNotAddSelfAsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanNotAddSelfAsSubView.m; sourceTree = "<group>"; };
 		83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanNotAddSelfAsSubView.xib; sourceTree = "<group>"; };
 		83C887941F44512A006B9A72 /* self addSubView self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self addSubView self.png"; sourceTree = "<group>"; };
+		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
+		83F27F7121FEDF0700E7FE9D /* WYJChartMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartMessage.h; sourceTree = "<group>"; };
+		83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartAddress.m; sourceTree = "<group>"; };
+		83F27F7421FEDF3700E7FE9D /* WYJChartAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartAddress.h; sourceTree = "<group>"; };
 		8CAE69609FDD1709F9D6DDE3 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 		A35A3FBF8A3B28261E113C8A /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -880,6 +898,7 @@
 			children = (
 				8335308B1F45AC1A00596581 /* ChatEnterList.h */,
 				8335308C1F45AC1A00596581 /* ChatEnterList.m */,
+				83A4C6EE21F7F8A10088359E /* WYJChartSDK */,
 				838868F120BBFDD5006619B9 /* WYJChat */,
 				8335308E1F45ACA100596581 /* MessageController */,
 			);
@@ -1256,18 +1275,6 @@
 			path = CitySelect;
 			sourceTree = "<group>";
 		};
-		8381416421EEDE2200AA21A8 /* BGChartUI */ = {
-			isa = PBXGroup;
-			children = (
-				8381416621EEDFE400AA21A8 /* WYJAddressListController.h */,
-				8381416721EEDFE400AA21A8 /* WYJAddressListController.m */,
-				8381416521EEDFE400AA21A8 /* WYJAddressListController.xib */,
-				8381416A21EEE2B300AA21A8 /* WYJChartManager.h */,
-				8381416B21EEE2B300AA21A8 /* WYJChartManager.m */,
-			);
-			path = BGChartUI;
-			sourceTree = "<group>";
-		};
 		8384E7C01EEA3C2300A61EF8 /* LayoutConstraintCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,8 +1287,6 @@
 		838868F120BBFDD5006619B9 /* WYJChat */ = {
 			isa = PBXGroup;
 			children = (
-				8381416421EEDE2200AA21A8 /* BGChartUI */,
-				83969EAD21EDF88F0032EAE7 /* ChartObject */,
 				838868F320BC0004006619B9 /* ChartHomeController.h */,
 				838868F420BC0004006619B9 /* ChartHomeController.m */,
 				838868F520BC0004006619B9 /* ChartHomeController.xib */,
@@ -1356,17 +1361,6 @@
 				83969EA421EDDC210032EAE7 /* BGDB.m */,
 			);
 			path = BG;
-			sourceTree = "<group>";
-		};
-		83969EAD21EDF88F0032EAE7 /* ChartObject */ = {
-			isa = PBXGroup;
-			children = (
-				83969EAE21EDF8E30032EAE7 /* WYJChartMessage.h */,
-				83969EAF21EDF8E30032EAE7 /* WYJChartMessage.m */,
-				83969EB121EDF9430032EAE7 /* WYJChartAddress.h */,
-				83969EB221EDF9430032EAE7 /* WYJChartAddress.m */,
-			);
-			path = ChartObject;
 			sourceTree = "<group>";
 		};
 		8398D804216C8A1F00DBBFD6 /* PullEyes */ = {
@@ -1723,6 +1717,81 @@
 			path = EventStoreSystem;
 			sourceTree = "<group>";
 		};
+		839D41F521F953D800130E47 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				839D41F621F953FC00130E47 /* WYJChatKeyboard.h */,
+				839D41F721F953FC00130E47 /* WYJChatKeyboard.m */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		83A4C6EE21F7F8A10088359E /* WYJChartSDK */ = {
+			isa = PBXGroup;
+			children = (
+				83A4C70021F80F950088359E /* WYJChartDefine.h */,
+				83A4C70C21F854830088359E /* Model */,
+				83A4C70621F8397F0088359E /* Controller */,
+				83A4C6EF21F800260088359E /* View */,
+				83A4C70121F836C60088359E /* Resource */,
+			);
+			path = WYJChartSDK;
+			sourceTree = "<group>";
+		};
+		83A4C6EF21F800260088359E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				839D41F521F953D800130E47 /* Keyboard */,
+				83A4C6F021F800310088359E /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83A4C6F021F800310088359E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				83A4C6FA21F800FA0088359E /* WYJChartBaseCell.h */,
+				83A4C6FB21F800FA0088359E /* WYJChartBaseCell.m */,
+				83A4C6FD21F8011C0088359E /* WYJChartTextCell.h */,
+				83A4C6FE21F8011C0088359E /* WYJChartTextCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		83A4C70121F836C60088359E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				839D41F921F9569900130E47 /* Add Chat@2x.png */,
+				83A4C71321F873890088359E /* Failed To Send@2x.png */,
+				83A4C70221F836C60088359E /* Text Voice Bubble Outgoing@2x.png */,
+				83A4C70321F836C60088359E /* Text Voice Bubble Incoming@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		83A4C70621F8397F0088359E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83A4C70721F83A020088359E /* WYJChartController.h */,
+				83A4C70821F83A020088359E /* WYJChartController.m */,
+				83A4C70921F83A020088359E /* WYJChartController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		83A4C70C21F854830088359E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83A4C71021F862A00088359E /* WYJChartCellTool.h */,
+				83A4C71121F862A00088359E /* WYJChartCellTool.m */,
+				83F27F7121FEDF0700E7FE9D /* WYJChartMessage.h */,
+				83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */,
+				83F27F7421FEDF3700E7FE9D /* WYJChartAddress.h */,
+				83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		83A7F36F2175D25C00CE8BA4 /* AnimationEncapsulation */ = {
 			isa = PBXGroup;
 			children = (
@@ -2070,6 +2139,7 @@
 				8366305D1EE16FB80029AD91 /* MapManagerController.xib in Resources */,
 				8388690A20BC0047006619B9 /* AddressLIstController.xib in Resources */,
 				839A201F208DEBC500024279 /* BezierPathVC.xib in Resources */,
+				83A4C70521F836C60088359E /* Text Voice Bubble Incoming@2x.png in Resources */,
 				83C887801F444FC0006B9A72 /* btn_icon_loading@3x.png in Resources */,
 				83C887651F444F2B006B9A72 /* 起点终点相同的运送计划.doc in Resources */,
 				83359AE21F4BC051007D3EB7 /* MinInsertExample.xib in Resources */,
@@ -2081,15 +2151,16 @@
 				8399B2A41E9B52CF0059B797 /* success@2x.png in Resources */,
 				83BE803E1EF9183100FD588A /* btn_map_locate.png in Resources */,
 				83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */,
-				8381416821EEDFE400AA21A8 /* WYJAddressListController.xib in Resources */,
 				833530631F459FFE00596581 /* middelLittle.png in Resources */,
 				8335309D1F45AD2700596581 /* Chat BackGround.jpg in Resources */,
+				839D41FA21F9569900130E47 /* Add Chat@2x.png in Resources */,
 				83C887641F444F2B006B9A72 /* minInser.png in Resources */,
 				836630641EE170B90029AD91 /* WaterFallController.xib in Resources */,
 				833530891F45A90100596581 /* SortViewController.xib in Resources */,
 				83780FCD1F467B41000264E1 /* MessageCell.xib in Resources */,
 				8388691920BC0183006619B9 /* ChatController.xib in Resources */,
 				83B5543B206B767900439E66 /* addNomal.png in Resources */,
+				83A4C70421F836C60088359E /* Text Voice Bubble Outgoing@2x.png in Resources */,
 				83B5543A206B767900439E66 /* addHight.png in Resources */,
 				83750D041EFB57C90058BC2A /* SystemMapController.xib in Resources */,
 				833530661F459FFE00596581 /* YJCutMiddle.xib in Resources */,
@@ -2105,7 +2176,9 @@
 				8377C9FB1EF376E900E4E56C /* city.plist in Resources */,
 				8399B2A31E9B52CF0059B797 /* success.png in Resources */,
 				83751D691EFA1076004F2D49 /* DrawCircleController.xib in Resources */,
+				83A4C70B21F83A020088359E /* WYJChartController.xib in Resources */,
 				8399B2A11E9B52CF0059B797 /* error@2x.png in Resources */,
+				83A4C71421F873890088359E /* Failed To Send@2x.png in Resources */,
 				83652B3B1F6F9214008F470D /* LastRemainExample.xib in Resources */,
 				839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */,
 				8388691D20BC0183006619B9 /* ChatMyCell.xib in Resources */,
@@ -2275,11 +2348,14 @@
 				839B7F3121F6B1D1008E7A8C /* NSArray+MASAdditions.m in Sources */,
 				83652B3A1F6F9214008F470D /* LastRemainExample.m in Sources */,
 				83BE80351EF911D500FD588A /* CustomAnnotationView.m in Sources */,
+				83A4C70A21F83A020088359E /* WYJChartController.m in Sources */,
 				8335309B1F45AD2700596581 /* MessageImageView.m in Sources */,
 				8377C9F91EF3768900E4E56C /* CityController.m in Sources */,
 				8399B2971E9B52CF0059B797 /* JKDBModel.m in Sources */,
 				83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */,
+				83A4C71221F862A00088359E /* WYJChartCellTool.m in Sources */,
 				839B7F2E21F6B1D1008E7A8C /* MASCompositeConstraint.m in Sources */,
+				83A4C6FC21F800FA0088359E /* WYJChartBaseCell.m in Sources */,
 				83A94FDC2179B19C009FF4B1 /* PieLayerData.m in Sources */,
 				839A201A208DE5E000024279 /* BezierPathView.m in Sources */,
 				8399B2B11E9B52CF0059B797 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -2308,6 +2384,7 @@
 				8377C9F51EF3751A00E4E56C /* CitySelectController.m in Sources */,
 				8399B2981E9B52CF0059B797 /* FMDatabase.m in Sources */,
 				8388690720BC0047006619B9 /* MessageList.m in Sources */,
+				83A4C6FF21F8011C0088359E /* WYJChartTextCell.m in Sources */,
 				83BE80371EF911D500FD588A /* CustomMAPointAnnotation.m in Sources */,
 				83637A9E1E9F783C00EAD984 /* YYKVStorage.m in Sources */,
 				83750D0D1EFB6C290058BC2A /* MyAnnotation.m in Sources */,
@@ -2328,8 +2405,7 @@
 				83751D681EFA1076004F2D49 /* DrawCircleController.m in Sources */,
 				833530671F459FFE00596581 /* YJRippleVC.m in Sources */,
 				833530991F45AD2700596581 /* MessageCell.m in Sources */,
-				8381416921EEDFE400AA21A8 /* WYJAddressListController.m in Sources */,
-				8381416C21EEE2B300AA21A8 /* WYJChartManager.m in Sources */,
+				83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */,
 				8399B2AC1E9B52CF0059B797 /* Base64.m in Sources */,
 				8399B2961E9B52CF0059B797 /* JKDBHelper.m in Sources */,
 				8335305F1F459FFE00596581 /* DashLineView.m in Sources */,
@@ -2348,13 +2424,13 @@
 				83637A8E1E9F65B200EAD984 /* NSDictionary+Category.m in Sources */,
 				8388691A20BC0183006619B9 /* ChatFriendCell.m in Sources */,
 				837151051EE01D10009E7ECF /* EnterListController.m in Sources */,
-				83969EB321EDF9430032EAE7 /* WYJChartAddress.m in Sources */,
 				83637A911E9F65B200EAD984 /* NetWorkStatus.m in Sources */,
 				839B7F2F21F6B1D1008E7A8C /* MASConstraintMaker.m in Sources */,
 				839C7E081EE54156006CAFDC /* ES_RemaindControler.m in Sources */,
 				8388691C20BC0183006619B9 /* ChatMyCell.m in Sources */,
 				8399B2A71E9B52CF0059B797 /* AFNetworkReachabilityManager.m in Sources */,
 				83C8878D1F445041006B9A72 /* SortFunction.c in Sources */,
+				83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */,
 				83735277205A7A6B002F1824 /* BlockPoint.m in Sources */,
 				83359AE11F4BC051007D3EB7 /* MinInsertExample.m in Sources */,
 				8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */,
@@ -2378,7 +2454,6 @@
 				83637A9D1E9F783C00EAD984 /* YYDiskCache.m in Sources */,
 				8399B2A21E9B52CF0059B797 /* MBProgressHUD+DIY.m in Sources */,
 				8399B2991E9B52CF0059B797 /* FMDatabaseAdditions.m in Sources */,
-				83969EB021EDF8E30032EAE7 /* WYJChartMessage.m in Sources */,
 				837151141EE02752009E7ECF /* NSString+NSString.m in Sources */,
 				83C887851F444FC0006B9A72 /* TextOneByOne.m in Sources */,
 				8399B20F1E9B52AF0059B797 /* main.m in Sources */,
@@ -2393,6 +2468,7 @@
 				8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */,
 				833530641F459FFE00596581 /* TimerWeakTarget.m in Sources */,
 				8399B29B1E9B52CF0059B797 /* FMDatabaseQueue.m in Sources */,
+				839D41F821F953FC00130E47 /* WYJChatKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
