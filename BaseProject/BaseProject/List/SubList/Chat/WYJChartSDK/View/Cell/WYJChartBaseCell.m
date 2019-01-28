@@ -35,7 +35,7 @@
 {
     if (!_timeLabel) {
         _timeLabel = [[UILabel alloc]init];
-        _timeLabel.textColor        = [UIColor blueColor];
+        _timeLabel.textColor        = [UIColor darkGrayColor];
         _timeLabel.textAlignment    = NSTextAlignmentCenter;
         _timeLabel.font             = [UIFont systemFontOfSize:12];
         _timeLabel.text             = @"12:18";
@@ -67,7 +67,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor yellowColor];
+        self.backgroundColor = [UIColor clearColor];
         
         self.left = NO;
         if ([reuseIdentifier hasSuffix:@"_left"]) {

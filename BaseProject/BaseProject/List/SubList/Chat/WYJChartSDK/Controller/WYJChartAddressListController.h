@@ -1,5 +1,5 @@
 //
-//  AddressLIstController.h
+//  WYJChartAddressListController.h
 //  FMDBMoreTable
 //
 //  Created by ZSXJ on 2018/5/25.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddressLIstController : UIViewController
+@interface WYJChartAddressListController : UIViewController
 
 @end

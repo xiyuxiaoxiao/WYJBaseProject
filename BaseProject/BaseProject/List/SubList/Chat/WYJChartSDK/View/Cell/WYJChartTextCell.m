@@ -17,6 +17,7 @@
         _contentBackView.tintColor = [UIColor greenColor];
         
         if (self.left) {
+             _contentBackView.tintColor = [UIColor whiteColor];
             _contentBackView.image = [[[UIImage imageNamed:@"Text Voice Bubble Incoming"] stretchableImageWithLeftCapWidth:20 topCapHeight:22]
                                       imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
         }else {
@@ -30,7 +31,7 @@
 - (UILabel *)messageLabel {
     if (_messageLabel == nil) {
         _messageLabel = [[UILabel alloc] init];
-        _messageLabel.textColor         = [UIColor blueColor];
+        _messageLabel.textColor         = [UIColor blackColor];
         _messageLabel.textAlignment     = NSTextAlignmentLeft;
         _messageLabel.font              = [UIFont systemFontOfSize:12];
         _messageLabel.numberOfLines     = 0;

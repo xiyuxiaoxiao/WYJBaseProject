@@ -1,18 +1,17 @@
 //
-//  AddressLIstController.m
+//  WYJChartAddressListController.m
 //  FMDBMoreTable
 //
 //  Created by ZSXJ on 2018/5/25.
 //  Copyright © 2018年 WYJ. All rights reserved.
 //
 
-#import "AddressLIstController.h"
-#import "AddressList.h"
+#import "WYJChartAddressListController.h"
+#import "WYJChartAddress.h"
 #import "ChatController.h"
 #import "MBProgressHUD.h"
-#import "MessageList.h"
 
-@interface AddressLIstController ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>
+@interface WYJChartAddressListController ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (strong, nonatomic) MBProgressHUD *hud;
@@ -20,7 +19,7 @@
 
 @end
 
-@implementation AddressLIstController
+@implementation WYJChartAddressListController
 
 - (void)dealloc {
     
@@ -41,12 +40,7 @@
         return;
     }
     
-    AddressList *list = [[AddressList alloc] init];
-    list.userId = [WYJDate getTimeSp:[NSDate date]];
-    list.name = self.textField.text;
-    list.sex = arc4random()%2 == 0 ? @"男":@"女";
-
-    [list saveOrUpdate];
+    [WYJChartAddress addNewFriendWithName:self.textField.text];
     
     self.textField.text = nil;
     [self.textField resignFirstResponder];
@@ -65,7 +59,7 @@
         
         
         CFAbsoluteTime startTime =CFAbsoluteTimeGetCurrent();
-        self.dataArr = [NSMutableArray arrayWithArray:[AddressList findAddressWithOneMessage]];
+        self.dataArr = [NSMutableArray arrayWithArray:[WYJChartAddress findAll]];
         CFAbsoluteTime linkTime = (CFAbsoluteTimeGetCurrent() - startTime);
         
         NSLog(@"Linked in %f ms", linkTime *1000.0);
@@ -83,7 +77,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    AddressList *address = self.dataArr[indexPath.row];
+    WYJChartAddress *address = self.dataArr[indexPath.row];
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:@"cell"];
     
@@ -94,29 +88,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ChatController *vc = [[ChatController alloc] init];
-    vc.myFriend = self.dataArr[indexPath.row];
+    NSObject *obj = self.dataArr[indexPath.row];
+    UIViewController *vc = [[NSClassFromString(@"WYJChartController") alloc] init];
+    [vc setValue:obj forKey:@"myFriend"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)addressListUpdate {
-    [self request];
-}
-- (void)messageNew:(MessageList *)message {
-    NSString *frientId = message.fromUserId;
-    if ([message.fromUserId isEqualToString:[CurrentUserManager currentUser].userId]) {
-        frientId = message.toUserId;
-    }
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.userId == %@",frientId];
-    
-    AddressList *address = [self.dataArr filteredArrayUsingPredicate:predicate].firstObject;
-    
-    if (!address) {
-        return;
-    }
-    
-    address.lastNewMessage = message.content;
-    
+#pragma mark - ChartDatabaseManagerDelegate
+- (void)newAddress:(NSObject *)user {
+    [self.dataArr addObject:user];
     [self.tableView reloadData];
 }
 

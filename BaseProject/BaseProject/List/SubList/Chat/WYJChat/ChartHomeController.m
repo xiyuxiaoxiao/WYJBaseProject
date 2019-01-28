@@ -67,7 +67,7 @@
 
 
 - (IBAction)addressListAction:(id)sender {
-    UIViewController *vc = [[NSClassFromString(@"AddressLIstController") alloc] init];
+    UIViewController *vc = [[NSClassFromString(@"WYJChartAddressListController") alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

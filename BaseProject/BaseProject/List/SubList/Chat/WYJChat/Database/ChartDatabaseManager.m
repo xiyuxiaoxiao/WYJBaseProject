@@ -50,4 +50,11 @@
 - (void)messageNew:(MessageList *)message {
     [mulitDelegate messageNew:message];
 }
+
+- (void)receiveMessageNew:(NSObject *)message {
+    [mulitDelegate receiveMessageNew:message];
+}
+- (void)newAddress:(NSObject *)user {
+    [mulitDelegate newAddress:user];
+}
 @end
