@@ -81,7 +81,6 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:@"cell"];
     
     cell.textLabel.text = address.name;
-    cell.detailTextLabel.text = address.lastNewMessage;
     return cell;
 }
 
