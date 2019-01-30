@@ -22,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (WYJChartMessage *)receiveMessageFromUser:(WYJChartAddress *)user;
 
 + (WYJChartAddress *)getCurrentUser;
+
+// 设置未读消息数量
++ (void)saveConversionUnRead:(WYJChartMessage *)message;
+// 清除未读标记
++ (void)clearConversionUnReadWithUserId:(NSString *)userId;
 @end
 
 NS_ASSUME_NONNULL_END

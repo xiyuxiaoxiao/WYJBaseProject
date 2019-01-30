@@ -17,6 +17,12 @@
     
     return [[WYJChartCellTool getCurrentUser].userId isEqualToString:self.fromUserId];
 }
+- (NSString *)parnerUserId {
+    if (self.byMySelf) {
+        return self.toUserId;
+    }
+    return self.fromUserId;
+}
 
 #pragma mark - 本地数据操作
 /**
@@ -80,6 +86,7 @@
 - (BOOL)save {
     if ([super save]) {
         [[ChartDatabaseManager share] receiveMessageNew:self];
+        [WYJChartCellTool saveConversionUnRead:self];
     }
     return NO;
 }

@@ -53,17 +53,4 @@
     return columeNamesArray;
 }
 
-- (BOOL)save {
-    if ([super save]) {
-        [[ChartDatabaseManager share] addressListUpdata];
-    }
-    return NO;
-}
-- (BOOL)saveOrUpdate {
-    if([super saveOrUpdate]) {
-        [[ChartDatabaseManager share] addressListUpdata];
-    }
-    return NO;
-}
-
 @end

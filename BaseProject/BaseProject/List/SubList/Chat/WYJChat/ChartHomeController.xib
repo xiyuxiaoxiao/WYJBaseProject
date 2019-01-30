@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,59 +21,59 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01f-oO-agM">
-                    <rect key="frame" x="134" y="318.5" width="108" height="30"/>
-                    <state key="normal" title="初始化本地数据"/>
+                    <rect key="frame" x="141.5" y="80" width="92" height="30"/>
+                    <state key="normal" title="聊天消息界面"/>
                     <connections>
-                        <action selector="saveOrder:" destination="-1" eventType="touchUpInside" id="LUD-tI-oRP"/>
+                        <action selector="conversationList:" destination="-1" eventType="touchUpInside" id="YPg-b8-1LQ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1j-d2-oZR">
-                    <rect key="frame" x="156.5" y="368.5" width="62" height="30"/>
+                    <rect key="frame" x="156.5" y="130" width="62" height="30"/>
                     <state key="normal" title="通讯列表"/>
                     <connections>
                         <action selector="addressListAction:" destination="-1" eventType="touchUpInside" id="MEU-Ew-wIV"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeW-sX-uRm">
-                    <rect key="frame" x="252" y="313" width="40" height="40"/>
+                    <rect key="frame" x="243.5" y="75" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="B12-Fp-4kY"/>
                         <constraint firstAttribute="width" constant="40" id="IK6-02-yz5"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bV5-Ka-Ob1">
-                    <rect key="frame" x="156" y="268.5" width="62" height="30"/>
-                    <state key="normal" title="清空数据"/>
-                    <connections>
-                        <action selector="clearData:" destination="-1" eventType="touchUpInside" id="3q4-hG-eul"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE0-4Q-l4y">
-                    <rect key="frame" x="134" y="418.5" width="108" height="30"/>
+                    <rect key="frame" x="133.5" y="240" width="108" height="30"/>
                     <state key="normal" title="数据库版本更新"/>
                     <connections>
                         <action selector="updateDatabaseVersionAction:" destination="-1" eventType="touchUpInside" id="D6j-i4-i2l"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFQ-JD-KQU">
-                    <rect key="frame" x="133.5" y="468.5" width="108" height="30"/>
+                    <rect key="frame" x="133.5" y="290" width="108" height="30"/>
                     <state key="normal" title="数据库版本更新"/>
                     <connections>
                         <action selector="updateDatabaseVersionToMessageAction:" destination="-1" eventType="touchUpInside" id="QwE-2Q-jSH"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将迁移的数据 重新存储消息列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7L-rs-9wt">
-                    <rect key="frame" x="10" y="498.5" width="355" height="8.5"/>
+                    <rect key="frame" x="10" y="320" width="355" height="8.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将消息列表 存储另一个表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drj-mc-td2">
-                    <rect key="frame" x="0.0" y="448.5" width="375" height="8.5"/>
+                    <rect key="frame" x="0.0" y="270" width="375" height="8.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="7"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bV5-Ka-Ob1">
+                    <rect key="frame" x="156.5" y="368.5" width="62" height="30"/>
+                    <state key="normal" title="清空数据"/>
+                    <connections>
+                        <action selector="clearData:" destination="-1" eventType="touchUpInside" id="3q4-hG-eul"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -87,11 +87,11 @@
                 <constraint firstItem="NeW-sX-uRm" firstAttribute="centerY" secondItem="01f-oO-agM" secondAttribute="centerY" id="FZe-E2-E70"/>
                 <constraint firstItem="drj-mc-td2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GnU-cp-wwn"/>
                 <constraint firstItem="JFQ-JD-KQU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JeD-x1-0em"/>
-                <constraint firstItem="01f-oO-agM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Oh6-nS-ZgL"/>
-                <constraint firstItem="NE0-4Q-l4y" firstAttribute="top" secondItem="u1j-d2-oZR" secondAttribute="bottom" constant="20" id="PlP-8w-xyH"/>
-                <constraint firstItem="01f-oO-agM" firstAttribute="top" secondItem="bV5-Ka-Ob1" secondAttribute="bottom" constant="20" id="SDd-oC-fk8"/>
+                <constraint firstItem="NE0-4Q-l4y" firstAttribute="top" secondItem="u1j-d2-oZR" secondAttribute="bottom" constant="80" id="PlP-8w-xyH"/>
+                <constraint firstItem="bV5-Ka-Ob1" firstAttribute="top" secondItem="X7L-rs-9wt" secondAttribute="bottom" constant="40" id="Qr3-i2-Ovr"/>
                 <constraint firstItem="01f-oO-agM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e2V-0c-AHr"/>
                 <constraint firstItem="X7L-rs-9wt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h2t-0T-k2L"/>
+                <constraint firstItem="01f-oO-agM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="i0h-10-260"/>
                 <constraint firstItem="bV5-Ka-Ob1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="i2i-ku-6fO"/>
                 <constraint firstItem="u1j-d2-oZR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jzF-KD-mJ9"/>
                 <constraint firstItem="JFQ-JD-KQU" firstAttribute="top" secondItem="NE0-4Q-l4y" secondAttribute="bottom" constant="20" id="kEh-4U-ErY"/>

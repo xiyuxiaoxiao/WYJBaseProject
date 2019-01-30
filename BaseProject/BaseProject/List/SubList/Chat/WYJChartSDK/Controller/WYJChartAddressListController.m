@@ -8,7 +8,6 @@
 
 #import "WYJChartAddressListController.h"
 #import "WYJChartAddress.h"
-#import "ChatController.h"
 #import "MBProgressHUD.h"
 
 @interface WYJChartAddressListController ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>

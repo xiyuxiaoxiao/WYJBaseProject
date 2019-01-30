@@ -10,6 +10,32 @@
 
 @implementation WYJChartBaseCell
 
++ (void)registerClassWithTableView:(UITableView *)tableView {
+    NSArray *cellClassNames = @[@"WYJChartTextCell"];
+    for (NSString *cellClassName in cellClassNames) {
+        NSString *identify_left     = [cellClassName stringByAppendingString:@"_left"];
+        NSString *identify_right    = [cellClassName stringByAppendingString:@"_right"];
+        [tableView registerClass:NSClassFromString(cellClassName) forCellReuseIdentifier:identify_left];
+        [tableView registerClass:NSClassFromString(cellClassName) forCellReuseIdentifier:identify_right];
+    }
+}
++ (NSString *)identifyWithMessage:(WYJChartMessage *)message {
+    
+    NSString *cellName = @"";
+    if (message.type == MessageTypeText) {
+        cellName = @"WYJChartTextCell";
+    }
+    
+    if (message.byMySelf) {
+        cellName = [cellName stringByAppendingString:@"_right"];
+    }else {
+        cellName = [cellName stringByAppendingString:@"_left"];
+    }
+    
+    return cellName;
+}
+
+
 //菊花
 - (UIActivityIndicatorView *)activiView
 {

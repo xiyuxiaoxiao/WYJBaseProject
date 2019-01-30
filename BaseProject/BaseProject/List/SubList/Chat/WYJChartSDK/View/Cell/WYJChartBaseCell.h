@@ -37,6 +37,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak)   id <WYJChartBaseCellDelegate> delegate;
 
++ (void)registerClassWithTableView:(UITableView *)tableView;
++ (NSString *)identifyWithMessage:(WYJChartMessage *)message;
+
 - (void)setFrame;
 - (void)setFailureFrameWithContentFrame:(CGRect)contentFrame;
 @end

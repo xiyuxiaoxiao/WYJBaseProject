@@ -615,6 +615,12 @@
     
     for (int i=0; i< proNames.count; i++) {
         [pars appendFormat:@"%@ %@",[proNames objectAtIndex:i],[proTypes objectAtIndex:i]];
+        
+        NSString *proName = [proNames objectAtIndex:i];
+        if ([[self uniquePropertys] containsObject:proName]) {
+            [pars appendFormat:@" UNIQUE"];
+        }
+        
         if(i+1 != proNames.count)
         {
             [pars appendString:@","];
@@ -726,6 +732,14 @@
 /** 如果子类中有一些property不需要创建数据库字段，那么这个方法必须在子类中重写
  */
 + (NSArray *)transients
+{
+    return [NSArray array];
+}
+
+/** 如果需要指定某些属性的值 不允许重复 那这个方法 必须在子类中重写
+ * 对于不允许重复的 不能使用数组保存 否则一个失败 则全部无效; 后期更新 可依使用数组更新 但是插入不行
+ */
++ (NSArray *)uniquePropertys
 {
     return [NSArray array];
 }

@@ -120,6 +120,9 @@
  */
 + (NSArray *)transients;
 
+/** 如果需要指定某些属性的值 不允许重复 那这个方法 必须在子类中重写
+ */
++ (NSArray *)uniquePropertys;
 
 /** 删除表 */
 + (BOOL)dropTable:(NSString *)tableName;

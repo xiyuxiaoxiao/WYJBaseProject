@@ -68,17 +68,4 @@
     return columeNamesArray;
 }
 
-- (BOOL)save {
-    if ([super save]) {
-        [[ChartDatabaseManager share] messageNew:self];
-    }
-    return NO;
-}
-- (BOOL)saveOrUpdate {
-    if([super saveOrUpdate]) {
-        [[ChartDatabaseManager share] messageNew:self];
-    }
-    return NO;
-}
-
 @end

@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 // 0：发送成功 、1：正在发送 、 2：发送失败
 @property (nonatomic, assign)   int sendStatus;
+// 0：未读  1:已读
+@property (nonatomic, assign)   int readStatus;
 
 
 
@@ -38,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)   CGSize  contentBackSize;  // 内容背景size
 @property (nonatomic, assign)   CGFloat cellHeight;       // cell高度
 
+- (NSString *)parnerUserId;
 
 + (NSArray *)findMessageArray:(NSString *)friendUserId page:(int)page perPageCount:(int)count lastCreatId:(NSString *)lastCreatId;
 // 重新发送

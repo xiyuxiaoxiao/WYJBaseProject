@@ -21,4 +21,13 @@ static int SendStatusSuccess                  = 0;
 static int SendStatusSending                  = 1;
 static int SendStatusFaile                    = 2;
 
+// 0：已读 1：未读
+static int ReadStatusRead                     = 0;
+static int ReadStatusUnRead                   = 1;
+
+
+// 消息类型
+static int MessageTypeText                    = 1;
+static int MessageTypeImage                   = 2;
+
 #endif /* WYJChartDefine_h */

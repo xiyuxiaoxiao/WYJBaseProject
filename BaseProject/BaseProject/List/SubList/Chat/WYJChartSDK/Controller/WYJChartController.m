@@ -7,7 +7,7 @@
 //
 
 #import "WYJChartController.h"
-#import "WYJChartTextCell.h"
+#import "WYJChartBaseCell.h"
 #import "WYJChartMessage.h"
 #import "WYJChartCellTool.h"
 #import "WYJChatKeyboard.h"
@@ -37,6 +37,18 @@
     }
     return _dataArr;
 }
+- (WYJChatKeyboard *)customKeyboard {
+    if (_customKeyboard == nil) {
+        _customKeyboard = [[WYJChatKeyboard alloc]init];
+        
+        CGFloat f_color = 230/155.0;
+        _customKeyboard.backgroundColor = [UIColor colorWithRed:f_color green:f_color blue:f_color alpha:1];
+        _customKeyboard.delegate = self;
+        
+        [self.view addSubview: _customKeyboard];
+    }
+    return _customKeyboard;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,44 +59,28 @@
     [self initUI];
     
     
-    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedRowHeight           = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.tableFooterView              = [[UIView alloc] initWithFrame:CGRectZero];
     
-    [self.tableView registerClass:[WYJChartTextCell class] forCellReuseIdentifier:@"WYJChartTextCell_left"];
-    [self.tableView registerClass:[WYJChartTextCell class] forCellReuseIdentifier:@"WYJChartTextCell_right"];
+    [WYJChartBaseCell registerClassWithTableView:self.tableView];
     
     [self loadMoreMessage:nil];
     
-    
     [[ChartDatabaseManager share] addDelegate:self];
+    
+    [WYJChartCellTool clearConversionUnReadWithUserId:self.myFriend.userId];
 }
 
-
-- (WYJChatKeyboard *)customKeyboard {
-    if (_customKeyboard == nil) {
-        _customKeyboard = [[WYJChatKeyboard alloc]init];
-        
-        CGFloat f_color = 230/155.0;
-        _customKeyboard.backgroundColor = [UIColor colorWithRed:f_color green:f_color blue:f_color alpha:1];
-        _customKeyboard.delegate = self;
-    }
-    return _customKeyboard;
-}
 - (void)initUI {
     
     CGFloat f_color = 240/255.0;
     self.tableView.backgroundColor = [UIColor colorWithRed:f_color green:f_color blue:f_color alpha:1];
     
     CGFloat keyboardHeight = 49;
-    self.tableView.frame = CGRectMake(0, 20, WYJScreenWidth, WYJScreenHeight - NavaBar_StatusHeight - keyboardHeight-20);
-    
-    
-    CGRect frame = CGRectMake(0, CGRectGetMaxY(self.tableView.frame), WYJScreenWidth, keyboardHeight);
-    
-    self.customKeyboard.frame = frame;
-    [self.view addSubview:self.customKeyboard];
+    self.tableView.frame = CGRectMake(0, 0, WYJScreenWidth, WYJScreenHeight - NavaBar_StatusHeight - keyboardHeight);
+    self.customKeyboard.frame = CGRectMake(0, CGRectGetMaxY(self.tableView.frame), WYJScreenWidth, keyboardHeight);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -148,14 +144,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell;
-    WYJChartMessage *message = self.dataArr[indexPath.row];
-    if (!message.byMySelf) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"WYJChartTextCell_left"];
-    }else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"WYJChartTextCell_right"];
-    }
-    ((WYJChartBaseCell *)cell).message = message;
+    WYJChartMessage *message    = self.dataArr[indexPath.row];
+    NSString *identify          = [WYJChartBaseCell identifyWithMessage:message];
+    WYJChartBaseCell *cell      = [tableView dequeueReusableCellWithIdentifier:identify];
+    
+    cell.message = message;
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -196,31 +189,13 @@
 #pragma mark - Keyboard Delegate
 - (void)keyBoardFrameChange {
     CGFloat h = self.customKeyboard.frame.origin.y;
-    self.tableView.frame = CGRectMake(0, 20, WYJScreenWidth, h-20);
+    self.tableView.frame = CGRectMake(0, 0, WYJScreenWidth, h);
     [self scrollTableToLast];
 }
 
 - (void)sendMessageText:(NSString *)text {
     WYJChartMessage *msg = [WYJChartCellTool creatMessageText:text];
     [WYJChartCellTool sendMessage:msg toUser:self.myFriend];
-//    msg.sendStatus = SendStatusSending;
-//    [self.dataArr addObject:msg];
-//    [self.tableView reloadData];
-//    [self scrollTableToLast];
-//
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        msg.sendStatus = SendStatusSuccess;
-//        [self.tableView reloadData];
-//
-//        [msg save];
-//    });
-//
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        WYJChartMessage *msg = [WYJChartCellTool receiveMessageFromUser:self.myFriend];
-//        [self.dataArr addObject:msg];
-//        [self.tableView reloadData];
-//        [self scrollTableToLast];
-//    });
 }
 
 
@@ -240,7 +215,7 @@
     });
 }
 
-#pragma mark - ChartDatabaseManagerDelegate
+#pragma mark - ChartDatabaseManagerDelegate 消息接收
 - (void)receiveMessageNew:(NSObject *)message {
     [self.dataArr addObject:message];
     [self.tableView reloadData];

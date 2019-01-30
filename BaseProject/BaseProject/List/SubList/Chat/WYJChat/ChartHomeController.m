@@ -35,36 +35,11 @@
     [MessageList clearTable];
 }
 
-- (IBAction)saveOrder:(id)sender {
+- (IBAction)conversationList:(id)sender {
     
-    [AddressList clearTable];
-    [MessageList clearTable];
-    
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.hud = [MBProgressHUD showHUDAddedTo:self.hudBackView animated:YES];
-        });
-        
-        CFAbsoluteTime startTime =CFAbsoluteTimeGetCurrent();
-        
-        //在这写入要计算时间的代码
-        [TestDataDatabase saveTestObjectAddressList];
-        [TestDataDatabase saveTestObjectMessageList];
-        
-        CFAbsoluteTime linkTime = (CFAbsoluteTimeGetCurrent() - startTime);
-        
-        NSLog(@"Linked in %f ms", linkTime *1000.0);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.hud hide:YES afterDelay:0];
-        });
-        
-    });
+    UIViewController *vc = [[NSClassFromString(@"WYJChartConversationListControlle") alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
-
-
 
 - (IBAction)addressListAction:(id)sender {
     UIViewController *vc = [[NSClassFromString(@"WYJChartAddressListController") alloc] init];

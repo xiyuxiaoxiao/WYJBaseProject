@@ -43,14 +43,7 @@
     [mulitDelegate removeDelegate:delegate];
 }
 
-- (void)addressListUpdata {
-    [mulitDelegate addressListUpdate];
-}
-
-- (void)messageNew:(MessageList *)message {
-    [mulitDelegate messageNew:message];
-}
-
+#pragma mark - 数据库更新后 需要通知 代理执行的相关方法
 - (void)receiveMessageNew:(NSObject *)message {
     [mulitDelegate receiveMessageNew:message];
 }
