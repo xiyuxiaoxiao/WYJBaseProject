@@ -150,6 +150,13 @@
 - (void)setMessage:(WYJChartMessage *)message {
     _message = message;
     
+    if (message.sendTimeShow) {
+        self.timeLabel.text = [self.class getSendTimeStr:message.sendTime];
+        self.timeLabel.hidden = NO;
+    }else {
+        self.timeLabel.hidden = YES;
+    }
+    
     // 如果按照 cell的left来判断 对与设计上 不符合 对象的处理 所以需要通过对象来设置是否展示相关控件
     if (!message.byMySelf) {
         self.failureButton.hidden = YES;
@@ -202,5 +209,21 @@
     if ([self.delegate respondsToSelector:selector]) {
         [self.delegate performSelector:selector withObject:object withObject:nil];
     }
+}
+
+
++ (NSString *)getSendTimeStr:(NSString *)timeSp {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeSp.doubleValue/1000.0];
+    
+    NSString *dateFormat = @"";
+    if ([[NSCalendar currentCalendar] isDateInToday:date]) {
+        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
+    }else {
+        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"yyyy-MM-dd tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = dateFormat;
+    return [dateFormatter stringFromDate:date];
 }
 @end

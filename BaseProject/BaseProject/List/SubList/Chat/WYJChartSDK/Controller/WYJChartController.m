@@ -153,6 +153,8 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [WYJChartCellTool reSetSendTimeMessage:self.dataArr whenCellHeightIndexpath:indexPath];
+    
     WYJChartMessage *msg = self.dataArr[indexPath.row];
     return msg.cellHeight;
 }

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)   NSString *toUserId;   // 接受者
 @property (nonatomic, copy)   NSString *content;    // 内容
 @property (nonatomic, assign)      int  type;       // 类型 1-文字 、 2-图片
-@property (nonatomic, copy)   NSString *sendTime;   // 发送时间
+@property (nonatomic, copy)   NSString *sendTime;   // 发送时间 （时间戳）
 
 @property (nonatomic, copy)   NSString *contentModelInfo;   // 其他信息转为字符串
 
@@ -46,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)   BOOL    byMySelf;
 @property (nonatomic, assign)   CGSize  contentBackSize;  // 内容背景size
 @property (nonatomic, assign)   CGFloat cellHeight;       // cell高度
+@property (nonatomic, assign)   BOOL    sendTimeShow;     // 是否显示时间
 
 - (NSString *)parnerUserId;
 

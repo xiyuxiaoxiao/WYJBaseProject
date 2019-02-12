@@ -97,7 +97,7 @@
     return NO;
 }
 + (NSArray *)transients {
-    return @[@"contentInfoModel",@"byMySelf",@"contentBackSize",@"cellHeight"];
+    return @[@"contentInfoModel",@"byMySelf",@"contentBackSize",@"cellHeight",@"sendTimeShow"];
 }
 
 

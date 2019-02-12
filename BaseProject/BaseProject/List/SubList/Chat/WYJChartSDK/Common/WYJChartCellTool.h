@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)saveConversionUnRead:(WYJChartMessage *)message;
 // 清除未读标记
 + (void)clearConversionUnReadWithUserId:(NSString *)userId;
+
+// 对数组所有重新计算赋值
++ (void)reSetSendTimeWithMessageArray: (NSArray *)array;
+
+// 只有在展示的时候 才用到相关计算 不需要全部计算 但是每次滑动都需要计算 不影响
++ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath;
 @end
 
 NS_ASSUME_NONNULL_END

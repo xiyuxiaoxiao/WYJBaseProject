@@ -140,6 +140,7 @@ static WYJChartAddress *currentUser = nil;
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user {
     message.toUserId = user.userId;
     message.fromUserId = [self getCurrentUser].userId;
+    message.sendTime = [WYJDate getTimeSp:[NSDate date]];
     [message save];
     
 //    // 模拟收到消息
@@ -153,6 +154,7 @@ static WYJChartAddress *currentUser = nil;
     message.sendStatus      = SendStatusSuccess;
     message.fromUserId      = user.userId;
     message.toUserId        = [self getCurrentUser].userId;
+    message.sendTime        = [WYJDate getTimeSp:[NSDate date]];
     
     [message save];
     return message;
@@ -201,4 +203,41 @@ static WYJChartAddress *currentUser = nil;
         [local saveOrUpdate];
     }
 }
+
+
+
+// 也可以放在cell height计算高度中 对高度time的高度重新计算 是否需要显示 然后cell中在设置
++ (void)reSetSendTimeWithMessageArray: (NSArray *)array {
+    for (int i = 0; i < array.count; i++) {
+        WYJChartMessage *message = array[i];
+        message.sendTimeShow = NO;
+        if (i == 0) {
+            message.sendTimeShow = YES;
+            continue;
+        }
+        
+        WYJChartMessage *lastMessage = array[i-1];
+        // 超过5分钟 就显示
+        if (message.sendTime.doubleValue/1000 - lastMessage.sendTime.doubleValue/1000 > 300) {
+            message.sendTimeShow = YES;
+        }
+    }
+}
+
++ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath {
+    
+    WYJChartMessage *message = array[indexPath.row];
+    message.sendTimeShow = NO;
+    
+    if (indexPath.row == 0) {
+        message.sendTimeShow = YES;
+        return;
+    }
+    WYJChartMessage *lastMessage = array[indexPath.row-1];
+    // 超过5分钟 就显示
+    if (message.sendTime.doubleValue/1000 - lastMessage.sendTime.doubleValue/1000 > 300) {
+        message.sendTimeShow = YES;
+    }
+}
+
 @end
