@@ -10,9 +10,65 @@
 #import "WYJChartTextCell.h"
 #import "WYJChartAddress.h"
 #import "WYJChartConversation.h"
+#import "UIImage+WYJChartImageStore.h"
 
 @implementation WYJChartCellTool
+
+static WYJChartAddress *currentUser = nil;
++ (WYJChartAddress *)getCurrentUser {
+    
+    if (currentUser == nil) {
+        currentUser = [[WYJChartAddress alloc] init];
+        currentUser.userId  = @"20180001";
+        currentUser.name    = @"小旺";
+    }
+    return currentUser;
+    
+}
+
+#pragma mark - 创建cell对象
++ (WYJChartMessage *)creatMessageText: (NSString *)text {
+    WYJChartTextCell *cell = [[WYJChartTextCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@""];
+    
+    WYJChartMessage *msg = [[WYJChartMessage alloc] init];
+    msg.content             = text;
+    msg.sendStatus          = SendStatusSuccess;
+    msg.type                = MessageTypeText;
+    
+    cell.messageLabel.text  = msg.content;
+    [WYJChartCellTool setCellheight:msg];
+    
+    return msg;
+}
++ (WYJChartMessage *)creatMessageImage:(UIImage *)image {
+    
+    NSString *imageName = [image storeFileName];
+    
+    WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
+    contentModel.imageSize = image.size;
+    
+    WYJChartMessage *msg = [[WYJChartMessage alloc] init];
+    msg.content             = imageName;
+    msg.sendStatus          = SendStatusSuccess;
+    msg.type                = MessageTypeImage;
+    
+    msg.contentInfoModel    = contentModel;
+    
+    [WYJChartCellTool setCellheight:msg];
+    
+    return msg;
+}
+
 + (void)setCellheight: (WYJChartMessage *)message {
+    if (message.type == MessageTypeText) {
+        [self setTextCellheight:message];
+    }
+    else if (message.type == MessageTypeImage) {
+        [self setImageCellheight:message];
+    }
+}
+
++ (void)setTextCellheight: (WYJChartMessage *)message {
     // 文本消息的高度计算
     UILabel *_messageLabel = [[UILabel alloc] init];
     _messageLabel.textColor = [UIColor blueColor];
@@ -42,6 +98,45 @@
     message.cellHeight = 50 + size.height;
 }
 
++ (void)setImageCellheight:(WYJChartMessage *)message {
+    
+    message.contentBackSize = [self calculateImageSizeOfCell:message.contentInfoModel.imageSize];
+    message.cellHeight = 50 + message.contentBackSize.height;
+}
++ (CGSize)calculateImageSizeOfCell:(CGSize)imageSize{
+    CGFloat minSideLength = 80;
+    CGFloat maxSideLength = 160;
+    
+    CGFloat w_image = imageSize.width;
+    CGFloat h_image = imageSize.height;
+    
+    if (w_image == 0) {
+        w_image = 1.0;
+    }
+    CGFloat ratio = h_image / w_image;
+    
+    
+    if (ratio < 0.5) {
+        h_image = minSideLength;
+        w_image = maxSideLength;
+    }
+    else if (ratio < 1) {
+        h_image = maxSideLength * ratio;
+        w_image = maxSideLength;
+    }
+    else if (ratio <= 2) {
+        h_image = maxSideLength;
+        w_image = maxSideLength / ratio;
+    }else {
+        h_image = maxSideLength;
+        w_image = minSideLength;
+    }
+    
+    return CGSizeMake(w_image, h_image);
+}
+
+#pragma mark -
+
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user {
     message.toUserId = user.userId;
     message.fromUserId = [self getCurrentUser].userId;
@@ -62,35 +157,6 @@
     [message save];
     return message;
 }
-
-+ (WYJChartMessage *)creatMessageText: (NSString *)text {
-    WYJChartTextCell *cell = [[WYJChartTextCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@""];
-    
-    WYJChartMessage *msg = [[WYJChartMessage alloc] init];
-    msg.content             = text;
-    msg.sendStatus          = SendStatusSuccess;
-    msg.byMySelf            = YES;
-    msg.type                = MessageTypeText;
-    
-    cell.messageLabel.text  = msg.content;
-    [WYJChartCellTool setCellheight:msg];
-    
-    return msg;
-}
-
-
-static WYJChartAddress *currentUser = nil;
-+ (WYJChartAddress *)getCurrentUser {
-    
-    if (currentUser == nil) {
-        currentUser = [[WYJChartAddress alloc] init];
-        currentUser.userId  = @"20180001";
-        currentUser.name    = @"小旺";
-    }
-    return currentUser;
-    
-}
-
 
 + (void)saveConversionUnRead:(WYJChartMessage *)message {
     // 需要先查询 是否已经存在 或者看看 直接覆盖更新的方法
@@ -128,7 +194,7 @@ static WYJChartAddress *currentUser = nil;
 + (void)clearConversionUnReadWithUserId:(NSString *)userId {
     // 需要先查询 是否已经存在 或者看看 直接覆盖更新的方法
     NSString *parnerUserId = userId;
-    NSString *sql = [NSString stringWithFormat:@"WHERE partnerUserId = %@",parnerUserId];
+    NSString *sql = [NSString stringWithFormat:@"WHERE partnerUserId = %@ and unreadCount > 0",parnerUserId];
     WYJChartConversation *local = [WYJChartConversation findFirstByCriteria:sql];
     if (local) {
         local.unreadCount = 0;

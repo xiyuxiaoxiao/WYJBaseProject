@@ -11,6 +11,7 @@
 @protocol WYJChatKeyboardDelegate <NSObject>
 
 - (void)sendMessageText:(NSString *)text;
+- (void)sendMessageImage:(UIImage *)image;
 
 // 必须在修改keyboarfd frame的时候 立即修改tableview frame 否则会出现动画不衔接的效果
 - (void)keyBoardFrameChange;

@@ -97,6 +97,100 @@
     return NO;
 }
 + (NSArray *)transients {
-    return @[@"byMySelf",@"contentBackSize",@"cellHeight"];
+    return @[@"contentInfoModel",@"byMySelf",@"contentBackSize",@"cellHeight"];
 }
+
+
+//-----------------------------------------------------------
+#pragma mark - 对image的size 等其他信息 json与model之间的转化
+
+@synthesize contentInfoModel = _contentInfoModel;
+
+- (WYJChartContentModel *)contentInfoModel {
+    if (_contentInfoModel == nil) {
+        _contentInfoModel = [self.class convertContentModelWithJson:_contentModelInfo];
+    }
+    return _contentInfoModel;
+}
+
+-(void)setContentInfoModel:(WYJChartContentModel *)contentInfoModel {
+    _contentInfoModel = contentInfoModel;
+    
+    if (!_contentModelInfo) {
+        _contentModelInfo = [self.class convertContentInfoWithModel:_contentInfoModel];
+    }
+}
+
++ (WYJChartContentModel *)convertContentModelWithJson:(NSString *)json {
+    
+    if (!json) {
+        return nil;
+    }
+    
+    NSDictionary *dict = [self.class dictionaryWithJsonString:json];
+    WYJChartContentModel *model  = [[WYJChartContentModel alloc] init];
+    model.imageSize = CGSizeFromString(dict[@"imageSize"]);
+    return model;
+}
+
++ (NSString *)convertContentInfoWithModel:(WYJChartContentModel *)contentModel {
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"imageSize"] = NSStringFromCGSize(contentModel.imageSize);
+    
+    return [self.class convertToJSONData:dict];
+}
+
+//字典与字符串的转化
++ (NSString*)convertToJSONData:(id)infoDict
+{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:infoDict
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    NSString *jsonString = @"";
+    
+    if (! jsonData)
+    {
+        NSLog(@"Got an error: %@", error);
+    }else
+    {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    
+    jsonString = [jsonString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];  //去除掉首尾的空白字符和换行字符
+    
+    [jsonString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    return jsonString;
+}
+
+
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err)
+    {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+@end
+
+
+// --------------------WYJChartContentModel-----------------
+
+#pragma mark - WYJChartContentModel
+
+@implementation WYJChartContentModel
 @end

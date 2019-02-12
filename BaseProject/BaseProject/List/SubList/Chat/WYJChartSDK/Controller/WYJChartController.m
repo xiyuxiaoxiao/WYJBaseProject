@@ -197,6 +197,10 @@
     WYJChartMessage *msg = [WYJChartCellTool creatMessageText:text];
     [WYJChartCellTool sendMessage:msg toUser:self.myFriend];
 }
+- (void)sendMessageImage:(UIImage *)image {
+    WYJChartMessage *msg = [WYJChartCellTool creatMessageImage:image];
+    [WYJChartCellTool sendMessage:msg toUser:self.myFriend];
+}
 
 
 #pragma mark - ChartCell delegate

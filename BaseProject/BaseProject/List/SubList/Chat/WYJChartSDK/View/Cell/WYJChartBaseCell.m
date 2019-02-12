@@ -11,7 +11,7 @@
 @implementation WYJChartBaseCell
 
 + (void)registerClassWithTableView:(UITableView *)tableView {
-    NSArray *cellClassNames = @[@"WYJChartTextCell"];
+    NSArray *cellClassNames = @[@"WYJChartTextCell",@"WYJChartImageCell"];
     for (NSString *cellClassName in cellClassNames) {
         NSString *identify_left     = [cellClassName stringByAppendingString:@"_left"];
         NSString *identify_right    = [cellClassName stringByAppendingString:@"_right"];
@@ -24,6 +24,9 @@
     NSString *cellName = @"";
     if (message.type == MessageTypeText) {
         cellName = @"WYJChartTextCell";
+    }
+    else if (message.type == MessageTypeImage) {
+        cellName = @"WYJChartImageCell";
     }
     
     if (message.byMySelf) {

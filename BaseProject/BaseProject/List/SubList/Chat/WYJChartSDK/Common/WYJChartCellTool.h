@@ -13,15 +13,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJChartCellTool : NSObject
-+ (void)setCellheight: (WYJChartMessage *)message;
+
++ (WYJChartAddress *)getCurrentUser;
 
 + (WYJChartMessage *)creatMessageText: (NSString *)text;
++ (WYJChartMessage *)creatMessageImage:(UIImage *)image;
 
++ (void)setCellheight: (WYJChartMessage *)message;
 
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user;
 + (WYJChartMessage *)receiveMessageFromUser:(WYJChartAddress *)user;
 
-+ (WYJChartAddress *)getCurrentUser;
 
 // 设置未读消息数量
 + (void)saveConversionUnRead:(WYJChartMessage *)message;

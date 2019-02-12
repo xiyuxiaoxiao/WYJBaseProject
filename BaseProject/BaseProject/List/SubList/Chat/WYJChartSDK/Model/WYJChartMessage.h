@@ -8,6 +8,8 @@
 
 #import "JKDBModel.h"
 
+@class WYJChartContentModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WYJChartMessage : JKDBModel
@@ -17,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)   NSString *content;    // 内容
 @property (nonatomic, assign)      int  type;       // 类型 1-文字 、 2-图片
 @property (nonatomic, copy)   NSString *sendTime;   // 发送时间
+
+@property (nonatomic, copy)   NSString *contentModelInfo;   // 其他信息转为字符串
+
+
 /*
     每次第一次进入时将所有未发送的信息状态改成发送失败
  
@@ -36,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // 额外的
+@property (nonatomic, strong)   WYJChartContentModel *contentInfoModel;   // 其他信息 对象
 @property (nonatomic, assign)   BOOL    byMySelf;
 @property (nonatomic, assign)   CGSize  contentBackSize;  // 内容背景size
 @property (nonatomic, assign)   CGFloat cellHeight;       // cell高度
@@ -50,3 +57,12 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+
+@interface WYJChartContentModel : NSObject
+// 图片尺寸
+@property (nonatomic, assign)   CGSize imageSize;
+
+// 相关语音时长等等
+@end

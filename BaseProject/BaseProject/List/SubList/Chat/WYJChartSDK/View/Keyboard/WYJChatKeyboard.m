@@ -8,6 +8,8 @@
 
 #import "WYJChatKeyboard.h"
 #import "WYJChartDefine.h"
+#import "WYJPhoto.h"
+#import "UIImage+WYJChartImageStore.h"
 
 @interface WYJChatKeyboard ()<UITextViewDelegate>
 {
@@ -229,6 +231,10 @@
     [self.msgTextView resignFirstResponder];
     keyboardHeight = 0;
     [self resetFrameWithAnimation:YES];
+    
+    [WYJPhoto getPhoto:^(UIImage * _Nonnull img) {
+        [self delegateRespondsSelector:@selector(sendMessageImage:) object:img];
+    }];
 }
 
 - (void)delegateRespondsSelector:(SEL)selector {
@@ -239,7 +245,7 @@
 
 - (void)delegateRespondsSelector:(SEL)selector object:(NSObject *)object{
     if ([self.delegate respondsToSelector:selector]) {
-        [self.delegate performSelector:selector withObject:object withObject:nil];
+        [self.delegate performSelector:selector withObject:object withObject:object];
     }
 }
 

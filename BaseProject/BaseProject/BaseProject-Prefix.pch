@@ -53,5 +53,6 @@
 #import "ChartDatabaseManager.h"
 #import "CurrentUserManager.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"
 #endif
 
