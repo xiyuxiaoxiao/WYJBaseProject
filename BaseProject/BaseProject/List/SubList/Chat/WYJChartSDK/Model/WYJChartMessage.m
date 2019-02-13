@@ -97,8 +97,8 @@
     }
     return NO;
 }
-- (BOOL)saveOrUpdate {
-    if([super saveOrUpdate]) {
+- (BOOL)update {
+    if([super update]) {
         [[ChartDatabaseManager share] receiveMessageNew:self];
         return YES;
     }

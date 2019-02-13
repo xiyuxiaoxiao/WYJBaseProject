@@ -28,8 +28,8 @@
     }
     return NO;
 }
-- (BOOL)saveOrUpdate {
-    if([super saveOrUpdate]) {
+- (BOOL)update {
+    if([super update]) {
         [[ChartDatabaseManager share] updateConversation:self];
         return YES;
     }
