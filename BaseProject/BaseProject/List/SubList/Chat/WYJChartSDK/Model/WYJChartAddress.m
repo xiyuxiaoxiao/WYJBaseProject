@@ -24,12 +24,14 @@
 - (BOOL)save {
     if ([super save]) {
         [[ChartDatabaseManager share] newAddress:self];
+        return YES;
     }
     return NO;
 }
 - (BOOL)saveOrUpdate {
     if([super saveOrUpdate]) {
         [[ChartDatabaseManager share] newAddress:self];
+        return YES;
     }
     return NO;
 }

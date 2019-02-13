@@ -125,10 +125,10 @@
             responseed = YES;
         }
     }
-    
-    if (!responseed && !self.silentWhenEmpty) {
-        [self doesNotRecognizeSelector:selector];
-    }
+//    if (!responseed && !self.silentWhenEmpty) {
+//        //如果执行doesNotRecognizeSelector  在没有实现相关方法的时候 就会造成崩溃
+//        [self doesNotRecognizeSelector:selector];
+//    }
 }
 
 

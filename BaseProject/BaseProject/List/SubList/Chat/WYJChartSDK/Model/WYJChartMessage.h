@@ -62,8 +62,10 @@ NS_ASSUME_NONNULL_END
 
 
 @interface WYJChartContentModel : NSObject
-// 图片尺寸
-@property (nonatomic, assign)   CGSize imageSize;
 
+@property (nonatomic, copy)     NSString *fileName; // 文件名
+@property (nonatomic, assign)   CGSize imageSize;   // 图片尺寸
+
+@property (nonatomic, copy)     NSString *fileURL;   // 文件路径
 // 相关语音时长等等
 @end

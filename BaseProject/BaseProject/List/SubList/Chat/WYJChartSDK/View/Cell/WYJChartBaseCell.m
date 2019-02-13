@@ -7,6 +7,8 @@
 //
 
 #import "WYJChartBaseCell.h"
+#define SendTimeHeight      20  // 时间label的高度
+#define CellBottomHeight    15  // cell下面的间距
 
 @implementation WYJChartBaseCell
 
@@ -112,10 +114,6 @@
     [self addSubview:self.iconView];
     [self addSubview:self.failureButton];
     [self addSubview:self.activiView];
-    
-    self.timeLabel.frame = CGRectMake(0, 0, WYJChartCellWidth,20);
-    
-    [self setIconFrame];
 }
 
 - (void)setIconFrame {
@@ -147,11 +145,34 @@
     self.activiView.frame = self.failureButton.frame;
 }
 
+// 对所有frame都需要重写 因为time的不确定 导致所有view 的frame 都可能变化
+- (void)resetFrame {
+    if (_message.sendTimeShow) {
+        self.timeLabel.frame = CGRectMake(0, 0, WYJChartCellWidth,SendTimeHeight);
+    }else {
+        self.timeLabel.frame = CGRectMake(0, 0, WYJChartCellWidth,0);
+    }
+    [self setIconFrame];
+}
+
+- (void)setFrame:(CGRect)frame {
+    frame.size.height   -= CellBottomHeight;
+    frame.size.width    -= 40;
+    frame.origin.x      += 20;
+    [super setFrame:frame];
+}
+
++ (CGFloat)extraHeight {
+    return SendTimeHeight + CellBottomHeight;
+}
+
 - (void)setMessage:(WYJChartMessage *)message {
     _message = message;
     
+    [self resetFrame];
+    
     if (message.sendTimeShow) {
-        self.timeLabel.text = [self.class getSendTimeStr:message.sendTime];
+        self.timeLabel.text = [WYJDate stringDateUniqueWithTimestamp:message.sendTime];
         self.timeLabel.hidden = NO;
     }else {
         self.timeLabel.hidden = YES;
@@ -178,13 +199,6 @@
     }
 }
 
-- (void)setFrame:(CGRect)frame {
-    frame.size.height   -= 20;
-    frame.size.width    -= 40;
-    frame.origin.x      += 20;
-    [super setFrame:frame];
-}
-
 #pragma mark - Action
 - (void)sendAgain {
     
@@ -209,21 +223,5 @@
     if ([self.delegate respondsToSelector:selector]) {
         [self.delegate performSelector:selector withObject:object withObject:nil];
     }
-}
-
-
-+ (NSString *)getSendTimeStr:(NSString *)timeSp {
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeSp.doubleValue/1000.0];
-    
-    NSString *dateFormat = @"";
-    if ([[NSCalendar currentCalendar] isDateInToday:date]) {
-        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
-    }else {
-        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"yyyy-MM-dd tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
-    }
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = dateFormat;
-    return [dateFormatter stringFromDate:date];
 }
 @end

@@ -21,10 +21,25 @@
     return @[@"partnerUserId"];
 }
 
+- (BOOL)save {
+    if ([super save]) {
+        [[ChartDatabaseManager share] updateConversation:self];
+        return YES;
+    }
+    return NO;
+}
+- (BOOL)saveOrUpdate {
+    if([super saveOrUpdate]) {
+        [[ChartDatabaseManager share] updateConversation:self];
+        return YES;
+    }
+    return NO;
+}
+
 + (NSArray *)findAddressWithOneMessage {
     
 //    NSString *sql = @"select con.*, toMsg.content from WYJChartConversation AS con LEFT JOIN WYJChartMessage AS toMsg ON con.partnerUserId = toMsg.toUserId OR con.partnerUserId = toMsg.fromUserId group by con.partnerUserId";
-    NSString *sql = @"select con.*, adr.*, toMsg.content, con.pk AS conPK, adr.pk AS adrPK from WYJChartConversation AS con LEFT JOIN WYJChartAddress AS adr ON con.partnerUserId = adr.userId LEFT JOIN WYJChartMessage AS toMsg ON con.partnerUserId = toMsg.toUserId OR con.partnerUserId = toMsg.fromUserId group by adr.userId";
+    NSString *sql = @"select con.*, adr.*, toMsg.content, toMsg.sendTime, con.pk AS conPK, adr.pk AS adrPK from WYJChartConversation AS con LEFT JOIN WYJChartAddress AS adr ON con.partnerUserId = adr.userId LEFT JOIN WYJChartMessage AS toMsg ON con.partnerUserId = toMsg.toUserId OR con.partnerUserId = toMsg.fromUserId group by adr.userId";
     
     JKDBHelper *jkDB = [JKDBHelper shareInstance];
     NSMutableArray *columeNamesArray = [NSMutableArray array];
@@ -55,6 +70,9 @@
             NSString *content = [resultSet stringForColumn:@"content"];
             [model setValue:content forKey:@"lastMessage"];
             
+            NSString *sendTime = [resultSet stringForColumn:@"sendTime"];
+            [model setValue:sendTime forKey:@"lastTimeString"];
+            
             
             [columeNamesArray addObject:model];
             FMDBRelease(model);
@@ -83,7 +101,8 @@
     WYJChartMessage *message = [WYJChartMessage findFirstByCriteria:sql_message];
     
     if (message) {
-        conversation.lastMessage = message.content;
+        conversation.lastMessage    = message.content;
+        conversation.lastTimeString = message.sendTime;
     }
     
     return conversation;

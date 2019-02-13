@@ -22,7 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setCellheight: (WYJChartMessage *)message;
 
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user;
-+ (WYJChartMessage *)receiveMessageFromUser:(WYJChartAddress *)user;
+
++ (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user;
++ (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user;
 
 
 // 设置未读消息数量

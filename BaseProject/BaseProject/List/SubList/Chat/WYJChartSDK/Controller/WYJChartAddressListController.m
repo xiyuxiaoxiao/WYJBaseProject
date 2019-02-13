@@ -9,7 +9,7 @@
 #import "WYJChartAddressListController.h"
 #import "WYJChartAddress.h"
 #import "MBProgressHUD.h"
-
+#import "WYJChartCellTool.h"
 @interface WYJChartAddressListController ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
@@ -43,6 +43,20 @@
     
     self.textField.text = nil;
     [self.textField resignFirstResponder];
+}
+- (IBAction)receiveNewMessageTextAction:(id)sender {
+    if (self.dataArr.count < 1) {
+        return;
+    }
+    [WYJChartCellTool receiveTextMessageFromUser:self.dataArr[0]];
+}
+
+- (IBAction)receiveNewMessageImageAction:(id)sender {
+    if (self.dataArr.count < 1) {
+        return;
+    }
+    
+    [WYJChartCellTool receiveImageMessageFromUser:self.dataArr[0]];
 }
 
 - (void)request {

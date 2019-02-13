@@ -66,9 +66,9 @@
 }
 
 #pragma mark - ChartDatabaseManagerDelegate
-// 收到消息的时候 刷新当前列
-- (void)receiveMessageNew:(NSObject *)message {
-    WYJChartConversation *conver = [WYJChartConversation findByUserId:[(WYJChartMessage *)message parnerUserId]];
+// 会话更新
+- (void)updateConversation: (NSObject *)conversation {
+    WYJChartConversation *conver = [WYJChartConversation findByUserId:[(WYJChartConversation *)conversation partnerUserId]];
     
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF.partnerUserId = %@",conver.partnerUserId];
     NSArray *arr = [self.dataArr filteredArrayUsingPredicate:pre];

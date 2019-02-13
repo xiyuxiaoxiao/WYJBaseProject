@@ -18,7 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 暂时不用 因为message列表 没有使用 这个id去关联
 //@property (nonatomic, copy)   NSString *conversationId;    // 主键
 @property (nonatomic, copy)   NSString *partnerUserId;     // 合作伙伴id (唯一键)
+
+// 实际 消息中的已读未读 没有用 主要是在此处记录了 后期修改message表未读 也不影响当前记录，
 @property (nonatomic, assign) int unreadCount;             // 未读个数
+
 
 // 不存储
 @property (nonatomic, strong)   WYJChartAddress *partnerUser;    // 最后一条消息

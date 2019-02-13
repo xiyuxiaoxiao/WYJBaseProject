@@ -109,5 +109,54 @@
 }
 
 
+// 个性化显示时间
++ (NSString *)stringDateUniqueWithTimestamp:(NSString *)timeSp {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeSp.doubleValue/1000.0];
+    
+    NSString *dateFormat = @"";
+    if ([[NSCalendar currentCalendar] isDateInToday:date]) {
+        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
+    }else {
+        dateFormat = [NSDateFormatter dateFormatFromTemplate:@"yyyy-MM-dd tt hh:mm" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = dateFormat;
+    return [dateFormatter stringFromDate:date];
+}
 
++ (NSString *)stringDateConversationListTime: (NSString *)timeSp {
+    
+    UInt64 nowTime = [[NSDate date] timeIntervalSince1970];
+    CGFloat time = timeSp.doubleValue/1000;
+    
+    CGFloat offset = nowTime - time;
+    if (offset < 60) {
+        return @"刚刚";
+    }
+    if (offset < 60*60) {
+        int n = (int) (offset/60);
+        return [NSString stringWithFormat:@"%d分钟前",n];
+    }
+
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:time];
+    if ([[NSCalendar currentCalendar] isDateInYesterday:date]) {
+        return @"昨天";
+    }
+
+    if (offset < 24*60*60) {
+        int n = (int) (offset/60*60);
+        return [NSString stringWithFormat:@"%d小时前",n];
+    }
+
+    if (offset < 30*24*60*60) {
+        int n = (int) (offset/24*60*60);
+        return [NSString stringWithFormat:@"%d天前",n];
+    }
+    
+    NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"yyyy-MM-dd" options:0 locale:[NSLocale localeWithLocaleIdentifier:@"zh_CN"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = dateFormat;
+    return [dateFormatter stringFromDate:date];
+}
 @end

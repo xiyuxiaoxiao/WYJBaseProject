@@ -44,8 +44,6 @@
     
     [self addSubview:self.contentBackView];
     [self addSubview:self.messageLabel];
-    
-    [self setContentBackFrame: CGSizeZero];
 }
 
 - (void)setContentBackFrame: (CGSize)contentSize {

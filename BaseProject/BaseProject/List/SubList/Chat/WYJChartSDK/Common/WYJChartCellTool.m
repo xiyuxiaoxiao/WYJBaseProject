@@ -45,10 +45,11 @@ static WYJChartAddress *currentUser = nil;
     NSString *imageName = [image storeFileName];
     
     WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
-    contentModel.imageSize = image.size;
+    contentModel.imageSize  = image.size;
+    contentModel.fileName   = imageName;
     
     WYJChartMessage *msg = [[WYJChartMessage alloc] init];
-    msg.content             = imageName;
+    msg.content             = @"[图片]";
     msg.sendStatus          = SendStatusSuccess;
     msg.type                = MessageTypeImage;
     
@@ -95,13 +96,12 @@ static WYJChartAddress *currentUser = nil;
     }
     
     message.contentBackSize = size;
-    message.cellHeight = 50 + size.height;
+    message.cellHeight = [WYJChartBaseCell extraHeight] + size.height;
 }
 
 + (void)setImageCellheight:(WYJChartMessage *)message {
-    
     message.contentBackSize = [self calculateImageSizeOfCell:message.contentInfoModel.imageSize];
-    message.cellHeight = 50 + message.contentBackSize.height;
+    message.cellHeight = [WYJChartBaseCell extraHeight] + message.contentBackSize.height;
 }
 + (CGSize)calculateImageSizeOfCell:(CGSize)imageSize{
     CGFloat minSideLength = 80;
@@ -145,31 +145,33 @@ static WYJChartAddress *currentUser = nil;
     
 //    // 模拟收到消息
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        WYJChartMessage *msg = [WYJChartCellTool receiveMessageFromUser:user];
+//        WYJChartMessage *msg = [WYJChartCellTool receiveTextMessageFromUser:user];
 //    });
 }
-+ (WYJChartMessage *)receiveMessageFromUser:(WYJChartAddress *)user {
-    WYJChartMessage *message = [self creatMessageText:@"收到你的消息了"];
+
++ (void)receiveMessage:(WYJChartMessage *)message {
     message.byMySelf        = NO;
     message.sendStatus      = SendStatusSuccess;
-    message.fromUserId      = user.userId;
     message.toUserId        = [self getCurrentUser].userId;
     message.sendTime        = [WYJDate getTimeSp:[NSDate date]];
-    
+    message.readStatus      = ReadStatusUnRead;
     [message save];
+}
++ (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user {
+    WYJChartMessage *message = [self creatMessageText:@"收到你的消息了"];
+    message.fromUserId      = user.userId;
+    [self receiveMessage:message];
+    return message;
+}
++ (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user {
+    WYJChartMessage *message = [self creatMessageImage:[UIImage imageNamed:@"yuanyuan.png"]];
+    message.fromUserId      = user.userId;
+    [self receiveMessage:message];
     return message;
 }
 
 + (void)saveConversionUnRead:(WYJChartMessage *)message {
     // 需要先查询 是否已经存在 或者看看 直接覆盖更新的方法
-    
-    if (message.byMySelf) {
-        return;
-    }
-//    if (message.readStatus != ReadStatusUnRead) {
-//        return;
-//    }
-    
     NSString *parnerUserId = @"";
     if (message.byMySelf) {
         parnerUserId = message.toUserId;
@@ -178,27 +180,23 @@ static WYJChartAddress *currentUser = nil;
     }
     
     NSString *sql = [NSString stringWithFormat:@"WHERE partnerUserId = %@",parnerUserId];
-    WYJChartConversation *local = [WYJChartConversation findFirstByCriteria:sql];
-    if (local) {
-        local.unreadCount += 1;
-        [local saveOrUpdate];
-    }else {
-        WYJChartConversation *conversion = [[WYJChartConversation alloc] init];
+    WYJChartConversation *conversion = [WYJChartConversation findFirstByCriteria:sql];
+    if (!conversion) {
+        conversion = [[WYJChartConversation alloc] init];
         conversion.partnerUserId = parnerUserId;
-        conversion.unreadCount = 1;
-        if ([conversion saveOrUpdate]){
-            NSLog(@"成功");
-        }else {
-            NSLog(@"失败");
-        }
+        conversion.unreadCount = 0;
     }
+    if (!message.byMySelf && message.readStatus == ReadStatusUnRead) {
+        conversion.unreadCount += 1;
+    }
+    [conversion saveOrUpdate];
 }
 + (void)clearConversionUnReadWithUserId:(NSString *)userId {
     // 需要先查询 是否已经存在 或者看看 直接覆盖更新的方法
     NSString *parnerUserId = userId;
     NSString *sql = [NSString stringWithFormat:@"WHERE partnerUserId = %@ and unreadCount > 0",parnerUserId];
     WYJChartConversation *local = [WYJChartConversation findFirstByCriteria:sql];
-    if (local) {
+    if (local && local.unreadCount > 0) {
         local.unreadCount = 0;
         [local saveOrUpdate];
     }

@@ -23,6 +23,12 @@
     }
     return self.fromUserId;
 }
+- (CGFloat)cellHeight {
+    if (_sendTimeShow) {
+        return _cellHeight;
+    }
+    return _cellHeight - 20;
+}
 
 #pragma mark - 本地数据操作
 /**
@@ -87,12 +93,14 @@
     if ([super save]) {
         [[ChartDatabaseManager share] receiveMessageNew:self];
         [WYJChartCellTool saveConversionUnRead:self];
+        return YES;
     }
     return NO;
 }
 - (BOOL)saveOrUpdate {
     if([super saveOrUpdate]) {
         [[ChartDatabaseManager share] receiveMessageNew:self];
+        return YES;
     }
     return NO;
 }
@@ -129,15 +137,16 @@
     
     NSDictionary *dict = [self.class dictionaryWithJsonString:json];
     WYJChartContentModel *model  = [[WYJChartContentModel alloc] init];
-    model.imageSize = CGSizeFromString(dict[@"imageSize"]);
+    model.imageSize     = CGSizeFromString(dict[@"imageSize"]);
+    model.fileName      = dict[@"fileName"];
     return model;
 }
 
 + (NSString *)convertContentInfoWithModel:(WYJChartContentModel *)contentModel {
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"imageSize"] = NSStringFromCGSize(contentModel.imageSize);
-    
+    dict[@"imageSize"]  = NSStringFromCGSize(contentModel.imageSize);
+    dict[@"fileName"]   = contentModel.fileName;
     return [self.class convertToJSONData:dict];
 }
 
@@ -191,6 +200,18 @@
 // --------------------WYJChartContentModel-----------------
 
 #pragma mark - WYJChartContentModel
+#import "UIImage+WYJChartImageStore.h"
 
 @implementation WYJChartContentModel
+- (NSString *)fileURL {
+    
+    if (!_fileName) {
+        return nil;
+    }
+    
+    NSString *path          = [UIImage filePathDocument];
+    NSString *imageFilePtah = [path stringByAppendingString:_fileName];
+    
+    return imageFilePtah;
+}
 @end

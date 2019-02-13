@@ -50,4 +50,7 @@
 - (void)newAddress:(NSObject *)user {
     [mulitDelegate newAddress:user];
 }
+- (void)updateConversation: (NSObject *)conversation {
+    [mulitDelegate updateConversation:conversation];
+}
 @end

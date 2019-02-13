@@ -13,12 +13,13 @@
 #import "WYJChatKeyboard.h"
 #import "WYJChartAddress.h"
 
-#define PageCount 10
+#define PageCount 15
 
 @interface WYJChartController ()<UITableViewDelegate, UITableViewDataSource,WYJChartBaseCellDelegate, ChartDatabaseManagerDelegate>
 {
     NSInteger page;
     BOOL dataOver;
+    BOOL requestting;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)   NSMutableArray *dataArr;
@@ -56,6 +57,7 @@
     self.title = self.myFriend.name;
     
     dataOver = NO;
+    requestting = NO;
     [self initUI];
     
     
@@ -94,6 +96,11 @@
     if (dataOver == YES) {
         return;
     }
+    if (requestting) {
+        return;
+    }
+    requestting = YES;
+    
     if (page == 0) {
         [self.dataArr removeAllObjects];
         [self.tableView reloadData];
@@ -116,6 +123,8 @@
         [WYJChartCellTool setCellheight:message];
     }
     
+    requestting = NO;
+    
     if (arr.count < PageCount) {
         // 没有数据了 不用在请求了 因此需要记录一下当前是否加载完毕
         dataOver = YES;
@@ -132,7 +141,7 @@
     CGFloat contentSizeOffset = currentContentSizeHeight - lastContentSizeHeight;
     
     if (lastContentSizeHeight > 0 && contentSizeOffset > 1) {
-        self.tableView.contentOffset = CGPointMake(0, lastOffsetY+contentSizeOffset - 60);
+        self.tableView.contentOffset = CGPointMake(0, lastOffsetY+contentSizeOffset);
     }
     
 }
@@ -170,20 +179,22 @@
 }
 
 - (void)scrollTableToLast {
-    
+    [self scrollTableToLastAnimation:YES];
+}
+- (void)scrollTableToLastAnimation:(BOOL)animation {
     if (self.tableView.contentSize.height > self.tableView.bounds.size.height) {
         
         CGFloat offsetY = self.tableView.contentSize.height - self.tableView.bounds.size.height;
         
         if (fabs(offsetY - self.tableView.contentOffset.y) > 0.001) {
             
-//            self.tableView.contentOffset = CGPointMake(0, offsetY);
-//            [self.tableView setContentOffset:CGPointMake(0, offsetY)];
-//            [UIView animateWithDuration:0.1 animations:^{
-//            }];
+            //            self.tableView.contentOffset = CGPointMake(0, offsetY);
+            //            [self.tableView setContentOffset:CGPointMake(0, offsetY)];
+            //            [UIView animateWithDuration:0.1 animations:^{
+            //            }];
             
             NSInteger row = self.dataArr.count - 1;
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:(UITableViewScrollPositionBottom) animated:YES];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] atScrollPosition:(UITableViewScrollPositionBottom) animated:animation];
         }
     }
 }
@@ -192,7 +203,7 @@
 - (void)keyBoardFrameChange {
     CGFloat h = self.customKeyboard.frame.origin.y;
     self.tableView.frame = CGRectMake(0, 0, WYJScreenWidth, h);
-    [self scrollTableToLast];
+    [self scrollTableToLastAnimation:NO];
 }
 
 - (void)sendMessageText:(NSString *)text {

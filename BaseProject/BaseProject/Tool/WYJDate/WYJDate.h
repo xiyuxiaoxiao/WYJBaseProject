@@ -14,4 +14,8 @@
 +(NSString *)stringWithDate:( NSDate *)date;
 +(NSString *)getTimeSp:(NSDate *)date;
 +(BOOL)isToday:(NSDate *)date;
+
+// 个性化显示时间
++ (NSString *)stringDateUniqueWithTimestamp:(NSString *)timeSp;
++ (NSString *)stringDateConversationListTime: (NSString *)timeSp;
 @end

@@ -118,12 +118,12 @@
 }
 
 - (void)setConversation:(WYJChartConversation *)conversation {
-    self.nameLabel.text = conversation.partnerUser.name;
-    self.messageLabel.text = conversation.lastMessage;
-    self.timeLabel.text = @"01-10 18:20";
+    self.nameLabel.text     = conversation.partnerUser.name;
+    self.messageLabel.text  = conversation.lastMessage;
+    self.timeLabel.text     = [WYJDate stringDateConversationListTime:conversation.lastTimeString];
     
-    self.countLabel.text = [NSString stringWithFormat:@"%d",conversation.unreadCount];
-    self.countLabel.hidden = conversation.unreadCount > 0 ? NO : YES;
+    self.countLabel.text    = [NSString stringWithFormat:@"%d",conversation.unreadCount];
+    self.countLabel.hidden  = conversation.unreadCount > 0 ? NO : YES;
 }
 
 @end
