@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (WYJChartMessage *)creatMessageText: (NSString *)text;
 + (WYJChartMessage *)creatMessageImage:(UIImage *)image;
++ (WYJChartMessage *)creatMessageWithURL:(NSString *)url;
 
 + (void)setCellheight: (WYJChartMessage *)message;
 

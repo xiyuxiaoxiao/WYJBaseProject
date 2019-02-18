@@ -8,6 +8,7 @@
 
 #import "WYJChartImageCell.h"
 #import "UIImage+WYJChartImageStore.h"
+#import "UIImageView+WYJChartImageViewStore.h"
 
 @implementation WYJChartImageCell
 
@@ -79,8 +80,7 @@
     
     self.activiView.frame = frame_active;
     
-    [self.imageMessageView sd_setImageWithURL:[NSURL fileURLWithPath:message.contentInfoModel.fileURL] placeholderImage:nil];
-    // 使用sdwebimagex显示 就不会出现卡顿 或者将data缓存下来
+    [self.imageMessageView wyjImageUrl:message.contentInfoModel.fileURLServer localImagePath:message.contentInfoModel.fileURL];
 }
 
 @end

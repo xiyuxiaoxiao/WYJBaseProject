@@ -193,6 +193,8 @@
 		839A201F208DEBC500024279 /* BezierPathVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839A201D208DEBC500024279 /* BezierPathVC.xib */; };
 		839A6F6D20C00178001EF130 /* KeyboardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A6F6A20C00178001EF130 /* KeyboardTool.m */; };
 		839A6F6E20C00178001EF130 /* NewBaseKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A6F6B20C00178001EF130 /* NewBaseKeyboardController.m */; };
+		839B59A422154EBE00A0D116 /* DownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B59A322154EBE00A0D116 /* DownLoadTool.m */; };
+		839B59A722154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B59A622154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m */; };
 		839B7F2C21F6B1D1008E7A8C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B7F1421F6B1D1008E7A8C /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		839B7F2D21F6B1D1008E7A8C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B7F1D21F6B1D1008E7A8C /* ViewController+MASAdditions.m */; };
 		839B7F2E21F6B1D1008E7A8C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 839B7F2121F6B1D1008E7A8C /* MASCompositeConstraint.m */; };
@@ -638,6 +640,10 @@
 		839A6F6820C00178001EF130 /* NewBaseKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBaseKeyboardController.h; sourceTree = "<group>"; };
 		839A6F6A20C00178001EF130 /* KeyboardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardTool.m; sourceTree = "<group>"; };
 		839A6F6B20C00178001EF130 /* NewBaseKeyboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBaseKeyboardController.m; sourceTree = "<group>"; };
+		839B59A222154EBE00A0D116 /* DownLoadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadTool.h; sourceTree = "<group>"; };
+		839B59A322154EBE00A0D116 /* DownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadTool.m; sourceTree = "<group>"; };
+		839B59A522154F6700A0D116 /* UIImageView+WYJChartImageViewStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WYJChartImageViewStore.h"; sourceTree = "<group>"; };
+		839B59A622154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WYJChartImageViewStore.m"; sourceTree = "<group>"; };
 		839B7F1321F6B1D1008E7A8C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		839B7F1421F6B1D1008E7A8C /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		839B7F1521F6B1D1008E7A8C /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -1429,6 +1435,10 @@
 				838929512201ABD0009DED0F /* WYJChartCellTool.m */,
 				836A3D652202E5FC006BA323 /* UIImage+WYJChartImageStore.h */,
 				836A3D662202E5FC006BA323 /* UIImage+WYJChartImageStore.m */,
+				839B59A522154F6700A0D116 /* UIImageView+WYJChartImageViewStore.h */,
+				839B59A622154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m */,
+				839B59A222154EBE00A0D116 /* DownLoadTool.h */,
+				839B59A322154EBE00A0D116 /* DownLoadTool.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2553,6 +2563,8 @@
 				836AE1C71F1F018600101A8D /* CommonBugEnter.m in Sources */,
 				833530601F459FFE00596581 /* DrawDashLineVC.m in Sources */,
 				831E240A20592A2E00557A96 /* LayoutConstraintCodeView.m in Sources */,
+				839B59A422154EBE00A0D116 /* DownLoadTool.m in Sources */,
+				839B59A722154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m in Sources */,
 				839B7F3021F6B1D1008E7A8C /* MASLayoutConstraint.m in Sources */,
 				836630811EE177370029AD91 /* CustomLayout.m in Sources */,
 				8366305E1EE16FB80029AD91 /* MapSkipManager.m in Sources */,

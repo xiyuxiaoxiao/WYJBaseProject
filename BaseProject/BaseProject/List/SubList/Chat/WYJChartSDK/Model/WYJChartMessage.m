@@ -139,6 +139,7 @@
     WYJChartContentModel *model  = [[WYJChartContentModel alloc] init];
     model.imageSize     = CGSizeFromString(dict[@"imageSize"]);
     model.fileName      = dict[@"fileName"];
+    model.fileURLServer = dict[@"fileURLServer"];
     return model;
 }
 
@@ -147,6 +148,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"imageSize"]  = NSStringFromCGSize(contentModel.imageSize);
     dict[@"fileName"]   = contentModel.fileName;
+    dict[@"fileURLServer"] = contentModel.fileURLServer;
     return [self.class convertToJSONData:dict];
 }
 

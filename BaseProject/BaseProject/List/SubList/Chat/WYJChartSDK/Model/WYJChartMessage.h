@@ -67,5 +67,9 @@ NS_ASSUME_NONNULL_END
 @property (nonatomic, assign)   CGSize imageSize;   // 图片尺寸
 
 @property (nonatomic, copy)     NSString *fileURL;   // 文件路径
+
+// 如果是这样 则需要考虑下载到本地的时候 是否已经下载好 否则没有下载好的话 在访问会出现问题
+// 如果是在socket接受的 可以通过接受data 然后在存储文件路劲/次fileURLServer 可以用下载文件内容等
+@property (nonatomic, copy)     NSString *fileURLServer; // 文件在服务器上的路径 （图片或者语音等路径）
 // 相关语音时长等等
 @end

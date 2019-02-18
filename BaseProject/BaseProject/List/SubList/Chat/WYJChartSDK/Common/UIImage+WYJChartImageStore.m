@@ -9,23 +9,35 @@
 #import "UIImage+WYJChartImageStore.h"
 
 @implementation UIImage (WYJChartImageStore)
-- (NSString *)storeFileName {
-    NSString *fileName = [UIImage hashFileName];
-    
-    
+
+// 此方法 只要是本地发送存储 不能通过子线程请求 如果是网络接受消息 需要子线程存储
+- (NSString *)storeFileName: (NSString *)fileName {
     NSString *path = [UIImage filePathDocument];
-    
     NSString *imageFilePtah = [path stringByAppendingString:fileName];
     
     NSLog(@"%@",imageFilePtah);
     
-    // 对图片尺寸和大小压缩
     UIImage *image = [self resizedImageWithCertainWidth:750];
     NSData *imageData = [image getCompressedImageData];
-    
     [[NSFileManager defaultManager] createFileAtPath:imageFilePtah contents:imageData attributes:nil];
     
     return fileName;
+}
+
+- (void)storeWebImageWithFilePathName: (NSString *)filePath {
+    // 对图片尺寸和大小压缩
+    dispatch_async(dispatch_queue_create(0, 0), ^{
+        
+        // 因为 是网络获取的 有可能出现多次 所以每次存储前 需要先a判断本地是否已经有
+        if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+            return ;
+        }
+        
+        UIImage *image = [self resizedImageWithCertainWidth:750];
+        NSData *imageData = [image getCompressedImageData];
+        
+        [[NSFileManager defaultManager] createFileAtPath:filePath contents:imageData attributes:nil];
+    });
 }
 
 + (NSString *)filePathDocument {

@@ -42,11 +42,32 @@ static WYJChartAddress *currentUser = nil;
 }
 + (WYJChartMessage *)creatMessageImage:(UIImage *)image {
     
-    NSString *imageName = [image storeFileName];
+    NSString *imageName = [UIImage hashFileName];
+    [image storeFileName:imageName];
     
     WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
-    contentModel.imageSize  = image.size;
+    contentModel.imageSize  = CGSizeMake(80, 120);
     contentModel.fileName   = imageName;
+    
+    WYJChartMessage *msg = [[WYJChartMessage alloc] init];
+    msg.content             = @"[图片]";
+    msg.sendStatus          = SendStatusSuccess;
+    msg.type                = MessageTypeImage;
+    
+    msg.contentInfoModel    = contentModel;
+    
+    [WYJChartCellTool setCellheight:msg];
+    
+    return msg;
+}
++ (WYJChartMessage *)creatMessageWithURL:(NSString *)url{
+    
+    NSString *imageName = [UIImage hashFileName];
+
+    WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
+    contentModel.imageSize  = CGSizeMake(80, 120);
+    contentModel.fileName   = imageName;
+    contentModel.fileURLServer = url;
     
     WYJChartMessage *msg = [[WYJChartMessage alloc] init];
     msg.content             = @"[图片]";
@@ -164,10 +185,16 @@ static WYJChartAddress *currentUser = nil;
     return message;
 }
 + (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user {
-    WYJChartMessage *message = [self creatMessageImage:[UIImage imageNamed:@"yuanyuan.png"]];
-    message.fromUserId      = user.userId;
-    [self receiveMessage:message];
-    return message;
+    
+    NSArray *array = @[@"http://lc-snkarza7.cn-n1.lcfile.com/9943047a70c8163096b3.jpg",
+                       @"http://lc-snkarza7.cn-n1.lcfile.com/627383453400d53214af.JPG",
+                       @"http://lc-snkarza7.cn-n1.lcfile.com/6ce9eafa8590b6a8e0e3.JPG"];
+    for (NSString *str in array) {
+        WYJChartMessage *message = [self creatMessageWithURL:str];
+        message.fromUserId      = user.userId;
+        [self receiveMessage:message];
+    }
+    return nil;
 }
 
 + (void)saveConversionUnRead:(WYJChartMessage *)message {
