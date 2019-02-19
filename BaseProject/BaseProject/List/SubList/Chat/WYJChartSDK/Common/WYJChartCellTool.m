@@ -164,10 +164,14 @@ static WYJChartAddress *currentUser = nil;
     message.sendTime = [WYJDate getTimeSp:[NSDate date]];
     [message save];
     
-//    // 模拟收到消息
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        WYJChartMessage *msg = [WYJChartCellTool receiveTextMessageFromUser:user];
-//    });
+    // 模拟收到消息
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (message.type == MessageTypeText) {
+            WYJChartMessage *msg = [WYJChartCellTool receiveTextMessageFromUser:user];
+        }else if (message.type == MessageTypeImage) {
+            WYJChartMessage *msg = [WYJChartCellTool receiveImageMessageFromUser:user];
+        }
+    });
 }
 
 + (void)receiveMessage:(WYJChartMessage *)message {
@@ -189,12 +193,18 @@ static WYJChartAddress *currentUser = nil;
     NSArray *array = @[@"http://lc-snkarza7.cn-n1.lcfile.com/9943047a70c8163096b3.jpg",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/627383453400d53214af.JPG",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/6ce9eafa8590b6a8e0e3.JPG"];
-    for (NSString *str in array) {
-        WYJChartMessage *message = [self creatMessageWithURL:str];
-        message.fromUserId      = user.userId;
-        [self receiveMessage:message];
-    }
-    return nil;
+//    for (NSString *str in array) {
+//        WYJChartMessage *message = [self creatMessageWithURL:str];
+//        message.fromUserId      = user.userId;
+//        [self receiveMessage:message];
+//    }
+//    return nil;
+    
+    int index = arc4random() % 3;
+    WYJChartMessage *message = [self creatMessageWithURL:array[index]];
+    message.fromUserId      = user.userId;
+    [self receiveMessage:message];
+    return message;
 }
 
 + (void)saveConversionUnRead:(WYJChartMessage *)message {

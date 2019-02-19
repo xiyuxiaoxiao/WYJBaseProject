@@ -33,12 +33,9 @@
 //        }
 //    }];
     
-    [self sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        if ([imageURL.absoluteString isEqualToString:url]) {
-            [image storeWebImageWithFilePathName:imageFilePtah];
-        }
-        
+    [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if ([imageURL.absoluteString isEqualToString:url]) {
+                    [image storeWebImageWithFilePathName:imageFilePtah];                }
     }];
 }
 @end
