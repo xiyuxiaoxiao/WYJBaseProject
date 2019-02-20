@@ -137,6 +137,8 @@
 		8389294F2201AB85009DED0F /* ChartDatabaseMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */; };
 		838929502201AB85009DED0F /* ChartDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294E2201AB85009DED0F /* ChartDatabaseManager.m */; };
 		838929532201ABD0009DED0F /* WYJChartCellTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 838929512201ABD0009DED0F /* WYJChartCellTool.m */; };
+		83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */; };
+		83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */ = {isa = PBXBuildFile; fileRef = 83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */; };
 		83969EA921EDDC210032EAE7 /* BGDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA421EDDC210032EAE7 /* BGDB.m */; };
 		83969EAA21EDDC210032EAE7 /* NSCache+BGCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA521EDDC210032EAE7 /* NSCache+BGCache.m */; };
 		83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA621EDDC210032EAE7 /* NSObject+BGModel.m */; };
@@ -527,6 +529,9 @@
 		83905979211D252000A61241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8390597B211D252900A61241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8390597D211D253400A61241 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		83924B6A221BD69800AC9A37 /* WYJCalculatorList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJCalculatorList.h; sourceTree = "<group>"; };
+		83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJCalculatorList.m; sourceTree = "<group>"; };
+		83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = subwayCostEachMonth.html; sourceTree = "<group>"; };
 		83969E9F21EDDC210032EAE7 /* NSCache+BGCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCache+BGCache.h"; sourceTree = "<group>"; };
 		83969EA021EDDC210032EAE7 /* NSObject+BGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BGModel.h"; sourceTree = "<group>"; };
 		83969EA121EDDC210032EAE7 /* BGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTool.h; sourceTree = "<group>"; };
@@ -1283,6 +1288,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				83924B69221BD66700AC9A37 /* WYJCalculator */,
 				836AE1C41F1EFF4E00101A8D /* CommonBug */,
 				836C56B11F185A5A00E7C84E /* TechnicalPoint */,
 				8366305F1EE16FDA0029AD91 /* WaterFall */,
@@ -1441,6 +1447,16 @@
 				839B59A322154EBE00A0D116 /* DownLoadTool.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		83924B69221BD66700AC9A37 /* WYJCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				83924B6A221BD69800AC9A37 /* WYJCalculatorList.h */,
+				83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */,
+				83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */,
+			);
+			path = WYJCalculator;
 			sourceTree = "<group>";
 		};
 		83969E9E21EDDC210032EAE7 /* BG */ = {
@@ -2261,6 +2277,7 @@
 				83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */,
 				8399B2A41E9B52CF0059B797 /* success@2x.png in Resources */,
 				83BE803E1EF9183100FD588A /* btn_map_locate.png in Resources */,
+				83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */,
 				83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */,
 				833530631F459FFE00596581 /* middelLittle.png in Resources */,
 				8335309D1F45AD2700596581 /* Chat BackGround.jpg in Resources */,
@@ -2409,6 +2426,7 @@
 				8399B2B61E9B52CF0059B797 /* UIRefreshControl+AFNetworking.m in Sources */,
 				83B5543C206B767900439E66 /* MyTabBar.m in Sources */,
 				839B7F2D21F6B1D1008E7A8C /* ViewController+MASAdditions.m in Sources */,
+				83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */,
 				839B7F3321F6B1D1008E7A8C /* MASConstraint.m in Sources */,
 				835C8AFD221273D00011EB91 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8343BE9A21805E0200C2BE0F /* BarChartVC.m in Sources */,

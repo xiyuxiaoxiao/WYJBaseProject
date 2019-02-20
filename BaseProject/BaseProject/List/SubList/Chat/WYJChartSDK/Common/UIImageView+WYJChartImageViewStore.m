@@ -15,7 +15,7 @@
 - (void)wyjImageUrl: (NSString *)url localImagePath: (NSString *)imageFilePtah {
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePtah]) {
-        [self sd_setImageWithURL:[NSURL fileURLWithPath:imageFilePtah] placeholderImage:nil];
+        [self sd_setImageWithURL:[NSURL fileURLWithPath:imageFilePtah] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:nil completed:nil];
         return;
     }
     
@@ -24,18 +24,11 @@
         return;
     }
     
-    // 如果不想用这样的 可以使用SDwebimage的存储功能 不过需要自己单独处理存储以及清空缓存
-//    [DownLoadTool creatByUrl:url filePath:imageFilePtah block:^(double pro, BOOL isFinished) {
-//        if (isFinished) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self sd_setImageWithURL:[NSURL fileURLWithPath:imageFilePtah] placeholderImage:nil];
-//            });
-//        }
-//    }];
-    
     [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil options:SDWebImageCacheMemoryOnly progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if ([imageURL.absoluteString isEqualToString:url]) {
-                    [image storeWebImageWithFilePathName:imageFilePtah];                }
+                    [image storeWebImageWithFilePathName:imageFilePtah];
+                }
     }];
 }
+
 @end

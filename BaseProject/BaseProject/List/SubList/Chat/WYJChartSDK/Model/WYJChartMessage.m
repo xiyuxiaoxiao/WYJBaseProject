@@ -30,6 +30,35 @@
     return _cellHeight - 20;
 }
 
+- (void)reSendServer {
+    self.sendStatus = SendStatusSending;
+}
+- (void)sendSuccess {
+    self.sendStatus = SendStatusSuccess;
+}
+
+
+
+
+- (BOOL)save {
+    if ([super save]) {
+        [[ChartDatabaseManager share] receiveMessageNew:self];
+        [WYJChartCellTool saveConversionUnRead:self];
+        return YES;
+    }
+    return NO;
+}
+- (BOOL)update {
+    if([super update]) {
+        [[ChartDatabaseManager share] receiveMessageNew:self];
+        return YES;
+    }
+    return NO;
+}
++ (NSArray *)transients {
+    return @[@"contentInfoModel",@"byMySelf",@"contentBackSize",@"cellHeight",@"sendTimeShow"];
+}
+
 #pragma mark - 本地数据操作
 /**
  lastCreatId 最后一个创建的Id查询 这样可以保证在 加载历史数据的时候 不会因为新增数据 分页查询本地的时候 造成数据重复
@@ -79,35 +108,26 @@
     return columeNamesArray;
 }
 
-- (void)reSendServer {
-    self.sendStatus = SendStatusSending;
++ (NSArray *)findFilePathByFriendUserId: (NSString *)friendUserId {
+    NSString *tableName = NSStringFromClass(self);
+    NSString *sql =  [NSString stringWithFormat:@"select * from %@ where (toUserId = '%@' or fromUserId = '%@') and type = 2",tableName,friendUserId,friendUserId];
+    
+    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    NSMutableArray *columeNamesArray = [NSMutableArray array];
+    
+    [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet *resultSet = [db executeQuery:sql];
+        while ([resultSet next]) {
+            
+            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartMessage *message = model;
+            [columeNamesArray insertObject:message.contentInfoModel.fileURL atIndex:0];
+            FMDBRelease(model);
+        }
+    }];
+    
+    return columeNamesArray;
 }
-- (void)sendSuccess {
-    self.sendStatus = SendStatusSuccess;
-}
-
-
-
-
-- (BOOL)save {
-    if ([super save]) {
-        [[ChartDatabaseManager share] receiveMessageNew:self];
-        [WYJChartCellTool saveConversionUnRead:self];
-        return YES;
-    }
-    return NO;
-}
-- (BOOL)update {
-    if([super update]) {
-        [[ChartDatabaseManager share] receiveMessageNew:self];
-        return YES;
-    }
-    return NO;
-}
-+ (NSArray *)transients {
-    return @[@"contentInfoModel",@"byMySelf",@"contentBackSize",@"cellHeight",@"sendTimeShow"];
-}
-
 
 //-----------------------------------------------------------
 #pragma mark - 对image的size 等其他信息 json与model之间的转化

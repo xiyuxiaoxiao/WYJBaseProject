@@ -26,7 +26,7 @@ static WYJChartAddress *currentUser = nil;
     
 }
 
-#pragma mark - 创建cell对象
+#pragma mark - 创建消息对象
 + (WYJChartMessage *)creatMessageText: (NSString *)text {
     WYJChartTextCell *cell = [[WYJChartTextCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@""];
     
@@ -81,6 +81,7 @@ static WYJChartAddress *currentUser = nil;
     return msg;
 }
 
+#pragma mark - cell高度
 + (void)setCellheight: (WYJChartMessage *)message {
     if (message.type == MessageTypeText) {
         [self setTextCellheight:message];
@@ -156,7 +157,25 @@ static WYJChartAddress *currentUser = nil;
     return CGSizeMake(w_image, h_image);
 }
 
-#pragma mark -
+// 只有在展示的时候 才用到相关计算 不需要全部计算 但是每次滑动都需要计算 不影响
++ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath {
+    
+    WYJChartMessage *message = array[indexPath.row];
+    message.sendTimeShow = NO;
+    
+    if (indexPath.row == 0) {
+        message.sendTimeShow = YES;
+        return;
+    }
+    WYJChartMessage *lastMessage = array[indexPath.row-1];
+    // 超过5分钟 就显示
+    if (message.sendTime.doubleValue/1000 - lastMessage.sendTime.doubleValue/1000 > 300) {
+        message.sendTimeShow = YES;
+    }
+}
+
+
+#pragma mark - 数据库相关操作
 
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user {
     message.toUserId = user.userId;
@@ -193,12 +212,12 @@ static WYJChartAddress *currentUser = nil;
     NSArray *array = @[@"http://lc-snkarza7.cn-n1.lcfile.com/9943047a70c8163096b3.jpg",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/627383453400d53214af.JPG",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/6ce9eafa8590b6a8e0e3.JPG"];
-//    for (NSString *str in array) {
-//        WYJChartMessage *message = [self creatMessageWithURL:str];
-//        message.fromUserId      = user.userId;
-//        [self receiveMessage:message];
-//    }
-//    return nil;
+    //    for (NSString *str in array) {
+    //        WYJChartMessage *message = [self creatMessageWithURL:str];
+    //        message.fromUserId      = user.userId;
+    //        [self receiveMessage:message];
+    //    }
+    //    return nil;
     
     int index = arc4random() % 3;
     WYJChartMessage *message = [self creatMessageWithURL:array[index]];
@@ -239,40 +258,45 @@ static WYJChartAddress *currentUser = nil;
     }
 }
 
+#pragma mark - 删除相关文件
+/*
+ 删除微信消息的时候 如何删除关联的文件 经测试 需要考虑分享的时候 使用的是同一个URL 接受分享消息 也同样如此
+ 
+ 需要将URl 和文件名 一一 对应 查看相同的URL （利用SDWebImage获取或者创建）
+ 删除好友的时候 由于同一个消息 本地的路径是一样的 这样当某个消息是转发过来的时候，本地的文件 是不能直接删除的 需要判断是否还有其他消息使用
+ 解决方法：
+ 1. 删除单个消息的时候 查询url是否还存在相同的 否则不删除
+ 2. 删除好友的时候 删除消息，需要查询 当前好友消息的文件路径 以及 文件路径不重复的情况，避免多个消息引用同一个URL
+ 3. 如果是清空所有聊天数据 则可以根据目录删除 以及删除消息数据表所有数据
+ */
 
-
-// 也可以放在cell height计算高度中 对高度time的高度重新计算 是否需要显示 然后cell中在设置
-+ (void)reSetSendTimeWithMessageArray: (NSArray *)array {
-    for (int i = 0; i < array.count; i++) {
-        WYJChartMessage *message = array[i];
-        message.sendTimeShow = NO;
-        if (i == 0) {
-            message.sendTimeShow = YES;
-            continue;
-        }
-        
-        WYJChartMessage *lastMessage = array[i-1];
-        // 超过5分钟 就显示
-        if (message.sendTime.doubleValue/1000 - lastMessage.sendTime.doubleValue/1000 > 300) {
-            message.sendTimeShow = YES;
-        }
+// 删除数据
++ (void)delegateMessage: (WYJChartMessage *)message {
+    [message deleteObject];
+    
+    // 清除相关联文件
+    if (message.type == MessageTypeImage) {
+        NSString *path = message.contentInfoModel.fileURL;
+        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
     }
 }
-
-+ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath {
+// 删除单个好友的聊天记录 // 在记录的每个用户的时候 文件存储单个目录 这样在删除聊天文件的时候 就可以通过用户的id来删除
++ (void)delegateMessageByUserId:(NSString *)userId {
     
-    WYJChartMessage *message = array[indexPath.row];
-    message.sendTimeShow = NO;
+    NSArray *fileArr = [WYJChartMessage findFilePathByFriendUserId:userId];
     
-    if (indexPath.row == 0) {
-        message.sendTimeShow = YES;
-        return;
+    // 需要先查好出 所有聊天包含的文件路径 然后删除相关路径
+    NSString *sqlWhere = [NSString stringWithFormat:@"where (toUserId = '%@' or fromUserId = '%@')",userId,userId];
+    [WYJChartMessage deleteObjectsByCriteria:sqlWhere];
+    
+    // 上面删除成功了 才能删除文件路径
+    for (NSString *path in fileArr) {
+        // 如果正在下载某个文件 也应该暂停下载 删除相关正在下载文件 并且取消相应下载文件
+        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
     }
-    WYJChartMessage *lastMessage = array[indexPath.row-1];
-    // 超过5分钟 就显示
-    if (message.sendTime.doubleValue/1000 - lastMessage.sendTime.doubleValue/1000 > 300) {
-        message.sendTimeShow = YES;
-    }
+    
+    //删除会话
+    NSString *sqlConv = [NSString stringWithFormat:@"where (partnerUserId = %@)",userId];
+    [WYJChartConversation deleteObjectsByCriteria:sqlConv];
 }
-
 @end

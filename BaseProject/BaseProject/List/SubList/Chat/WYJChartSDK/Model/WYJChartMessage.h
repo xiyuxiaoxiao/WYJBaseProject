@@ -49,11 +49,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)   BOOL    sendTimeShow;     // 是否显示时间
 
 - (NSString *)parnerUserId;
-
-+ (NSArray *)findMessageArray:(NSString *)friendUserId page:(int)page perPageCount:(int)count lastCreatId:(NSString *)lastCreatId;
 // 重新发送
 - (void)reSendServer;
 - (void)sendSuccess;
+
++ (NSArray *)findMessageArray:(NSString *)friendUserId page:(int)page perPageCount:(int)count lastCreatId:(NSString *)lastCreatId;
+// 查询单个好友的所有聊天文件路径
++ (NSArray *)findFilePathByFriendUserId: (NSString *)friendUserId;
+
 
 @end
 

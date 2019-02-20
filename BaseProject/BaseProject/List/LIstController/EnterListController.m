@@ -62,7 +62,8 @@
 
 
 - (void)initData {
-    
+    [self.dataArray addObject:@{TitleKey:@"计算器",
+                                CN_Key:@"WYJCalculatorList"}];
     [self.dataArray addObject:@{TitleKey:@"常见Bug",
                                 CN_Key:@"CommonBugEnter"}];
     

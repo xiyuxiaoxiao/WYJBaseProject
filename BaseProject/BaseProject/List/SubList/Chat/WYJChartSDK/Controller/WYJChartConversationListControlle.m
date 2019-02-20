@@ -12,6 +12,7 @@
 #import "WYJChartConversation.h"
 #import "WYJChartConversationCell.h"
 #import "WYJChartMessage.h"
+#import "WYJChartCellTool.h"
 
 @interface WYJChartConversationListControlle ()<UITableViewDelegate,UITableViewDataSource,ChartDatabaseManagerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -63,6 +64,25 @@
     UIViewController *vc = [[NSClassFromString(@"WYJChartController") alloc] init];
     [vc setValue:[obj valueForKey:@"partnerUser"] forKey:@"myFriend"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+// 删除当前用户的文件
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle != UITableViewCellEditingStyleDelete) {
+        return;
+    }
+    
+    WYJChartConversation *conver = self.dataArr[indexPath.row];
+    [WYJChartCellTool delegateMessageByUserId:conver.partnerUserId];
+    
+    [self.dataArr removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationTop)];
 }
 
 #pragma mark - ChartDatabaseManagerDelegate

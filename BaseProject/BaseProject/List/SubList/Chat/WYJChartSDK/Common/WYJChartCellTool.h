@@ -16,12 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (WYJChartAddress *)getCurrentUser;
 
+#pragma mark - 创建消息对象
 + (WYJChartMessage *)creatMessageText: (NSString *)text;
 + (WYJChartMessage *)creatMessageImage:(UIImage *)image;
 + (WYJChartMessage *)creatMessageWithURL:(NSString *)url;
 
+#pragma mark - cell高度
 + (void)setCellheight: (WYJChartMessage *)message;
+// 只有在展示的时候 才用到相关计算 不需要全部计算 但是每次滑动都需要计算 不影响
++ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath;
 
+#pragma mark - 数据库相关操作
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user;
 
 + (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user;
@@ -33,11 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 清除未读标记
 + (void)clearConversionUnReadWithUserId:(NSString *)userId;
 
-// 对数组所有重新计算赋值
-+ (void)reSetSendTimeWithMessageArray: (NSArray *)array;
 
-// 只有在展示的时候 才用到相关计算 不需要全部计算 但是每次滑动都需要计算 不影响
-+ (void)reSetSendTimeMessage:(NSArray *)array whenCellHeightIndexpath:(NSIndexPath *)indexPath;
+// 删除单个好友的聊天记录
++ (void)delegateMessageByUserId:(NSString *)userId;
 @end
 
 NS_ASSUME_NONNULL_END
