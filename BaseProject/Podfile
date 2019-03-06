@@ -7,5 +7,6 @@ pod 'AMapSearch'
 pod 'AMapLocation'
 
 pod 'GPUImage'
+pod 'AKTLayout'
 
 end

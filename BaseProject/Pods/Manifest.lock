@@ -1,4 +1,5 @@
 PODS:
+  - AKTLayout (1.3.0)
   - AMap3DMap (5.0.0):
     - AMapFoundation (~> 1.3)
   - AMapFoundation (1.4.0)
@@ -9,6 +10,7 @@ PODS:
   - GPUImage (0.1.7)
 
 DEPENDENCIES:
+  - AKTLayout
   - AMap3DMap
   - AMapLocation
   - AMapSearch
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AKTLayout
     - AMap3DMap
     - AMapFoundation
     - AMapLocation
@@ -23,12 +26,13 @@ SPEC REPOS:
     - GPUImage
 
 SPEC CHECKSUMS:
+  AKTLayout: fc9feb42f5ebecbd0f94bd5f958bfaba47e1de0c
   AMap3DMap: 4d0a53d0e57c7c758560225dfdaf593b306bd468
   AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
   AMapLocation: 6016f0e09c127461c9c8e36945f34c0f037ad962
   AMapSearch: cf7fd100d533995822d92c22586abfaf7cdf6eef
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
 
-PODFILE CHECKSUM: 46b8ba73db4f3f6d95fbe8fa55d4797823c48683
+PODFILE CHECKSUM: 70f254175183ba968f17e04c622de86c9ea7615c
 
 COCOAPODS: 1.5.3

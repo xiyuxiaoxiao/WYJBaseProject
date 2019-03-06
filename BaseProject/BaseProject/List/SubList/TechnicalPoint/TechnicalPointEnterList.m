@@ -33,17 +33,27 @@
     [self.dataArray addObject:@{TitleKey:@"pthread、NSThread",
                                 @"filePath":@"NSThread.htm"}];
     
+    [self.dataArray addObject:@{TitleKey:@"GCD 自己的总结",
+                                CN_Key:@"GCDMySummary"
+                                }];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dict = self.dataArray[indexPath.row];
     SourceViewController *vc = [[SourceViewController alloc] init];
-    if (indexPath.row >= 2) {
-        vc.filePath = [[NSBundle mainBundle] pathForResource:dict[@"filePath"] ofType:nil];
-    }else {
+    
+    if (dict[CN_Key]) {
         vc.filePath = SourcePathByClassName(dict[CN_Key]);
     }
+    else if (dict[@"filePath"]){
+        vc.filePath = [[NSBundle mainBundle] pathForResource:dict[@"filePath"] ofType:nil];
+    }else {
+        return;
+    }
     [self.navigationController pushViewController:vc animated:YES];
+    
+//    [NSClassFromString(@"GCDMySummary") performSelector:@selector(test1)];
 }
 
 @end

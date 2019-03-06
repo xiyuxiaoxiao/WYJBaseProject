@@ -75,8 +75,6 @@
                             CN_Key:@"MapEnterList"}];
     [self.dataArray addObject:@{TitleKey:@"系统提醒事件",
                             CN_Key:@"ES_RemaindControler"}];
-    [self.dataArray addObject:@{TitleKey:@"纯代码添加约束",
-                            CN_Key:@"LayoutConstraintCodeController"}];
     [self.dataArray addObject:@{TitleKey:@"获取城市信息",
                             CN_Key:@"CitySelectController"}];
     [self.dataArray addObject:@{TitleKey:@"画图",
@@ -94,7 +92,7 @@
     
     [self.dataArray addObject:@{TitleKey:@"动画效果封装",
                                 CN_Key:@"AnimationEncapsulation"}];
-    
-    
+    [self.dataArray addObject:@{TitleKey:@"布局",
+                                CN_Key:@"LayoutLearn"}];
 }
 @end

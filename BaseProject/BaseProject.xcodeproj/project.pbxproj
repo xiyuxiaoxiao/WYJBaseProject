@@ -137,6 +137,8 @@
 		8389294F2201AB85009DED0F /* ChartDatabaseMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */; };
 		838929502201AB85009DED0F /* ChartDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294E2201AB85009DED0F /* ChartDatabaseManager.m */; };
 		838929532201ABD0009DED0F /* WYJChartCellTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 838929512201ABD0009DED0F /* WYJChartCellTool.m */; };
+		838A01B42227E39E00372A9D /* LayoutLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A01B32227E39E00372A9D /* LayoutLearn.m */; };
+		838A01B82227E41100372A9D /* AKTClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A01B72227E41100372A9D /* AKTClassController.m */; };
 		83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */; };
 		83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */ = {isa = PBXBuildFile; fileRef = 83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */; };
 		83969EA921EDDC210032EAE7 /* BGDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA421EDDC210032EAE7 /* BGDB.m */; };
@@ -270,6 +272,7 @@
 		83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */; };
 		83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C887941F44512A006B9A72 /* self addSubView self.png */; };
 		83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCD1732202855500577E3B /* WYJChartImageCell.m */; };
+		83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EF517F222CDA3E00B47F4E /* GCDMySummary.m */; };
 		83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */; };
 		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
 		83F27F7E21FEEFF700E7FE9D /* WYJChartAddressListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F27F7C21FEEFF600E7FE9D /* WYJChartAddressListController.xib */; };
@@ -524,6 +527,10 @@
 		8389294E2201AB85009DED0F /* ChartDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDatabaseManager.m; sourceTree = "<group>"; };
 		838929512201ABD0009DED0F /* WYJChartCellTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartCellTool.m; sourceTree = "<group>"; };
 		838929522201ABD0009DED0F /* WYJChartCellTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartCellTool.h; sourceTree = "<group>"; };
+		838A01B22227E39E00372A9D /* LayoutLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutLearn.h; sourceTree = "<group>"; };
+		838A01B32227E39E00372A9D /* LayoutLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayoutLearn.m; sourceTree = "<group>"; };
+		838A01B62227E41100372A9D /* AKTClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKTClassController.h; sourceTree = "<group>"; };
+		838A01B72227E41100372A9D /* AKTClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKTClassController.m; sourceTree = "<group>"; };
 		83905975211D250B00A61241 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		83905977211D251600A61241 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		83905979211D252000A61241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -775,6 +782,7 @@
 		83C887941F44512A006B9A72 /* self addSubView self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self addSubView self.png"; sourceTree = "<group>"; };
 		83DCD1722202855500577E3B /* WYJChartImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartImageCell.h; sourceTree = "<group>"; };
 		83DCD1732202855500577E3B /* WYJChartImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartImageCell.m; sourceTree = "<group>"; };
+		83EF517F222CDA3E00B47F4E /* GCDMySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDMySummary.m; sourceTree = "<group>"; };
 		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
 		83F27F7121FEDF0700E7FE9D /* WYJChartMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartMessage.h; sourceTree = "<group>"; };
 		83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartAddress.m; sourceTree = "<group>"; };
@@ -836,6 +844,7 @@
 				83735276205A7A6B002F1824 /* BlockPoint.m */,
 				8398D80C216C8EB300DBBFD6 /* WXPullView.h */,
 				8398D80B216C8EB300DBBFD6 /* WXPullView.m */,
+				83EF517F222CDA3E00B47F4E /* GCDMySummary.m */,
 			);
 			path = Dom;
 			sourceTree = "<group>";
@@ -1288,6 +1297,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				838A01B12227E34C00372A9D /* Layout */,
 				83924B69221BD66700AC9A37 /* WYJCalculator */,
 				836AE1C41F1EFF4E00101A8D /* CommonBug */,
 				836C56B11F185A5A00E7C84E /* TechnicalPoint */,
@@ -1447,6 +1457,25 @@
 				839B59A322154EBE00A0D116 /* DownLoadTool.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		838A01B12227E34C00372A9D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				838A01B22227E39E00372A9D /* LayoutLearn.h */,
+				838A01B32227E39E00372A9D /* LayoutLearn.m */,
+				838A01B52227E3E600372A9D /* AKT */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		838A01B52227E3E600372A9D /* AKT */ = {
+			isa = PBXGroup;
+			children = (
+				838A01B62227E41100372A9D /* AKTClassController.h */,
+				838A01B72227E41100372A9D /* AKTClassController.m */,
+			);
+			path = AKT;
 			sourceTree = "<group>";
 		};
 		83924B69221BD66700AC9A37 /* WYJCalculator */ = {
@@ -2449,6 +2478,7 @@
 				835C8AFC221273D00011EB91 /* SDWebImageDecoder.m in Sources */,
 				83969EA921EDDC210032EAE7 /* BGDB.m in Sources */,
 				8388690620BC0047006619B9 /* CurrentUserManager.m in Sources */,
+				83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */,
 				83C8875D1F443F95006B9A72 /* MinInsert.m in Sources */,
 				835C8AFF221273D00011EB91 /* UIImage+GIF.m in Sources */,
 				83F693E322003BF000E342E8 /* WYJChartConversation.m in Sources */,
@@ -2508,8 +2538,10 @@
 				83C887811F444FC0006B9A72 /* ButtonProgress.m in Sources */,
 				83F693E722006EE700E342E8 /* WYJChartConversationListControlle.m in Sources */,
 				83A7F37F2175D78800CE8BA4 /* YJSlideMenu.m in Sources */,
+				838A01B82227E41100372A9D /* AKTClassController.m in Sources */,
 				83C887841F444FC0006B9A72 /* CustomViewEnterList.m in Sources */,
 				8365073D1F70EFB2008F1B6F /* JSOC_Object.m in Sources */,
+				838A01B42227E39E00372A9D /* LayoutLearn.m in Sources */,
 				835C8AFE221273D00011EB91 /* SDWebImageDownloader.m in Sources */,
 				83669BCA211C2B6F0096EAB9 /* GradientColorController.m in Sources */,
 				8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */,
