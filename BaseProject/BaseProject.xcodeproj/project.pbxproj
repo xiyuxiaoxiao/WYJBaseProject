@@ -277,6 +277,7 @@
 		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
 		83F27F7E21FEEFF700E7FE9D /* WYJChartAddressListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F27F7C21FEEFF600E7FE9D /* WYJChartAddressListController.xib */; };
 		83F27F7F21FEEFF700E7FE9D /* WYJChartAddressListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7D21FEEFF600E7FE9D /* WYJChartAddressListController.m */; };
+		83F379022240D2E00063B0AA /* WYJFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F379012240D2E00063B0AA /* WYJFileTool.m */; };
 		83F693E322003BF000E342E8 /* WYJChartConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F693E222003BF000E342E8 /* WYJChartConversation.m */; };
 		83F693E722006EE700E342E8 /* WYJChartConversationListControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F693E522006EE700E342E8 /* WYJChartConversationListControlle.m */; };
 		83F693E822006EE700E342E8 /* WYJChartConversationListControlle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83F693E622006EE700E342E8 /* WYJChartConversationListControlle.xib */; };
@@ -790,6 +791,8 @@
 		83F27F7B21FEEFF600E7FE9D /* WYJChartAddressListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartAddressListController.h; sourceTree = "<group>"; };
 		83F27F7C21FEEFF600E7FE9D /* WYJChartAddressListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYJChartAddressListController.xib; sourceTree = "<group>"; };
 		83F27F7D21FEEFF600E7FE9D /* WYJChartAddressListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartAddressListController.m; sourceTree = "<group>"; };
+		83F379002240D2E00063B0AA /* WYJFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJFileTool.h; sourceTree = "<group>"; };
+		83F379012240D2E00063B0AA /* WYJFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJFileTool.m; sourceTree = "<group>"; };
 		83F693E122003BF000E342E8 /* WYJChartConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartConversation.h; sourceTree = "<group>"; };
 		83F693E222003BF000E342E8 /* WYJChartConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartConversation.m; sourceTree = "<group>"; };
 		83F693E422006EE600E342E8 /* WYJChartConversationListControlle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartConversationListControlle.h; sourceTree = "<group>"; };
@@ -1455,6 +1458,8 @@
 				839B59A622154F6700A0D116 /* UIImageView+WYJChartImageViewStore.m */,
 				839B59A222154EBE00A0D116 /* DownLoadTool.h */,
 				839B59A322154EBE00A0D116 /* DownLoadTool.m */,
+				83F379002240D2E00063B0AA /* WYJFileTool.h */,
+				83F379012240D2E00063B0AA /* WYJFileTool.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2531,6 +2536,7 @@
 				8399B29E1E9B52CF0059B797 /* InfoValidator.m in Sources */,
 				831E240C20592A2E00557A96 /* SortInsert.m in Sources */,
 				839A6F6D20C00178001EF130 /* KeyboardTool.m in Sources */,
+				83F379022240D2E00063B0AA /* WYJFileTool.m in Sources */,
 				833530691F459FFE00596581 /* YJRippleView.m in Sources */,
 				83BE80361EF911D500FD588A /* CustomCalloutView.m in Sources */,
 				8366305C1EE16FB80029AD91 /* MapManagerController.m in Sources */,
@@ -2794,6 +2800,7 @@
 			baseConfigurationReference = A35A3FBF8A3B28261E113C8A /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TL7L83CUD;
@@ -2857,6 +2864,7 @@
 			baseConfigurationReference = 8CAE69609FDD1709F9D6DDE3 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TL7L83CUD;

@@ -57,6 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 查询单个好友的所有聊天文件路径
 + (NSArray *)findFilePathByFriendUserId: (NSString *)friendUserId;
 
+// 查询是否 只有一个文件名在本地存储的
++ (BOOL)onlyOneMessageFileName: (NSString *)fileName;
+
 
 @end
 

@@ -35,6 +35,7 @@
         _messageLabel.textAlignment     = NSTextAlignmentLeft;
         _messageLabel.font              = [UIFont systemFontOfSize:12];
         _messageLabel.numberOfLines     = 0;
+        [self setupTap:_messageLabel];
     }
     return _messageLabel;
 }

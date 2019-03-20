@@ -62,36 +62,49 @@
 
 
 - (void)initData {
-    [self.dataArray addObject:@{TitleKey:@"计算器",
-                                CN_Key:@"WYJCalculatorList"}];
-    [self.dataArray addObject:@{TitleKey:@"常见Bug",
-                                CN_Key:@"CommonBugEnter"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"聊天",
+                                CN_Key:@"ChatEnterList"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"自定义view",
+                                CN_Key:@"CustomViewEnterList"}];
     
     [self.dataArray addObject:@{TitleKey:@"技术点",
                                 CN_Key:@"TechnicalPointEnterList"}];
-    [self.dataArray addObject:@{TitleKey:@"瀑布流 (上滑隐藏topView 下滑展示)",
-                            CN_Key:@"WaterFallController"}];
-    [self.dataArray addObject:@{TitleKey:@"地图",
-                            CN_Key:@"MapEnterList"}];
-    [self.dataArray addObject:@{TitleKey:@"系统提醒事件",
-                            CN_Key:@"ES_RemaindControler"}];
-    [self.dataArray addObject:@{TitleKey:@"获取城市信息",
-                            CN_Key:@"CitySelectController"}];
-    [self.dataArray addObject:@{TitleKey:@"画图",
-                                CN_Key:@"DrawEnterList"}];
+    
     [self.dataArray addObject:@{TitleKey:@"算法",
                                 CN_Key:@"AlgorithmEnterList"}];
-    [self.dataArray addObject:@{TitleKey:@"自定义view",
-                                CN_Key:@"CustomViewEnterList"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"计算器",
+                                CN_Key:@"WYJCalculatorList"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"常见Bug",
+                                CN_Key:@"CommonBugEnter"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"瀑布流 (上滑隐藏topView 下滑展示)",
+                            CN_Key:@"WaterFallController"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"地图",
+                            CN_Key:@"MapEnterList"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"系统提醒事件",
+                            CN_Key:@"ES_RemaindControler"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"获取城市信息",
+                            CN_Key:@"CitySelectController"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"画图",
+                                CN_Key:@"DrawEnterList"}];
+    
     [self.dataArray addObject:@{TitleKey:@"扫一扫",
                                 CN_Key:@"WYJScanEnterList"}];
-    [self.dataArray addObject:@{TitleKey:@"聊天",
-                                CN_Key:@"ChatEnterList"}];
+    
     [self.dataArray addObject:@{TitleKey:@"Web",
                                 CN_Key:@"WebEnter"}];
     
     [self.dataArray addObject:@{TitleKey:@"动画效果封装",
                                 CN_Key:@"AnimationEncapsulation"}];
+    
     [self.dataArray addObject:@{TitleKey:@"布局",
                                 CN_Key:@"LayoutLearn"}];
 }

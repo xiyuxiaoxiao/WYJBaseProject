@@ -158,6 +158,15 @@
     WYJChartBaseCell *cell      = [tableView dequeueReusableCellWithIdentifier:identify];
     
     cell.message = message;
+    
+    NSString *url = @"";
+    if (cell.left) {
+        url = self.myFriend.portraitURL;
+    }else {
+        url = [WYJChartCellTool getCurrentUser].portraitURL;
+    }
+    [cell.iconView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

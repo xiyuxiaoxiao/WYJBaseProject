@@ -67,6 +67,7 @@ static WYJPhoto *StaticPhoto = nil;
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     StaticPhoto = nil;
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 

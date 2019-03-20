@@ -145,12 +145,12 @@
     }
 
     if (offset < 24*60*60) {
-        int n = (int) (offset/60*60);
+        int n = (int) (offset/(60*60));
         return [NSString stringWithFormat:@"%d小时前",n];
     }
 
     if (offset < 30*24*60*60) {
-        int n = (int) (offset/24*60*60);
+        int n = (int) (offset/(24*60*60));
         return [NSString stringWithFormat:@"%d天前",n];
     }
     

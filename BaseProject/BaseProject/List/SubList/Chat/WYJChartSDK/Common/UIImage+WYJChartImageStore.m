@@ -7,12 +7,13 @@
 //
 
 #import "UIImage+WYJChartImageStore.h"
+#import "WYJFileTool.h"
 
 @implementation UIImage (WYJChartImageStore)
 
 // 此方法 只要是本地发送存储 不能通过子线程请求 如果是网络接受消息 需要子线程存储
 - (NSString *)storeFileName: (NSString *)fileName {
-    NSString *path = [UIImage filePathDocument];
+    NSString *path = [WYJFileTool filePathDocument];
     NSString *imageFilePtah = [path stringByAppendingString:fileName];
     
     NSLog(@"%@",imageFilePtah);
@@ -38,27 +39,6 @@
         
         [[NSFileManager defaultManager] createFileAtPath:filePath contents:imageData attributes:nil];
     });
-}
-
-+ (NSString *)filePathDocument {
-    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [documentDirectory stringByAppendingString:@"/WyjSource/image/"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    return path;
-}
-
-+ (NSString *)hashFileName {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss-SSS-"];
-    NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
-    
-    
-    int num = arc4random() % 10000;
-    NSString *str =[NSString stringWithFormat:@"%@%d.png",dateStr,num];
-    return str;
 }
 
 #pragma mark - 压缩 裁剪

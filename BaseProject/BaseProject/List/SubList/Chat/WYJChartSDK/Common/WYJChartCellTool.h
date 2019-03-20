@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)clearConversionUnReadWithUserId:(NSString *)userId;
 
 
+// 删除数据
++ (void)delegateMessage: (WYJChartMessage *)message;
 // 删除单个好友的聊天记录
 + (void)delegateMessageByUserId:(NSString *)userId;
 @end

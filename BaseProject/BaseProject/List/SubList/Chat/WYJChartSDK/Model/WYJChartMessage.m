@@ -129,6 +129,26 @@
     return columeNamesArray;
 }
 
+// 不成功 要么保存在字段种 不能通过字符串这样匹配
++ (BOOL)onlyOneMessageFileName: (NSString *)fileName {
+    NSString *tableName = NSStringFromClass(self);
+    NSString *sql =  [NSString stringWithFormat:@"select count(*) from %@ where ( contentModelInfo like '%%%@%%' )",tableName,fileName];
+    
+    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    NSInteger __block count = 0;
+    [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet *resultSet = [db executeQuery:sql];
+        while ([resultSet next]) {
+            count = [resultSet intForColumnIndex:0];
+        }
+    }];
+    
+    if (count <= 0) {
+        return YES;
+    }
+    return NO;
+}
+
 //-----------------------------------------------------------
 #pragma mark - 对image的size 等其他信息 json与model之间的转化
 
@@ -231,7 +251,7 @@
         return nil;
     }
     
-    NSString *path          = [UIImage filePathDocument];
+    NSString *path          = [WYJFileTool filePathDocument];
     NSString *imageFilePtah = [path stringByAppendingString:_fileName];
     
     return imageFilePtah;

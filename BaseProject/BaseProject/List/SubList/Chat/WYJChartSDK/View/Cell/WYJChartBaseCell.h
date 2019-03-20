@@ -43,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setFrame;
 - (void)setFailureFrameWithContentFrame:(CGRect)contentFrame;
 + (CGFloat)extraHeight;
+
+//添加长按手势
+- (void)setupTap:(UIView*)tapView;
 @end
 
 NS_ASSUME_NONNULL_END

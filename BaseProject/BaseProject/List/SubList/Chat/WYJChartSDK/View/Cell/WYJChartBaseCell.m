@@ -7,6 +7,8 @@
 //
 
 #import "WYJChartBaseCell.h"
+#import "WYJChartCellTool.h"
+
 #define SendTimeHeight      20  // 时间label的高度
 #define CellBottomHeight    15  // cell下面的间距
 
@@ -79,8 +81,9 @@
     if (!_iconView) {
         _iconView = [[UIImageView alloc]init];
         _iconView.userInteractionEnabled = YES;
-        _iconView.backgroundColor = [UIColor redColor];
-        _iconView.layer.cornerRadius = 18;
+        _iconView.backgroundColor = [UIColor whiteColor];
+        _iconView.layer.cornerRadius = 5;
+        _iconView.layer.masksToBounds = YES;
 //        dispatch_async(dispatch_get_global_queue(0, 0), ^{
 //            _iconView.layer.cornerRadius = 25;
 //        });
@@ -223,5 +226,51 @@
     if ([self.delegate respondsToSelector:selector]) {
         [self.delegate performSelector:selector withObject:object withObject:nil];
     }
+}
+
+// 删除
+- (void)delegate {
+    [WYJChartCellTool delegateMessage:self.message];
+}
+
+#pragma mark - 添加长安手势
+/** 设置敲击手势 */
+- (void)setupTap:(UIView*)tapView
+{
+    //已经在stroyboard设置了与用户交互,也可以用纯代码设置
+    tapView.userInteractionEnabled = YES;
+    
+    //当前控件是label 所以是给label添加敲击手势
+    [tapView addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)]];
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        
+        UIView *tapView =  gesture.view;
+        [self becomeFirstResponder];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        if(menu.isMenuVisible) return;
+        
+        UIMenuItem *item =[[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(delegate)];
+        menu.menuItems = @[item];
+        [menu setTargetRect:tapView.frame inView:self];
+        [menu setMenuVisible:YES animated:YES];
+    }
+}
+
+#pragma mark - UIMenuController相关
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(delegate)) {
+        return YES;
+    }
+    return NO;
 }
 @end

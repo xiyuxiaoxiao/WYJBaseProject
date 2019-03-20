@@ -21,6 +21,7 @@ static WYJChartAddress *currentUser = nil;
         currentUser = [[WYJChartAddress alloc] init];
         currentUser.userId  = @"20180001";
         currentUser.name    = @"小旺";
+        currentUser.portraitURL = @"http://lc-snkarza7.cn-n1.lcfile.com/4909a37f32dff9d050ad.JPG";
     }
     return currentUser;
     
@@ -42,11 +43,11 @@ static WYJChartAddress *currentUser = nil;
 }
 + (WYJChartMessage *)creatMessageImage:(UIImage *)image {
     
-    NSString *imageName = [UIImage hashFileName];
+    NSString *imageName = [WYJFileTool creatFileName];
     [image storeFileName:imageName];
     
     WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
-    contentModel.imageSize  = CGSizeMake(80, 120);
+    contentModel.imageSize  = image.size;
     contentModel.fileName   = imageName;
     
     WYJChartMessage *msg = [[WYJChartMessage alloc] init];
@@ -62,11 +63,9 @@ static WYJChartAddress *currentUser = nil;
 }
 + (WYJChartMessage *)creatMessageWithURL:(NSString *)url{
     
-    NSString *imageName = [UIImage hashFileName];
-
     WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
     contentModel.imageSize  = CGSizeMake(80, 120);
-    contentModel.fileName   = imageName;
+    contentModel.fileName   = [WYJFileTool fileNameWithURL:url];
     contentModel.fileURLServer = url;
     
     WYJChartMessage *msg = [[WYJChartMessage alloc] init];
@@ -276,8 +275,7 @@ static WYJChartAddress *currentUser = nil;
     
     // 清除相关联文件
     if (message.type == MessageTypeImage) {
-        NSString *path = message.contentInfoModel.fileURL;
-        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+        [self delegateFileWithFilePath:message.contentInfoModel.fileURL];
     }
 }
 // 删除单个好友的聊天记录 // 在记录的每个用户的时候 文件存储单个目录 这样在删除聊天文件的时候 就可以通过用户的id来删除
@@ -291,12 +289,20 @@ static WYJChartAddress *currentUser = nil;
     
     // 上面删除成功了 才能删除文件路径
     for (NSString *path in fileArr) {
-        // 如果正在下载某个文件 也应该暂停下载 删除相关正在下载文件 并且取消相应下载文件
-        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+        [self delegateFileWithFilePath:path];
     }
     
     //删除会话
     NSString *sqlConv = [NSString stringWithFormat:@"where (partnerUserId = %@)",userId];
     [WYJChartConversation deleteObjectsByCriteria:sqlConv];
+}
+
+// 删除文件  先查找本地 是否全部没有了 然后才可以删除
++ (void)delegateFileWithFilePath: (NSString *)filePath {
+    BOOL res = [WYJChartMessage onlyOneMessageFileName:filePath.lastPathComponent];
+    if (res) {
+        // 如果正在下载某个文件 也应该暂停下载 删除相关正在下载文件 并且取消相应下载文件
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
+    }
 }
 @end

@@ -30,4 +30,8 @@ static int ReadStatusUnRead                   = 1;
 static int MessageTypeText                    = 1;
 static int MessageTypeImage                   = 2;
 
+
+
+#import "WYJFileTool.h"
+
 #endif /* WYJChartDefine_h */

@@ -15,7 +15,6 @@
 - (UIImageView *)contentBackView {
     if (_contentBackView == nil) {
         _contentBackView = [[UIImageView alloc] init];
-        
         _contentBackView.tintColor = [UIColor greenColor];
         
         if (self.left) {
@@ -39,6 +38,8 @@
         _imageMessageView.backgroundColor = [UIColor darkGrayColor];
         // 如果采用 addSubView 让遮罩在上面 则需要使用不透明的部分遮掉  但是这样 需要不透明部分的颜色与背景颜色一致 否则不行
         _imageMessageView.layer.mask = self.contentBackView.layer;
+        
+        [self setupTap:_imageMessageView];
     }
     return _imageMessageView;
 }
