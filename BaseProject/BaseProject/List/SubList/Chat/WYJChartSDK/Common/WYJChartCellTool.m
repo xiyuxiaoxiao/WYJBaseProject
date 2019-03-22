@@ -11,6 +11,7 @@
 #import "WYJChartAddress.h"
 #import "WYJChartConversation.h"
 #import "UIImage+WYJChartImageStore.h"
+#import "WYJChartManager.h"
 
 @implementation WYJChartCellTool
 
@@ -179,15 +180,37 @@ static WYJChartAddress *currentUser = nil;
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user {
     message.toUserId = user.userId;
     message.fromUserId = [self getCurrentUser].userId;
-    message.sendTime = [WYJDate getTimeSp:[NSDate date]];
-    [message save];
+    message.sendTime   = [WYJDate getTimeSp:[NSDate date]];
+    message.sendStatus = SendStatusSending;
     
-    // 模拟收到消息
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (message.type == MessageTypeText) {
-            WYJChartMessage *msg = [WYJChartCellTool receiveTextMessageFromUser:user];
-        }else if (message.type == MessageTypeImage) {
-            WYJChartMessage *msg = [WYJChartCellTool receiveImageMessageFromUser:user];
+    if (message.pk) {
+        // 有本地的pk表示是重新发送
+        [message update];
+    }else {
+        [message save];
+    }
+    
+//    dispatch_queue_t queue = dispatch_queue_create("wyj.chart", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_get_main_queue();
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), queue, ^{
+        
+        int index = arc4random() % 2;
+        if (index == 0) {
+            message.sendStatus = SendStatusSuccess;
+        }
+        else if (index == 1)  {
+            message.sendStatus = SendStatusFaile;
+        }
+        [message update];
+        
+        if (message.sendStatus == SendStatusSuccess) {
+            if (message.type == MessageTypeText) {
+                // dispatch_after 在后台无法运行block的内容 只有在此回到前台的时候 才会运行block里面的内容
+                [WYJChartCellTool performSelector:@selector(receiveTextMessageFromUser:) withObject:user afterDelay:2];
+            }else if (message.type == MessageTypeImage) {
+                [WYJChartCellTool performSelector:@selector(receiveImageMessageFromUser:) withObject:user afterDelay:2];
+            }
         }
     });
 }
@@ -197,7 +220,13 @@ static WYJChartAddress *currentUser = nil;
     message.sendStatus      = SendStatusSuccess;
     message.toUserId        = [self getCurrentUser].userId;
     message.sendTime        = [WYJDate getTimeSp:[NSDate date]];
-    message.readStatus      = ReadStatusUnRead;
+    
+    if ([WYJChartManager isReadMessageByUserId:message.fromUserId]) {
+        message.readStatus      = ReadStatusRead;
+    }else {
+        message.readStatus      = ReadStatusUnRead;
+    }
+    
     [message save];
 }
 + (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user {
@@ -211,16 +240,9 @@ static WYJChartAddress *currentUser = nil;
     NSArray *array = @[@"http://lc-snkarza7.cn-n1.lcfile.com/9943047a70c8163096b3.jpg",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/627383453400d53214af.JPG",
                        @"http://lc-snkarza7.cn-n1.lcfile.com/6ce9eafa8590b6a8e0e3.JPG"];
-    //    for (NSString *str in array) {
-    //        WYJChartMessage *message = [self creatMessageWithURL:str];
-    //        message.fromUserId      = user.userId;
-    //        [self receiveMessage:message];
-    //    }
-    //    return nil;
-    
     int index = arc4random() % 3;
     WYJChartMessage *message = [self creatMessageWithURL:array[index]];
-    message.fromUserId      = user.userId;
+    message.fromUserId = user.userId;
     [self receiveMessage:message];
     return message;
 }
@@ -236,6 +258,7 @@ static WYJChartAddress *currentUser = nil;
     
     NSString *sql = [NSString stringWithFormat:@"WHERE partnerUserId = %@",parnerUserId];
     WYJChartConversation *conversion = [WYJChartConversation findFirstByCriteria:sql];
+    
     if (!conversion) {
         conversion = [[WYJChartConversation alloc] init];
         conversion.partnerUserId = parnerUserId;
@@ -244,6 +267,7 @@ static WYJChartAddress *currentUser = nil;
     if (!message.byMySelf && message.readStatus == ReadStatusUnRead) {
         conversion.unreadCount += 1;
     }
+    // 无论如何都需要更新 来通知 相关列表更新UI
     [conversion saveOrUpdate];
 }
 + (void)clearConversionUnReadWithUserId:(NSString *)userId {
@@ -270,7 +294,7 @@ static WYJChartAddress *currentUser = nil;
  */
 
 // 删除数据
-+ (void)delegateMessage: (WYJChartMessage *)message {
++ (void)deleteMessage: (WYJChartMessage *)message {
     [message deleteObject];
     
     // 清除相关联文件
@@ -279,7 +303,7 @@ static WYJChartAddress *currentUser = nil;
     }
 }
 // 删除单个好友的聊天记录 // 在记录的每个用户的时候 文件存储单个目录 这样在删除聊天文件的时候 就可以通过用户的id来删除
-+ (void)delegateMessageByUserId:(NSString *)userId {
++ (void)deleteMessageByUserId:(NSString *)userId {
     
     NSArray *fileArr = [WYJChartMessage findFilePathByFriendUserId:userId];
     

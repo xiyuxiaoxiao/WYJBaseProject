@@ -40,9 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 // 删除数据
-+ (void)delegateMessage: (WYJChartMessage *)message;
++ (void)deleteMessage: (WYJChartMessage *)message;
 // 删除单个好友的聊天记录
-+ (void)delegateMessageByUserId:(NSString *)userId;
++ (void)deleteMessageByUserId:(NSString *)userId;
 @end
 
 NS_ASSUME_NONNULL_END

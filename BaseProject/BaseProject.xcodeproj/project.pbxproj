@@ -39,12 +39,6 @@
 		833530881F45A90100596581 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530861F45A90100596581 /* SortViewController.m */; };
 		833530891F45A90100596581 /* SortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833530871F45A90100596581 /* SortViewController.xib */; };
 		8335308D1F45AC1A00596581 /* ChatEnterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8335308C1F45AC1A00596581 /* ChatEnterList.m */; };
-		833530991F45AD2700596581 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530901F45AD2700596581 /* MessageCell.m */; };
-		8335309A1F45AD2700596581 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530921F45AD2700596581 /* MessageController.m */; };
-		8335309B1F45AD2700596581 /* MessageImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530941F45AD2700596581 /* MessageImageView.m */; };
-		8335309C1F45AD2700596581 /* Chat Back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 833530961F45AD2700596581 /* Chat Back.jpg */; };
-		8335309D1F45AD2700596581 /* Chat BackGround.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 833530971F45AD2700596581 /* Chat BackGround.jpg */; };
-		8335309E1F45AD2700596581 /* chat Image Test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 833530981F45AD2700596581 /* chat Image Test.jpg */; };
 		83359AE11F4BC051007D3EB7 /* MinInsertExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 83359ADF1F4BC051007D3EB7 /* MinInsertExample.m */; };
 		83359AE21F4BC051007D3EB7 /* MinInsertExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83359AE01F4BC051007D3EB7 /* MinInsertExample.xib */; };
 		83367D992089F32900A5571F /* PieChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83367D972089F32900A5571F /* PieChartVC.m */; };
@@ -123,7 +117,6 @@
 		8377C9FB1EF376E900E4E56C /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8377C9FA1EF376E900E4E56C /* city.plist */; };
 		8377CA001EF3A7C500E4E56C /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8377C9FE1EF3A7C500E4E56C /* address.plist */; };
 		8377CA011EF3A7C500E4E56C /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8377C9FF1EF3A7C500E4E56C /* cityData.plist */; };
-		83780FCD1F467B41000264E1 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83780FCB1F467B41000264E1 /* MessageCell.xib */; };
 		83781A491EFCA826001A80C9 /* SystemMapAnnotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */; };
 		83781A4C1EFCB4C6001A80C9 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A4B1EFCB4C6001A80C9 /* MyAnnotationView.m */; };
 		8384E7C61EEA3DD700A61EF8 /* LayoutConstraintCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E7C51EEA3DD700A61EF8 /* LayoutConstraintCodeController.m */; };
@@ -141,6 +134,7 @@
 		838A01B82227E41100372A9D /* AKTClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A01B72227E41100372A9D /* AKTClassController.m */; };
 		83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */; };
 		83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */ = {isa = PBXBuildFile; fileRef = 83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */; };
+		839399242244C11800EDDFCB /* WYJChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 839399232244C11800EDDFCB /* WYJChartManager.m */; };
 		83969EA921EDDC210032EAE7 /* BGDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA421EDDC210032EAE7 /* BGDB.m */; };
 		83969EAA21EDDC210032EAE7 /* NSCache+BGCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA521EDDC210032EAE7 /* NSCache+BGCache.m */; };
 		83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA621EDDC210032EAE7 /* NSObject+BGModel.m */; };
@@ -353,15 +347,6 @@
 		833530871F45A90100596581 /* SortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortViewController.xib; sourceTree = "<group>"; };
 		8335308B1F45AC1A00596581 /* ChatEnterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEnterList.h; sourceTree = "<group>"; };
 		8335308C1F45AC1A00596581 /* ChatEnterList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEnterList.m; sourceTree = "<group>"; };
-		8335308F1F45AD2700596581 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
-		833530901F45AD2700596581 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
-		833530911F45AD2700596581 /* MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageController.h; sourceTree = "<group>"; };
-		833530921F45AD2700596581 /* MessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageController.m; sourceTree = "<group>"; };
-		833530931F45AD2700596581 /* MessageImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageImageView.h; sourceTree = "<group>"; };
-		833530941F45AD2700596581 /* MessageImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageImageView.m; sourceTree = "<group>"; };
-		833530961F45AD2700596581 /* Chat Back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chat Back.jpg"; sourceTree = "<group>"; };
-		833530971F45AD2700596581 /* Chat BackGround.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chat BackGround.jpg"; sourceTree = "<group>"; };
-		833530981F45AD2700596581 /* chat Image Test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "chat Image Test.jpg"; sourceTree = "<group>"; };
 		83359ADE1F4BC051007D3EB7 /* MinInsertExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinInsertExample.h; sourceTree = "<group>"; };
 		83359ADF1F4BC051007D3EB7 /* MinInsertExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinInsertExample.m; sourceTree = "<group>"; };
 		83359AE01F4BC051007D3EB7 /* MinInsertExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MinInsertExample.xib; sourceTree = "<group>"; };
@@ -502,7 +487,6 @@
 		8377C9FA1EF376E900E4E56C /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		8377C9FE1EF3A7C500E4E56C /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
 		8377C9FF1EF3A7C500E4E56C /* cityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityData.plist; sourceTree = "<group>"; };
-		83780FCB1F467B41000264E1 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		83781A471EFCA826001A80C9 /* SystemMapAnnotationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMapAnnotationManager.h; sourceTree = "<group>"; };
 		83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMapAnnotationManager.m; sourceTree = "<group>"; };
 		83781A4A1EFCB4C6001A80C9 /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
@@ -540,6 +524,8 @@
 		83924B6A221BD69800AC9A37 /* WYJCalculatorList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJCalculatorList.h; sourceTree = "<group>"; };
 		83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJCalculatorList.m; sourceTree = "<group>"; };
 		83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = subwayCostEachMonth.html; sourceTree = "<group>"; };
+		839399222244C11800EDDFCB /* WYJChartManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartManager.h; sourceTree = "<group>"; };
+		839399232244C11800EDDFCB /* WYJChartManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartManager.m; sourceTree = "<group>"; };
 		83969E9F21EDDC210032EAE7 /* NSCache+BGCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCache+BGCache.h"; sourceTree = "<group>"; };
 		83969EA021EDDC210032EAE7 /* NSObject+BGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BGModel.h"; sourceTree = "<group>"; };
 		83969EA121EDDC210032EAE7 /* BGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTool.h; sourceTree = "<group>"; };
@@ -968,34 +954,8 @@
 				8335308C1F45AC1A00596581 /* ChatEnterList.m */,
 				83A4C6EE21F7F8A10088359E /* WYJChartSDK */,
 				838868F120BBFDD5006619B9 /* WYJChat */,
-				8335308E1F45ACA100596581 /* MessageController */,
 			);
 			path = Chat;
-			sourceTree = "<group>";
-		};
-		8335308E1F45ACA100596581 /* MessageController */ = {
-			isa = PBXGroup;
-			children = (
-				833530911F45AD2700596581 /* MessageController.h */,
-				833530921F45AD2700596581 /* MessageController.m */,
-				8335308F1F45AD2700596581 /* MessageCell.h */,
-				833530901F45AD2700596581 /* MessageCell.m */,
-				83780FCB1F467B41000264E1 /* MessageCell.xib */,
-				833530931F45AD2700596581 /* MessageImageView.h */,
-				833530941F45AD2700596581 /* MessageImageView.m */,
-				833530951F45AD2700596581 /* resource */,
-			);
-			path = MessageController;
-			sourceTree = "<group>";
-		};
-		833530951F45AD2700596581 /* resource */ = {
-			isa = PBXGroup;
-			children = (
-				833530961F45AD2700596581 /* Chat Back.jpg */,
-				833530971F45AD2700596581 /* Chat BackGround.jpg */,
-				833530981F45AD2700596581 /* chat Image Test.jpg */,
-			);
-			path = resource;
 			sourceTree = "<group>";
 		};
 		83367D952089F30500A5571F /* PieChart */ = {
@@ -1452,6 +1412,8 @@
 				8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */,
 				838929522201ABD0009DED0F /* WYJChartCellTool.h */,
 				838929512201ABD0009DED0F /* WYJChartCellTool.m */,
+				839399222244C11800EDDFCB /* WYJChartManager.h */,
+				839399232244C11800EDDFCB /* WYJChartManager.m */,
 				836A3D652202E5FC006BA323 /* UIImage+WYJChartImageStore.h */,
 				836A3D662202E5FC006BA323 /* UIImage+WYJChartImageStore.m */,
 				839B59A522154F6700A0D116 /* UIImageView+WYJChartImageViewStore.h */,
@@ -2306,7 +2268,6 @@
 				83359AE21F4BC051007D3EB7 /* MinInsertExample.xib in Resources */,
 				83C8877D1F444FC0006B9A72 /* ButtonProgressController.xib in Resources */,
 				8349E2C21F5D3F67001FB473 /* html in Resources */,
-				8335309E1F45AD2700596581 /* chat Image Test.jpg in Resources */,
 				83BE803C1EF917F100FD588A /* iconfont-suoxiao.png in Resources */,
 				83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */,
 				8399B2A41E9B52CF0059B797 /* success@2x.png in Resources */,
@@ -2314,12 +2275,10 @@
 				83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */,
 				83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */,
 				833530631F459FFE00596581 /* middelLittle.png in Resources */,
-				8335309D1F45AD2700596581 /* Chat BackGround.jpg in Resources */,
 				839D41FA21F9569900130E47 /* Add Chat@2x.png in Resources */,
 				83C887641F444F2B006B9A72 /* minInser.png in Resources */,
 				836630641EE170B90029AD91 /* WaterFallController.xib in Resources */,
 				833530891F45A90100596581 /* SortViewController.xib in Resources */,
-				83780FCD1F467B41000264E1 /* MessageCell.xib in Resources */,
 				83B5543B206B767900439E66 /* addNomal.png in Resources */,
 				83A4C70421F836C60088359E /* Text Voice Bubble Outgoing@2x.png in Resources */,
 				83B5543A206B767900439E66 /* addHight.png in Resources */,
@@ -2354,7 +2313,6 @@
 				837151061EE01D10009E7ECF /* EnterListController.xib in Resources */,
 				833530621F459FFE00596581 /* cutMiddle.png in Resources */,
 				831E240820592A2E00557A96 /* JSAndOC.xib in Resources */,
-				8335309C1F45AD2700596581 /* Chat Back.jpg in Resources */,
 				8377C9F61EF3751A00E4E56C /* CitySelectController.xib in Resources */,
 				83B30E9E20CA5A0A0090D264 /* 多线程GCD.htm in Resources */,
 				83B30E9F20CA5A0A0090D264 /* NSThread.htm in Resources */,
@@ -2477,6 +2435,7 @@
 				83B14D6E1EFD0FAA00EF24A9 /* MapData.m in Sources */,
 				838868F620BC0004006619B9 /* ChartHomeController.m in Sources */,
 				835EF3D91F065B23000006FD /* AlgorithmEnterList.m in Sources */,
+				839399242244C11800EDDFCB /* WYJChartManager.m in Sources */,
 				83A7F3B52175EB8900CE8BA4 /* SlideRootVC.m in Sources */,
 				83A7F3722175D29000CE8BA4 /* AnimationEncapsulation.m in Sources */,
 				83637A8F1E9F65B200EAD984 /* NSString+Password.m in Sources */,
@@ -2509,7 +2468,6 @@
 				8399B2D11E9B893B0059B797 /* AnimationEffect.m in Sources */,
 				8343BEA22180649B00C2BE0F /* BarChartView.m in Sources */,
 				8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */,
-				8335309A1F45AD2700596581 /* MessageController.m in Sources */,
 				83C8878E1F445041006B9A72 /* TaskNumber.m in Sources */,
 				8399B2B21E9B52CF0059B797 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				8399B2AF1E9B52CF0059B797 /* AFAutoPurgingImageCache.m in Sources */,
@@ -2517,7 +2475,6 @@
 				83652B3A1F6F9214008F470D /* LastRemainExample.m in Sources */,
 				83BE80351EF911D500FD588A /* CustomAnnotationView.m in Sources */,
 				83A4C70A21F83A020088359E /* WYJChartController.m in Sources */,
-				8335309B1F45AD2700596581 /* MessageImageView.m in Sources */,
 				8377C9F91EF3768900E4E56C /* CityController.m in Sources */,
 				8399B2971E9B52CF0059B797 /* JKDBModel.m in Sources */,
 				83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */,
@@ -2578,7 +2535,6 @@
 				83BE80231EF90E6100FD588A /* MapEnterList.m in Sources */,
 				83751D681EFA1076004F2D49 /* DrawCircleController.m in Sources */,
 				833530671F459FFE00596581 /* YJRippleVC.m in Sources */,
-				833530991F45AD2700596581 /* MessageCell.m in Sources */,
 				83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */,
 				8399B2AC1E9B52CF0059B797 /* Base64.m in Sources */,
 				8399B2961E9B52CF0059B797 /* JKDBHelper.m in Sources */,

@@ -47,6 +47,9 @@
 - (void)receiveMessageNew:(NSObject *)message {
     [mulitDelegate receiveMessageNew:message];
 }
+- (void)updateMessage:(NSObject *)message {
+    [mulitDelegate updateMessage:message];
+}
 - (void)newAddress:(NSObject *)user {
     [mulitDelegate newAddress:user];
 }

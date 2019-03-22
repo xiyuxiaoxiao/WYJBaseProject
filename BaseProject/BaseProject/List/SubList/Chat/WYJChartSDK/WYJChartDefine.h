@@ -33,5 +33,6 @@ static int MessageTypeImage                   = 2;
 
 
 #import "WYJFileTool.h"
+#import "WYJChartManager.h"
 
 #endif /* WYJChartDefine_h */

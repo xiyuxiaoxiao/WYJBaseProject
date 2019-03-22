@@ -50,7 +50,7 @@
 }
 - (BOOL)update {
     if([super update]) {
-        [[ChartDatabaseManager share] receiveMessageNew:self];
+        [[ChartDatabaseManager share] updateMessage:self];
         return YES;
     }
     return NO;

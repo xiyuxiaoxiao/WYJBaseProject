@@ -12,6 +12,7 @@
 #import "WYJChartCellTool.h"
 #import "WYJChatKeyboard.h"
 #import "WYJChartAddress.h"
+#import "WYJChartManager.h"
 
 #define PageCount 15
 
@@ -88,7 +89,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [WYJChartManager setCurrentChartUser:self.myFriend];
     [self scrollTableToLast];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [WYJChartManager setCurrentChartUser:nil];
 }
 
 - (void)loadMoreMessage:(id)sender {
@@ -156,6 +163,7 @@
     WYJChartMessage *message    = self.dataArr[indexPath.row];
     NSString *identify          = [WYJChartBaseCell identifyWithMessage:message];
     WYJChartBaseCell *cell      = [tableView dequeueReusableCellWithIdentifier:identify];
+    cell.delegate = self;
     
     cell.message = message;
     
@@ -231,14 +239,18 @@
 - (void)resendMessage:(WYJChartBaseCell *)cell {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     WYJChartMessage *message = cell.message;
-    [message reSendServer];
+//    [message reSendServer];
+//    
+//    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
     
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [message sendSuccess];
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
-    });
+    [WYJChartCellTool sendMessage:message toUser:self.myFriend];
+}
+
+- (void)deleteMessageCell:(WYJChartBaseCell *)cell {
+    NSObject *message = cell.message;
+    [self.dataArr removeObject:message];
+    [self.tableView reloadData];
+    [WYJChartCellTool deleteMessage:message];
 }
 
 #pragma mark - ChartDatabaseManagerDelegate 消息接收
@@ -248,4 +260,7 @@
     [self scrollTableToLast];
 }
 
+- (void)updateMessage:(NSObject *)message {
+    [self.tableView reloadData];
+}
 @end

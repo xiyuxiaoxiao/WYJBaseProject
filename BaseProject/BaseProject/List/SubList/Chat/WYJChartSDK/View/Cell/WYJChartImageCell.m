@@ -45,11 +45,9 @@
 }
 
 - (void)setFrame {
-    [super setFrame];
-    
     [self addSubview:self.imageMessageView];
     
-    [self.activiView bringSubviewToFront:self.imageMessageView];
+    [super setFrame];
 }
 
 - (void)setContentBackFrame: (CGSize)contentSize {
@@ -72,14 +70,7 @@
     
     [self setContentBackFrame:message.contentBackSize];
     
-    [super setFailureFrameWithContentFrame:self.contentBackView.frame];
-    
-    
-    CGRect frame_active = self.activiView.frame;
-    frame_active.origin.x = self.imageMessageView.center.x - frame_active.size.width / 2;
-    frame_active.origin.y = self.imageMessageView.center.y - frame_active.size.height / 2;
-    
-    self.activiView.frame = frame_active;
+    [super setFailureFrameWithContentFrame:self.imageMessageView.frame];
     
     [self.imageMessageView wyjImageUrl:message.contentInfoModel.fileURLServer localImagePath:message.contentInfoModel.fileURL];
 }

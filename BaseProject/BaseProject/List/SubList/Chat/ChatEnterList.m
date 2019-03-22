@@ -20,8 +20,6 @@
 }
 
 - (void)initData {
-    [self.dataArray addObject:@{TitleKey:@"聊天发送图片自泡自定义layer 有待完善",
-                                CN_Key:@"MessageController"}];
     [self.dataArray addObject:@{TitleKey:@"即时通讯-本地数据库（通讯录、聊天记录）",
                                 CN_Key:@"ChartHomeController"}];
 }

@@ -13,6 +13,7 @@
 @protocol ChartDatabaseManagerDelegate
 
 - (void)receiveMessageNew:(NSObject *)message; //新增消息
+- (void)updateMessage:(NSObject *)message;  //更新消息
 - (void)newAddress:(NSObject *)user; // 新增一个联系人
 - (void)updateConversation: (NSObject *)conversation; // 会话更新
 @end
@@ -27,6 +28,7 @@
 
 #pragma mark - 数据库更新后 需要通知 代理执行的相关方法
 - (void)receiveMessageNew:(NSObject *)message;
+- (void)updateMessage:(NSObject *)message;  //更新消息
 - (void)newAddress:(NSObject *)user;
 - (void)updateConversation: (NSObject *)conversation; // 会话更新
 

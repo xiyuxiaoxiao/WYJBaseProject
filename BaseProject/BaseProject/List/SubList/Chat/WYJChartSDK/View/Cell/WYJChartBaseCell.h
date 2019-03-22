@@ -14,6 +14,8 @@
 
 @protocol WYJChartBaseCellDelegate <NSObject>
 - (void)resendMessage:(WYJChartBaseCell *)cell;
+// 删除cell的时候 删除UI
+- (void)deleteMessageCell: (WYJChartBaseCell *)cell;
 @end
 
 

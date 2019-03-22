@@ -79,7 +79,7 @@
     }
     
     WYJChartConversation *conver = self.dataArr[indexPath.row];
-    [WYJChartCellTool delegateMessageByUserId:conver.partnerUserId];
+    [WYJChartCellTool deleteMessageByUserId:conver.partnerUserId];
     
     [self.dataArr removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationTop)];
@@ -101,5 +101,6 @@
     
     [self.tableView reloadData];
 }
+
 @end
 

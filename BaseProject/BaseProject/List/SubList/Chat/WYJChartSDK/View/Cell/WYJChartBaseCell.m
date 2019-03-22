@@ -204,22 +204,7 @@
 
 #pragma mark - Action
 - (void)sendAgain {
-    
     [self delegateRespondsSelector:@selector(resendMessage:) object:self];
-    
-    // 重新发送
-    WYJChartMessage *message = self.message;
-    message.sendStatus = SendStatusSending;
-    [self setMessage:message];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        message.sendStatus = SendStatusSuccess;
-        message.content = @"哈哈哈！！！";
-        // cell重用
-        if ([message isEqual: self.message]) {        
-            [self setMessage:message];
-        }
-    });
 }
 
 - (void)delegateRespondsSelector:(SEL)selector object:(NSObject *)object{
@@ -229,8 +214,8 @@
 }
 
 // 删除
-- (void)delegate {
-    [WYJChartCellTool delegateMessage:self.message];
+- (void)delete {
+    [self delegateRespondsSelector:@selector(deleteMessageCell:) object:self];
 }
 
 #pragma mark - 添加长安手势
@@ -253,7 +238,7 @@
         UIMenuController *menu = [UIMenuController sharedMenuController];
         if(menu.isMenuVisible) return;
         
-        UIMenuItem *item =[[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(delegate)];
+        UIMenuItem *item =[[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(delete)];
         menu.menuItems = @[item];
         [menu setTargetRect:tapView.frame inView:self];
         [menu setMenuVisible:YES animated:YES];
@@ -268,7 +253,7 @@
 }
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
-    if (action == @selector(delegate)) {
+    if (action == @selector(delete)) {
         return YES;
     }
     return NO;
