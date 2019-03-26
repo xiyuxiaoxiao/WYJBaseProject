@@ -37,6 +37,10 @@
                                 CN_Key:@"GCDMySummary"
                                 }];
     
+    [self.dataArray addObject:@{TitleKey:@"RunLoop",
+                                @"web_url":@"http://www.cocoachina.com/ios/20160612/16631.html",
+                                }];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,12 +52,21 @@
     }
     else if (dict[@"filePath"]){
         vc.filePath = [[NSBundle mainBundle] pathForResource:dict[@"filePath"] ofType:nil];
+    }else if (dict[@"web_url"]) {
+        vc.filePath = dict[@"web_url"];
     }else {
         return;
     }
     [self.navigationController pushViewController:vc animated:YES];
-    
-//    [NSClassFromString(@"GCDMySummary") performSelector:@selector(test1)];
 }
+
+/*
+ 
+ 后续添加
+ 第三方 解读
+ 
+ AFN 就是 通过信号量同步化了 taskForkeyPath 来返回task
+ 
+ */
 
 @end

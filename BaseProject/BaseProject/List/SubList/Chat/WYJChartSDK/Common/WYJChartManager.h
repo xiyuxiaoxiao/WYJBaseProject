@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class WYJChartAddress;
+@class WYJChartMessage;
 
 @interface WYJChartManager : NSObject
 
 + (void)setCurrentChartUser: (WYJChartAddress *)user;
 + (BOOL)isReadMessageByUserId: (NSString *)userId;
++ (void)pushLocalNotificationWithMessage:(WYJChartMessage *)message fromUser:(WYJChartAddress *)user;
 
 @end

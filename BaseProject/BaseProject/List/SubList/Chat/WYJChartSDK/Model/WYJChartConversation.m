@@ -90,8 +90,7 @@
         return nil;
     }
     
-    NSString *sql_address = [@"where userId = " stringByAppendingString:conversation.partnerUserId];
-    WYJChartAddress *address = [WYJChartAddress findFirstByCriteria:sql_address];
+    WYJChartAddress *address = [WYJChartAddress findByUserId:conversation.partnerUserId];
     
     if (address) {
         conversation.partnerUser = address;

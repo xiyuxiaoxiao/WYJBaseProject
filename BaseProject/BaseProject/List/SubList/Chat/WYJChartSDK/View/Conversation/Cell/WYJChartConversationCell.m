@@ -31,6 +31,8 @@
     if (!_iconView) {
         _iconView = [[UIImageView alloc] init];
         _iconView.backgroundColor = [UIColor yellowColor];
+        _iconView.layer.cornerRadius = 5;
+        _iconView.layer.masksToBounds = YES;
     }
     return _iconView;
 }
@@ -100,18 +102,18 @@
     CGFloat w_time = size_time.width;
     CGFloat x_time = WYJScreenWidth - 20 - w_time;
     CGFloat h_time = size_time.height;
-    CGFloat y_time = CGRectGetMidY(self.iconView.frame) - h_time/2;
+    CGFloat y_time = CGRectGetMidY(self.nameLabel.frame) - h_time/2;
     self.timeLabel.frame = CGRectMake(x_time, y_time, w_time, h_time);
     
     
-    [self.iconView addSubview:self.countLabel];
+    [self.contentView addSubview:self.countLabel];
     
-    CGFloat x_count = self.iconView.frame.size.width - 15/2.0;
-    self.countLabel.frame = CGRectMake(x_count , 0, 15, 15);
+    CGFloat x_count = CGRectGetMaxX(self.iconView.frame) - 15/2.0 - 2;
+    CGFloat y_count = CGRectGetMinY(self.iconView.frame) - 15/2.0 + 2;
+    self.countLabel.frame = CGRectMake(x_count , y_count, 15, 15);
     self.countLabel.layer.cornerRadius = 15/2.0;
     self.countLabel.layer.masksToBounds = YES;
 }
-
 
 + (CGFloat)cellHeight {
     return 70;
@@ -124,6 +126,8 @@
     
     self.countLabel.text    = [NSString stringWithFormat:@"%d",conversation.unreadCount];
     self.countLabel.hidden  = conversation.unreadCount > 0 ? NO : YES;
+    
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:conversation.partnerUser.portraitURL] completed:nil];
 }
 
 @end

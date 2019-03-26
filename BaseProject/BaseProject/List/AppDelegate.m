@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UserNotifications/UserNotifications.h>
 @interface AppDelegate ()
 
 @end
@@ -15,6 +16,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        
+    }];
     
     //设置启动页隐藏状态栏
     [application setStatusBarHidden:NO withAnimation:(UIStatusBarAnimationFade)];
@@ -49,6 +56,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
 }
 
 

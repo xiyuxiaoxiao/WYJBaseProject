@@ -67,6 +67,25 @@
     return NO;
 }
 
+
+// 需要将 用户名传过来
++ (void)pushLocalNotificationWithMessage:(WYJChartMessage *)message fromUser:(WYJChartAddress *)user{
+    
+    // 实例化一个本地通知对象.
+    UILocalNotification * notification = [[UILocalNotification alloc] init];
+    
+//    notification.fireDate=[[NSDate new] dateByAddingTimeInterval:30]; // 触发时间 立即出发 无需设置
+//    notification.repeatInterval = kCFCalendarUnitMinute;  //重复间隔设置 只能是 每分钟 每天 每月等设置
+    notification.timeZone       = [NSTimeZone defaultTimeZone];
+    notification.alertBody      = message.content;
+    notification.alertTitle     = user.name;
+    [notification setApplicationIconBadgeNumber:1];
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    NSDictionary * userDict = [NSDictionary dictionaryWithObject:message.content forKey:@"message"];
+    notification.userInfo = userDict;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
 @end
 
 
@@ -88,6 +107,7 @@
 }
 
 - (void)wyjChartApplicationWillEnterForeground:(UIApplication *)application {
+    NSLog(@"进入前台了");
     [WYJChartManager manager].isBackGround = NO;
 }
 

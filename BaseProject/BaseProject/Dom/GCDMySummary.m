@@ -91,3 +91,41 @@ MakeSourcePath
      如果开始是0, 则肯定需要 例如上面 test1Async 那样 先执行异步的操作 等待异步结果将信号量 +1 然后外部在等待返回 减去1，否则后面不会不会执行
  */
 
+/*
+****** 栅栏
+    dispatch_barrier_async
+ 
+    可以实现将任务按照 顺序执行 栅栏前 的先执行 然后执行 栅栏内的 在执行栅栏后的
+ 
+    官方规定了，栅栏函数 只能用在调度并发队列中（自定义的并发队列），不能使用在全局并发队列中
+    （如果使用全局并发队列，会导致结果错误。猜测 可能是 栅栏在全局并发队列 不起作用了）
+*/
+
+/*
+******* 分组
+    dispatch_group_async
+    dispatch_group_notify 等待前面全部执行完 再执行notify
+*/
+
+/*
++ (void)dispatch_group_TEST {
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----耗时任务1-----%@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----耗时任务2-----%@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----耗时任务3-----%@", [NSThread currentThread]);
+    });
+    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----耗时任务4-----%@", [NSThread currentThread]);
+    });
+    //线程组全执行完毕才会调用
+    dispatch_group_notify(group, dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----结束-----");
+    });
+}
+*/

@@ -769,6 +769,7 @@
 		83C887941F44512A006B9A72 /* self addSubView self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self addSubView self.png"; sourceTree = "<group>"; };
 		83DCD1722202855500577E3B /* WYJChartImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartImageCell.h; sourceTree = "<group>"; };
 		83DCD1732202855500577E3B /* WYJChartImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartImageCell.m; sourceTree = "<group>"; };
+		83E74637224A053A00546565 /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaseProject.entitlements; sourceTree = "<group>"; };
 		83EF517F222CDA3E00B47F4E /* GCDMySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDMySummary.m; sourceTree = "<group>"; };
 		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
 		83F27F7121FEDF0700E7FE9D /* WYJChartMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartMessage.h; sourceTree = "<group>"; };
@@ -1506,6 +1507,7 @@
 		8399B20C1E9B52AF0059B797 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				83E74637224A053A00546565 /* BaseProject.entitlements */,
 				831E23FB20592A2E00557A96 /* Dom */,
 				837150FA1EE01BBA009E7ECF /* List */,
 				8399B2131E9B52AF0059B797 /* ViewController.h */,
@@ -2215,6 +2217,17 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5TL7L83CUD;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					8399B2221E9B52B00059B797 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -2812,6 +2825,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2875,6 +2889,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wyj.www.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -36,4 +36,10 @@
     }
     return NO;
 }
+
++ (instancetype)findByUserId: (NSString *)userId {
+    NSString *sql_address = [@"where userId = " stringByAppendingString:userId];
+    WYJChartAddress *address = [WYJChartAddress findFirstByCriteria:sql_address];
+    return address;
+}
 @end

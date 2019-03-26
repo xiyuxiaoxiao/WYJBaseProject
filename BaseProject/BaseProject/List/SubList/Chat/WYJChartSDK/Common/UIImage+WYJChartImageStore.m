@@ -15,30 +15,26 @@
 - (NSString *)storeFileName: (NSString *)fileName {
     NSString *path = [WYJFileTool filePathDocument];
     NSString *imageFilePtah = [path stringByAppendingString:fileName];
-    
     NSLog(@"%@",imageFilePtah);
-    
-    UIImage *image = [self resizedImageWithCertainWidth:750];
-    NSData *imageData = [image getCompressedImageData];
-    [[NSFileManager defaultManager] createFileAtPath:imageFilePtah contents:imageData attributes:nil];
+    [self saveFilePath:imageFilePtah];
     
     return fileName;
 }
 
 - (void)storeWebImageWithFilePathName: (NSString *)filePath {
-    // 对图片尺寸和大小压缩
+    // 因为 是网络获取的 有可能出现多次 所以每次存储前 需要先a判断本地是否已经有
     dispatch_async(dispatch_queue_create(0, 0), ^{
-        
-        // 因为 是网络获取的 有可能出现多次 所以每次存储前 需要先a判断本地是否已经有
-        if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
-            return ;
+        if (NO == [[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+            [self saveFilePath:filePath];
         }
-        
-        UIImage *image = [self resizedImageWithCertainWidth:750];
-        NSData *imageData = [image getCompressedImageData];
-        
-        [[NSFileManager defaultManager] createFileAtPath:filePath contents:imageData attributes:nil];
     });
+}
+// 保存在本地 -- 对图片尺寸和大小压缩
+- (void)saveFilePath: (NSString *)filePath {
+    UIImage *image = [self resizedImageWithCertainWidth:750];
+    NSData *imageData = [image getCompressedImageData];
+    
+    [[NSFileManager defaultManager] createFileAtPath:filePath contents:imageData attributes:nil];
 }
 
 #pragma mark - 压缩 裁剪

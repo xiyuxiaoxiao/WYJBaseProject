@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 如果在此记录最后一条消息 和 未读个数 那么无法实现 唯独个数的消息 放在最上面 因为如果用户的头像变更的话 也会需要更新的
 
 + (void)addNewFriendWithName:(NSString *)name;
++ (instancetype)findByUserId: (NSString *)userId;
 
 @end
 

@@ -190,29 +190,32 @@ static WYJChartAddress *currentUser = nil;
         [message save];
     }
     
-//    dispatch_queue_t queue = dispatch_queue_create("wyj.chart", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_queue_t queue = dispatch_get_main_queue();
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), queue, ^{
-        
-        int index = arc4random() % 2;
-        if (index == 0) {
-            message.sendStatus = SendStatusSuccess;
-        }
-        else if (index == 1)  {
-            message.sendStatus = SendStatusFaile;
-        }
-        [message update];
-        
-        if (message.sendStatus == SendStatusSuccess) {
-            if (message.type == MessageTypeText) {
-                // dispatch_after 在后台无法运行block的内容 只有在此回到前台的时候 才会运行block里面的内容
-                [WYJChartCellTool performSelector:@selector(receiveTextMessageFromUser:) withObject:user afterDelay:2];
-            }else if (message.type == MessageTypeImage) {
-                [WYJChartCellTool performSelector:@selector(receiveImageMessageFromUser:) withObject:user afterDelay:2];
-            }
-        }
+    dispatch_async(dispatch_queue_create("wyj.chart", DISPATCH_QUEUE_SERIAL), ^{
+        sleep(3);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self sendMessageNetworkBack:message toUser:user];
+        });
     });
+}
+
++ (void)sendMessageNetworkBack: (WYJChartMessage *)message toUser:(WYJChartAddress *)user{
+    int index = arc4random() % 2;
+    if (index == 0) {
+        message.sendStatus = SendStatusSuccess;
+    }
+    else if (index == 1)  {
+        message.sendStatus = SendStatusFaile;
+    }
+    [message update];
+    
+    if (message.sendStatus == SendStatusSuccess) {
+        if (message.type == MessageTypeText) {
+            // 延时执行 在后台无法运行 只有在此回到前台的时候才会运行 (在进入后台的时候 添加[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil] 申请时间便可以)
+            [WYJChartCellTool performSelector:@selector(receiveTextMessageFromUser:) withObject:user afterDelay:2];
+        }else if (message.type == MessageTypeImage) {
+            [WYJChartCellTool performSelector:@selector(receiveImageMessageFromUser:) withObject:user afterDelay:2];
+        }
+    }
 }
 
 + (void)receiveMessage:(WYJChartMessage *)message {
@@ -228,6 +231,12 @@ static WYJChartAddress *currentUser = nil;
     }
     
     [message save];
+    
+    if (message.readStatus == ReadStatusUnRead) {
+        // 前台通知 创建本地通知
+        WYJChartAddress *user = [WYJChartAddress findByUserId:message.fromUserId];
+        [WYJChartManager pushLocalNotificationWithMessage:message fromUser:user];
+    }
 }
 + (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user {
     WYJChartMessage *message = [self creatMessageText:@"收到你的消息了"];

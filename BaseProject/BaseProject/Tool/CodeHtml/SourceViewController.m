@@ -46,6 +46,17 @@ static NSString *html = nil;
 }
 
 -(void)loadCode:(NSString *)code{
+    
+    if ([self.filePath hasPrefix:@"http"]) {
+        NSURL *url = [NSURL URLWithString:self.filePath];
+        NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.webView.backgroundColor = [UIColor whiteColor];
+            [self.webView loadRequest:request];
+        });
+        return;
+    }
     if (code) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             if (html == nil) {
@@ -59,7 +70,6 @@ static NSString *html = nil;
                  baseURL:[NSURL fileURLWithPath:[[self class] htmlRoot] isDirectory:YES]];
             });
         });
-        
     }
 }
 
