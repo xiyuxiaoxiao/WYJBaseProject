@@ -190,6 +190,8 @@ static WYJChartAddress *currentUser = nil;
         [message save];
     }
     
+    [WYJChartManager sendMessage:message];
+    return;
     dispatch_async(dispatch_queue_create("wyj.chart", DISPATCH_QUEUE_SERIAL), ^{
         sleep(3);
         dispatch_async(dispatch_get_main_queue(), ^{

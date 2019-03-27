@@ -1,5 +1,5 @@
 //
-//  ChartDatabaseMultiDelegate.h
+//  WYJMultiDelegate.h
 //  BaseProject
 //
 //  Created by ZSXJ on 2018/5/31.
@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ChartDatabaseMultiDelegate : NSObject
+@interface WYJMultiDelegate : NSObject
 
 @property (readonly, nonatomic) NSPointerArray* delegates;
-@property (nonatomic, assign) BOOL silentWhenEmpty;
 
 - (void)addDelegate:(id)delegate;
 - (void)removeDelegate:(id)delegate;

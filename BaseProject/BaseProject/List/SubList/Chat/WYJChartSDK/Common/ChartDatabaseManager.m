@@ -7,11 +7,11 @@
 //
 
 #import "ChartDatabaseManager.h"
-#import "ChartDatabaseMultiDelegate.h"
+#import "WYJMultiDelegate.h"
 
 @interface ChartDatabaseManager()
 {
-    ChartDatabaseMultiDelegate<ChartDatabaseManagerDelegate> *mulitDelegate;
+    WYJMultiDelegate<ChartDatabaseManagerDelegate> *mulitDelegate;
 }
 @end
 
@@ -29,7 +29,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        mulitDelegate = (ChartDatabaseMultiDelegate<ChartDatabaseManagerDelegate> *)[[ChartDatabaseMultiDelegate alloc] init];
+        mulitDelegate = (WYJMultiDelegate<ChartDatabaseManagerDelegate> *)[[WYJMultiDelegate alloc] init];
     }
     return self;
 }

@@ -127,11 +127,13 @@
 		8388690720BC0047006619B9 /* MessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 838868FE20BC0047006619B9 /* MessageList.m */; };
 		8388690820BC0047006619B9 /* TestDataDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388690020BC0047006619B9 /* TestDataDatabase.m */; };
 		8389294922015286009DED0F /* WYJChartConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294822015286009DED0F /* WYJChartConversationCell.m */; };
-		8389294F2201AB85009DED0F /* ChartDatabaseMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */; };
+		8389294F2201AB85009DED0F /* WYJMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294D2201AB85009DED0F /* WYJMultiDelegate.m */; };
 		838929502201AB85009DED0F /* ChartDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294E2201AB85009DED0F /* ChartDatabaseManager.m */; };
 		838929532201ABD0009DED0F /* WYJChartCellTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 838929512201ABD0009DED0F /* WYJChartCellTool.m */; };
 		838A01B42227E39E00372A9D /* LayoutLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A01B32227E39E00372A9D /* LayoutLearn.m */; };
 		838A01B82227E41100372A9D /* AKTClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A01B72227E41100372A9D /* AKTClassController.m */; };
+		838FA602224B4CD200D548C2 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 838FA5FF224B4CD200D548C2 /* SRWebSocket.m */; };
+		838FA605224B4D0400D548C2 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 838FA604224B4D0400D548C2 /* SocketRocketUtility.m */; };
 		83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */; };
 		83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */ = {isa = PBXBuildFile; fileRef = 83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */; };
 		839399242244C11800EDDFCB /* WYJChartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 839399232244C11800EDDFCB /* WYJChartManager.m */; };
@@ -506,9 +508,9 @@
 		8388690020BC0047006619B9 /* TestDataDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataDatabase.m; sourceTree = "<group>"; };
 		8389294722015286009DED0F /* WYJChartConversationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartConversationCell.h; sourceTree = "<group>"; };
 		8389294822015286009DED0F /* WYJChartConversationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartConversationCell.m; sourceTree = "<group>"; };
-		8389294B2201AB85009DED0F /* ChartDatabaseMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDatabaseMultiDelegate.h; sourceTree = "<group>"; };
+		8389294B2201AB85009DED0F /* WYJMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJMultiDelegate.h; sourceTree = "<group>"; };
 		8389294C2201AB85009DED0F /* ChartDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDatabaseManager.h; sourceTree = "<group>"; };
-		8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDatabaseMultiDelegate.m; sourceTree = "<group>"; };
+		8389294D2201AB85009DED0F /* WYJMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJMultiDelegate.m; sourceTree = "<group>"; };
 		8389294E2201AB85009DED0F /* ChartDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDatabaseManager.m; sourceTree = "<group>"; };
 		838929512201ABD0009DED0F /* WYJChartCellTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartCellTool.m; sourceTree = "<group>"; };
 		838929522201ABD0009DED0F /* WYJChartCellTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartCellTool.h; sourceTree = "<group>"; };
@@ -516,6 +518,11 @@
 		838A01B32227E39E00372A9D /* LayoutLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayoutLearn.m; sourceTree = "<group>"; };
 		838A01B62227E41100372A9D /* AKTClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKTClassController.h; sourceTree = "<group>"; };
 		838A01B72227E41100372A9D /* AKTClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKTClassController.m; sourceTree = "<group>"; };
+		838FA5FF224B4CD200D548C2 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		838FA600224B4CD200D548C2 /* SocketRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocket.h; sourceTree = "<group>"; };
+		838FA601224B4CD200D548C2 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		838FA603224B4D0400D548C2 /* SocketRocketUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
+		838FA604224B4D0400D548C2 /* SocketRocketUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
 		83905975211D250B00A61241 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		83905977211D251600A61241 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		83905979211D252000A61241 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1029,6 +1036,7 @@
 		835C8ADC221273D00011EB91 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				838FA5FE224B4CD200D548C2 /* SocketRocket */,
 				835C8ADD221273D00011EB91 /* SDWebImage */,
 			);
 			path = ThirdPart;
@@ -1409,8 +1417,8 @@
 			children = (
 				8389294C2201AB85009DED0F /* ChartDatabaseManager.h */,
 				8389294E2201AB85009DED0F /* ChartDatabaseManager.m */,
-				8389294B2201AB85009DED0F /* ChartDatabaseMultiDelegate.h */,
-				8389294D2201AB85009DED0F /* ChartDatabaseMultiDelegate.m */,
+				8389294B2201AB85009DED0F /* WYJMultiDelegate.h */,
+				8389294D2201AB85009DED0F /* WYJMultiDelegate.m */,
 				838929522201ABD0009DED0F /* WYJChartCellTool.h */,
 				838929512201ABD0009DED0F /* WYJChartCellTool.m */,
 				839399222244C11800EDDFCB /* WYJChartManager.h */,
@@ -1444,6 +1452,25 @@
 				838A01B72227E41100372A9D /* AKTClassController.m */,
 			);
 			path = AKT;
+			sourceTree = "<group>";
+		};
+		838FA5FD224B4C9000D548C2 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				838FA603224B4D0400D548C2 /* SocketRocketUtility.h */,
+				838FA604224B4D0400D548C2 /* SocketRocketUtility.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		838FA5FE224B4CD200D548C2 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				838FA5FF224B4CD200D548C2 /* SRWebSocket.m */,
+				838FA600224B4CD200D548C2 /* SocketRocket.h */,
+				838FA601224B4CD200D548C2 /* SRWebSocket.h */,
+			);
+			path = SocketRocket;
 			sourceTree = "<group>";
 		};
 		83924B69221BD66700AC9A37 /* WYJCalculator */ = {
@@ -1844,6 +1871,7 @@
 			isa = PBXGroup;
 			children = (
 				83A4C70021F80F950088359E /* WYJChartDefine.h */,
+				838FA5FD224B4C9000D548C2 /* Socket */,
 				8389294A2201AB64009DED0F /* Common */,
 				83A4C70C21F854830088359E /* Model */,
 				83A4C70621F8397F0088359E /* Controller */,
@@ -2539,10 +2567,11 @@
 				8399B29C1E9B52CF0059B797 /* FMResultSet.m in Sources */,
 				83C8877C1F444FC0006B9A72 /* ButtonProgressController.m in Sources */,
 				8399B2AD1E9B52CF0059B797 /* MD5.m in Sources */,
-				8389294F2201AB85009DED0F /* ChartDatabaseMultiDelegate.m in Sources */,
+				8389294F2201AB85009DED0F /* WYJMultiDelegate.m in Sources */,
 				8399B2B81E9B52CF0059B797 /* WYJHTTPSession.m in Sources */,
 				836630821EE177370029AD91 /* CustomLayoutAttributes.m in Sources */,
 				83C887591F443F13006B9A72 /* Algorithm_MinInsert.c in Sources */,
+				838FA602224B4CD200D548C2 /* SRWebSocket.m in Sources */,
 				83781A491EFCA826001A80C9 /* SystemMapAnnotationManager.m in Sources */,
 				8335305C1F459FFE00596581 /* ArcEqualVC.m in Sources */,
 				83BE80231EF90E6100FD588A /* MapEnterList.m in Sources */,
@@ -2555,6 +2584,7 @@
 				8399B2A81E9B52CF0059B797 /* AFSecurityPolicy.m in Sources */,
 				83367DA02089F38300A5571F /* PieLayer.m in Sources */,
 				83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */,
+				838FA605224B4D0400D548C2 /* SocketRocketUtility.m in Sources */,
 				8399B29A1E9B52CF0059B797 /* FMDatabasePool.m in Sources */,
 				83781A4C1EFCB4C6001A80C9 /* MyAnnotationView.m in Sources */,
 				839A201E208DEBC500024279 /* BezierPathVC.m in Sources */,

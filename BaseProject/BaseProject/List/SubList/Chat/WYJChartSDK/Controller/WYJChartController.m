@@ -260,7 +260,16 @@
     [self scrollTableToLast];
 }
 
+// 也就是状态更新 不会有其他更新的 所以可以只更新状态 否则还需要去计算相关高度等
 - (void)updateMessage:(NSObject *)message {
-    [self.tableView reloadData];
+    WYJChartMessage *msg = (WYJChartMessage *)message;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.pk = %d",msg.pk];
+    NSArray *array = [self.dataArr filteredArrayUsingPredicate:predicate];
+    if (array.count > 0) {
+        WYJChartMessage *msgCurrent = array[0];
+        msgCurrent.sendStatus = msg.sendStatus;
+    
+        [self.tableView reloadData];
+    }
 }
 @end

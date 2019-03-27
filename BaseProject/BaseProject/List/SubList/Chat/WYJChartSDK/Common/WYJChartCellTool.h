@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 数据库相关操作
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user;
 
++ (void)receiveMessage:(WYJChartMessage *)message;
 + (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user;
 + (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user;
 

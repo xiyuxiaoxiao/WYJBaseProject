@@ -1,14 +1,14 @@
 //
-//  ChartDatabaseMultiDelegate.m
+//  WYJMultiDelegate.m
 //  BaseProject
 //
 //  Created by ZSXJ on 2018/5/31.
 //  Copyright © 2018年 WYJ. All rights reserved.
 //
 
-#import "ChartDatabaseMultiDelegate.h"
+#import "WYJMultiDelegate.h"
 
-@implementation ChartDatabaseMultiDelegate
+@implementation WYJMultiDelegate
 {
     
     NSPointerArray* _delegates;
@@ -98,7 +98,7 @@
     }
     [_delegates addPointer:NULL];
     [_delegates compact];
-    if (self.silentWhenEmpty && _delegates.count == 0) {
+    if (_delegates.count == 0) {
         return [self methodSignatureForSelector:@selector(description)];
     }
     
@@ -112,6 +112,7 @@
         }
     }
     
+    // signature如果返回空的 回报错 所以需要在最后没有的时候 调用自己的方法
     return signature;
 }
 
@@ -125,7 +126,7 @@
             responseed = YES;
         }
     }
-//    if (!responseed && !self.silentWhenEmpty) {
+//    if (!responseed) {
 //        //如果执行 在没有实现相关方法的时候 就会造成崩溃
 //        [self doesNotRecognizeSelector:selector];
 //    }
