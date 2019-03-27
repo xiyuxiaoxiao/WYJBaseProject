@@ -7,7 +7,7 @@
 //
 
 #import "MessageList.h"
-#import "JKDBHelper.h"
+#import "WYJChartDBHelper.h"
 
 @implementation MessageList
 
@@ -50,14 +50,14 @@
 
 + (NSArray *)findMessageArrayBySql:(NSString *)sql {
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *columeNamesArray = [NSMutableArray array];
     
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
             
-            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *model = [self WYJChartDBModelWithResultset:resultSet];
             // 此处 由于最新时间的 放在最后 当前结果是按照时间倒序的分页请求的 所以应该让后面的插入在前面
 //            [columeNamesArray addObject:model];
             [columeNamesArray insertObject:model atIndex:0];

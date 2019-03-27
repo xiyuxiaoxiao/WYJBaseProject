@@ -7,7 +7,7 @@
 //
 
 #import "WYJChartConversation.h"
-#import "JKDBHelper.h"
+#import "WYJChartDBHelper.h"
 #import "WYJChartAddress.h"
 #import "WYJChartMessage.h"
 
@@ -41,7 +41,7 @@
 //    NSString *sql = @"select con.*, toMsg.content from WYJChartConversation AS con LEFT JOIN WYJChartMessage AS toMsg ON con.partnerUserId = toMsg.toUserId OR con.partnerUserId = toMsg.fromUserId group by con.partnerUserId";
     NSString *sql = @"select con.*, adr.*, toMsg.content, toMsg.sendTime, con.pk AS conPK, adr.pk AS adrPK from WYJChartConversation AS con LEFT JOIN WYJChartAddress AS adr ON con.partnerUserId = adr.userId LEFT JOIN WYJChartMessage AS toMsg ON con.partnerUserId = toMsg.toUserId OR con.partnerUserId = toMsg.fromUserId group by adr.userId";
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *columeNamesArray = [NSMutableArray array];
     
     //    [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
@@ -59,10 +59,10 @@
             // 如果实现方法 放在其他地方，
             // 只要切换对象 初始化就会崩溃
             //            MessageList *msg = [[MessageList alloc] init];
-            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *model = [self WYJChartDBModelWithResultset:resultSet];
             [model setValue:[NSNumber numberWithLongLong:[resultSet longLongIntForColumn:@"conPK"]] forKey:@"pk"];
             
-            JKDBModel *user = [NSClassFromString(@"WYJChartAddress") JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *user = [NSClassFromString(@"WYJChartAddress") WYJChartDBModelWithResultset:resultSet];
             [user setValue:[NSNumber numberWithLongLong:[resultSet longLongIntForColumn:@"adrPK"]] forKey:@"pk"];
             [model setValue:user forKey:@"partnerUser"];
             

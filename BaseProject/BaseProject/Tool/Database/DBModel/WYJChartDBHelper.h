@@ -4,16 +4,16 @@
 //
 //  Created by zx_04 on 15/6/24.
 //
-//  github:https://github.com/Joker-King/JKDBModel
+//  github:https://github.com/Joker-King/WYJChartDBModel
 
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 
-@interface JKDBHelper : NSObject
+@interface WYJChartDBHelper : NSObject
 
 @property (nonatomic, retain, readonly) FMDatabaseQueue *dbQueue;
 
-+ (JKDBHelper *)shareInstance;
++ (WYJChartDBHelper *)shareInstance;
 
 + (NSString *)dbPath;
 

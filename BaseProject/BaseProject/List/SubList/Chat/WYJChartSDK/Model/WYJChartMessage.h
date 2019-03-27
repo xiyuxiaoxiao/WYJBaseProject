@@ -6,13 +6,13 @@
 //  Copyright © 2019年 WYJ. All rights reserved.
 //
 
-#import "JKDBModel.h"
+#import "WYJChartDBModel.h"
 
 @class WYJChartContentModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJChartMessage : JKDBModel
+@interface WYJChartMessage : WYJChartDBModel
 
 @property (nonatomic, copy)   NSString *fromUserId; // 发送者
 @property (nonatomic, copy)   NSString *toUserId;   // 接受者

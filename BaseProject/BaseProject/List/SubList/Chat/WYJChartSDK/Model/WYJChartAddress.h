@@ -6,10 +6,10 @@
 //  Copyright © 2019年 WYJ. All rights reserved.
 //
 
-#import "JKDBModel.h"
+#import "WYJChartDBModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJChartAddress : JKDBModel
+@interface WYJChartAddress : WYJChartDBModel
 @property (nonatomic, copy)   NSString *userId;     // 用户id
 @property (nonatomic, copy)   NSString *name;       // 用户名称
 @property (nonatomic, copy)   NSString *nickName;   // 昵称

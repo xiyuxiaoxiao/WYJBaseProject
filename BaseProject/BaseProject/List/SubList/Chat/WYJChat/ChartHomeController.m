@@ -12,7 +12,7 @@
 #import "JKDBVersionUpdateTest.h"
 #import "TestDataDatabase.h"
 #import "MBProgressHUD.h"
-#import "JKDBHelper.h"
+#import "WYJChartDBHelper.h"
 
 @interface ChartHomeController ()
 @property (weak, nonatomic) IBOutlet UIView *hudBackView;
@@ -54,7 +54,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@",[JKDBHelper dbPath]);
+    NSLog(@"%@",[WYJChartDBHelper dbPath]);
 }
 
 

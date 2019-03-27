@@ -149,8 +149,8 @@
 		8399B21D1E9B52AF0059B797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8399B21B1E9B52AF0059B797 /* LaunchScreen.storyboard */; };
 		8399B2281E9B52B00059B797 /* BaseProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2271E9B52B00059B797 /* BaseProjectTests.m */; };
 		8399B2331E9B52B00059B797 /* BaseProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2321E9B52B00059B797 /* BaseProjectUITests.m */; };
-		8399B2961E9B52CF0059B797 /* JKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2441E9B52CF0059B797 /* JKDBHelper.m */; };
-		8399B2971E9B52CF0059B797 /* JKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2461E9B52CF0059B797 /* JKDBModel.m */; };
+		8399B2961E9B52CF0059B797 /* WYJChartDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2441E9B52CF0059B797 /* WYJChartDBHelper.m */; };
+		8399B2971E9B52CF0059B797 /* WYJChartDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2461E9B52CF0059B797 /* WYJChartDBModel.m */; };
 		8399B2981E9B52CF0059B797 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2491E9B52CF0059B797 /* FMDatabase.m */; };
 		8399B2991E9B52CF0059B797 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B24B1E9B52CF0059B797 /* FMDatabaseAdditions.m */; };
 		8399B29A1E9B52CF0059B797 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B24D1E9B52CF0059B797 /* FMDatabasePool.m */; };
@@ -556,10 +556,10 @@
 		8399B22E1E9B52B00059B797 /* BaseProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8399B2321E9B52B00059B797 /* BaseProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseProjectUITests.m; sourceTree = "<group>"; };
 		8399B2341E9B52B00059B797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8399B2431E9B52CF0059B797 /* JKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBHelper.h; sourceTree = "<group>"; };
-		8399B2441E9B52CF0059B797 /* JKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBHelper.m; sourceTree = "<group>"; };
-		8399B2451E9B52CF0059B797 /* JKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDBModel.h; sourceTree = "<group>"; };
-		8399B2461E9B52CF0059B797 /* JKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDBModel.m; sourceTree = "<group>"; };
+		8399B2431E9B52CF0059B797 /* WYJChartDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartDBHelper.h; sourceTree = "<group>"; };
+		8399B2441E9B52CF0059B797 /* WYJChartDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartDBHelper.m; sourceTree = "<group>"; };
+		8399B2451E9B52CF0059B797 /* WYJChartDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJChartDBModel.h; sourceTree = "<group>"; };
+		8399B2461E9B52CF0059B797 /* WYJChartDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartDBModel.m; sourceTree = "<group>"; };
 		8399B2481E9B52CF0059B797 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		8399B2491E9B52CF0059B797 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		8399B24A1E9B52CF0059B797 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -1584,10 +1584,10 @@
 		8399B2421E9B52CF0059B797 /* DBModel */ = {
 			isa = PBXGroup;
 			children = (
-				8399B2431E9B52CF0059B797 /* JKDBHelper.h */,
-				8399B2441E9B52CF0059B797 /* JKDBHelper.m */,
-				8399B2451E9B52CF0059B797 /* JKDBModel.h */,
-				8399B2461E9B52CF0059B797 /* JKDBModel.m */,
+				8399B2431E9B52CF0059B797 /* WYJChartDBHelper.h */,
+				8399B2441E9B52CF0059B797 /* WYJChartDBHelper.m */,
+				8399B2451E9B52CF0059B797 /* WYJChartDBModel.h */,
+				8399B2461E9B52CF0059B797 /* WYJChartDBModel.m */,
 			);
 			path = DBModel;
 			sourceTree = "<group>";
@@ -2489,7 +2489,7 @@
 				83BE80351EF911D500FD588A /* CustomAnnotationView.m in Sources */,
 				83A4C70A21F83A020088359E /* WYJChartController.m in Sources */,
 				8377C9F91EF3768900E4E56C /* CityController.m in Sources */,
-				8399B2971E9B52CF0059B797 /* JKDBModel.m in Sources */,
+				8399B2971E9B52CF0059B797 /* WYJChartDBModel.m in Sources */,
 				83969EAB21EDDC210032EAE7 /* NSObject+BGModel.m in Sources */,
 				839B7F2E21F6B1D1008E7A8C /* MASCompositeConstraint.m in Sources */,
 				83A4C6FC21F800FA0088359E /* WYJChartBaseCell.m in Sources */,
@@ -2550,7 +2550,7 @@
 				833530671F459FFE00596581 /* YJRippleVC.m in Sources */,
 				83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */,
 				8399B2AC1E9B52CF0059B797 /* Base64.m in Sources */,
-				8399B2961E9B52CF0059B797 /* JKDBHelper.m in Sources */,
+				8399B2961E9B52CF0059B797 /* WYJChartDBHelper.m in Sources */,
 				8335305F1F459FFE00596581 /* DashLineView.m in Sources */,
 				8399B2A81E9B52CF0059B797 /* AFSecurityPolicy.m in Sources */,
 				83367DA02089F38300A5571F /* PieLayer.m in Sources */,

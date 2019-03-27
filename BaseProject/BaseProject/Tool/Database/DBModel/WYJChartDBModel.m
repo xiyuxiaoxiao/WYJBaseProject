@@ -4,19 +4,19 @@
 //
 //  Created by zx_04 on 15/6/27.
 //  Copyright (c) 2015年 joker. All rights reserved.
-//  github:https://github.com/Joker-King/JKDBModel
+//  github:https://github.com/Joker-King/WYJChartDBModel
 
-#import "JKDBModel.h"
-#import "JKDBHelper.h"
+#import "WYJChartDBModel.h"
+#import "WYJChartDBHelper.h"
 
 #import <objc/runtime.h>
 
-@implementation JKDBModel
+@implementation WYJChartDBModel
 
 #pragma mark - override method
 + (void)initialize
 {
-    if (self != [JKDBModel self]) {
+    if (self != [WYJChartDBModel self]) {
         [self createTable];
     }
 }
@@ -104,7 +104,7 @@
 + (BOOL)isExistInTable
 {
     __block BOOL res = NO;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
          res = [db tableExists:tableName];
@@ -115,7 +115,7 @@
 /** 获取列名 */
 + (NSArray *)getColumns
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *columns = [NSMutableArray array];
      [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
          NSString *tableName = NSStringFromClass(self.class);
@@ -135,7 +135,7 @@
 + (BOOL)createTable
 {
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         NSString *tableName = NSStringFromClass(self.class);
         NSString *columeAndType = [self.class getColumeAndTypeString];
@@ -179,7 +179,7 @@
  */
 //+ (BOOL)createTable
 //{
-//    FMDatabase *db = [FMDatabase databaseWithPath:[JKDBHelper dbPath]];
+//    FMDatabase *db = [FMDatabase databaseWithPath:[WYJChartDBHelper dbPath]];
 //    if (![db open]) {
 //        NSLog(@"数据库打开失败!");
 //        return NO;
@@ -266,7 +266,7 @@
     [keyString deleteCharactersInRange:NSMakeRange(keyString.length - 1, 1)];
     [valueString deleteCharactersInRange:NSMakeRange(valueString.length - 1, 1)];
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];
@@ -281,17 +281,17 @@
 + (BOOL)saveObjects:(NSArray *)array
 {
     //判断是否是JKBaseModel的子类
-    for (JKDBModel *model in array) {
-        if (![model isKindOfClass:[JKDBModel class]]) {
+    for (WYJChartDBModel *model in array) {
+        if (![model isKindOfClass:[WYJChartDBModel class]]) {
             return NO;
         }
     }
     
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        for (JKDBModel *model in array) {
+        for (WYJChartDBModel *model in array) {
             NSString *tableName = NSStringFromClass(model.class);
             NSMutableString *keyString = [NSMutableString string];
             NSMutableString *valueString = [NSMutableString string];
@@ -329,7 +329,7 @@
 /** 更新单个对象 */
 - (BOOL)update
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -365,16 +365,16 @@
 /** 批量更新用户对象*/
 + (BOOL)updateObjects:(NSArray *)array
 {
-    for (JKDBModel *model in array) {
-        if (![model isKindOfClass:[JKDBModel class]]) {
+    for (WYJChartDBModel *model in array) {
+        if (![model isKindOfClass:[WYJChartDBModel class]]) {
             return NO;
         }
     }
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        for (JKDBModel *model in array) {
+        for (WYJChartDBModel *model in array) {
             NSString *tableName = NSStringFromClass(model.class);
             id primaryValue = [model valueForKey:primaryId];
             if (!primaryValue || primaryValue <= 0) {
@@ -418,7 +418,7 @@
 /** 删除单个对象 */
 - (BOOL)deleteObject
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -436,17 +436,17 @@
 /** 批量删除用户对象 */
 + (BOOL)deleteObjects:(NSArray *)array
 {
-    for (JKDBModel *model in array) {
-        if (![model isKindOfClass:[JKDBModel class]]) {
+    for (WYJChartDBModel *model in array) {
+        if (![model isKindOfClass:[WYJChartDBModel class]]) {
             return NO;
         }
     }
     
     __block BOOL res = YES;
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     // 如果要支持事务
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        for (JKDBModel *model in array) {
+        for (WYJChartDBModel *model in array) {
             NSString *tableName = NSStringFromClass(model.class);
             id primaryValue = [model valueForKey:primaryId];
             if (!primaryValue || primaryValue <= 0) {
@@ -469,7 +469,7 @@
 /** 通过条件删除数据 */
 + (BOOL)deleteObjectsByCriteria:(NSString *)criteria
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -494,7 +494,7 @@
 /** 清空表 */
 + (BOOL)clearTable
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
@@ -509,14 +509,14 @@
 + (NSArray *)findAll
 {
      NSLog(@"jkdb---%s",__func__);
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *users = [NSMutableArray array];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@",tableName];
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
-            JKDBModel *model = [[self.class alloc] init];
+            WYJChartDBModel *model = [[self.class alloc] init];
             for (int i=0; i< model.columeNames.count; i++) {
                  NSString *columeName = [model.columeNames objectAtIndex:i];
                  NSString *columeType = [model.columeTypes objectAtIndex:i];
@@ -574,14 +574,14 @@
 /** 通过条件查找数据 */
 + (NSArray *)findByCriteria:(NSString *)criteria
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *users = [NSMutableArray array];
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = NSStringFromClass(self.class);
         NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,criteria];
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
-            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *model = [self WYJChartDBModelWithResultset:resultSet];
             [users addObject:model];
             FMDBRelease(model);
         }
@@ -590,8 +590,8 @@
     return users;
 }
 
-+ (instancetype)JKDBModelWithResultset:(FMResultSet *)resultSet {
-    JKDBModel *model = [[self.class alloc] init];
++ (instancetype)WYJChartDBModelWithResultset:(FMResultSet *)resultSet {
+    WYJChartDBModel *model = [[self.class alloc] init];
     for (int i=0; i< model.columeNames.count; i++) {
         NSString *columeName = [model.columeNames objectAtIndex:i];
         NSString *columeType = [model.columeTypes objectAtIndex:i];
@@ -665,7 +665,7 @@
             columns: (NSArray *)needColumns
           newColumn: (NSArray *)newColumns {
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     [jkDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         
         NSString *tableName = NSStringFromClass(self.class);
@@ -747,7 +747,7 @@
 /** 删除表 */
 + (BOOL)dropTable:(NSString *)tableName
 {
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     __block BOOL res = NO;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         NSString *sql = [NSString stringWithFormat:@"DROP TABLE %@",tableName];

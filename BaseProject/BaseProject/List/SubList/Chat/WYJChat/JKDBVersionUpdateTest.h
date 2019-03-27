@@ -7,9 +7,9 @@
 //
 
 // 数据库表 版本更新  用于迁移 MessageList表  
-#import "JKDBModel.h"
+#import "WYJChartDBModel.h"
 
-@interface JKDBVersionUpdateTest : JKDBModel
+@interface JKDBVersionUpdateTest : WYJChartDBModel
 
 @property (nonatomic,copy) NSString *toUserId;
 @property (nonatomic,copy) NSString *fromUserId;

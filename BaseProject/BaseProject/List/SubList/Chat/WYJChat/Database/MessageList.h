@@ -6,9 +6,9 @@
 //  Copyright © 2018年 WYJ. All rights reserved.
 //
 
-#import "JKDBModel.h"
+#import "WYJChartDBModel.h"
 
-@interface MessageList : JKDBModel
+@interface MessageList : WYJChartDBModel
 
 @property (nonatomic,copy) NSString *toUserId;
 @property (nonatomic,copy) NSString *fromUserId;

@@ -6,14 +6,14 @@
 //  Copyright © 2019年 WYJ. All rights reserved.
 //
 
-#import "JKDBModel.h"
+#import "WYJChartDBModel.h"
 
 @class WYJChartMessage;
 @class WYJChartAddress;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WYJChartConversation : JKDBModel
+@interface WYJChartConversation : WYJChartDBModel
 
 // 暂时不用 因为message列表 没有使用 这个id去关联
 //@property (nonatomic, copy)   NSString *conversationId;    // 主键

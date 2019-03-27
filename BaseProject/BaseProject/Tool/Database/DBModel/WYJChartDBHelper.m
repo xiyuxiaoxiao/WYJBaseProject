@@ -4,22 +4,22 @@
 //
 //  Created by zx_04 on 15/6/24.
 //
-// github:https://github.com/Joker-King/JKDBModel
+// github:https://github.com/Joker-King/WYJChartDBModel
 
 #import <objc/runtime.h>
 
-#import "JKDBHelper.h"
-#import "JKDBModel.h"
+#import "WYJChartDBHelper.h"
+#import "WYJChartDBModel.h"
 
-@interface JKDBHelper ()
+@interface WYJChartDBHelper ()
 
 @property (nonatomic, retain) FMDatabaseQueue *dbQueue;
 
 @end
 
-@implementation JKDBHelper
+@implementation WYJChartDBHelper
 
-static JKDBHelper *_instance = nil;
+static WYJChartDBHelper *_instance = nil;
 
 + (instancetype)shareInstance
 {
@@ -68,7 +68,7 @@ static JKDBHelper *_instance = nil;
     if (_instance.dbQueue) {
         _instance.dbQueue = nil;
     }
-    _instance.dbQueue = [[FMDatabaseQueue alloc] initWithPath:[JKDBHelper dbPathWithDirectoryName:directoryName]];
+    _instance.dbQueue = [[FMDatabaseQueue alloc] initWithPath:[WYJChartDBHelper dbPathWithDirectoryName:directoryName]];
     
     int numClasses;
     Class *classes = NULL;
@@ -79,7 +79,7 @@ static JKDBHelper *_instance = nil;
         classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
         numClasses = objc_getClassList(classes, numClasses);
         for (int i = 0; i < numClasses; i++) {
-            if (class_getSuperclass(classes[i]) == [JKDBModel class]){
+            if (class_getSuperclass(classes[i]) == [WYJChartDBModel class]){
                 id class = classes[i];
                 [class performSelector:@selector(createTable) withObject:nil];
             }
@@ -92,12 +92,12 @@ static JKDBHelper *_instance = nil;
 
 + (id)allocWithZone:(struct _NSZone *)zone
 {
-    return [JKDBHelper shareInstance];
+    return [WYJChartDBHelper shareInstance];
 }
 
 - (id)copyWithZone:(struct _NSZone *)zone
 {
-    return [JKDBHelper shareInstance];
+    return [WYJChartDBHelper shareInstance];
 }
 
 #if ! __has_feature(objc_arc)

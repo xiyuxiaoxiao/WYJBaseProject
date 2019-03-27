@@ -7,7 +7,7 @@
 //
 
 #import "WYJChartMessage.h"
-#import "JKDBHelper.h"
+#import "WYJChartDBHelper.h"
 #import "WYJChartDefine.h"
 #import "WYJChartCellTool.h"
 #import "WYJChartAddress.h"
@@ -90,14 +90,14 @@
 
 + (NSArray *)findMessageArrayBySql:(NSString *)sql {
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *columeNamesArray = [NSMutableArray array];
     
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
             
-            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *model = [self WYJChartDBModelWithResultset:resultSet];
             // 此处 由于最新时间的 放在最后 当前结果是按照时间倒序的分页请求的 所以应该让后面的插入在前面
             //            [columeNamesArray addObject:model];
             [columeNamesArray insertObject:model atIndex:0];
@@ -112,14 +112,14 @@
     NSString *tableName = NSStringFromClass(self);
     NSString *sql =  [NSString stringWithFormat:@"select * from %@ where (toUserId = '%@' or fromUserId = '%@') and type = 2",tableName,friendUserId,friendUserId];
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSMutableArray *columeNamesArray = [NSMutableArray array];
     
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
             
-            JKDBModel *model = [self JKDBModelWithResultset:resultSet];
+            WYJChartDBModel *model = [self WYJChartDBModelWithResultset:resultSet];
             WYJChartMessage *message = model;
             [columeNamesArray insertObject:message.contentInfoModel.fileURL atIndex:0];
             FMDBRelease(model);
@@ -134,7 +134,7 @@
     NSString *tableName = NSStringFromClass(self);
     NSString *sql =  [NSString stringWithFormat:@"select count(*) from %@ where ( contentModelInfo like '%%%@%%' )",tableName,fileName];
     
-    JKDBHelper *jkDB = [JKDBHelper shareInstance];
+    WYJChartDBHelper *jkDB = [WYJChartDBHelper shareInstance];
     NSInteger __block count = 0;
     [jkDB.dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *resultSet = [db executeQuery:sql];

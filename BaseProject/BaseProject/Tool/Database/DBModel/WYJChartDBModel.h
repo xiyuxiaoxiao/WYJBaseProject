@@ -4,7 +4,7 @@
 //
 //  Created by zx_04 on 15/6/27.
 //  Copyright (c) 2015年 joker. All rights reserved.
-//  github:https://github.com/Joker-King/JKDBModel
+//  github:https://github.com/Joker-King/WYJChartDBModel
 
 #import <Foundation/Foundation.h>
 #import "FMResultSet.h"
@@ -19,7 +19,7 @@
 
 #define primaryId   @"pk"
 
-@interface JKDBModel : NSObject
+@interface WYJChartDBModel : NSObject
 
 /** 主键 id */
 @property (nonatomic, assign)   int        pk;
@@ -91,7 +91,7 @@
 /**
  根据SQL 查询结果 创建对象
  */
-+ (instancetype)JKDBModelWithResultset:(FMResultSet *)resultSet;
++ (instancetype)WYJChartDBModelWithResultset:(FMResultSet *)resultSet;
 /**
  * 创建表
  * 如果已经创建，返回YES
