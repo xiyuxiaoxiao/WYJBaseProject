@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 创建消息对象
 + (WYJChartMessage *)creatMessageText: (NSString *)text;
 + (WYJChartMessage *)creatMessageImage:(UIImage *)image;
-+ (WYJChartMessage *)creatMessageWithURL:(NSString *)url;
++ (WYJChartMessage *)creatMessageWithImageDict:(NSDictionary *)dict;
 
 #pragma mark - cell高度
 + (void)setCellheight: (WYJChartMessage *)message;
@@ -30,9 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)sendMessage:(WYJChartMessage *)message toUser:(WYJChartAddress *)user;
 
 + (void)receiveMessage:(WYJChartMessage *)message;
-+ (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user;
-+ (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user;
-
 
 // 设置未读消息数量
 + (void)saveConversionUnRead:(WYJChartMessage *)message;

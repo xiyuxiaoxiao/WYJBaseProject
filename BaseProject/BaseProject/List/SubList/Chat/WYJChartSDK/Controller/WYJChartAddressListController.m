@@ -44,20 +44,6 @@
     self.textField.text = nil;
     [self.textField resignFirstResponder];
 }
-- (IBAction)receiveNewMessageTextAction:(id)sender {
-    if (self.dataArr.count < 1) {
-        return;
-    }
-    [WYJChartCellTool receiveTextMessageFromUser:self.dataArr[0]];
-}
-
-- (IBAction)receiveNewMessageImageAction:(id)sender {
-    if (self.dataArr.count < 1) {
-        return;
-    }
-    
-    [WYJChartCellTool receiveImageMessageFromUser:self.dataArr[0]];
-}
 
 - (void)request {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

@@ -36,28 +36,67 @@
 #pragma mark - socket
 /*
  ws://localhost:3000
- ws://192.168.1.103:3000
+ ws://wyjsocket.herokuapp.com/:3000 自己创建的服务器
+ 
  ws://echo.websocket.org   websocket官网提供的
  ws://39.96.27.144:30005 新提供的
  */
 + (void)connectWithURL:(NSString *)url {
-    [[SocketRocketUtility instance] SRWebSocketOpenWithURLString:@"ws://localhost:3000"];
+    NSString *userId = [WYJChartCellTool getCurrentUser].userId;
+    NSString *urlString = [NSString stringWithFormat:@"ws://localhost:3000?userId=%@",userId];
+    [[SocketRocketUtility instance] SRWebSocketOpenWithURLString:urlString];
 }
 
 /*
  pk:用表标记message的id
  */
 + (void)sendMessage:(WYJChartMessage *)message {
+    
+    if ([SocketRocketUtility instance].socketReadyState != SR_OPEN) {
+        [self socketCloseNote];
+        return;
+    }
+    
     NSString *messageId = [NSString stringWithFormat:@"%d",message.pk];
-    NSDictionary *dict = @{@"resMsg": @"1", // 表示对发送的消息的回调的格式
-                           @"messageId":messageId};
+    
+    NSString *content = @"";
+    if (message.type == 1) {
+        content = message.content;
+    }
+    if (message.type == 2) {
+        content = message.contentInfoModel.fileURL;
+    }
+    
+    NSDictionary *dict = @{@"resMsg":       @"1", // 表示对发送的消息的回调的格式
+                           @"messageId":    messageId,
+                           @"fromUserId":   message.fromUserId,
+                           @"toUserId":     message.toUserId,
+                           @"contentType":  @(message.type), // 1:文本，2:图片
+                           @"content":      content
+                           };
     NSString *str = [NSDictionary dictionaryToJson:dict];
+    // 先判断 能否发送 否则 不发送
     [[SocketRocketUtility instance] sendData: str];
 }
 + (void)closePort {
     [[SocketRocketUtility instance] SRWebSocketClose];
+    
+    [WYJChartMessage updateSendStatusing];
 }
 
+
++ (void)socketCloseNote {
+    NSString *str = [NSString stringWithFormat:@"where sendStatus = %d",SendStatusSending];
+    NSArray *array = [WYJChartMessage findByCriteria:str];
+    for (WYJChartMessage *msg in array) {
+        msg.sendStatus = SendStatusFaile;
+        [msg update];
+    }
+    // 不使用这个 主要是因为 没有在 监听一组数据更新的时候 对UI的更新处理
+//    [WYJChartMessage updateObjects:array];
+}
+
+// 需要对 比如发送消息的时候 如果当前刚好在发送消息 突然socketc中断  在重连后 则需要重新发送 无法得知之前发送的内容是什么 因此需要对数据库的发送中的状态 修改为-未成功，链接成功后 不需要重新发送  不然里面之前发送失败的 都会被需要去发送 所以就按照失败处理
 + (void)receiveSocketData: (NSNotification *)noti {
     NSString *msg = noti.object;
     if ([msg isKindOfClass:[NSString class]]) {
@@ -83,8 +122,17 @@
         }
     }else {
         // 接受新消息 需要判断本地是否有此联系人 没有则不能添加
-        WYJChartMessage *message = [WYJChartCellTool creatMessageText:dict[@"message"]];
-        message.fromUserId = dict[@"userId"];
+        
+        int type = [dict[@"contentType"] intValue];
+        
+        WYJChartMessage *message;
+        if (type == MessageTypeText) {
+            message = [WYJChartCellTool creatMessageText:dict[@"content"]];
+        }
+        else if (type == MessageTypeImage) {
+            message = [WYJChartCellTool creatMessageWithImageDict:dict];
+        }
+        message.fromUserId = dict[@"fromUserId"];
         [WYJChartCellTool receiveMessage:message];
     }
 }
@@ -101,6 +149,7 @@
 // 通过类来加载 如果放在 init中 则会导致 子类继承的时候 多次添加
 + (void)initialize {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveSocketData:) name:kWebSocketdidReceiveMessageNote object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(socketCloseNote) name:kWebSocketDidCloseNote object:nil];
 }
 + (instancetype)manager {
     static WYJChartManager *chartManager = nil;

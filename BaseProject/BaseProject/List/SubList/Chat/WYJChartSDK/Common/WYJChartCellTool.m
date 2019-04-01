@@ -62,7 +62,12 @@ static WYJChartAddress *currentUser = nil;
     
     return msg;
 }
-+ (WYJChartMessage *)creatMessageWithURL:(NSString *)url{
+
+
+// 后台收到的消息的转发
++ (WYJChartMessage *)creatMessageWithImageDict:(NSDictionary *)dict {
+    
+    NSString *url = dict[@"content"];
     
     WYJChartContentModel *contentModel = [[WYJChartContentModel alloc] init];
     contentModel.imageSize  = CGSizeMake(80, 120);
@@ -191,33 +196,6 @@ static WYJChartAddress *currentUser = nil;
     }
     
     [WYJChartManager sendMessage:message];
-    return;
-    dispatch_async(dispatch_queue_create("wyj.chart", DISPATCH_QUEUE_SERIAL), ^{
-        sleep(3);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self sendMessageNetworkBack:message toUser:user];
-        });
-    });
-}
-
-+ (void)sendMessageNetworkBack: (WYJChartMessage *)message toUser:(WYJChartAddress *)user{
-    int index = arc4random() % 2;
-    if (index == 0) {
-        message.sendStatus = SendStatusSuccess;
-    }
-    else if (index == 1)  {
-        message.sendStatus = SendStatusFaile;
-    }
-    [message update];
-    
-    if (message.sendStatus == SendStatusSuccess) {
-        if (message.type == MessageTypeText) {
-            // 延时执行 在后台无法运行 只有在此回到前台的时候才会运行 (在进入后台的时候 添加[[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil] 申请时间便可以)
-            [WYJChartCellTool performSelector:@selector(receiveTextMessageFromUser:) withObject:user afterDelay:2];
-        }else if (message.type == MessageTypeImage) {
-            [WYJChartCellTool performSelector:@selector(receiveImageMessageFromUser:) withObject:user afterDelay:2];
-        }
-    }
 }
 
 + (void)receiveMessage:(WYJChartMessage *)message {
@@ -239,23 +217,6 @@ static WYJChartAddress *currentUser = nil;
         WYJChartAddress *user = [WYJChartAddress findByUserId:message.fromUserId];
         [WYJChartManager pushLocalNotificationWithMessage:message fromUser:user];
     }
-}
-+ (WYJChartMessage *)receiveTextMessageFromUser:(WYJChartAddress *)user {
-    WYJChartMessage *message = [self creatMessageText:@"收到你的消息了"];
-    message.fromUserId      = user.userId;
-    [self receiveMessage:message];
-    return message;
-}
-+ (WYJChartMessage *)receiveImageMessageFromUser:(WYJChartAddress *)user {
-    
-    NSArray *array = @[@"http://lc-snkarza7.cn-n1.lcfile.com/9943047a70c8163096b3.jpg",
-                       @"http://lc-snkarza7.cn-n1.lcfile.com/627383453400d53214af.JPG",
-                       @"http://lc-snkarza7.cn-n1.lcfile.com/6ce9eafa8590b6a8e0e3.JPG"];
-    int index = arc4random() % 3;
-    WYJChartMessage *message = [self creatMessageWithURL:array[index]];
-    message.fromUserId = user.userId;
-    [self receiveMessage:message];
-    return message;
 }
 
 + (void)saveConversionUnRead:(WYJChartMessage *)message {
@@ -313,6 +274,7 @@ static WYJChartAddress *currentUser = nil;
         [self delegateFileWithFilePath:message.contentInfoModel.fileURL];
     }
 }
+
 // 删除单个好友的聊天记录 // 在记录的每个用户的时候 文件存储单个目录 这样在删除聊天文件的时候 就可以通过用户的id来删除
 + (void)deleteMessageByUserId:(NSString *)userId {
     

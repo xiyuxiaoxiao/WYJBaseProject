@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 查询是否 只有一个文件名在本地存储的
 + (BOOL)onlyOneMessageFileName: (NSString *)fileName;
 
-
++ (BOOL)updateSendStatusing;
 @end
 
 NS_ASSUME_NONNULL_END
