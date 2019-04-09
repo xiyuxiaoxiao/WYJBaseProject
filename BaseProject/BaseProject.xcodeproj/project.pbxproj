@@ -91,6 +91,8 @@
 		836630801EE177370029AD91 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307B1EE177370029AD91 /* CollectionViewCell.m */; };
 		836630811EE177370029AD91 /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307D1EE177370029AD91 /* CustomLayout.m */; };
 		836630821EE177370029AD91 /* CustomLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8366307F1EE177370029AD91 /* CustomLayoutAttributes.m */; };
+		836646CF225B232A00204C1F /* BlockPointCpp.m in Sources */ = {isa = PBXBuildFile; fileRef = 836646CE225B232A00204C1F /* BlockPointCpp.m */; };
+		836646D3225B2B6A00204C1F /* RuntimePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 836646D2225B2B6A00204C1F /* RuntimePoint.m */; };
 		83669BCA211C2B6F0096EAB9 /* GradientColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83669BC9211C2B6F0096EAB9 /* GradientColorController.m */; };
 		836A3D642202CDB8006BA323 /* WYJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A3D632202CDB8006BA323 /* WYJPhoto.m */; };
 		836A3D672202E5FC006BA323 /* UIImage+WYJChartImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 836A3D662202E5FC006BA323 /* UIImage+WYJChartImageStore.m */; };
@@ -447,6 +449,8 @@
 		8366307D1EE177370029AD91 /* CustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayout.m; sourceTree = "<group>"; };
 		8366307E1EE177370029AD91 /* CustomLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayoutAttributes.h; sourceTree = "<group>"; };
 		8366307F1EE177370029AD91 /* CustomLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayoutAttributes.m; sourceTree = "<group>"; };
+		836646CE225B232A00204C1F /* BlockPointCpp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockPointCpp.m; sourceTree = "<group>"; };
+		836646D2225B2B6A00204C1F /* RuntimePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimePoint.m; sourceTree = "<group>"; };
 		83669BC8211C2B6F0096EAB9 /* GradientColorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientColorController.h; sourceTree = "<group>"; };
 		83669BC9211C2B6F0096EAB9 /* GradientColorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientColorController.m; sourceTree = "<group>"; };
 		836A3D622202CDB8006BA323 /* WYJPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJPhoto.h; sourceTree = "<group>"; };
@@ -839,6 +843,8 @@
 				831E240620592A2E00557A96 /* SortRecursive.m */,
 				83735273205A4D47002F1824 /* CopyMemory.m */,
 				83735276205A7A6B002F1824 /* BlockPoint.m */,
+				836646CE225B232A00204C1F /* BlockPointCpp.m */,
+				836646D2225B2B6A00204C1F /* RuntimePoint.m */,
 				8398D80C216C8EB300DBBFD6 /* WXPullView.h */,
 				8398D80B216C8EB300DBBFD6 /* WXPullView.m */,
 				83EF517F222CDA3E00B47F4E /* GCDMySummary.m */,
@@ -2552,6 +2558,7 @@
 				83B14D6D1EFD0FAA00EF24A9 /* MapController.m in Sources */,
 				836C56B41F185ABF00E7C84E /* TechnicalPointEnterList.m in Sources */,
 				833530331F457F8900596581 /* WYJScanEnterList.m in Sources */,
+				836646D3225B2B6A00204C1F /* RuntimePoint.m in Sources */,
 				8377C9F51EF3751A00E4E56C /* CitySelectController.m in Sources */,
 				8399B2981E9B52CF0059B797 /* FMDatabase.m in Sources */,
 				8388690720BC0047006619B9 /* MessageList.m in Sources */,
@@ -2649,6 +2656,7 @@
 				8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */,
 				833530641F459FFE00596581 /* TimerWeakTarget.m in Sources */,
 				8399B29B1E9B52CF0059B797 /* FMDatabaseQueue.m in Sources */,
+				836646CF225B232A00204C1F /* BlockPointCpp.m in Sources */,
 				839D41F821F953FC00130E47 /* WYJChatKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

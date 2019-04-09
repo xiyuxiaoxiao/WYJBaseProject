@@ -22,6 +22,10 @@
 -(void)initData {
     [self.dataArray addObject:@{TitleKey:@"block 使用",
                                 CN_Key:@"BlockPoint"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"Block的实现原理 实践",
+                                CN_Key:@"BlockPointCpp"}];
+    
     [self.dataArray addObject:@{TitleKey:@"copy 内存管理",
                                 CN_Key:@"CopyMemory"}];
     
@@ -41,6 +45,9 @@
                                 @"web_url":@"http://www.cocoachina.com/ios/20160612/16631.html",
                                 }];
     
+    [self.dataArray addObject:@{TitleKey: @"Runtime",
+                                CN_Key: @"RuntimePoint"
+                                }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
