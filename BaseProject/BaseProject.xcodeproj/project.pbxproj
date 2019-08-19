@@ -53,6 +53,7 @@
 		8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349E2AB1F5D3AFA001FB473 /* SourceViewController.m */; };
 		8349E2C21F5D3F67001FB473 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 8349E2C11F5D3F67001FB473 /* html */; };
 		8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349E2D51F5D56DC001FB473 /* NSObject+SourcePathGroup.m */; };
+		83539D2F230A83DF004E555B /* MasonryClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83539D2E230A83DF004E555B /* MasonryClassController.m */; };
 		835C8AFB221273D00011EB91 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE0221273D00011EB91 /* SDWebImageManager.m */; };
 		835C8AFC221273D00011EB91 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE1221273D00011EB91 /* SDWebImageDecoder.m */; };
 		835C8AFD221273D00011EB91 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE3221273D00011EB91 /* UIImageView+HighlightedWebCache.m */; };
@@ -376,6 +377,8 @@
 		8349E2D31F5D4FBF001FB473 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
 		8349E2D41F5D56DC001FB473 /* NSObject+SourcePathGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SourcePathGroup.h"; sourceTree = "<group>"; };
 		8349E2D51F5D56DC001FB473 /* NSObject+SourcePathGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SourcePathGroup.m"; sourceTree = "<group>"; };
+		83539D2D230A83DF004E555B /* MasonryClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryClassController.h; sourceTree = "<group>"; };
+		83539D2E230A83DF004E555B /* MasonryClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryClassController.m; sourceTree = "<group>"; };
 		835C8ADE221273D00011EB91 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		835C8ADF221273D00011EB91 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		835C8AE0221273D00011EB91 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
@@ -1039,6 +1042,15 @@
 			path = CodeHtml;
 			sourceTree = "<group>";
 		};
+		83539D2C230A83A8004E555B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				83539D2D230A83DF004E555B /* MasonryClassController.h */,
+				83539D2E230A83DF004E555B /* MasonryClassController.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
 		835C8ADC221273D00011EB91 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
@@ -1446,6 +1458,7 @@
 			children = (
 				838A01B22227E39E00372A9D /* LayoutLearn.h */,
 				838A01B32227E39E00372A9D /* LayoutLearn.m */,
+				83539D2C230A83A8004E555B /* Masonry */,
 				838A01B52227E3E600372A9D /* AKT */,
 			);
 			path = Layout;
@@ -2479,6 +2492,7 @@
 				83C887831F444FC0006B9A72 /* ButtonProgressViewManger.m in Sources */,
 				835C8B03221273D00011EB91 /* SDImageCache.m in Sources */,
 				83F27F7F21FEEFF700E7FE9D /* WYJChartAddressListController.m in Sources */,
+				83539D2F230A83DF004E555B /* MasonryClassController.m in Sources */,
 				83B14D6E1EFD0FAA00EF24A9 /* MapData.m in Sources */,
 				838868F620BC0004006619B9 /* ChartHomeController.m in Sources */,
 				835EF3D91F065B23000006FD /* AlgorithmEnterList.m in Sources */,

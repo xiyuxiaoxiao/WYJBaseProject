@@ -26,6 +26,8 @@
                                 CN_Key:@"LayoutConstraintCodeController"}];
     [self.dataArray addObject:@{TitleKey:@"AKTLayout 学习",
                                 CN_Key:@"AKTClassController"}];
+    [self.dataArray addObject:@{TitleKey:@"Masonry 学习",
+                                CN_Key:@"MasonryClassController"}];
 }
 
 
