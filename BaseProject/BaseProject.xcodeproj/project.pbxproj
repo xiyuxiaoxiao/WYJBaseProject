@@ -16,6 +16,11 @@
 		831E240D20592A2E00557A96 /* SortQuick.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240520592A2E00557A96 /* SortQuick.m */; };
 		831E240E20592A2E00557A96 /* SortRecursive.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240620592A2E00557A96 /* SortRecursive.m */; };
 		833222AD1F5562EC006627A5 /* LineAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 833222AC1F5562EC006627A5 /* LineAnimation.m */; };
+		833300A4231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333009E231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m */; };
+		833300A5231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 833300A0231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m */; };
+		833300A6231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 833300A1231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		833300A7231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 833300A2231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.m */; };
+		833300AB231CAEFD003656A5 /* FDTemplateClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833300AA231CAEFD003656A5 /* FDTemplateClassController.m */; };
 		833530331F457F8900596581 /* WYJScanEnterList.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530321F457F8900596581 /* WYJScanEnterList.m */; };
 		833530381F4580BD00596581 /* ScanSysController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833530361F4580BD00596581 /* ScanSysController.m */; };
 		833530391F4580BD00596581 /* ScanSysController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833530371F4580BD00596581 /* ScanSysController.xib */; };
@@ -122,6 +127,8 @@
 		8377CA011EF3A7C500E4E56C /* cityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8377C9FF1EF3A7C500E4E56C /* cityData.plist */; };
 		83781A491EFCA826001A80C9 /* SystemMapAnnotationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */; };
 		83781A4C1EFCB4C6001A80C9 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83781A4B1EFCB4C6001A80C9 /* MyAnnotationView.m */; };
+		8380C4A0231CB33300AEDE5C /* FDTemplateClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380C49E231CB33300AEDE5C /* FDTemplateClassCell.m */; };
+		8380C4A1231CB33300AEDE5C /* FDTemplateClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8380C49F231CB33300AEDE5C /* FDTemplateClassCell.xib */; };
 		8384E7C61EEA3DD700A61EF8 /* LayoutConstraintCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E7C51EEA3DD700A61EF8 /* LayoutConstraintCodeController.m */; };
 		838868F620BC0004006619B9 /* ChartHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838868F420BC0004006619B9 /* ChartHomeController.m */; };
 		838868F720BC0004006619B9 /* ChartHomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838868F520BC0004006619B9 /* ChartHomeController.xib */; };
@@ -315,6 +322,16 @@
 		831E240620592A2E00557A96 /* SortRecursive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortRecursive.m; sourceTree = "<group>"; };
 		833222AB1F5562EC006627A5 /* LineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineAnimation.h; sourceTree = "<group>"; };
 		833222AC1F5562EC006627A5 /* LineAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineAnimation.m; sourceTree = "<group>"; };
+		8333009C231CAE42003656A5 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		8333009D231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		8333009E231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		8333009F231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		833300A0231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		833300A1231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		833300A2231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		833300A3231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		833300A9231CAEFD003656A5 /* FDTemplateClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTemplateClassController.h; sourceTree = "<group>"; };
+		833300AA231CAEFD003656A5 /* FDTemplateClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTemplateClassController.m; sourceTree = "<group>"; };
 		833530311F457F8900596581 /* WYJScanEnterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJScanEnterList.h; sourceTree = "<group>"; };
 		833530321F457F8900596581 /* WYJScanEnterList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJScanEnterList.m; sourceTree = "<group>"; };
 		833530351F4580BD00596581 /* ScanSysController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanSysController.h; sourceTree = "<group>"; };
@@ -500,6 +517,9 @@
 		83781A481EFCA826001A80C9 /* SystemMapAnnotationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMapAnnotationManager.m; sourceTree = "<group>"; };
 		83781A4A1EFCB4C6001A80C9 /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
 		83781A4B1EFCB4C6001A80C9 /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
+		8380C49D231CB33300AEDE5C /* FDTemplateClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTemplateClassCell.h; sourceTree = "<group>"; };
+		8380C49E231CB33300AEDE5C /* FDTemplateClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTemplateClassCell.m; sourceTree = "<group>"; };
+		8380C49F231CB33300AEDE5C /* FDTemplateClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDTemplateClassCell.xib; sourceTree = "<group>"; };
 		8384E7C41EEA3DD700A61EF8 /* LayoutConstraintCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutConstraintCodeController.h; sourceTree = "<group>"; };
 		8384E7C51EEA3DD700A61EF8 /* LayoutConstraintCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintCodeController.m; sourceTree = "<group>"; };
 		838868F320BC0004006619B9 /* ChartHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartHomeController.h; sourceTree = "<group>"; };
@@ -864,6 +884,33 @@
 			path = LineAnimation;
 			sourceTree = "<group>";
 		};
+		8333009B231CAE42003656A5 /* UITableView+FDTemplateLayoutCell */ = {
+			isa = PBXGroup;
+			children = (
+				8333009C231CAE42003656A5 /* UITableView+FDKeyedHeightCache.h */,
+				8333009D231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				8333009E231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m */,
+				8333009F231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.h */,
+				833300A0231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m */,
+				833300A1231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m */,
+				833300A2231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.m */,
+				833300A3231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.h */,
+			);
+			path = "UITableView+FDTemplateLayoutCell";
+			sourceTree = "<group>";
+		};
+		833300A8231CAEC5003656A5 /* FDTemplateClassController */ = {
+			isa = PBXGroup;
+			children = (
+				833300A9231CAEFD003656A5 /* FDTemplateClassController.h */,
+				833300AA231CAEFD003656A5 /* FDTemplateClassController.m */,
+				8380C49D231CB33300AEDE5C /* FDTemplateClassCell.h */,
+				8380C49E231CB33300AEDE5C /* FDTemplateClassCell.m */,
+				8380C49F231CB33300AEDE5C /* FDTemplateClassCell.xib */,
+			);
+			path = FDTemplateClassController;
+			sourceTree = "<group>";
+		};
 		833530301F457F2C00596581 /* WYJScan */ = {
 			isa = PBXGroup;
 			children = (
@@ -1056,6 +1103,7 @@
 			children = (
 				838FA5FE224B4CD200D548C2 /* SocketRocket */,
 				835C8ADD221273D00011EB91 /* SDWebImage */,
+				8333009B231CAE42003656A5 /* UITableView+FDTemplateLayoutCell */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -1458,6 +1506,7 @@
 			children = (
 				838A01B22227E39E00372A9D /* LayoutLearn.h */,
 				838A01B32227E39E00372A9D /* LayoutLearn.m */,
+				833300A8231CAEC5003656A5 /* FDTemplateClassController */,
 				83539D2C230A83A8004E555B /* Masonry */,
 				838A01B52227E3E600372A9D /* AKT */,
 			);
@@ -2350,6 +2399,7 @@
 				8343BE9B21805E0200C2BE0F /* BarChartVC.xib in Resources */,
 				83BE803B1EF917F100FD588A /* iconfont-fangda.png in Resources */,
 				83C8877F1F444FC0006B9A72 /* btn_icon_loading@2x.png in Resources */,
+				8380C4A1231CB33300AEDE5C /* FDTemplateClassCell.xib in Resources */,
 				833530681F459FFE00596581 /* YJRippleVC.xib in Resources */,
 				838868F720BC0004006619B9 /* ChartHomeController.xib in Resources */,
 				83C8877E1F444FC0006B9A72 /* btn_icon_loading.png in Resources */,
@@ -2482,6 +2532,7 @@
 				839B7F3321F6B1D1008E7A8C /* MASConstraint.m in Sources */,
 				835C8AFD221273D00011EB91 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8343BE9A21805E0200C2BE0F /* BarChartVC.m in Sources */,
+				8380C4A0231CB33300AEDE5C /* FDTemplateClassCell.m in Sources */,
 				83751D601EFA0FC5004F2D49 /* DrawEnterList.m in Sources */,
 				83A7F3B22175E13200CE8BA4 /* XLSlideMenu.m in Sources */,
 				83750D0A1EFB618A0058BC2A /* CustomPinAnnotationView.m in Sources */,
@@ -2514,6 +2565,7 @@
 				8399B2A51E9B52CF0059B797 /* MSDPreventImagePickerCrashOn3DTouch.m in Sources */,
 				8335303D1F45812F00596581 /* ScanSystem.m in Sources */,
 				835C8B02221273D00011EB91 /* SDWebImagePrefetcher.m in Sources */,
+				833300A5231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				839B7F3421F6B1D1008E7A8C /* MASViewConstraint.m in Sources */,
 				83751D641EFA1015004F2D49 /* CustomCircleView.m in Sources */,
 				83BE802D1EF9118800FD588A /* NearbyView.m in Sources */,
@@ -2521,6 +2573,7 @@
 				8399B2B71E9B52CF0059B797 /* UIWebView+AFNetworking.m in Sources */,
 				835C8B08221273D00011EB91 /* UIButton+WebCache.m in Sources */,
 				83735274205A4D47002F1824 /* CopyMemory.m in Sources */,
+				833300A6231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				83A7F3B12175E13200CE8BA4 /* UIViewController+XLSlideMenu.m in Sources */,
 				83969EAA21EDDC210032EAE7 /* NSCache+BGCache.m in Sources */,
 				8399B2B01E9B52CF0059B797 /* AFImageDownloader.m in Sources */,
@@ -2547,6 +2600,7 @@
 				83751D6C1EFA423F004F2D49 /* PortraitArrowView.m in Sources */,
 				835C8B06221273D00011EB91 /* UIImageView+WebCache.m in Sources */,
 				83A7F38E2175DBDA00CE8BA4 /* SlideRightVC.m in Sources */,
+				833300A4231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				8335308D1F45AC1A00596581 /* ChatEnterList.m in Sources */,
 				836507341F70EE25008F1B6F /* WebEnter.m in Sources */,
 				8399B2B51E9B52CF0059B797 /* UIProgressView+AFNetworking.m in Sources */,
@@ -2604,6 +2658,7 @@
 				8335305F1F459FFE00596581 /* DashLineView.m in Sources */,
 				8399B2A81E9B52CF0059B797 /* AFSecurityPolicy.m in Sources */,
 				83367DA02089F38300A5571F /* PieLayer.m in Sources */,
+				833300AB231CAEFD003656A5 /* FDTemplateClassController.m in Sources */,
 				83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */,
 				838FA605224B4D0400D548C2 /* SocketRocketUtility.m in Sources */,
 				8399B29A1E9B52CF0059B797 /* FMDatabasePool.m in Sources */,
@@ -2646,6 +2701,7 @@
 				8366305E1EE16FB80029AD91 /* MapSkipManager.m in Sources */,
 				833530881F45A90100596581 /* SortViewController.m in Sources */,
 				8335305E1F459FFE00596581 /* ArcEqualView.m in Sources */,
+				833300A7231CAE42003656A5 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				8335306E1F45A2E500596581 /* ChatDrawAndSave.m in Sources */,
 				831E240920592A2E00557A96 /* LastRemainObject.m in Sources */,
 				835C8B01221273D00011EB91 /* SDWebImageCompat.m in Sources */,

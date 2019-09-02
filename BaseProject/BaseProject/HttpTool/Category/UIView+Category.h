@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 
 @interface UIView (Category)
 @property (nonatomic, assign)CGFloat x;

@@ -28,6 +28,9 @@
                                 CN_Key:@"AKTClassController"}];
     [self.dataArray addObject:@{TitleKey:@"Masonry 学习",
                                 CN_Key:@"MasonryClassController"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"cell高度自适应 FDTemplate",
+                                CN_Key:@"FDTemplateClassController"}];
 }
 
 
