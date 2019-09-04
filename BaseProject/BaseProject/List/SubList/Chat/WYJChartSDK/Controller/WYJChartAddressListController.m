@@ -31,6 +31,10 @@
     [self request];
     
     [[ChartDatabaseManager share] addDelegate:self];
+    
+    
+    WYJChartAddress *user = [WYJChartCellTool getCurrentUser];
+    self.title = [NSString stringWithFormat:@"%@: %@", user.name, user.userId];
 }
 
 - (IBAction)addFriendAction:(id)sender {
@@ -82,6 +86,10 @@
     
     cell.textLabel.text = address.name;
     cell.detailTextLabel.text = address.userId;
+    cell.detailTextLabel.userInteractionEnabled = YES;
+    cell.detailTextLabel.backgroundColor = [UIColor redColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
+    [cell.detailTextLabel addGestureRecognizer:tap];
     return cell;
 }
 
@@ -107,6 +115,12 @@
     
     [self.dataArr removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationTop)];
+}
+
+- (void)tapClick: (UITapGestureRecognizer *)tap {
+    UILabel *lable = (UILabel *)tap.view;
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = lable.text;
 }
 
 #pragma mark - ChartDatabaseManagerDelegate
