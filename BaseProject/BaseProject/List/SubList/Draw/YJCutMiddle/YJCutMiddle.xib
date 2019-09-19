@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +16,7 @@
                 <outlet property="angleButtonZ" destination="zqU-gs-mv1" id="Eij-ch-npN"/>
                 <outlet property="customView" destination="eey-x2-W86" id="ChX-rx-9LD"/>
                 <outlet property="middelImageView" destination="dPU-5B-MfS" id="vhk-d2-reF"/>
+                <outlet property="originlImageView" destination="G7I-YL-9yv" id="v7r-oR-kYg"/>
                 <outlet property="textX" destination="3kN-UJ-zRs" id="TjA-5I-RSg"/>
                 <outlet property="textY" destination="vUk-QO-xMi" id="A9f-TV-Dcg"/>
                 <outlet property="textZ" destination="vcT-Me-bqZ" id="6jt-CV-ctN"/>
@@ -34,7 +36,7 @@
                         <constraint firstAttribute="width" constant="200" id="Sla-O7-OPP"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cutMiddle.png" translatesAutoresizingMaskIntoConstraints="NO" id="G7I-YL-9yv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7I-YL-9yv">
                     <rect key="frame" x="50" y="370" width="200" height="200"/>
                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
@@ -75,19 +77,19 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vUk-QO-xMi">
-                    <rect key="frame" x="123" y="112" width="53.5" height="30"/>
+                    <rect key="frame" x="123.5" y="112" width="53" height="30"/>
                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-Me-bqZ">
-                    <rect key="frame" x="192" y="112" width="53" height="30"/>
+                    <rect key="frame" x="191.5" y="112" width="53.5" height="30"/>
                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="di1-Be-Uzx">
-                    <rect key="frame" x="71" y="88" width="20" height="20"/>
+                    <rect key="frame" x="71.5" y="88" width="20" height="20"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="8gt-42-heT"/>
@@ -99,7 +101,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaY-Jz-Ytl">
-                    <rect key="frame" x="139" y="88" width="20" height="20"/>
+                    <rect key="frame" x="140" y="88" width="20" height="20"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Y"/>
                     <connections>
@@ -107,7 +109,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqU-gs-mv1">
-                    <rect key="frame" x="208" y="88" width="20" height="20"/>
+                    <rect key="frame" x="208.5" y="88" width="20" height="20"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Z"/>
                     <connections>
@@ -199,7 +201,6 @@
         </view>
     </objects>
     <resources>
-        <image name="cutMiddle.png" width="3418" height="3413"/>
         <image name="middelLittle.png" width="120" height="120"/>
     </resources>
 </document>

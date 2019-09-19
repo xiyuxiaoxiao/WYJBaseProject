@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *customView;
 @property (weak, nonatomic) IBOutlet UIImageView *middelImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *originlImageView;
 
 @property (weak, nonatomic) IBOutlet UITextField *textX;
 @property (weak, nonatomic) IBOutlet UITextField *textY;
@@ -49,17 +50,23 @@
     // 先初始化指定当前选中哪个
     [self initAngleButton];
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"cutMiddle" ofType:@".png"];
+    self.originlImageView.image = [UIImage imageWithContentsOfFile:path];
+    //imageNamed 会内存缓存 不会在VC销毁的时候释放
+//    self.originlImageView.image = [UIImage imageNamed:@"cutMiddle"];
+    
     [self setCustomViewWithCAlayer];
-    
     [self cutTheMiddleSection:self.customView];
-    
+//
     _middelImageView.layer.cornerRadius = 20;
     _middelImageView.layer.masksToBounds = YES;
 }
 
 -(void)setCustomViewWithCAlayer{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"cutMiddle" ofType:@".png"];
     self.customView.layer.cornerRadius = self.customView.bounds.size.width / 2;
-    self.customView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"cutMiddle"].CGImage);
+    self.customView.layer.contents = (__bridge id _Nullable)([UIImage imageWithContentsOfFile:path].CGImage);
+
     
 //    self.customView.layer.masksToBounds = YES;
 

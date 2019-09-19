@@ -278,6 +278,8 @@
 		83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C887931F44512A006B9A72 /* CanNotAddSelfAsSubView.xib */; };
 		83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C887941F44512A006B9A72 /* self addSubView self.png */; };
 		83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCD1732202855500577E3B /* WYJChartImageCell.m */; };
+		83DE83A2233232DD00926E80 /* ButtonByControlTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DE83A1233232DD00926E80 /* ButtonByControlTestVC.m */; };
+		83DE83A6233234A800926E80 /* WYJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DE83A4233234A800926E80 /* WYJButton.m */; };
 		83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EF517F222CDA3E00B47F4E /* GCDMySummary.m */; };
 		83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */; };
 		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
@@ -803,6 +805,10 @@
 		83C887941F44512A006B9A72 /* self addSubView self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self addSubView self.png"; sourceTree = "<group>"; };
 		83DCD1722202855500577E3B /* WYJChartImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartImageCell.h; sourceTree = "<group>"; };
 		83DCD1732202855500577E3B /* WYJChartImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartImageCell.m; sourceTree = "<group>"; };
+		83DE83A0233232DD00926E80 /* ButtonByControlTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonByControlTestVC.h; sourceTree = "<group>"; };
+		83DE83A1233232DD00926E80 /* ButtonByControlTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonByControlTestVC.m; sourceTree = "<group>"; };
+		83DE83A4233234A800926E80 /* WYJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJButton.m; sourceTree = "<group>"; };
+		83DE83A5233234A800926E80 /* WYJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJButton.h; sourceTree = "<group>"; };
 		83E74637224A053A00546565 /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaseProject.entitlements; sourceTree = "<group>"; };
 		83EF517F222CDA3E00B47F4E /* GCDMySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDMySummary.m; sourceTree = "<group>"; };
 		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
@@ -2155,9 +2161,10 @@
 		83C887661F444FC0006B9A72 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				83C887671F444FC0006B9A72 /* ButtonProgress */,
 				83C887761F444FC0006B9A72 /* CustomViewEnterList.h */,
 				83C887771F444FC0006B9A72 /* CustomViewEnterList.m */,
+				83DE839B2332319300926E80 /* buttonByControl */,
+				83C887671F444FC0006B9A72 /* ButtonProgress */,
 				83C887781F444FC0006B9A72 /* TextOneByOne */,
 				83B55433206B767900439E66 /* HitTestTabBar */,
 			);
@@ -2230,6 +2237,25 @@
 				83C887941F44512A006B9A72 /* self addSubView self.png */,
 			);
 			path = CanNotAddSelfAsSubView;
+			sourceTree = "<group>";
+		};
+		83DE839B2332319300926E80 /* buttonByControl */ = {
+			isa = PBXGroup;
+			children = (
+				83DE83A0233232DD00926E80 /* ButtonByControlTestVC.h */,
+				83DE83A1233232DD00926E80 /* ButtonByControlTestVC.m */,
+				83DE83A3233234A800926E80 /* WYJButton */,
+			);
+			path = buttonByControl;
+			sourceTree = "<group>";
+		};
+		83DE83A3233234A800926E80 /* WYJButton */ = {
+			isa = PBXGroup;
+			children = (
+				83DE83A5233234A800926E80 /* WYJButton.h */,
+				83DE83A4233234A800926E80 /* WYJButton.m */,
+			);
+			path = WYJButton;
 			sourceTree = "<group>";
 		};
 		B906997D5A8A31FEB81B0052 /* Pods */ = {
@@ -2655,6 +2681,7 @@
 				83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */,
 				8399B2AC1E9B52CF0059B797 /* Base64.m in Sources */,
 				8399B2961E9B52CF0059B797 /* WYJChartDBHelper.m in Sources */,
+				83DE83A2233232DD00926E80 /* ButtonByControlTestVC.m in Sources */,
 				8335305F1F459FFE00596581 /* DashLineView.m in Sources */,
 				8399B2A81E9B52CF0059B797 /* AFSecurityPolicy.m in Sources */,
 				83367DA02089F38300A5571F /* PieLayer.m in Sources */,
@@ -2677,6 +2704,7 @@
 				83637A911E9F65B200EAD984 /* NetWorkStatus.m in Sources */,
 				839B7F2F21F6B1D1008E7A8C /* MASConstraintMaker.m in Sources */,
 				839C7E081EE54156006CAFDC /* ES_RemaindControler.m in Sources */,
+				83DE83A6233234A800926E80 /* WYJButton.m in Sources */,
 				8399B2A71E9B52CF0059B797 /* AFNetworkReachabilityManager.m in Sources */,
 				83C8878D1F445041006B9A72 /* SortFunction.c in Sources */,
 				83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */,

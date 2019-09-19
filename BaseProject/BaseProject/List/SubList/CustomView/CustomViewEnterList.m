@@ -33,6 +33,8 @@
     [self.dataArray addObject:@{TitleKey:@"tabbar中间凸出（重写hitTest）",
                                 CN_Key:@"MyTabBarController"}];
     
+    [self.dataArray addObject:@{TitleKey:@"使用UIControl自定义button控件",
+                                CN_Key:@"ButtonByControlTestVC"}];
 }
 
 @end
