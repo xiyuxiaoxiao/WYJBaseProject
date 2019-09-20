@@ -13,10 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (WYJChartImageStore)
 - (NSString *)storeFileName: (NSString *)fileName;
 - (void)storeWebImageWithFilePathName: (NSString *)filePath;
-
-- (NSData *)getCompressedImageData;
-- (UIImage *)resizedImageWithCertainWidth: (CGFloat)limitWidth;
-
 @end
 
 NS_ASSUME_NONNULL_END

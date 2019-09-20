@@ -50,14 +50,18 @@
     // 先初始化指定当前选中哪个
     [self initAngleButton];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"cutMiddle" ofType:@".png"];
-    self.originlImageView.image = [UIImage imageWithContentsOfFile:path];
-    //imageNamed 会内存缓存 不会在VC销毁的时候释放
-//    self.originlImageView.image = [UIImage imageNamed:@"cutMiddle"];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"cutMiddle" ofType:@".png"];
+        UIImage *image = [[UIImage imageWithContentsOfFile:path] resizedImageWithCertainWidth:3417];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.originlImageView.image = image;
+        });
+    });
     
     [self setCustomViewWithCAlayer];
     [self cutTheMiddleSection:self.customView];
-//
+    
     _middelImageView.layer.cornerRadius = 20;
     _middelImageView.layer.masksToBounds = YES;
 }
