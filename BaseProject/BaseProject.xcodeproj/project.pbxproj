@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831217022333500700DBDBFE /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 831217012333500700DBDBFE /* UIImage+Category.m */; };
 		831E240720592A2E00557A96 /* JSAndOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E23FD20592A2E00557A96 /* JSAndOC.m */; };
 		831E240820592A2E00557A96 /* JSAndOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E23FE20592A2E00557A96 /* JSAndOC.xib */; };
 		831E240920592A2E00557A96 /* LastRemainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240020592A2E00557A96 /* LastRemainObject.m */; };
@@ -315,6 +316,8 @@
 
 /* Begin PBXFileReference section */
 		2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		831217002333500700DBDBFE /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
+		831217012333500700DBDBFE /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		831E23FC20592A2E00557A96 /* JSAndOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAndOC.h; sourceTree = "<group>"; };
 		831E23FD20592A2E00557A96 /* JSAndOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAndOC.m; sourceTree = "<group>"; };
 		831E23FE20592A2E00557A96 /* JSAndOC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSAndOC.xib; sourceTree = "<group>"; };
@@ -1730,6 +1733,8 @@
 			isa = PBXGroup;
 			children = (
 				8399B2541E9B52CF0059B797 /* ImageGif */,
+				831217002333500700DBDBFE /* UIImage+Category.h */,
+				831217012333500700DBDBFE /* UIImage+Category.m */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2745,6 +2750,7 @@
 				839C7E081EE54156006CAFDC /* ES_RemaindControler.m in Sources */,
 				83DE83A6233234A800926E80 /* WYJButton.m in Sources */,
 				8399B2A71E9B52CF0059B797 /* AFNetworkReachabilityManager.m in Sources */,
+				831217022333500700DBDBFE /* UIImage+Category.m in Sources */,
 				83C8878D1F445041006B9A72 /* SortFunction.c in Sources */,
 				83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */,
 				83735277205A7A6B002F1824 /* BlockPoint.m in Sources */,

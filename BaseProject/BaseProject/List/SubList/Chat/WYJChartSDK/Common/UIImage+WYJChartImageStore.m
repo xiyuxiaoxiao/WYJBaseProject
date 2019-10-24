@@ -36,48 +36,4 @@
     
     [[NSFileManager defaultManager] createFileAtPath:filePath contents:imageData attributes:nil];
 }
-
-#pragma mark - 压缩 裁剪
-// 压缩
-- (NSData *)getCompressedImageData {
-    
-    CGFloat maximumDataSizePerPixel = 0.1;
-    CGFloat maxCompression          = 0.5;
-    CGFloat compression             = 1.0;
-    
-    CGFloat maxFileSize = self.size.width*self.size.height*maximumDataSizePerPixel;
-    NSData *imageData = UIImageJPEGRepresentation(self, compression);
-    
-    while (imageData.length > maxFileSize && compression > maxCompression) {
-        compression -= 0.1;
-        imageData = UIImageJPEGRepresentation(self, compression);
-    }
-    
-    return imageData;
-}
-
-
-// 直接给定所选图片的最大宽度
-- (UIImage *)resizedImageWithCertainWidth: (CGFloat)limitWidth {
-    
-    CGFloat width   = self.size.width;
-    CGFloat height  = self.size.height;
-    CGFloat scale   = limitWidth / width;
-    
-    if (scale >= 1) {
-        return self;
-    }else {
-        CGFloat newWidth  = width * scale;
-        CGFloat newHeight = height * scale;
-        
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(newWidth, newHeight), NO, 1);
-        
-        [self drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
-        
-        UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-        
-        return resizedImage;
-    }
-}
-
 @end
