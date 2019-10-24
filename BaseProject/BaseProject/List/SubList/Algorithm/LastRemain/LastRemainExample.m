@@ -39,7 +39,10 @@
     
     NSString *mText = self.mText.text;
     int m = [mText intValue];
-    
+    if (n <= 0 || m <= 0) {
+        self.resultLabel.text = [NSString stringWithFormat:@"结果: 请检查m、n"];
+        return;
+    }
     int s = LastRemaining(n, m);
     self.resultLabel.text = [NSString stringWithFormat:@"结果: %d",s];
 }

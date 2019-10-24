@@ -59,6 +59,8 @@
 		8349E2C21F5D3F67001FB473 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 8349E2C11F5D3F67001FB473 /* html */; };
 		8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349E2D51F5D56DC001FB473 /* NSObject+SourcePathGroup.m */; };
 		83539D2F230A83DF004E555B /* MasonryClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83539D2E230A83DF004E555B /* MasonryClassController.m */; };
+		8359E3BD236138A000386BEF /* RestMoneyEveryYearController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8359E3BB236138A000386BEF /* RestMoneyEveryYearController.m */; };
+		8359E3BE236138A000386BEF /* RestMoneyEveryYearController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8359E3BC236138A000386BEF /* RestMoneyEveryYearController.xib */; };
 		835C8AFB221273D00011EB91 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE0221273D00011EB91 /* SDWebImageManager.m */; };
 		835C8AFC221273D00011EB91 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE1221273D00011EB91 /* SDWebImageDecoder.m */; };
 		835C8AFD221273D00011EB91 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C8AE3221273D00011EB91 /* UIImageView+HighlightedWebCache.m */; };
@@ -237,6 +239,8 @@
 		83A94FDC2179B19C009FF4B1 /* PieLayerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A94FDB2179B19C009FF4B1 /* PieLayerData.m */; };
 		83B14D6D1EFD0FAA00EF24A9 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B14D681EFD0FAA00EF24A9 /* MapController.m */; };
 		83B14D6E1EFD0FAA00EF24A9 /* MapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B14D6A1EFD0FAA00EF24A9 /* MapData.m */; };
+		83B291F7234F2CC3006DC43E /* ImageTechnologyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */; };
+		83B291FA234F2DA7006DC43E /* ImageIoLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B291F9234F2DA7006DC43E /* ImageIoLoadVC.m */; };
 		83B30E9C20CA5A0A0090D264 /* NSOperation.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9820CA5A0A0090D264 /* NSOperation.htm */; };
 		83B30E9E20CA5A0A0090D264 /* 多线程GCD.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9A20CA5A0A0090D264 /* 多线程GCD.htm */; };
 		83B30E9F20CA5A0A0090D264 /* NSThread.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9B20CA5A0A0090D264 /* NSThread.htm */; };
@@ -398,6 +402,9 @@
 		8349E2D51F5D56DC001FB473 /* NSObject+SourcePathGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SourcePathGroup.m"; sourceTree = "<group>"; };
 		83539D2D230A83DF004E555B /* MasonryClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryClassController.h; sourceTree = "<group>"; };
 		83539D2E230A83DF004E555B /* MasonryClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryClassController.m; sourceTree = "<group>"; };
+		8359E3BA236138A000386BEF /* RestMoneyEveryYearController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestMoneyEveryYearController.h; sourceTree = "<group>"; };
+		8359E3BB236138A000386BEF /* RestMoneyEveryYearController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = RestMoneyEveryYearController.m; sourceTree = "<group>"; };
+		8359E3BC236138A000386BEF /* RestMoneyEveryYearController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestMoneyEveryYearController.xib; sourceTree = "<group>"; };
 		835C8ADE221273D00011EB91 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		835C8ADF221273D00011EB91 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		835C8AE0221273D00011EB91 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
@@ -743,6 +750,10 @@
 		83B14D681EFD0FAA00EF24A9 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapController.m; sourceTree = "<group>"; };
 		83B14D691EFD0FAA00EF24A9 /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
 		83B14D6A1EFD0FAA00EF24A9 /* MapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapData.m; sourceTree = "<group>"; };
+		83B291F5234F2CC3006DC43E /* ImageTechnologyList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageTechnologyList.h; sourceTree = "<group>"; };
+		83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTechnologyList.m; sourceTree = "<group>"; };
+		83B291F8234F2DA7006DC43E /* ImageIoLoadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageIoLoadVC.h; sourceTree = "<group>"; };
+		83B291F9234F2DA7006DC43E /* ImageIoLoadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageIoLoadVC.m; sourceTree = "<group>"; };
 		83B30E9820CA5A0A0090D264 /* NSOperation.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NSOperation.htm; sourceTree = "<group>"; };
 		83B30E9A20CA5A0A0090D264 /* 多线程GCD.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "多线程GCD.htm"; sourceTree = "<group>"; };
 		83B30E9B20CA5A0A0090D264 /* NSThread.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NSThread.htm; sourceTree = "<group>"; };
@@ -1341,6 +1352,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				83B291F3234F2C2B006DC43E /* ImageTechnology */,
 				838A01B12227E34C00372A9D /* Layout */,
 				83924B69221BD66700AC9A37 /* WYJCalculator */,
 				836AE1C41F1EFF4E00101A8D /* CommonBug */,
@@ -1552,6 +1564,9 @@
 			children = (
 				83924B6A221BD69800AC9A37 /* WYJCalculatorList.h */,
 				83924B6B221BD69800AC9A37 /* WYJCalculatorList.m */,
+				8359E3BA236138A000386BEF /* RestMoneyEveryYearController.h */,
+				8359E3BB236138A000386BEF /* RestMoneyEveryYearController.m */,
+				8359E3BC236138A000386BEF /* RestMoneyEveryYearController.xib */,
 				83924B6D221BD73A00AC9A37 /* subwayCostEachMonth.html */,
 			);
 			path = WYJCalculator;
@@ -2074,6 +2089,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		83B291F3234F2C2B006DC43E /* ImageTechnology */ = {
+			isa = PBXGroup;
+			children = (
+				83B291F5234F2CC3006DC43E /* ImageTechnologyList.h */,
+				83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */,
+				83B291F4234F2C83006DC43E /* ImageIoLoad */,
+			);
+			path = ImageTechnology;
+			sourceTree = "<group>";
+		};
+		83B291F4234F2C83006DC43E /* ImageIoLoad */ = {
+			isa = PBXGroup;
+			children = (
+				83B291F8234F2DA7006DC43E /* ImageIoLoadVC.h */,
+				83B291F9234F2DA7006DC43E /* ImageIoLoadVC.m */,
+			);
+			path = ImageIoLoad;
+			sourceTree = "<group>";
+		};
 		83B30E9720CA55DA0090D264 /* MultiThread */ = {
 			isa = PBXGroup;
 			children = (
@@ -2370,6 +2404,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -2440,6 +2475,7 @@
 				8399B21A1E9B52AF0059B797 /* Assets.xcassets in Resources */,
 				833530611F459FFE00596581 /* DrawDashLineVC.xib in Resources */,
 				83BE80401EF9186600FD588A /* iconfont-biaoji.png in Resources */,
+				8359E3BE236138A000386BEF /* RestMoneyEveryYearController.xib in Resources */,
 				8335305D1F459FFE00596581 /* ArcEqualVC.xib in Resources */,
 				8399B2A01E9B52CF0059B797 /* error.png in Resources */,
 				8377CA011EF3A7C500E4E56C /* cityData.plist in Resources */,
@@ -2552,6 +2588,7 @@
 				839B7F3221F6B1D1008E7A8C /* View+MASAdditions.m in Sources */,
 				8399B2B41E9B52CF0059B797 /* UIImageView+AFNetworking.m in Sources */,
 				8399B2B61E9B52CF0059B797 /* UIRefreshControl+AFNetworking.m in Sources */,
+				83B291F7234F2CC3006DC43E /* ImageTechnologyList.m in Sources */,
 				83B5543C206B767900439E66 /* MyTabBar.m in Sources */,
 				839B7F2D21F6B1D1008E7A8C /* ViewController+MASAdditions.m in Sources */,
 				83924B6C221BD69800AC9A37 /* WYJCalculatorList.m in Sources */,
@@ -2576,6 +2613,7 @@
 				839399242244C11800EDDFCB /* WYJChartManager.m in Sources */,
 				83A7F3B52175EB8900CE8BA4 /* SlideRootVC.m in Sources */,
 				83A7F3722175D29000CE8BA4 /* AnimationEncapsulation.m in Sources */,
+				8359E3BD236138A000386BEF /* RestMoneyEveryYearController.m in Sources */,
 				83637A8F1E9F65B200EAD984 /* NSString+Password.m in Sources */,
 				835C8AFC221273D00011EB91 /* SDWebImageDecoder.m in Sources */,
 				83969EA921EDDC210032EAE7 /* BGDB.m in Sources */,
@@ -2683,6 +2721,7 @@
 				8399B2961E9B52CF0059B797 /* WYJChartDBHelper.m in Sources */,
 				83DE83A2233232DD00926E80 /* ButtonByControlTestVC.m in Sources */,
 				8335305F1F459FFE00596581 /* DashLineView.m in Sources */,
+				83B291FA234F2DA7006DC43E /* ImageIoLoadVC.m in Sources */,
 				8399B2A81E9B52CF0059B797 /* AFSecurityPolicy.m in Sources */,
 				83367DA02089F38300A5571F /* PieLayer.m in Sources */,
 				833300AB231CAEFD003656A5 /* FDTemplateClassController.m in Sources */,
@@ -2905,7 +2944,7 @@
 			baseConfigurationReference = A35A3FBF8A3B28261E113C8A /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TL7L83CUD;
@@ -2970,7 +3009,7 @@
 			baseConfigurationReference = 8CAE69609FDD1709F9D6DDE3 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5TL7L83CUD;
