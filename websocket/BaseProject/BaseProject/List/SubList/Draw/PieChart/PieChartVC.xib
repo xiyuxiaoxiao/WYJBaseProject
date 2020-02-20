@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PieChartVC">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edV-fW-tpF">
+                    <rect key="frame" x="15" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="动画1"/>
+                    <connections>
+                        <action selector="animation1:" destination="-1" eventType="touchUpInside" id="QGf-pj-GYZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Q-oJ-TYk">
+                    <rect key="frame" x="105" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="动画2"/>
+                    <connections>
+                        <action selector="animation2:" destination="-1" eventType="touchUpInside" id="nAC-Qz-saD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J9-NF-TAC">
+                    <rect key="frame" x="195" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title=" 数据1 "/>
+                    <connections>
+                        <action selector="updata1" destination="-1" eventType="touchUpInside" id="FAS-zN-fo0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-WG-zad">
+                    <rect key="frame" x="285" y="40" width="75" height="30"/>
+                    <color key="backgroundColor" red="0.92156862750000001" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title=" 数据2 "/>
+                    <connections>
+                        <action selector="updata2" destination="-1" eventType="touchUpInside" id="SDK-ca-PQA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.90196078430000004" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="FGd-CF-915"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="Iq7-Ck-aoM"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="I6g-WG-zad" secondAttribute="trailing" constant="15" id="M7U-UC-5WI"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="NvU-5x-Eav"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="leading" secondItem="edV-fW-tpF" secondAttribute="trailing" constant="15" id="VsI-Sw-AI2"/>
+                <constraint firstItem="edV-fW-tpF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="Wcx-JA-veS"/>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="leading" secondItem="y1Q-oJ-TYk" secondAttribute="trailing" constant="15" id="bpa-gC-FOW"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="centerY" secondItem="edV-fW-tpF" secondAttribute="centerY" id="f33-rJ-8vE"/>
+                <constraint firstItem="edV-fW-tpF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="gyI-0o-RGh"/>
+                <constraint firstItem="y1Q-oJ-TYk" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="m8K-6c-bbR"/>
+                <constraint firstItem="7J9-NF-TAC" firstAttribute="width" secondItem="edV-fW-tpF" secondAttribute="width" id="sja-OS-65H"/>
+                <constraint firstItem="I6g-WG-zad" firstAttribute="leading" secondItem="7J9-NF-TAC" secondAttribute="trailing" constant="15" id="wcG-bJ-Ejl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>
