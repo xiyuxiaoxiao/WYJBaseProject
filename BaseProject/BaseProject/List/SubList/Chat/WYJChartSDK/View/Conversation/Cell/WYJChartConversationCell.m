@@ -2,8 +2,8 @@
 //  WYJChartConversationCell.m
 //  BaseProject
 //
-//  Created by ZSXJ on 2019/1/30.
-//  Copyright © 2019年 WYJ. All rights reserved.
+//  Created by ZSXJ on 2020/2/20.
+//  Copyright © 2020 WYJ. All rights reserved.
 //
 
 #import "WYJChartConversationCell.h"
@@ -13,111 +13,33 @@
 
 @interface WYJChartConversationCell ()
 //头像
-@property (nonatomic, strong) UIImageView *iconView;
+@property (nonatomic, weak) IBOutlet UIImageView *iconView;
 //时间
-@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 //用户名
-@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+//等级
+@property (nonatomic, weak) IBOutlet UILabel *gradeLabel;
 //消息
-@property (nonatomic, strong) UILabel *messageLabel;
+@property (nonatomic, weak) IBOutlet UILabel *messageLabel;
 
 //countLabel
-@property (nonatomic, strong) UILabel *countLabel;
+@property (nonatomic, weak) IBOutlet UILabel *countLabel;
 @end
+
 
 @implementation WYJChartConversationCell
 
-- (UIImageView *)iconView {
-    if (!_iconView) {
-        _iconView = [[UIImageView alloc] init];
-        _iconView.backgroundColor = [UIColor yellowColor];
-        _iconView.layer.cornerRadius = 5;
-        _iconView.layer.masksToBounds = YES;
-    }
-    return _iconView;
-}
-- (UILabel *)timeLabel {
-    if (!_timeLabel) {
-        _timeLabel = [[UILabel alloc] init];
-        _timeLabel.font             = [UIFont systemFontOfSize:14];
-        _timeLabel.textAlignment    = NSTextAlignmentRight;
-    }
-    return _timeLabel;
-}
-- (UILabel *)messageLabel {
-    if (!_messageLabel) {
-        _messageLabel = [[UILabel alloc] init];
-        _messageLabel.font      = [UIFont systemFontOfSize:14];
-        _messageLabel.textColor = [UIColor darkGrayColor];
-    }
-    return _messageLabel;
-}
-- (UILabel *)nameLabel {
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = [UIFont systemFontOfSize:17];
-    }
-    return _nameLabel;
-}
-- (UILabel *)countLabel {
-    if (!_countLabel) {
-        _countLabel = [[UILabel alloc] init];
-        _countLabel.font            = [UIFont systemFontOfSize:13];
-        _countLabel.textColor       = [UIColor whiteColor];
-        _countLabel.textAlignment   = NSTextAlignmentCenter;
-        _countLabel.backgroundColor = [UIColor redColor];
-    }
-    return _countLabel;
-}
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
     
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor clearColor];
-        [self setFrame];
-    }
-    return self;
-}
-
-- (void)setFrame {
-    [self.contentView addSubview:self.iconView];
-    [self.contentView addSubview:self.timeLabel];
-    [self.contentView addSubview:self.nameLabel];
-    [self.contentView addSubview:self.messageLabel];
-    
-    self.iconView.frame = CGRectMake(15, 0, 45, 45);
-    
-    CGFloat x_name = CGRectGetMaxX(self.iconView.frame) + 25;
-    CGFloat h_name = CGRectGetHeight(self.iconView.frame)/2;
-    CGFloat w_name = WYJScreenWidth - x_name;
-    self.nameLabel.frame    = CGRectMake(x_name, 0, w_name, h_name);
-    self.messageLabel.frame = CGRectMake(x_name, h_name, w_name, h_name);
-    
-    
-    self.timeLabel.text = @"01-10 18:20";
-    CGSize size_time = [self.timeLabel sizeThatFits:CGSizeMake(MAXFLOAT, 30)];
-    self.timeLabel.text = nil;
-    
-    CGFloat w_time = size_time.width;
-    CGFloat x_time = WYJScreenWidth - 20 - w_time;
-    CGFloat h_time = size_time.height;
-    CGFloat y_time = CGRectGetMidY(self.nameLabel.frame) - h_time/2;
-    self.timeLabel.frame = CGRectMake(x_time, y_time, w_time, h_time);
-    
-    
-    [self.contentView addSubview:self.countLabel];
-    
-    CGFloat x_count = CGRectGetMaxX(self.iconView.frame) - 15/2.0 - 2;
-    CGFloat y_count = CGRectGetMinY(self.iconView.frame) - 15/2.0 + 2;
-    self.countLabel.frame = CGRectMake(x_count , y_count, 15, 15);
-    self.countLabel.layer.cornerRadius = 15/2.0;
+    self.iconView.layer.cornerRadius = 6;
+    self.iconView.backgroundColor = [UIColor yellowColor];
+    self.countLabel.layer.cornerRadius = 9;
     self.countLabel.layer.masksToBounds = YES;
 }
 
-+ (CGFloat)cellHeight {
-    return 70;
-}
 
 - (void)setConversation:(WYJChartConversation *)conversation {
     self.nameLabel.text     = conversation.partnerUser.name;
@@ -128,6 +50,10 @@
     self.countLabel.hidden  = conversation.unreadCount > 0 ? NO : YES;
     
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:conversation.partnerUser.portraitURL] completed:nil];
+}
+
++ (CGFloat)cellHeight {
+    return 70;
 }
 
 @end

@@ -31,9 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:NSClassFromString(@"WYJChartConversationCell") forCellReuseIdentifier:@"WYJChartConversationCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WYJChartConversationCell" bundle:nil] forCellReuseIdentifier:@"WYJChartConversationCell"];
     self.tableView.rowHeight = [WYJChartConversationCell cellHeight];
-    self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     
     [self request];
     

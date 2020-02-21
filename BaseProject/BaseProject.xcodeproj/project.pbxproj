@@ -139,7 +139,6 @@
 		8388690620BC0047006619B9 /* CurrentUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 838868FC20BC0047006619B9 /* CurrentUserManager.m */; };
 		8388690720BC0047006619B9 /* MessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 838868FE20BC0047006619B9 /* MessageList.m */; };
 		8388690820BC0047006619B9 /* TestDataDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8388690020BC0047006619B9 /* TestDataDatabase.m */; };
-		8389294922015286009DED0F /* WYJChartConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294822015286009DED0F /* WYJChartConversationCell.m */; };
 		8389294F2201AB85009DED0F /* WYJMultiDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294D2201AB85009DED0F /* WYJMultiDelegate.m */; };
 		838929502201AB85009DED0F /* ChartDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389294E2201AB85009DED0F /* ChartDatabaseManager.m */; };
 		838929532201ABD0009DED0F /* WYJChartCellTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 838929512201ABD0009DED0F /* WYJChartCellTool.m */; };
@@ -242,6 +241,8 @@
 		83B14D6E1EFD0FAA00EF24A9 /* MapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B14D6A1EFD0FAA00EF24A9 /* MapData.m */; };
 		83B291F7234F2CC3006DC43E /* ImageTechnologyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */; };
 		83B291FA234F2DA7006DC43E /* ImageIoLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B291F9234F2DA7006DC43E /* ImageIoLoadVC.m */; };
+		83B2B26223FE945A00BA45E2 /* WYJChartConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2B26023FE945A00BA45E2 /* WYJChartConversationCell.m */; };
+		83B2B26323FE945A00BA45E2 /* WYJChartConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B2B26123FE945A00BA45E2 /* WYJChartConversationCell.xib */; };
 		83B30E9C20CA5A0A0090D264 /* NSOperation.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9820CA5A0A0090D264 /* NSOperation.htm */; };
 		83B30E9E20CA5A0A0090D264 /* 多线程GCD.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9A20CA5A0A0090D264 /* 多线程GCD.htm */; };
 		83B30E9F20CA5A0A0090D264 /* NSThread.htm in Resources */ = {isa = PBXBuildFile; fileRef = 83B30E9B20CA5A0A0090D264 /* NSThread.htm */; };
@@ -545,8 +546,6 @@
 		838868FE20BC0047006619B9 /* MessageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageList.m; sourceTree = "<group>"; };
 		838868FF20BC0047006619B9 /* TestDataDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataDatabase.h; sourceTree = "<group>"; };
 		8388690020BC0047006619B9 /* TestDataDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataDatabase.m; sourceTree = "<group>"; };
-		8389294722015286009DED0F /* WYJChartConversationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartConversationCell.h; sourceTree = "<group>"; };
-		8389294822015286009DED0F /* WYJChartConversationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartConversationCell.m; sourceTree = "<group>"; };
 		8389294B2201AB85009DED0F /* WYJMultiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJMultiDelegate.h; sourceTree = "<group>"; };
 		8389294C2201AB85009DED0F /* ChartDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDatabaseManager.h; sourceTree = "<group>"; };
 		8389294D2201AB85009DED0F /* WYJMultiDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJMultiDelegate.m; sourceTree = "<group>"; };
@@ -757,6 +756,9 @@
 		83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageTechnologyList.m; sourceTree = "<group>"; };
 		83B291F8234F2DA7006DC43E /* ImageIoLoadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageIoLoadVC.h; sourceTree = "<group>"; };
 		83B291F9234F2DA7006DC43E /* ImageIoLoadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageIoLoadVC.m; sourceTree = "<group>"; };
+		83B2B25F23FE945A00BA45E2 /* WYJChartConversationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartConversationCell.h; sourceTree = "<group>"; };
+		83B2B26023FE945A00BA45E2 /* WYJChartConversationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartConversationCell.m; sourceTree = "<group>"; };
+		83B2B26123FE945A00BA45E2 /* WYJChartConversationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYJChartConversationCell.xib; sourceTree = "<group>"; };
 		83B30E9820CA5A0A0090D264 /* NSOperation.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NSOperation.htm; sourceTree = "<group>"; };
 		83B30E9A20CA5A0A0090D264 /* 多线程GCD.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "多线程GCD.htm"; sourceTree = "<group>"; };
 		83B30E9B20CA5A0A0090D264 /* NSThread.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NSThread.htm; sourceTree = "<group>"; };
@@ -1493,8 +1495,9 @@
 		8389294622015250009DED0F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8389294722015286009DED0F /* WYJChartConversationCell.h */,
-				8389294822015286009DED0F /* WYJChartConversationCell.m */,
+				83B2B25F23FE945A00BA45E2 /* WYJChartConversationCell.h */,
+				83B2B26023FE945A00BA45E2 /* WYJChartConversationCell.m */,
+				83B2B26123FE945A00BA45E2 /* WYJChartConversationCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2443,6 +2446,7 @@
 				83359AE21F4BC051007D3EB7 /* MinInsertExample.xib in Resources */,
 				83C8877D1F444FC0006B9A72 /* ButtonProgressController.xib in Resources */,
 				8349E2C21F5D3F67001FB473 /* html in Resources */,
+				83B2B26323FE945A00BA45E2 /* WYJChartConversationCell.xib in Resources */,
 				83BE803C1EF917F100FD588A /* iconfont-suoxiao.png in Resources */,
 				83C8879A1F44512A006B9A72 /* CanNotAddSelfAsSubView.xib in Resources */,
 				8399B2A41E9B52CF0059B797 /* success@2x.png in Resources */,
@@ -2756,7 +2760,7 @@
 				83735277205A7A6B002F1824 /* BlockPoint.m in Sources */,
 				83359AE11F4BC051007D3EB7 /* MinInsertExample.m in Sources */,
 				8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */,
-				8389294922015286009DED0F /* WYJChartConversationCell.m in Sources */,
+				83B2B26223FE945A00BA45E2 /* WYJChartConversationCell.m in Sources */,
 				839A6F6E20C00178001EF130 /* NewBaseKeyboardController.m in Sources */,
 				8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */,
 				835C8B07221273D00011EB91 /* UIView+WebCacheOperation.m in Sources */,
