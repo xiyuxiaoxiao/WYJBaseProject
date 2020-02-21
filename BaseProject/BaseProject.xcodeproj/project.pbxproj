@@ -286,6 +286,8 @@
 		83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCD1732202855500577E3B /* WYJChartImageCell.m */; };
 		83DE83A2233232DD00926E80 /* ButtonByControlTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DE83A1233232DD00926E80 /* ButtonByControlTestVC.m */; };
 		83DE83A6233234A800926E80 /* WYJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DE83A4233234A800926E80 /* WYJButton.m */; };
+		83E0339123FFB6E5003A793F /* ChatMorePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E0339023FFB6E5003A793F /* ChatMorePanel.m */; };
+		83E0339423FFC975003A793F /* ChatMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E0339323FFC975003A793F /* ChatMoreItem.m */; };
 		83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EF517F222CDA3E00B47F4E /* GCDMySummary.m */; };
 		83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */; };
 		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
@@ -825,6 +827,10 @@
 		83DE83A1233232DD00926E80 /* ButtonByControlTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonByControlTestVC.m; sourceTree = "<group>"; };
 		83DE83A4233234A800926E80 /* WYJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJButton.m; sourceTree = "<group>"; };
 		83DE83A5233234A800926E80 /* WYJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJButton.h; sourceTree = "<group>"; };
+		83E0338F23FFB6E5003A793F /* ChatMorePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMorePanel.h; sourceTree = "<group>"; };
+		83E0339023FFB6E5003A793F /* ChatMorePanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMorePanel.m; sourceTree = "<group>"; };
+		83E0339223FFC975003A793F /* ChatMoreItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMoreItem.h; sourceTree = "<group>"; };
+		83E0339323FFC975003A793F /* ChatMoreItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMoreItem.m; sourceTree = "<group>"; };
 		83E74637224A053A00546565 /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaseProject.entitlements; sourceTree = "<group>"; };
 		83EF517F222CDA3E00B47F4E /* GCDMySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDMySummary.m; sourceTree = "<group>"; };
 		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
@@ -1958,6 +1964,10 @@
 			children = (
 				839D41F621F953FC00130E47 /* WYJChatKeyboard.h */,
 				839D41F721F953FC00130E47 /* WYJChatKeyboard.m */,
+				83E0338F23FFB6E5003A793F /* ChatMorePanel.h */,
+				83E0339023FFB6E5003A793F /* ChatMorePanel.m */,
+				83E0339223FFC975003A793F /* ChatMoreItem.h */,
+				83E0339323FFC975003A793F /* ChatMoreItem.m */,
 				836A3D622202CDB8006BA323 /* WYJPhoto.h */,
 				836A3D632202CDB8006BA323 /* WYJPhoto.m */,
 			);
@@ -2612,6 +2622,7 @@
 				833530651F459FFE00596581 /* YJCutMiddle.m in Sources */,
 				83BE802C1EF9118800FD588A /* CustomAnnotationViewController.m in Sources */,
 				8399B29D1E9B52CF0059B797 /* UIImage+GifLoad.m in Sources */,
+				83E0339123FFB6E5003A793F /* ChatMorePanel.m in Sources */,
 				83C887831F444FC0006B9A72 /* ButtonProgressViewManger.m in Sources */,
 				835C8B03221273D00011EB91 /* SDImageCache.m in Sources */,
 				83F27F7F21FEEFF700E7FE9D /* WYJChartAddressListController.m in Sources */,
@@ -2645,6 +2656,7 @@
 				835C8B00221273D00011EB91 /* UIImage+MultiFormat.m in Sources */,
 				8399B2B71E9B52CF0059B797 /* UIWebView+AFNetworking.m in Sources */,
 				835C8B08221273D00011EB91 /* UIButton+WebCache.m in Sources */,
+				83E0339423FFC975003A793F /* ChatMoreItem.m in Sources */,
 				83735274205A4D47002F1824 /* CopyMemory.m in Sources */,
 				833300A6231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				83A7F3B12175E13200CE8BA4 /* UIViewController+XLSlideMenu.m in Sources */,

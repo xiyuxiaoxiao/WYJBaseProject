@@ -10,6 +10,7 @@
 #import "WYJChartDefine.h"
 #import "WYJPhoto.h"
 #import "UIImage+WYJChartImageStore.h"
+#import "ChatMorePanel.h"
 
 @interface WYJChatKeyboard ()<UITextViewDelegate>
 {
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) UIView *      messageBar;
 @property (nonatomic, strong) UITextView *  msgTextView;
 @property (nonatomic, strong) UIButton *    swtHandleButton;
+@property (nonatomic, strong) ChatMorePanel* morePanel;
 @end
 
 @implementation WYJChatKeyboard
@@ -72,6 +74,19 @@
         [_swtHandleButton addTarget:self action:@selector(switchHandleKeyboard:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _swtHandleButton;
+}
+
+- (ChatMorePanel *)morePanel {
+    if (!_morePanel) {
+        _morePanel = [[ChatMorePanel alloc] initWithFrame:CGRectMake(0, 49, WYJScreenWidth, 187)];
+        [self addSubview:_morePanel];
+        
+        __weak typeof(self) weakSelf = self;
+        _morePanel.itemTap = ^(ChatMoreItem * _Nonnull moreItem) {
+            [weakSelf moreItemTap:moreItem];
+        };
+    }
+    return _morePanel;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -183,6 +198,12 @@
     self.msgTextView.frame = msgFrame;
     
     messageBarHeight = messagebarFrame.size.height;
+    
+    
+    CGRect morePanelFrame = self.morePanel.frame;
+    morePanelFrame.origin.y = messageBarHeight;
+    self.morePanel.frame =morePanelFrame;
+    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -218,23 +239,33 @@
 #pragma mark - 按钮
 
 - (void)endEdit {
-    if (self.msgTextView.isFirstResponder) {
+    
+    if (keyboardHeight > 0) {
         [self.msgTextView resignFirstResponder];
         keyboardHeight = 0;
         [self resetFrameWithAnimation:YES];
+        self.morePanel.hidden = YES;
     }
 }
 
 // 键盘
 - (void)switchHandleKeyboard: (UIButton *)sender{
-
+    self.morePanel.hidden = NO;
     [self.msgTextView resignFirstResponder];
-    keyboardHeight = 0;
+    keyboardHeight = self.morePanel.frame.size.height;
     [self resetFrameWithAnimation:YES];
-    
-    [WYJPhoto getPhoto:^(UIImage * _Nonnull img) {
-        [self delegateRespondsSelector:@selector(sendMessageImage:) object:img];
-    }];
+}
+
+- (void)moreItemTap: (ChatMoreItem *)item {
+    if (item.type == 0) {
+        return;
+    }
+    if (item.type == 1) {
+        [WYJPhoto getPhoto:^(UIImage * _Nonnull img) {
+            [self delegateRespondsSelector:@selector(sendMessageImage:) object:img];
+        }];
+        return;
+    }
 }
 
 - (void)delegateRespondsSelector:(SEL)selector {

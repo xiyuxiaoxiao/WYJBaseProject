@@ -13,7 +13,7 @@
 #define WYJScreenHeight     [UIScreen mainScreen].bounds.size.height
 #define WYJChartCellWidth   (WYJScreenWidth - 40)
 
-#define IPhoneX             (WYJScreenHeight == 812 ? YES : NO)
+#define IPhoneX             (WYJScreenHeight >= 812 ? YES : NO)
 #define NavaBar_StatusHeight    (IPhoneX ? 88 : 64)
 
 // 0：发送成功 、1：正在发送 、 2：发送失败
