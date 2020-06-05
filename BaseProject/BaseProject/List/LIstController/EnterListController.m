@@ -50,6 +50,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSDictionary *dict = self.dataArray[indexPath.row];
     Class class = NSClassFromString(dict[CN_Key]);
     UIViewController *vc = [[class alloc] init];
@@ -59,7 +60,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 50;
 }
-
 
 - (void)initData {
     
@@ -107,5 +107,8 @@
     
     [self.dataArray addObject:@{TitleKey:@"布局",
                                 CN_Key:@"LayoutLearn"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"图片处理",
+                                CN_Key:@"ImageTechnologyList"}];
 }
 @end

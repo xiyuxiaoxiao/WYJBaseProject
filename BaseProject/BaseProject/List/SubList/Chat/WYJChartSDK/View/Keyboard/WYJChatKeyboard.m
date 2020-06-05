@@ -266,6 +266,14 @@
         }];
         return;
     }
+    if (item.type == 3) {
+        NSLog(@"发送优惠券");
+        return;
+    }
+    if (item.type == 4) {
+        NSLog(@"点击了快捷回复");
+        return;
+    }
 }
 
 - (void)delegateRespondsSelector:(SEL)selector {

@@ -17,7 +17,7 @@ DEPENDENCIES:
   - GPUImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AKTLayout
     - AMap3DMap
     - AMapFoundation
@@ -35,4 +35,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 70f254175183ba968f17e04c622de86c9ea7615c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

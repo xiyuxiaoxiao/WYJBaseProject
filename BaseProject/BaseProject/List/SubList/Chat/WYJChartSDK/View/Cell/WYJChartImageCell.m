@@ -45,6 +45,8 @@
 }
 
 - (void)setFrame {
+    
+//    [self addSubview:self.contentBackView];
     [self addSubview:self.imageMessageView];
     
     [super setFrame];

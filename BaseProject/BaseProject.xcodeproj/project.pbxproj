@@ -155,6 +155,18 @@
 		83969EAC21EDDC210032EAE7 /* BGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 83969EA721EDDC210032EAE7 /* BGTool.m */; };
 		8398D807216C8A9500DBBFD6 /* PullEyesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D806216C8A9500DBBFD6 /* PullEyesController.m */; };
 		8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8398D80B216C8EB300DBBFD6 /* WXPullView.m */; };
+		8399A33324877D020082EDC3 /* DazFireController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399A32924877D010082EDC3 /* DazFireController.m */; };
+		8399A33424877D020082EDC3 /* DazTouchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399A32A24877D010082EDC3 /* DazTouchController.m */; };
+		8399A33524877D020082EDC3 /* DazInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399A32D24877D020082EDC3 /* DazInfoController.m */; };
+		8399A33624877D020082EDC3 /* DazViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399A33024877D020082EDC3 /* DazViewController.m */; };
+		8399A33724877D020082EDC3 /* DazFireworksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399A33224877D020082EDC3 /* DazFireworksController.m */; };
+		8399A34024877D890082EDC3 /* DazFlake.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33924877D890082EDC3 /* DazFlake.png */; };
+		8399A34124877D890082EDC3 /* DazStarOutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33A24877D890082EDC3 /* DazStarOutline.png */; };
+		8399A34224877D890082EDC3 /* DazHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33B24877D890082EDC3 /* DazHeart.png */; };
+		8399A34324877D890082EDC3 /* DazRing.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33C24877D890082EDC3 /* DazRing.png */; };
+		8399A34424877D890082EDC3 /* DazSmoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33D24877D890082EDC3 /* DazSmoke.png */; };
+		8399A34524877D890082EDC3 /* DazTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33E24877D890082EDC3 /* DazTriangle.png */; };
+		8399A34624877D890082EDC3 /* DazFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 8399A33F24877D890082EDC3 /* DazFire.png */; };
 		8399B20F1E9B52AF0059B797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B20E1E9B52AF0059B797 /* main.m */; };
 		8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2111E9B52AF0059B797 /* AppDelegate.m */; };
 		8399B2151E9B52AF0059B797 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399B2141E9B52AF0059B797 /* ViewController.m */; };
@@ -222,6 +234,8 @@
 		839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839C7E071EE54156006CAFDC /* ES_RemaindControler.xib */; };
 		839D41F821F953FC00130E47 /* WYJChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 839D41F721F953FC00130E47 /* WYJChatKeyboard.m */; };
 		839D41FA21F9569900130E47 /* Add Chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 839D41F921F9569900130E47 /* Add Chat@2x.png */; };
+		83A07CAC2473CE8F00EDF20E /* ImagePswxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A07CAA2473CE8F00EDF20E /* ImagePswxVC.m */; };
+		83A07CAD2473CE8F00EDF20E /* ImagePswxVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A07CAB2473CE8F00EDF20E /* ImagePswxVC.xib */; };
 		83A4C6FC21F800FA0088359E /* WYJChartBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C6FB21F800FA0088359E /* WYJChartBaseCell.m */; };
 		83A4C6FF21F8011C0088359E /* WYJChartTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A4C6FE21F8011C0088359E /* WYJChartTextCell.m */; };
 		83A4C70421F836C60088359E /* Text Voice Bubble Outgoing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83A4C70221F836C60088359E /* Text Voice Bubble Outgoing@2x.png */; };
@@ -587,6 +601,23 @@
 		8398D806216C8A9500DBBFD6 /* PullEyesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullEyesController.m; sourceTree = "<group>"; };
 		8398D80B216C8EB300DBBFD6 /* WXPullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPullView.m; sourceTree = "<group>"; };
 		8398D80C216C8EB300DBBFD6 /* WXPullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPullView.h; sourceTree = "<group>"; };
+		8399A32924877D010082EDC3 /* DazFireController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DazFireController.m; sourceTree = "<group>"; };
+		8399A32A24877D010082EDC3 /* DazTouchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DazTouchController.m; sourceTree = "<group>"; };
+		8399A32B24877D010082EDC3 /* DazInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DazInfoController.h; sourceTree = "<group>"; };
+		8399A32C24877D010082EDC3 /* DazFireController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DazFireController.h; sourceTree = "<group>"; };
+		8399A32D24877D020082EDC3 /* DazInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DazInfoController.m; sourceTree = "<group>"; };
+		8399A32E24877D020082EDC3 /* DazTouchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DazTouchController.h; sourceTree = "<group>"; };
+		8399A32F24877D020082EDC3 /* DazViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DazViewController.h; sourceTree = "<group>"; };
+		8399A33024877D020082EDC3 /* DazViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DazViewController.m; sourceTree = "<group>"; };
+		8399A33124877D020082EDC3 /* DazFireworksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DazFireworksController.h; sourceTree = "<group>"; };
+		8399A33224877D020082EDC3 /* DazFireworksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DazFireworksController.m; sourceTree = "<group>"; };
+		8399A33924877D890082EDC3 /* DazFlake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFlake.png; sourceTree = "<group>"; };
+		8399A33A24877D890082EDC3 /* DazStarOutline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazStarOutline.png; sourceTree = "<group>"; };
+		8399A33B24877D890082EDC3 /* DazHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazHeart.png; sourceTree = "<group>"; };
+		8399A33C24877D890082EDC3 /* DazRing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazRing.png; sourceTree = "<group>"; };
+		8399A33D24877D890082EDC3 /* DazSmoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazSmoke.png; sourceTree = "<group>"; };
+		8399A33E24877D890082EDC3 /* DazTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazTriangle.png; sourceTree = "<group>"; };
+		8399A33F24877D890082EDC3 /* DazFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DazFire.png; sourceTree = "<group>"; };
 		8399B20A1E9B52AF0059B797 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8399B20E1E9B52AF0059B797 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8399B2101E9B52AF0059B797 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -723,6 +754,9 @@
 		839D41F621F953FC00130E47 /* WYJChatKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChatKeyboard.h; sourceTree = "<group>"; };
 		839D41F721F953FC00130E47 /* WYJChatKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChatKeyboard.m; sourceTree = "<group>"; };
 		839D41F921F9569900130E47 /* Add Chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Chat@2x.png"; sourceTree = "<group>"; };
+		83A07CA92473CE8F00EDF20E /* ImagePswxVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePswxVC.h; sourceTree = "<group>"; };
+		83A07CAA2473CE8F00EDF20E /* ImagePswxVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePswxVC.m; sourceTree = "<group>"; };
+		83A07CAB2473CE8F00EDF20E /* ImagePswxVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePswxVC.xib; sourceTree = "<group>"; };
 		83A4C6FA21F800FA0088359E /* WYJChartBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartBaseCell.h; sourceTree = "<group>"; };
 		83A4C6FB21F800FA0088359E /* WYJChartBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYJChartBaseCell.m; sourceTree = "<group>"; };
 		83A4C6FD21F8011C0088359E /* WYJChartTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYJChartTextCell.h; sourceTree = "<group>"; };
@@ -1610,6 +1644,38 @@
 			path = PullEyes;
 			sourceTree = "<group>";
 		};
+		8399A32824877CDB0082EDC3 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				8399A32C24877D010082EDC3 /* DazFireController.h */,
+				8399A32924877D010082EDC3 /* DazFireController.m */,
+				8399A33124877D020082EDC3 /* DazFireworksController.h */,
+				8399A33224877D020082EDC3 /* DazFireworksController.m */,
+				8399A32B24877D010082EDC3 /* DazInfoController.h */,
+				8399A32D24877D020082EDC3 /* DazInfoController.m */,
+				8399A32E24877D020082EDC3 /* DazTouchController.h */,
+				8399A32A24877D010082EDC3 /* DazTouchController.m */,
+				8399A32F24877D020082EDC3 /* DazViewController.h */,
+				8399A33024877D020082EDC3 /* DazViewController.m */,
+				8399A33824877D890082EDC3 /* source */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		8399A33824877D890082EDC3 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				8399A33924877D890082EDC3 /* DazFlake.png */,
+				8399A33A24877D890082EDC3 /* DazStarOutline.png */,
+				8399A33B24877D890082EDC3 /* DazHeart.png */,
+				8399A33C24877D890082EDC3 /* DazRing.png */,
+				8399A33D24877D890082EDC3 /* DazSmoke.png */,
+				8399A33E24877D890082EDC3 /* DazTriangle.png */,
+				8399A33F24877D890082EDC3 /* DazFire.png */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		8399B2011E9B52AF0059B797 = {
 			isa = PBXGroup;
 			children = (
@@ -1974,6 +2040,16 @@
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
+		83A07CA82473CDE300EDF20E /* ImagePSWX */ = {
+			isa = PBXGroup;
+			children = (
+				83A07CA92473CE8F00EDF20E /* ImagePswxVC.h */,
+				83A07CAA2473CE8F00EDF20E /* ImagePswxVC.m */,
+				83A07CAB2473CE8F00EDF20E /* ImagePswxVC.xib */,
+			);
+			path = ImagePSWX;
+			sourceTree = "<group>";
+		};
 		83A4C6EE21F7F8A10088359E /* WYJChartSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -2056,6 +2132,7 @@
 			children = (
 				83A7F3702175D29000CE8BA4 /* AnimationEncapsulation.h */,
 				83A7F3712175D29000CE8BA4 /* AnimationEncapsulation.m */,
+				8399A32824877CDB0082EDC3 /* animation */,
 				83A7F3802175D8EC00CE8BA4 /* YJSlideMenu */,
 			);
 			path = AnimationEncapsulation;
@@ -2112,6 +2189,7 @@
 			children = (
 				83B291F5234F2CC3006DC43E /* ImageTechnologyList.h */,
 				83B291F6234F2CC3006DC43E /* ImageTechnologyList.m */,
+				83A07CA82473CDE300EDF20E /* ImagePSWX */,
 				83B291F4234F2C83006DC43E /* ImageIoLoad */,
 			);
 			path = ImageTechnology;
@@ -2443,11 +2521,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8399A34624877D890082EDC3 /* DazFire.png in Resources */,
 				83367D9A2089F32900A5571F /* PieChartVC.xib in Resources */,
 				83C887861F444FC0006B9A72 /* TextOneByOne.xib in Resources */,
 				8365073F1F70F1E4008F1B6F /* JSAndOC.html in Resources */,
 				8366305D1EE16FB80029AD91 /* MapManagerController.xib in Resources */,
 				839A201F208DEBC500024279 /* BezierPathVC.xib in Resources */,
+				8399A34324877D890082EDC3 /* DazRing.png in Resources */,
 				83F693E822006EE700E342E8 /* WYJChartConversationListControlle.xib in Resources */,
 				83A4C70521F836C60088359E /* Text Voice Bubble Incoming@2x.png in Resources */,
 				83C887801F444FC0006B9A72 /* btn_icon_loading@3x.png in Resources */,
@@ -2463,6 +2543,7 @@
 				83BE803E1EF9183100FD588A /* btn_map_locate.png in Resources */,
 				83924B6E221BD73A00AC9A37 /* subwayCostEachMonth.html in Resources */,
 				83C8879B1F44512A006B9A72 /* self addSubView self.png in Resources */,
+				8399A34524877D890082EDC3 /* DazTriangle.png in Resources */,
 				833530631F459FFE00596581 /* middelLittle.png in Resources */,
 				839D41FA21F9569900130E47 /* Add Chat@2x.png in Resources */,
 				83C887641F444F2B006B9A72 /* minInser.png in Resources */,
@@ -2475,8 +2556,10 @@
 				833530661F459FFE00596581 /* YJCutMiddle.xib in Resources */,
 				83B30E9C20CA5A0A0090D264 /* NSOperation.htm in Resources */,
 				83751D6E1EFA444B004F2D49 /* yuanyuan.png in Resources */,
+				8399A34424877D890082EDC3 /* DazSmoke.png in Resources */,
 				8399B21D1E9B52AF0059B797 /* LaunchScreen.storyboard in Resources */,
 				8343BE9B21805E0200C2BE0F /* BarChartVC.xib in Resources */,
+				8399A34224877D890082EDC3 /* DazHeart.png in Resources */,
 				83BE803B1EF917F100FD588A /* iconfont-fangda.png in Resources */,
 				83C8877F1F444FC0006B9A72 /* btn_icon_loading@2x.png in Resources */,
 				8380C4A1231CB33300AEDE5C /* FDTemplateClassCell.xib in Resources */,
@@ -2493,6 +2576,7 @@
 				839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */,
 				8399B21A1E9B52AF0059B797 /* Assets.xcassets in Resources */,
 				833530611F459FFE00596581 /* DrawDashLineVC.xib in Resources */,
+				83A07CAD2473CE8F00EDF20E /* ImagePswxVC.xib in Resources */,
 				83BE80401EF9186600FD588A /* iconfont-biaoji.png in Resources */,
 				8359E3BE236138A000386BEF /* RestMoneyEveryYearController.xib in Resources */,
 				8335305D1F459FFE00596581 /* ArcEqualVC.xib in Resources */,
@@ -2500,6 +2584,7 @@
 				8377CA011EF3A7C500E4E56C /* cityData.plist in Resources */,
 				8377CA001EF3A7C500E4E56C /* address.plist in Resources */,
 				8335306F1F45A2E500596581 /* ChatDrawAndSave.xib in Resources */,
+				8399A34124877D890082EDC3 /* DazStarOutline.png in Resources */,
 				83C8875E1F443F95006B9A72 /* MinInsert.xib in Resources */,
 				837151061EE01D10009E7ECF /* EnterListController.xib in Resources */,
 				833530621F459FFE00596581 /* cutMiddle.png in Resources */,
@@ -2510,6 +2595,7 @@
 				833530391F4580BD00596581 /* ScanSysController.xib in Resources */,
 				83C8878F1F445041006B9A72 /* TaskNumber.xib in Resources */,
 				8399B2181E9B52AF0059B797 /* Main.storyboard in Resources */,
+				8399A34024877D890082EDC3 /* DazFlake.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2568,7 +2654,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
@@ -2587,7 +2673,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2625,6 +2711,7 @@
 				83E0339123FFB6E5003A793F /* ChatMorePanel.m in Sources */,
 				83C887831F444FC0006B9A72 /* ButtonProgressViewManger.m in Sources */,
 				835C8B03221273D00011EB91 /* SDImageCache.m in Sources */,
+				8399A33724877D020082EDC3 /* DazFireworksController.m in Sources */,
 				83F27F7F21FEEFF700E7FE9D /* WYJChartAddressListController.m in Sources */,
 				83539D2F230A83DF004E555B /* MasonryClassController.m in Sources */,
 				83B14D6E1EFD0FAA00EF24A9 /* MapData.m in Sources */,
@@ -2652,6 +2739,7 @@
 				833300A5231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				839B7F3421F6B1D1008E7A8C /* MASViewConstraint.m in Sources */,
 				83751D641EFA1015004F2D49 /* CustomCircleView.m in Sources */,
+				8399A33624877D020082EDC3 /* DazViewController.m in Sources */,
 				83BE802D1EF9118800FD588A /* NearbyView.m in Sources */,
 				835C8B00221273D00011EB91 /* UIImage+MultiFormat.m in Sources */,
 				8399B2B71E9B52CF0059B797 /* UIWebView+AFNetworking.m in Sources */,
@@ -2686,6 +2774,7 @@
 				835C8B06221273D00011EB91 /* UIImageView+WebCache.m in Sources */,
 				83A7F38E2175DBDA00CE8BA4 /* SlideRightVC.m in Sources */,
 				833300A4231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				8399A33424877D020082EDC3 /* DazTouchController.m in Sources */,
 				8335308D1F45AC1A00596581 /* ChatEnterList.m in Sources */,
 				836507341F70EE25008F1B6F /* WebEnter.m in Sources */,
 				8399B2B51E9B52CF0059B797 /* UIProgressView+AFNetworking.m in Sources */,
@@ -2721,12 +2810,14 @@
 				83750D0D1EFB6C290058BC2A /* MyAnnotation.m in Sources */,
 				83637A9C1E9F783C00EAD984 /* YYCache.m in Sources */,
 				83750D031EFB57C90058BC2A /* SystemMapController.m in Sources */,
+				8399A33524877D020082EDC3 /* DazInfoController.m in Sources */,
 				831E240720592A2E00557A96 /* JSAndOC.m in Sources */,
 				8399B2A61E9B52CF0059B797 /* AFHTTPSessionManager.m in Sources */,
 				8399B2AE1E9B52CF0059B797 /* RC4.m in Sources */,
 				8399B29C1E9B52CF0059B797 /* FMResultSet.m in Sources */,
 				83C8877C1F444FC0006B9A72 /* ButtonProgressController.m in Sources */,
 				8399B2AD1E9B52CF0059B797 /* MD5.m in Sources */,
+				83A07CAC2473CE8F00EDF20E /* ImagePswxVC.m in Sources */,
 				8389294F2201AB85009DED0F /* WYJMultiDelegate.m in Sources */,
 				8399B2B81E9B52CF0059B797 /* WYJHTTPSession.m in Sources */,
 				836630821EE177370029AD91 /* CustomLayoutAttributes.m in Sources */,
@@ -2753,6 +2844,7 @@
 				839A201E208DEBC500024279 /* BezierPathVC.m in Sources */,
 				83604AF920C15EA7001F62DB /* JKDBVersionUpdateTest.m in Sources */,
 				839B7F2C21F6B1D1008E7A8C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				8399A33324877D020082EDC3 /* DazFireController.m in Sources */,
 				8340E4311EA05B88006DC1FF /* WYJDate.m in Sources */,
 				83367DA12089F38300A5571F /* PicView.m in Sources */,
 				835C8B05221273D00011EB91 /* NSData+ImageContentType.m in Sources */,

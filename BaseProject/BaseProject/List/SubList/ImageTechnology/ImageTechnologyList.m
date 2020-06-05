@@ -21,6 +21,8 @@
 -(void)initData {
     [self.dataArray addObject:@{TitleKey:@"渐近加载图片",
                                 CN_Key:@"ImageIoLoadVC"}];
+    [self.dataArray addObject:@{TitleKey:@"ps微信图片",
+                                CN_Key:@"ImagePswxVC"}];
 }
 
 @end

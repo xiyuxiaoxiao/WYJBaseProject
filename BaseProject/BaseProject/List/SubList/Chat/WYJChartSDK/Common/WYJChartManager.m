@@ -43,7 +43,7 @@
  */
 + (void)connectWithURL:(NSString *)url {
     NSString *userId = [WYJChartCellTool getCurrentUser].userId;
-    NSString *urlString = [NSString stringWithFormat:@"ws://localhost:3000?userId=%@",userId];
+    NSString *urlString = [NSString stringWithFormat:@"ws://wyjsocket.herokuapp.com/:3000?userId=%@",userId];
     [[SocketRocketUtility instance] SRWebSocketOpenWithURLString:urlString];
 }
 

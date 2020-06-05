@@ -146,7 +146,7 @@
 
 - (UIButton *)iconView {
     if (!_iconView) {
-        _iconView = [UIButton buttonWithType:(UIButtonTypeSystem)];
+        _iconView = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _iconView.backgroundColor = [UIColor whiteColor];
         _iconView.layer.cornerRadius = 8;
         CGFloat f = 10;
