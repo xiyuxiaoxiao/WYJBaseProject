@@ -302,6 +302,12 @@
 		83DE83A6233234A800926E80 /* WYJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DE83A4233234A800926E80 /* WYJButton.m */; };
 		83E0339123FFB6E5003A793F /* ChatMorePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E0339023FFB6E5003A793F /* ChatMorePanel.m */; };
 		83E0339423FFC975003A793F /* ChatMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E0339323FFC975003A793F /* ChatMoreItem.m */; };
+		83E2BC4524B6E83D00E7DF3A /* DatePickController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E2BC4324B6E83D00E7DF3A /* DatePickController.m */; };
+		83E2BC4624B6E83D00E7DF3A /* DatePickController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E2BC4424B6E83D00E7DF3A /* DatePickController.xib */; };
+		83E2BC5B24B6EE3300E7DF3A /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E2BC5724B6EE3300E7DF3A /* WSDatePickerView.xib */; };
+		83E2BC5C24B6EE3300E7DF3A /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E2BC5824B6EE3300E7DF3A /* WSDatePickerView.m */; };
+		83E2BC5D24B6EE3300E7DF3A /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E2BC5924B6EE3300E7DF3A /* NSDate+Extension.m */; };
+		83E2BC5E24B6EE3300E7DF3A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E2BC5A24B6EE3300E7DF3A /* UIView+Extension.m */; };
 		83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EF517F222CDA3E00B47F4E /* GCDMySummary.m */; };
 		83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */; };
 		83F27F7521FEDF3700E7FE9D /* WYJChartAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F27F7321FEDF3700E7FE9D /* WYJChartAddress.m */; };
@@ -865,6 +871,16 @@
 		83E0339023FFB6E5003A793F /* ChatMorePanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMorePanel.m; sourceTree = "<group>"; };
 		83E0339223FFC975003A793F /* ChatMoreItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMoreItem.h; sourceTree = "<group>"; };
 		83E0339323FFC975003A793F /* ChatMoreItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMoreItem.m; sourceTree = "<group>"; };
+		83E2BC4224B6E83D00E7DF3A /* DatePickController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickController.h; sourceTree = "<group>"; };
+		83E2BC4324B6E83D00E7DF3A /* DatePickController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickController.m; sourceTree = "<group>"; };
+		83E2BC4424B6E83D00E7DF3A /* DatePickController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickController.xib; sourceTree = "<group>"; };
+		83E2BC5424B6EE3300E7DF3A /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		83E2BC5524B6EE3300E7DF3A /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
+		83E2BC5624B6EE3300E7DF3A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		83E2BC5724B6EE3300E7DF3A /* WSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSDatePickerView.xib; sourceTree = "<group>"; };
+		83E2BC5824B6EE3300E7DF3A /* WSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatePickerView.m; sourceTree = "<group>"; };
+		83E2BC5924B6EE3300E7DF3A /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		83E2BC5A24B6EE3300E7DF3A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		83E74637224A053A00546565 /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaseProject.entitlements; sourceTree = "<group>"; };
 		83EF517F222CDA3E00B47F4E /* GCDMySummary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDMySummary.m; sourceTree = "<group>"; };
 		83F27F7021FEDF0700E7FE9D /* WYJChartMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJChartMessage.m; sourceTree = "<group>"; };
@@ -1163,6 +1179,7 @@
 		835C8ADC221273D00011EB91 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				83E2BC5324B6EE3300E7DF3A /* WSDatePickerView */,
 				838FA5FE224B4CD200D548C2 /* SocketRocket */,
 				835C8ADD221273D00011EB91 /* SDWebImage */,
 				8333009B231CAE42003656A5 /* UITableView+FDTemplateLayoutCell */,
@@ -1397,6 +1414,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				83E2BC4124B6E80000E7DF3A /* DatePick */,
 				83B291F3234F2C2B006DC43E /* ImageTechnology */,
 				838A01B12227E34C00372A9D /* Layout */,
 				83924B69221BD66700AC9A37 /* WYJCalculator */,
@@ -2388,6 +2406,30 @@
 			path = WYJButton;
 			sourceTree = "<group>";
 		};
+		83E2BC4124B6E80000E7DF3A /* DatePick */ = {
+			isa = PBXGroup;
+			children = (
+				83E2BC4224B6E83D00E7DF3A /* DatePickController.h */,
+				83E2BC4324B6E83D00E7DF3A /* DatePickController.m */,
+				83E2BC4424B6E83D00E7DF3A /* DatePickController.xib */,
+			);
+			path = DatePick;
+			sourceTree = "<group>";
+		};
+		83E2BC5324B6EE3300E7DF3A /* WSDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				83E2BC5424B6EE3300E7DF3A /* NSDate+Extension.h */,
+				83E2BC5524B6EE3300E7DF3A /* WSDatePickerView.h */,
+				83E2BC5624B6EE3300E7DF3A /* UIView+Extension.h */,
+				83E2BC5724B6EE3300E7DF3A /* WSDatePickerView.xib */,
+				83E2BC5824B6EE3300E7DF3A /* WSDatePickerView.m */,
+				83E2BC5924B6EE3300E7DF3A /* NSDate+Extension.m */,
+				83E2BC5A24B6EE3300E7DF3A /* UIView+Extension.m */,
+			);
+			path = WSDatePickerView;
+			sourceTree = "<group>";
+		};
 		B906997D5A8A31FEB81B0052 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2571,8 +2613,10 @@
 				83751D691EFA1076004F2D49 /* DrawCircleController.xib in Resources */,
 				83A4C70B21F83A020088359E /* WYJChartController.xib in Resources */,
 				8399B2A11E9B52CF0059B797 /* error@2x.png in Resources */,
+				83E2BC5B24B6EE3300E7DF3A /* WSDatePickerView.xib in Resources */,
 				83A4C71421F873890088359E /* Failed To Send@2x.png in Resources */,
 				83652B3B1F6F9214008F470D /* LastRemainExample.xib in Resources */,
+				83E2BC4624B6E83D00E7DF3A /* DatePickController.xib in Resources */,
 				839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */,
 				8399B21A1E9B52AF0059B797 /* Assets.xcassets in Resources */,
 				833530611F459FFE00596581 /* DrawDashLineVC.xib in Resources */,
@@ -2745,6 +2789,7 @@
 				8399B2B71E9B52CF0059B797 /* UIWebView+AFNetworking.m in Sources */,
 				835C8B08221273D00011EB91 /* UIButton+WebCache.m in Sources */,
 				83E0339423FFC975003A793F /* ChatMoreItem.m in Sources */,
+				83E2BC5C24B6EE3300E7DF3A /* WSDatePickerView.m in Sources */,
 				83735274205A4D47002F1824 /* CopyMemory.m in Sources */,
 				833300A6231CAE42003656A5 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				83A7F3B12175E13200CE8BA4 /* UIViewController+XLSlideMenu.m in Sources */,
@@ -2862,6 +2907,7 @@
 				83C8878D1F445041006B9A72 /* SortFunction.c in Sources */,
 				83F27F7221FEDF0700E7FE9D /* WYJChartMessage.m in Sources */,
 				83735277205A7A6B002F1824 /* BlockPoint.m in Sources */,
+				83E2BC5E24B6EE3300E7DF3A /* UIView+Extension.m in Sources */,
 				83359AE11F4BC051007D3EB7 /* MinInsertExample.m in Sources */,
 				8398D80D216C8EB400DBBFD6 /* WXPullView.m in Sources */,
 				83B2B26223FE945A00BA45E2 /* WYJChartConversationCell.m in Sources */,
@@ -2887,6 +2933,7 @@
 				831E240920592A2E00557A96 /* LastRemainObject.m in Sources */,
 				835C8B01221273D00011EB91 /* SDWebImageCompat.m in Sources */,
 				8399B29F1E9B52CF0059B797 /* MBProgressHUD.m in Sources */,
+				83E2BC4524B6E83D00E7DF3A /* DatePickController.m in Sources */,
 				839C7E011EE53ECC006CAFDC /* EventStoreManager.m in Sources */,
 				8343BE9F218061D100C2BE0F /* BarLayerData.m in Sources */,
 				83637A9D1E9F783C00EAD984 /* YYDiskCache.m in Sources */,
@@ -2903,6 +2950,7 @@
 				83A7F38B2175DB5600CE8BA4 /* SlideLeftVC.m in Sources */,
 				8388690520BC0047006619B9 /* AddressList.m in Sources */,
 				836630801EE177370029AD91 /* CollectionViewCell.m in Sources */,
+				83E2BC5D24B6EE3300E7DF3A /* NSDate+Extension.m in Sources */,
 				8388690820BC0047006619B9 /* TestDataDatabase.m in Sources */,
 				8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */,
 				833530641F459FFE00596581 /* TimerWeakTarget.m in Sources */,
@@ -3058,6 +3106,7 @@
 			baseConfigurationReference = A35A3FBF8A3B28261E113C8A /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -3123,6 +3172,7 @@
 			baseConfigurationReference = 8CAE69609FDD1709F9D6DDE3 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

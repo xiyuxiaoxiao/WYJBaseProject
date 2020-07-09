@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhz-Z7-jTK">
+                    <rect key="frame" x="151.5" y="129" width="111" height="45"/>
+                    <color key="backgroundColor" red="0.73725490199999999" green="0.74901960779999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title=" 年月 "/>
+                    <connections>
+                        <action selector="button2:" destination="-1" eventType="touchUpInside" id="sHe-nd-qHA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R17-pv-wkE">
+                    <rect key="frame" x="20" y="129" width="111.5" height="45"/>
+                    <color key="backgroundColor" red="0.73725490199999999" green="0.74901960779999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="nYx-IZ-qEo"/>
+                    </constraints>
+                    <state key="normal" title=" 年月日 "/>
+                    <connections>
+                        <action selector="button1:" destination="-1" eventType="touchUpInside" id="UN5-4n-ihB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEA-Gb-G4E">
+                    <rect key="frame" x="20" y="214" width="111.5" height="45"/>
+                    <color key="backgroundColor" red="0.73725490199999999" green="0.74901960779999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title=" 年月日十分秒 "/>
+                    <connections>
+                        <action selector="button5:" destination="-1" eventType="touchUpInside" id="7gn-YG-pDr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCW-eT-YdS">
+                    <rect key="frame" x="282.5" y="129" width="111.5" height="45"/>
+                    <color key="backgroundColor" red="0.73725490199999999" green="0.74901960779999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="月日"/>
+                    <connections>
+                        <action selector="button3:" destination="-1" eventType="touchUpInside" id="F9u-Co-E4K"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5E-IK-kQy">
+                    <rect key="frame" x="151.5" y="214" width="111" height="45"/>
+                    <color key="backgroundColor" red="0.73725490199999999" green="0.74901960779999999" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="日时分 "/>
+                    <connections>
+                        <action selector="button4:" destination="-1" eventType="touchUpInside" id="bCv-R1-7Z6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MCW-eT-YdS" secondAttribute="trailing" constant="20" id="0Sd-9h-MIJ"/>
+                <constraint firstItem="EEA-Gb-G4E" firstAttribute="height" secondItem="R17-pv-wkE" secondAttribute="height" id="33r-6f-BOS"/>
+                <constraint firstItem="S5E-IK-kQy" firstAttribute="width" secondItem="EEA-Gb-G4E" secondAttribute="width" id="4hi-Lq-dcW"/>
+                <constraint firstItem="S5E-IK-kQy" firstAttribute="height" secondItem="EEA-Gb-G4E" secondAttribute="height" id="5Wd-H0-YBE"/>
+                <constraint firstItem="MCW-eT-YdS" firstAttribute="height" secondItem="R17-pv-wkE" secondAttribute="height" id="Bjb-xr-Otx"/>
+                <constraint firstItem="S5E-IK-kQy" firstAttribute="centerY" secondItem="EEA-Gb-G4E" secondAttribute="centerY" id="HMD-4F-0BI"/>
+                <constraint firstItem="fhz-Z7-jTK" firstAttribute="leading" secondItem="R17-pv-wkE" secondAttribute="trailing" constant="20" id="JYL-jK-TBy"/>
+                <constraint firstItem="fhz-Z7-jTK" firstAttribute="height" secondItem="R17-pv-wkE" secondAttribute="height" id="Oss-FO-lqj"/>
+                <constraint firstItem="fhz-Z7-jTK" firstAttribute="centerY" secondItem="R17-pv-wkE" secondAttribute="centerY" id="TK0-9P-HRX"/>
+                <constraint firstItem="R17-pv-wkE" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="TR3-i9-sL1"/>
+                <constraint firstItem="MCW-eT-YdS" firstAttribute="leading" secondItem="fhz-Z7-jTK" secondAttribute="trailing" constant="20" id="hxe-I9-FfQ"/>
+                <constraint firstItem="EEA-Gb-G4E" firstAttribute="centerX" secondItem="R17-pv-wkE" secondAttribute="centerX" id="o20-WV-CVg"/>
+                <constraint firstItem="EEA-Gb-G4E" firstAttribute="leading" secondItem="R17-pv-wkE" secondAttribute="leading" id="oyv-1g-VOa"/>
+                <constraint firstItem="R17-pv-wkE" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="85" id="raJ-AV-6R4"/>
+                <constraint firstItem="MCW-eT-YdS" firstAttribute="centerY" secondItem="R17-pv-wkE" secondAttribute="centerY" id="t9g-VE-Sok"/>
+                <constraint firstItem="S5E-IK-kQy" firstAttribute="centerX" secondItem="fhz-Z7-jTK" secondAttribute="centerX" id="tj9-tz-TCm"/>
+                <constraint firstItem="fhz-Z7-jTK" firstAttribute="width" secondItem="R17-pv-wkE" secondAttribute="width" id="vvU-xV-6Va"/>
+                <constraint firstItem="EEA-Gb-G4E" firstAttribute="top" secondItem="R17-pv-wkE" secondAttribute="bottom" constant="40" id="wHC-yK-KIF"/>
+                <constraint firstItem="fhz-Z7-jTK" firstAttribute="width" secondItem="MCW-eT-YdS" secondAttribute="width" id="yrO-6g-Cqi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+        </view>
+    </objects>
+</document>

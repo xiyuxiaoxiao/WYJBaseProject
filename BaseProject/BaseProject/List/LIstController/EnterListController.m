@@ -110,5 +110,9 @@
     
     [self.dataArray addObject:@{TitleKey:@"图片处理",
                                 CN_Key:@"ImageTechnologyList"}];
+    
+    [self.dataArray addObject:@{TitleKey:@"日期选择器",
+    CN_Key:@"DatePickController"}];
+    
 }
 @end
