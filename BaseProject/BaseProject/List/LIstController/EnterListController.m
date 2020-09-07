@@ -63,6 +63,8 @@
 
 - (void)initData {
     
+    [self.dataArray addObject:@{TitleKey:@"多选tabView封装",CN_Key:@"MutableSelectTabVCViewController"}];
+    
     [self.dataArray addObject:@{TitleKey:@"聊天",
                                 CN_Key:@"ChatEnterList"}];
     

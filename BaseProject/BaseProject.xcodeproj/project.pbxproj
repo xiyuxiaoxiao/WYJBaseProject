@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83004FE724C6C07100E4A9C2 /* MutableSelectTabVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83004FE624C6C07100E4A9C2 /* MutableSelectTabVCViewController.m */; };
 		831217022333500700DBDBFE /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 831217012333500700DBDBFE /* UIImage+Category.m */; };
 		831E240720592A2E00557A96 /* JSAndOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E23FD20592A2E00557A96 /* JSAndOC.m */; };
 		831E240820592A2E00557A96 /* JSAndOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E23FE20592A2E00557A96 /* JSAndOC.xib */; };
@@ -339,6 +340,8 @@
 
 /* Begin PBXFileReference section */
 		2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83004FE524C6C07100E4A9C2 /* MutableSelectTabVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableSelectTabVCViewController.h; sourceTree = "<group>"; };
+		83004FE624C6C07100E4A9C2 /* MutableSelectTabVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutableSelectTabVCViewController.m; sourceTree = "<group>"; };
 		831217002333500700DBDBFE /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		831217012333500700DBDBFE /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		831E23FC20592A2E00557A96 /* JSAndOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAndOC.h; sourceTree = "<group>"; };
@@ -928,6 +931,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83004FE324C6BF7A00E4A9C2 /* MutableSelectTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				83004FE424C6C02700E4A9C2 /* Example */,
+			);
+			path = MutableSelectTableCell;
+			sourceTree = "<group>";
+		};
+		83004FE424C6C02700E4A9C2 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				83004FE524C6C07100E4A9C2 /* MutableSelectTabVCViewController.h */,
+				83004FE624C6C07100E4A9C2 /* MutableSelectTabVCViewController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		831E23FB20592A2E00557A96 /* Dom */ = {
 			isa = PBXGroup;
 			children = (
@@ -1414,6 +1434,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				83004FE324C6BF7A00E4A9C2 /* MutableSelectTableCell */,
 				83E2BC4124B6E80000E7DF3A /* DatePick */,
 				83B291F3234F2C2B006DC43E /* ImageTechnology */,
 				838A01B12227E34C00372A9D /* Layout */,
@@ -2771,6 +2792,7 @@
 				8388690620BC0047006619B9 /* CurrentUserManager.m in Sources */,
 				83EF5180222CDA3E00B47F4E /* GCDMySummary.m in Sources */,
 				83C8875D1F443F95006B9A72 /* MinInsert.m in Sources */,
+				83004FE724C6C07100E4A9C2 /* MutableSelectTabVCViewController.m in Sources */,
 				835C8AFF221273D00011EB91 /* UIImage+GIF.m in Sources */,
 				83F693E322003BF000E342E8 /* WYJChartConversation.m in Sources */,
 				83B55440206B76F000439E66 /* UIView+Category.m in Sources */,
