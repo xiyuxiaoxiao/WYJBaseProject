@@ -66,7 +66,7 @@
 		top: 0;
 		width: 100%;
 		overflow: hidden;
-		background-color: #1D69A9;
+		background-color: #FFFFFF;
 	}
 	
 	.navigate-content {

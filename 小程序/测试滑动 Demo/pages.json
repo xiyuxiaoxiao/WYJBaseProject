@@ -18,6 +18,13 @@
 			"style": {
 				"navigationStyle":"custom"
 			}
+		},
+		{
+			"path": "pages/index/bottomCard",
+			"style": {
+				"navigationStyle":"custom",
+				"disableScroll": true
+			}
 		}
 	],
 	"globalStyle": {

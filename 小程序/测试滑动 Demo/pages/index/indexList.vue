@@ -14,6 +14,7 @@
 				list:[
 					{title: "仿iOS section header效果",path: "/pages/index/index"},
 					{title: "隐藏导航栏",path: "/pages/index/navigateHidden"},
+					{title: "底部卡片模式",path: "/pages/index/bottomCard"},
 				]
 			}
 		},
