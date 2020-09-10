@@ -25,6 +25,12 @@
 				"navigationStyle":"custom",
 				"disableScroll": true
 			}
+		},
+		{
+			"path": "pages/index/zsxjStoreDemo",
+			"style": {
+				"navigationBarTitleText":"动态组件库布局"
+			}
 		}
 	],
 	"globalStyle": {
