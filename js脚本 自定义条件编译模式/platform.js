@@ -20,18 +20,18 @@ var write = function(strInputFileName, strOutputFileName) {
 		terminal: false
 	});
 	
-	var flag = false;
+	var type = "";
 	objReadline.on('line', (item) => {
-		if (conditionalStart(item, "Plugin")) {
-			flag = true;
-			return;
-		}
-		if (flag && conditionaEnd(item, "js")) {
-			flag = false;
+		
+		if (type) {
+			if (conditionaEnd(item, type)) {
+				type = "";
+			}
 			return;
 		}
 		
-		if (flag) {
+		type = conditionalStart(item, "Plugin");
+		if (type) {
 			return;
 		}
 		
@@ -44,8 +44,16 @@ var write = function(strInputFileName, strOutputFileName) {
 	// });
 }
 
+// 遍历所有类型 html js的条件编译
 function conditionalStart(string,platformName){
-	return condStart(string, platformName, "js");
+	let type_list = allType();
+	for (var i = 0; i < type_list.length; i++) {
+		let type = type_list[i];
+		if (condStart(string, platformName, type)) {
+			return type;
+		}
+	}
+	return "";
 }
 //  判断结束: <!--#endif-->
 function conditionaEnd(string, type){
@@ -55,9 +63,8 @@ function conditionaEnd(string, type){
 
 // 条件编译 是否是平台 <!-- #ifdef  platform -->
 function condStart(string,platformName,type){
-	var regexp = new RegExp(condReg(type, 10));
+	var regexp = new RegExp(condReg(type, 0));
 	if (regexp.test(string)) {
-		
 		var start = string.indexOf("#ifdef ") + 7; // “#ifdef ”的长度 还有空格 因为其实位置会从最后一个空格开始 包含 
 		
 		var end_index = condReg(type, 2);
@@ -69,11 +76,22 @@ function condStart(string,platformName,type){
 		
 		res = res.replace(/\s*/g,"");
 		var list = res.split("||");
-		if (list.indexOf(platformName) >= 0) {
+		if (list.indexOf(platformName) < 0) {
+			// 如果没有相应的平台 则开始不写入
 			return true;
 		};
+		
+		// 后面还要考虑 如果是 不是插件的  相反的 #ifndef 则也需要删除
+		// if (list.index(platformName) >= 0) {
+		// 	return true;
+		// }
 	}
 	return false;
+}
+
+// 所有类型
+function allType() {
+	return ["html", "js"];
 }
 
 // type : html , json
