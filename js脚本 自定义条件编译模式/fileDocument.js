@@ -1,7 +1,10 @@
+
 //  遍历文件目录
 var fs = require('fs');
 
 var buildFile = require("./platform.js");
+var arguments = process.argv.splice(2);
+buildFile.setPlatform(arguments[0]);
 
 var copy = function(src, dst) {
 	let paths = fs.readdirSync(src); //同步读取当前目录
@@ -33,6 +36,8 @@ var checkDirectory = function(src, dst, callback) {
 		}
 	});
 };
-const SOURCES_DIRECTORY = './a'; //源目录
-const TARGET_DIRECTORY = './aCopy'; //目标目录
+
+var config = require('./platformConfig.js');
+const SOURCES_DIRECTORY = './' + config.sourceCodePath; //源目录
+const TARGET_DIRECTORY = './' + config.sourceTargetPath; //目标目录
 checkDirectory(SOURCES_DIRECTORY, TARGET_DIRECTORY, copy);
