@@ -122,7 +122,7 @@ function matchPlatform (list, platform) {
 
 // 所有类型
 function allType() {
-	return ["html", "js"];
+	return ["html", "js", "css"];
 }
 
 // type : html , json
@@ -141,7 +141,13 @@ function condReg(type, keysIndex) {
 			reg_s_n: 	"^(\\s*//\\s*#ifndef\\s+)[\\s\\S]+\\s*",
 			reg_e: 		"^(\\s*//\\s*#endif)\\s*",
 			index_end: 	""
-		}
+		},
+		css: {
+			reg_s: 		"^(\\s*/[*]\\s*#ifdef\\s+)[\\s\\S]+\\s*[*]/",
+			reg_s_n: 	"^(\\s*/[*]\\s*#ifndef\\s+)[\\s\\S]+\\s*[*]/",
+			reg_e: 		"^(\\s*/[*]\\s*#endif)\\s*[*]/",
+			index_end: 	"*/"
+		},
 	}
 	
 	var key = ["reg_s", "reg_s_n", "reg_e", "index_end"][keysIndex];

@@ -8,6 +8,9 @@
  使用 *?
  匹配上一个元素零次或多次，但次数尽可能少 这样 结果不会出现重叠 多个#if #end之间不会重叠
  https://www.cnblogs.com/dwlsxj/p/3532458.html
+ 
+ 正则中 * 匹配 需要使用 [*]
+ 
 */
 
 // 但是这种匹配 只能删除不是当前的 对于符合的 js不知如何设置
@@ -17,6 +20,8 @@
 // 上面的 不保留换行符号 需要自己手动在每个后面添加
 // var list = fRead.toString().split(/[(\r\n)\r\n]+/);
 // 可以保留换行符号
+
+
 
 /*
 	匹配 <!--#ifdef   Plugin --> 的 前后允许空格 按照<!--#ifdef开头 
@@ -51,7 +56,7 @@
 // }
 
 
-// var regexpEnd = new RegExp("^(\\s*<!--\\s*#endif)\\s*-->");
-// var stringEnd = "<!--  #endif  -->";
+// var regexpEnd = new RegExp("^(\\s*/[*]\\s*#endif)\\s*[*]/");
+// var stringEnd = "/*#endif*/";
 // console.log("结果", regexpEnd.test(stringEnd)); 
 
