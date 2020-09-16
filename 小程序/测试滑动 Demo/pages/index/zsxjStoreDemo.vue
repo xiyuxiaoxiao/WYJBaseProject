@@ -14,6 +14,7 @@
 							{
 								name: "text",
 								text:"组件1",
+								text_key: "pageData.wyj",
 							}
 						]
 					},

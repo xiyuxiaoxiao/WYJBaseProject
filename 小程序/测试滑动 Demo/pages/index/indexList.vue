@@ -16,6 +16,7 @@
 					{title: "隐藏导航栏",path: "/pages/index/navigateHidden"},
 					{title: "底部卡片模式",path: "/pages/index/bottomCard"},
 					{title: "自定义动态组件库布局",path:"/pages/index/zsxjStoreDemo"},
+					{title: "测试动态组件",path:"/pages/comStore/test"},
 				]
 			}
 		},

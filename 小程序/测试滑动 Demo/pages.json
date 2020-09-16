@@ -31,6 +31,12 @@
 			"style": {
 				"navigationBarTitleText":"动态组件库布局"
 			}
+		},
+		{
+			"path": "pages/comStore/test",
+			"style": {
+				"navigationBarTitleText":"测试"
+			}
 		}
 	],
 	"globalStyle": {
@@ -38,5 +44,8 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true
 	}
 }
