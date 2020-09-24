@@ -9,4 +9,9 @@ module.exports = {
 	},
 	sourceCodePath: "srcDev",
 	sourceTargetPath: "src",
+	
+	// 不编译的文件路径或者目录 需要设置全部路径
+	copyPaths: [
+		"../srcDev/node_modules"
+	]
 }
