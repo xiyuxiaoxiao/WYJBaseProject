@@ -14,7 +14,7 @@
 							{
 								name: "text",
 								text:"组件1",
-								text_key: "pageData.wyj",
+								click: "1",
 							}
 						]
 					},
@@ -40,8 +40,20 @@
 						name: "view",
 						list: [
 							{
-								name: "text",
+								name: "view",
 								text:"组件 4",
+								
+								list:[
+									{
+										name: "view",
+										list: [
+											{
+												name: "text",
+												text:"组件 44",
+											}
+										]
+									},
+								]
 							}
 						]
 					},
@@ -57,6 +69,17 @@
 				uni.showToast({
 					title: obj.name + ":" + obj.info.text,
 				})
+				
+				this.list[3].list[0].list[0].list[0].text = "修改的数据";
+				// this.list.push({
+				// 		name: "view",
+				// 		list: [
+				// 			{
+				// 				name: "text",
+				// 				text:"组件 5",
+				// 			}
+				// 		]
+				// 	})
 			}
 		}
 	}

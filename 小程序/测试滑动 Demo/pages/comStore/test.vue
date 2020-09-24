@@ -14,11 +14,7 @@
 		onLoad() {
 			this.list = this.getLayoutData();
 			
-			let obj = {
-					coupon_name: "优惠券 row",
-					coupon_list: ["优惠券01","优惠券02","优惠券03"],
-				};
-				uni.setStoreData("setPageData", obj)
+			this.reloadData(0);
 				
 		},
 		destroyed() {
@@ -31,23 +27,81 @@
 		methods: {
 			emitCallBack(obj) {
 				console.log("组件回调:", obj);
-				uni.showToast({
-					title: obj.name + ":" + obj.info.text,
-				})
+				// uni.showToast({
+				// 	title: obj.name + ":" + obj.info.text,
+				// })
 				
 				if (obj.name == "uni-segmented-control") {
-					this.reloadData();
+					this.reloadData(obj.e.currentIndex);
 					uni.$emit("update");
+					return;
+				}
+				
+				if (obj.info.click == 'show') {
+					uni.showToast({
+						title: obj.item
+					})
+					
+					// let name = this.list[0].list[2].name;
+					// this.list[0].list[2].name = name ? "" : "view";
+					return;
 				}
 			},
 			
-			reloadData() {
-				let obj = {
-							coupon_name: "优惠券 row 修改了",
-							coupon_list: ["优惠券 1","优惠券 2","优惠券 3","优惠券 4","优惠券 5"],
-						};
-				uni.setStoreData("setPageData", obj)
+			reloadData(index) {
+				var source = [{
+					name: '未使用',
+					count: 3
+				},
+				{
+					name: '已使用',
+					count: 10
+				},
+				{
+					name: '已过期',
+					count: 20
+				}];
+				
+				var listSuper = this.list[0].list[1].list[0].list[0];
+				var list = [];
+				for (var i = 1; i < source[index].count; i++) {
+					var obj = Object.assign({},listSuper.child);
+					obj["text"] = source[index].name + i;
+					list.push(obj);
+				}
+				
+				// 同时 需要监听 当前数据变化 是否
+				
+				if (index == 0) {
+					this.list[0].list[1].list[0].list[0]['list'] = list;
+				}else {
+					// this.list[0].list[0].list[0].data.current = 2; // 不修改 也没有影响当前list-current的变化
+					this.list[0].list[1].list[0].list[0]['list'][1].text = source[index].name;
+				}
+				
+				this.list = JSON.parse(JSON.stringify(this.list));
+				
+				console.log("list",this.list);
 			},
+			
+			// updateLayoutData() {
+			// 	var s = this.list[0].list[1].list[0].list[0];
+			// 	s.list = [];
+			// },
+			
+			// ergodicLayout(list) {
+			// 	// 这样不太好处理 主要是递归最后的话 对于list嵌套的list 可能导致数据不到 
+			// 	// 需要单独处理 目前先简单处理一下
+			// 	for (var item in list) {
+			// 		if (item.type == 'list') {
+			// 		}
+			// 		if (item.list) {
+			// 			this.ergodicLayout(item.list);
+			// 		}
+			// 	}
+			// },
+			
+			
 			getLayoutData() {
 				return [
 					{
@@ -74,20 +128,26 @@
 								class: "coupon-list-card",
 								list: [
 									{
-										name: "list",
-										data_path: "pageData.coupon_list",
-										child_list: [
+										name: "view",
+										list: [
 											{
-												name: "text",
-												class: "coupon-list-row",
-												text:"组件 2",
-												data_path: "pageData.coupon_list",
-												type: "list_item"
+												name:"view",
+												click:"show",
+												child: {
+														name: "text",
+														class: "coupon-list-row",
+														text:"组件 2",
+												}
 											}
 										]
 									}
 								]
-							}
+							},
+							{
+								name: 'view',
+								class: "test-view",
+								show: 'testView',// show表示当前的view是否显示用哪个字段判断
+							},
 						]
 					},
 				]

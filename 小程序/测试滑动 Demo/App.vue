@@ -39,4 +39,12 @@
 		margin: 30rpx 20rpx;
 	}
 	
+	.test-view {
+		background: #F00AFE;
+		padding: 30rpx 20rpx;
+		margin: 30rpx 20rpx;
+		margin-top: 100rpx;
+		height: 40rpx;
+	}
+	
 </style>

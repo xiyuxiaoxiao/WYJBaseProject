@@ -13,7 +13,7 @@
 			<slot></slot>
 		</view>
 		<view ref="text" v-if="info.name == 'text'" v-bind:class="info.class" @click="click('text')">
-			{{getData()}}
+			{{info.text}}
 		</view>
 		
 		<uni-segmented-control v-if="info.name == 'uni-segmented-control'"
@@ -26,42 +26,13 @@
 		 :fontSize="'28rpx'"
 		 @clickItem="onClickItem" />
 		 
-		 <!-- getPropByPath 没有调用  -->
-		 <block v-if="info.name == 'list'" v-for="(item,index) in getListData">
-			 <zsxj-component-copy :list="info.child_list" :list_item="{'a': listData(index)}" @emitCallBack="emitCallBack"></zsxj-component-copy>
-		 </block>
-		 
 	</view>
 </template>
 
 <script>
-	import zsxjComponentCopy from "./zsxj-component-copy.vue"
 	export default {
 		props: {
 			info: Object,
-			//  该属性为上一级传入的 不允许列表嵌套列表 否则里层的列表 无法获取上一级之的index
-			// 如果需要支持列表嵌套里列表，则需要将数据的index 再次传入 可以考虑存储上一层级的index path可以单独设置或者单独存储在数据中
-			// 如：list_item: [{index:index,data_path:''},.....]
-			list_item: Object,
-		},
-		data() {
-			return {
-				getListData: [],
-			}
-		},
-		created() {
-			this.reloadLayoutView();
-			
-			uni.$on("update", (data)=>{
-				this.reloadLayoutView();
-			})
-		},
-		watch: {
-			'store.state.reload'(val , oldVal) {
-				console.log("监听",this.info.name);
-				return;
-				this.reloadLayoutView();
-			}
 		},
 		methods: {
 			click(name) {
@@ -70,7 +41,7 @@
 				}
 				this.$emit("emitCallBack",{
 					name: name,
-					info: this.info
+					info: this.info,
 				});
 			},
 			onClickItem(e) {
@@ -83,36 +54,7 @@
 			emitCallBack(obj) {
 				this.$emit("emitCallBack",obj);
 			},
-			
-			listData(index) {
-				return {
-					'list_index': index
-				}
-			},
-			
-			// 刷新所有需要刷新的View list等 动态的 单独写单独方式即可
-			reloadLayoutView() {
-				this.reloadListView();
-			},
-			
-			// 刷新列表对象
-			reloadListView() {
-				if (this.info.name == 'list') {
-					console.log("this-path：",this.info.data_path);
-					this.getListData = this.getPropByPath(this.info.data_path);
-				}
-			},
-			
-			getData() {
-				if (this.info.type == "list_item") {
-					return this.getPropByPath(this.info.data_path)[this.list_item.a.list_index];
-				}
-				return this.getPropByPath(this.info.text_key);
-			}
 		},
-		components: {
-			zsxjComponentCopy,
-		}
 	}
 </script>
 
