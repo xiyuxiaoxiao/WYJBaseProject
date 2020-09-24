@@ -3,6 +3,7 @@
 // nodejs读取文件、按行读取
 // https://blog.csdn.net/weixin_42171955/article/details/100156212
 
+// 平台名称 由外部传入设置
 var platform = "";
 
 var config = require('./platformConfig.js');
@@ -24,17 +25,17 @@ var write = function(strInputFileName, strOutputFileName) {
 		terminal: false
 	});
 	
-	var type = "";
-	var subTypeCount = 0;
+	var type = "";			// 记录非当前平台条件编译开始的类型
+	var subTypeCount = 0; 	// 嵌套内部条件编译开始的计数
 	objReadline.on('line', (item) => {
 		
 		if (type) {
-			// 计算是否还有其他的相应的类型的 if条件 
+			// 计算是否还有嵌套 其他的 if条件编译
 			if (condStart(item, "", type)) {
 				subTypeCount += 1;
 				return;
 			}
-			if (conditionaEnd(item, type)) {
+			if (conditionalEnd(item, type)) {
 				subTypeCount -= 1;
 				if (subTypeCount < 0) {
 					subTypeCount = 0;
@@ -48,6 +49,11 @@ var write = function(strInputFileName, strOutputFileName) {
 			return;
 		}
 		
+		// 删除条件编译的行
+		if (conditionalLine(item)) {
+			return;
+		}
+		
 		fWrite.write(item + "\n");
 	});
 	
@@ -55,6 +61,21 @@ var write = function(strInputFileName, strOutputFileName) {
 	// objReadline.on('close', () => {
 	// 	console.log('readline close...');
 	// });
+}
+
+// 判断是否是 条件编译 的行 开始或者结束， 用于不写入
+function conditionalLine(string) {
+	let type_list = allType();
+	for (var i = 0; i < type_list.length; i++) {
+		let type = type_list[i];
+		if (condStart(string, "", type)) {
+			return true;
+		}
+		if (conditionalEnd(string, type)) {
+			return true;
+		}
+	}
+	return false;
 }
 
 // 遍历所有类型 html js的条件编译
@@ -69,7 +90,7 @@ function conditionalStart(string,platformName){
 	return "";
 }
 //  判断结束: <!--#endif-->
-function conditionaEnd(string, type){
+function conditionalEnd(string, type){
 	var regexp = new RegExp(condReg(type, 2));
 	return regexp.test(string);
 }
@@ -91,7 +112,7 @@ function condStart(string,platformName,type){
 	
 	if (flag_if != 0) {
 		
-		if (!platformName || platformName.length < 1) {
+		if (!platformName) {
 			return true;
 		}
 		
