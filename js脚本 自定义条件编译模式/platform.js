@@ -25,11 +25,21 @@ var write = function(strInputFileName, strOutputFileName) {
 	});
 	
 	var type = "";
+	var subTypeCount = 0;
 	objReadline.on('line', (item) => {
 		
 		if (type) {
+			// 计算是否还有其他的相应的类型的 if条件 
+			if (condStart(item, "", type)) {
+				subTypeCount += 1;
+				return;
+			}
 			if (conditionaEnd(item, type)) {
-				type = "";
+				subTypeCount -= 1;
+				if (subTypeCount < 0) {
+					subTypeCount = 0;
+					type = "";
+				}
 			}
 			return;
 		}
@@ -65,6 +75,8 @@ function conditionaEnd(string, type){
 }
 
 // 条件编译 是否是平台 <!-- #ifdef  platform -->
+// paltform 为空的时候 默认认为找不到对应的平台 不写入
+// 返回true 表示不符合当前平台 不写入开始
 function condStart(string,platformName,type){
 	
 	var flag_if = 0; // 1表示 当前平台 2表示 不是当前平台
@@ -78,6 +90,11 @@ function condStart(string,platformName,type){
 	}
 	
 	if (flag_if != 0) {
+		
+		if (!platformName || platformName.length < 1) {
+			return true;
+		}
+		
 		let index_flag = flag_if == 1 ? "#ifdef " : "#ifndef ";// “#ifdef ”的长度 还有空格 因为其实位置会从最后一个空格开始 包含 
 		var start = string.indexOf(index_flag) + index_flag.length;
 		
