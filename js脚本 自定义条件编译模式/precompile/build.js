@@ -38,6 +38,6 @@ var checkDirectory = function(src, dst, callback) {
 };
 
 var config = require('./platformConfig.js');
-const SOURCES_DIRECTORY = './' + config.sourceCodePath; //源目录
-const TARGET_DIRECTORY = './' + config.sourceTargetPath; //目标目录
+const SOURCES_DIRECTORY = '../' + config.sourceCodePath; //源目录
+const TARGET_DIRECTORY = '../' + config.sourceTargetPath; //目标目录
 checkDirectory(SOURCES_DIRECTORY, TARGET_DIRECTORY, copy);

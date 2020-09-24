@@ -1,8 +1,3 @@
-// Node.js readline 逐行读取、写入文件内容的示例
-// https://www.jb51.net/article/135706.htm
-// nodejs读取文件、按行读取
-// https://blog.csdn.net/weixin_42171955/article/details/100156212
-
 // 平台名称 由外部传入设置
 var platform = "";
 

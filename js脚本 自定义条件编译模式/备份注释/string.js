@@ -1,4 +1,12 @@
-
+/*
+	读取文件 按行读取写入
+	全部读取 对于文件过大的 会导致性能或者内存暴增
+	
+	Node.js readline 逐行读取、写入文件内容的示例
+		https://www.jb51.net/article/135706.htm
+	nodejs读取文件、按行读取
+		https://blog.csdn.net/weixin_42171955/article/details/100156212
+*/ 
 
 /*
  配包括换行符在内的任意字符，以下为正确的正则表达式匹配规则： 
