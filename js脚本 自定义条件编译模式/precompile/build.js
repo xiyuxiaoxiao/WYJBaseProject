@@ -28,13 +28,29 @@ var copy = function(src, dst) {
 }
 var checkDirectory = function(src, dst, callback) {
 	fs.access(dst, fs.constants.F_OK, (err) => {
-		if (err) {
-			fs.mkdirSync(dst);
-			callback(src, dst);
-		} else {
-			callback(src, dst);
+		if (!err) {
+			deleteFile(dst);
 		}
+		fs.mkdirSync(dst);
+		callback(src, dst);
 	});
+};
+
+// 删除指定目录 由于当前 只能递归删除 rmdirSync 只能删除空的文件
+function deleteFile(path) {
+    var files = [];
+    if( fs.existsSync(path) ) {
+        files = fs.readdirSync(path);
+        files.forEach(function(file,index){
+            var curPath = path + "/" + file;
+            if(fs.statSync(curPath).isDirectory()) {
+                deleteFile(curPath);
+            } else {
+                fs.unlinkSync(curPath);
+            }
+        });
+        fs.rmdirSync(path);
+    }
 };
 
 var config = require('./platformConfig.js');
