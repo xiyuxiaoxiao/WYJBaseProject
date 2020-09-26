@@ -57,17 +57,45 @@ const TARGET_DIRECTORY = '../' + config.sourceTargetPath; //目标目录
 checkDirectory(SOURCES_DIRECTORY, TARGET_DIRECTORY, copy);
 
 
+var watch = require('watch')
+watch.createMonitor(SOURCES_DIRECTORY, function (monitor) {
+    
+	monitor.on("created", function (f, stat) {
+		writeFileOfStats(f, sourcePathToTarget(f), stat);
+    })
+	
+	// 只有文件修改 才会涉及到改变 如果是文件夹修改名称 则会走删除-再走创建
+    monitor.on("changed", function (f, curr, prev) {
+	  writeFile(f, sourcePathToTarget(f));
+    })
+	
+    monitor.on("removed", function (f, stat) {
+	  var dst = sourcePathToTarget(f);
+	  fs.stat(dst, function(err, stats){
+		  if (err) {
+			  return;
+		  }
+		  if (stats.isFile()) {
+		  		  deletePath(dst, true);
+		  }else if(stats.isDirectory()){
+		  		  deletePath(dst, false);
+		  }
+	  })
+    })
+    // monitor.stop(); // Stop watching
+})
 
 // 删除指定目录 由于当前 只能递归删除 rmdirSync 只能删除空的文件
 function deletePath(path, file_bool) {
 	
-	if (file_bool) {
-		fs.unlinkSync(path);
-		return;
-	}
-	
     var files = [];
     if( fs.existsSync(path) ) {
+		
+		if (file_bool) {
+			fs.unlinkSync(path);
+			return;
+		}
+		
         files = fs.readdirSync(path);
         files.forEach(function(file,index){
             var curPath = path + "/" + file;
@@ -113,7 +141,7 @@ function findSubPath(path, subPath) {
 	return false;
 }
 
-
+//  获取对应的目标路径
 function sourcePathToTarget(path) {
 	var string = path.substring(SOURCES_DIRECTORY.length, path.length);
 	return TARGET_DIRECTORY + string;
