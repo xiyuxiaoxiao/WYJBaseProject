@@ -1,6 +1,20 @@
 //  遍历文件目录
 var fs = require('fs');
 
+var finishFlg = 0;
+
+var finishBlock = function () {
+	
+	finishFlg += 1;
+	var lastFlg = finishFlg;
+	setTimeout(function() {
+		if (lastFlg == finishFlg) {
+			console.log("\n条件编译完成");
+			process.stdout.write(" \033[0m");
+		}
+	}, 1000);
+}
+
 var buildFile = require("./platform.js");
 var arguments = process.argv.splice(2);
 buildFile.setPlatform(arguments[0]);
@@ -48,6 +62,10 @@ function writeFile(_src, _dst) {
 	} else {
 		buildFile.write(_src, _dst);
 	}
+	
+	console.log("\033[A");
+	process.stdout.write("\033[;34m "+_src + "\033[K");
+	finishBlock();
 }
 
 
