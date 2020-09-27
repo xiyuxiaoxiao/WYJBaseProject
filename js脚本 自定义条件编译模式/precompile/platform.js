@@ -124,20 +124,21 @@ function condStart(string, platformName, type) {
 		res = res.replace(/\s*/g, "");
 		var list = res.split("||");
 
+		let match_res = matchPlatform(list, platformName);
 		// 如果没有相应的平台 则开始不写入
-		if (flag_if == 1 && !matchPlatform(list, platformName)) {
+		if (flag_if == 1 && !match_res) {
 			return true;
 		};
 
-		// 相反的 #ifndef 如果有相应平台  则不写入
-		if (flag_if == 2 && list.indexOf(platformName) >= 0) {
+		// 相反的 #ifndef 如果有相应平台
+		if (flag_if == 2 && match_res) {
 			return true;
 		}
 	}
 	return false;
 }
 
-// 判断当前平台是否符合 目前只能符合 平台的时候调用  #ifndef 不能用 负责其他的条件会导致无效的
+// 判断当前平台是否符合
 function matchPlatform(list, platform) {
 	var arr = [platform];
 	if (config[platform] && config[platform].coexist) {
