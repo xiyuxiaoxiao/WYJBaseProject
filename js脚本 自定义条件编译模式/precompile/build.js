@@ -1,10 +1,12 @@
+var arguments = process.argv.splice(2);
+
 //  遍历文件目录
 var fs = require('fs');
 
 var finishFlg = 0;
 
-var finishBlock = function () {
-	
+var finishBlock = function() {
+
 	finishFlg += 1;
 	var lastFlg = finishFlg;
 	setTimeout(function() {
@@ -16,7 +18,6 @@ var finishBlock = function () {
 }
 
 var buildFile = require("./platform.js");
-var arguments = process.argv.splice(2);
 buildFile.setPlatform(arguments[0]);
 
 var copy = function(src, dst) {
@@ -62,14 +63,15 @@ function writeFile(_src, _dst) {
 	} else {
 		buildFile.write(_src, _dst);
 	}
-	
+
 	console.log("\033[A");
-	process.stdout.write("\033[;34m "+_src + "\033[K");
+	process.stdout.write("\033[;34m " + _src + "\033[K");
 	finishBlock();
 }
 
 
 var config = require('./platformConfig.js');
+config.environment(arguments[0], arguments[1]);
 const SOURCES_DIRECTORY = '../' + config.sourceCodePath; //源目录
 const TARGET_DIRECTORY = '../' + config.sourceTargetPath; //目标目录
 checkDirectory(SOURCES_DIRECTORY, TARGET_DIRECTORY, copy);
