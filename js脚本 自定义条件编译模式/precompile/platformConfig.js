@@ -26,12 +26,20 @@ var environment = function(platform, env) {
 module.exports = {
 
 	//  微信 - 插件
-	"WX-PLUGIN": {
+	"MP-WX-PLUGIN": {
 		// 兼容其他条件 比如在符合“插件”的时候,同时支持微信小程序的
 		coexist: [
 			"MP-WEIXIN",
 		]
 	},
+	// 微信
+	"MP-WEIXIN": {},
+	// 支付宝
+	"MP-ALIPAY": {},
+	// 淘宝
+	"MP-TAOBAO": {},
+
+	// 编译的路径和目标路径
 	sourceCodePath: "srcDev",
 	sourceTargetPath: "src",
 
@@ -39,11 +47,12 @@ module.exports = {
 	copyPaths: [
 		"../srcDev/node_modules"
 	],
+
 	// 环境变量配置
 	env_platform: {
-		dev: "DEVELOPER",
-		dis: "PRODUCTION",
+		dis: "DISTRIBUTION",
 		pre: "PREVIEW",
+		dev: "DEVELOPER",
 	},
 	environment: environment,
 }

@@ -6,6 +6,11 @@
 		https://www.jb51.net/article/135706.htm
 	nodejs读取文件、按行读取
 		https://blog.csdn.net/weixin_42171955/article/details/100156212
+		
+		
+	var config = require('./platformConfig.js');
+	require 获取的是个单利，node 会将 require 缓存 下次在获取的时候 直接从缓存中获取
+	因此 可以通过将config 初始化后 不需要再单独设置全局
 */ 
 
 /*
