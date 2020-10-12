@@ -56,7 +56,7 @@ function writeFileOfStats(_src, _dst, stats) {
 
 function writeFile(_src, _dst) {
 	// copy文件 不进行条件编译
-	if (findSubPathAll(config.copyPaths, _src)) {
+	if (findSubPathAll(config.copyPaths, _src) || unsupportedFileType(_src)) {
 		let readable = fs.createReadStream(_src); //创建读取流
 		let writable = fs.createWriteStream(_dst); //创建写入流
 		readable.pipe(writable);
@@ -164,4 +164,14 @@ function findSubPath(path, subPath) {
 function sourcePathToTarget(path) {
 	var string = path.substring(SOURCES_DIRECTORY.length, path.length);
 	return TARGET_DIRECTORY + string;
+}
+
+// 不支持的文件类型
+function unsupportedFileType(filePath) {
+	var index= filePath.lastIndexOf(".");
+	//获取后缀
+	var ext = filePath.substr(index+1);
+	// 支持的类型
+	let type_list = ["vue","nvue","js","json","css","scss"];
+	return type_list.indexOf(ext) < 0;
 }
