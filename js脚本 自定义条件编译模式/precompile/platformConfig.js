@@ -1,6 +1,9 @@
 /*
 	安装node环境 并且安装 node install watch
 	条件编译 cd 到precompile 文件下,执行 node build.js XXX ,例如：node build.js MP-WEIXIN
+	
+	当前默认需要添加环境模式 否则执行无效
+	例如：node build.js MP-WEIXIN dev
 */
 
 // 添加环境条件编译
