@@ -1,21 +1,42 @@
 <template>
 	<zsxjComponent :list="list" @emitCallBack="emitCallBack"></zsxjComponent>
 </template>
-
+<!-- 
+	针对列表的 可能需要单独封装一层 list 然后将需要的数据设置进去
+	或者根据 node 对象 将数据设置或者子节点设置
+ -->
 <script>
 	import zsxjComponent from "../../compotent/zsxj-component.vue"
+	import componentNode from "../../compotent/componentNode.js"
 	export default {
 		data() {
 			return {
-				list: []
+				list: [],
+				pageData: {
+					list_item_id : "0-1-0-0",
+					list: []
+				},
+				coupon_node: {
+					name: "view",
+					class: "",
+					list: [
+						{
+							name: "text",
+							class: "",
+							text: "",
+						}
+					]
+					
+				}
 			}
 		},
 		
 		onLoad() {
 			this.list = this.getLayoutData();
 			
+			componentNode.nodeListInitId(this.list);
+			
 			this.reloadData(0);
-				
 		},
 		destroyed() {
 				uni.setStoreData("setPageData", undefined)
@@ -46,9 +67,14 @@
 					// this.list[0].list[2].name = name ? "" : "view";
 					return;
 				}
+				
+				if (obj.info.click == "addList") {
+					this.reloadData(1, true);
+					return;
+				}
 			},
 			
-			reloadData(index) {
+			reloadData(index, next) {
 				var source = [{
 					name: '未使用',
 					count: 3
@@ -62,45 +88,30 @@
 					count: 20
 				}];
 				
-				var listSuper = this.list[0].list[1].list[0].list[0];
+				let listSuper = componentNode.getNodeByListId(this.list, this.pageData.list_item_id);
 				var list = [];
-				for (var i = 1; i < source[index].count; i++) {
+				for (var i = 0; i < 10; i++) {
+					
+					var flg = i;
+					if (next && listSuper.list) {
+						flg = i + listSuper.list.length;
+					}
 					var obj = Object.assign({},listSuper.child);
-					obj["text"] = source[index].name + i;
+					obj["text"] = source[index].name + flg;
 					list.push(obj);
 				}
 				
-				// 同时 需要监听 当前数据变化 是否
-				
-				if (index == 0) {
-					this.list[0].list[1].list[0].list[0]['list'] = list;
+				if (next && listSuper.list) {
+					listSuper.list = listSuper.list.concat(list);
 				}else {
-					// this.list[0].list[0].list[0].data.current = 2; // 不修改 也没有影响当前list-current的变化
-					this.list[0].list[1].list[0].list[0]['list'][1].text = source[index].name;
+					listSuper.list = list;
 				}
 				
-				this.list = JSON.parse(JSON.stringify(this.list));
+				componentNode.nodeListInitId(listSuper.list, listSuper.id);
 				
-				console.log("list",this.list);
+				this.list = JSON.parse(JSON.stringify(this.list));
+				console.log("list", JSON.stringify(this.list));
 			},
-			
-			// updateLayoutData() {
-			// 	var s = this.list[0].list[1].list[0].list[0];
-			// 	s.list = [];
-			// },
-			
-			// ergodicLayout(list) {
-			// 	// 这样不太好处理 主要是递归最后的话 对于list嵌套的list 可能导致数据不到 
-			// 	// 需要单独处理 目前先简单处理一下
-			// 	for (var item in list) {
-			// 		if (item.type == 'list') {
-			// 		}
-			// 		if (item.list) {
-			// 			this.ergodicLayout(item.list);
-			// 		}
-			// 	}
-			// },
-			
 			
 			getLayoutData() {
 				return [
@@ -147,6 +158,12 @@
 								name: 'view',
 								class: "test-view",
 								show: 'testView',// show表示当前的view是否显示用哪个字段判断
+							},
+							{
+								name: 'text',
+								class: "fixed-button",
+								text: "点击",
+								click: "addList",
 							},
 						]
 					},
