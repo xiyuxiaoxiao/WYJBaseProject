@@ -1,0 +1,17 @@
+.rotateY-back-front {
+	transform: rotateY(-180deg);
+	opacity: 0;
+	animation-name: rotateYBackToFront;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes rotateYBackToFront {
+	from {
+		transform: rotateY(-180deg);
+	}
+	to {
+		transform: rotateY(0deg);
+	}
+}
