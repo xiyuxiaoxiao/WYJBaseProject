@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		83004FE724C6C07100E4A9C2 /* MutableSelectTabVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83004FE624C6C07100E4A9C2 /* MutableSelectTabVCViewController.m */; };
+		830D2A28259D6E5600F9CCE8 /* BluetoothVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 830D2A25259D6E5500F9CCE8 /* BluetoothVC.m */; };
+		830D2A29259D6E5600F9CCE8 /* BluetoothVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830D2A26259D6E5500F9CCE8 /* BluetoothVC.xib */; };
 		831217022333500700DBDBFE /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 831217012333500700DBDBFE /* UIImage+Category.m */; };
 		831E240720592A2E00557A96 /* JSAndOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E23FD20592A2E00557A96 /* JSAndOC.m */; };
 		831E240820592A2E00557A96 /* JSAndOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E23FE20592A2E00557A96 /* JSAndOC.xib */; };
@@ -342,6 +344,9 @@
 		2CD16904D5AC4ED7BBA72387 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83004FE524C6C07100E4A9C2 /* MutableSelectTabVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutableSelectTabVCViewController.h; sourceTree = "<group>"; };
 		83004FE624C6C07100E4A9C2 /* MutableSelectTabVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutableSelectTabVCViewController.m; sourceTree = "<group>"; };
+		830D2A25259D6E5500F9CCE8 /* BluetoothVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothVC.m; sourceTree = "<group>"; };
+		830D2A26259D6E5500F9CCE8 /* BluetoothVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluetoothVC.xib; sourceTree = "<group>"; };
+		830D2A27259D6E5600F9CCE8 /* BluetoothVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothVC.h; sourceTree = "<group>"; };
 		831217002333500700DBDBFE /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		831217012333500700DBDBFE /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		831E23FC20592A2E00557A96 /* JSAndOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAndOC.h; sourceTree = "<group>"; };
@@ -948,6 +953,16 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		830D2A24259D6E1800F9CCE8 /* Blue */ = {
+			isa = PBXGroup;
+			children = (
+				830D2A27259D6E5600F9CCE8 /* BluetoothVC.h */,
+				830D2A25259D6E5500F9CCE8 /* BluetoothVC.m */,
+				830D2A26259D6E5500F9CCE8 /* BluetoothVC.xib */,
+			);
+			path = Blue;
+			sourceTree = "<group>";
+		};
 		831E23FB20592A2E00557A96 /* Dom */ = {
 			isa = PBXGroup;
 			children = (
@@ -1434,6 +1449,7 @@
 		837150FC1EE01C43009E7ECF /* SubList */ = {
 			isa = PBXGroup;
 			children = (
+				830D2A24259D6E1800F9CCE8 /* Blue */,
 				83004FE324C6BF7A00E4A9C2 /* MutableSelectTableCell */,
 				83E2BC4124B6E80000E7DF3A /* DatePick */,
 				83B291F3234F2C2B006DC43E /* ImageTechnology */,
@@ -2639,6 +2655,7 @@
 				83652B3B1F6F9214008F470D /* LastRemainExample.xib in Resources */,
 				83E2BC4624B6E83D00E7DF3A /* DatePickController.xib in Resources */,
 				839C7E091EE54156006CAFDC /* ES_RemaindControler.xib in Resources */,
+				830D2A29259D6E5600F9CCE8 /* BluetoothVC.xib in Resources */,
 				8399B21A1E9B52AF0059B797 /* Assets.xcassets in Resources */,
 				833530611F459FFE00596581 /* DrawDashLineVC.xib in Resources */,
 				83A07CAD2473CE8F00EDF20E /* ImagePswxVC.xib in Resources */,
@@ -2907,6 +2924,7 @@
 				83DCD1742202855500577E3B /* WYJChartImageCell.m in Sources */,
 				838FA605224B4D0400D548C2 /* SocketRocketUtility.m in Sources */,
 				8399B29A1E9B52CF0059B797 /* FMDatabasePool.m in Sources */,
+				830D2A28259D6E5600F9CCE8 /* BluetoothVC.m in Sources */,
 				83781A4C1EFCB4C6001A80C9 /* MyAnnotationView.m in Sources */,
 				839A201E208DEBC500024279 /* BezierPathVC.m in Sources */,
 				83604AF920C15EA7001F62DB /* JKDBVersionUpdateTest.m in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #import "EnterListController.h"
-
 @interface EnterListController ()
 @end
 
@@ -62,6 +61,11 @@
 }
 
 - (void)initData {
+    
+    
+    
+    [self.dataArray addObject:@{TitleKey:@"蓝牙权限",
+    CN_Key:@"BluetoothVC"}];
     
     [self.dataArray addObject:@{TitleKey:@"多选tabView封装",CN_Key:@"MutableSelectTabVCViewController"}];
     
