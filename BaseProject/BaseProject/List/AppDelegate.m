@@ -27,7 +27,7 @@
     
     Class class = NSClassFromString(@"EnterListController");
     UIViewController *vc = [[class alloc] init];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController: vc];
+    UINavigationController *nc = [[NSClassFromString(@"WYJNavigationController") alloc] initWithRootViewController: vc];
     nc.navigationBar.translucent = NO;
     self.window.rootViewController = nc;
     

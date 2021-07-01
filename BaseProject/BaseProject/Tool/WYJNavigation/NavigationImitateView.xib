@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationImitateView">
+            <connections>
+                <outlet property="leftButton" destination="UA3-Th-Iqz" id="zDY-0u-31k"/>
+                <outlet property="rightButton" destination="6GH-vB-0Iw" id="noz-wF-cmR"/>
+                <outlet property="thisView" destination="iN0-l3-epB" id="1yV-Db-rGY"/>
+                <outlet property="titleLabel" destination="GzJ-fO-Wae" id="ICd-Ap-Lbf"/>
+                <outlet property="topSpace" destination="ZmY-N4-FzM" id="RCp-FI-ye9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UA3-Th-Iqz">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="1Mx-aQ-ede"/>
+                    </constraints>
+                    <state key="normal" image="back_arrow_black.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzJ-fO-Wae">
+                    <rect key="frame" x="237.5" y="31" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GH-vB-0Iw">
+                    <rect key="frame" x="472" y="0.0" width="30" height="83"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="UA3-Th-Iqz" secondAttribute="bottom" id="4lZ-aE-MRH"/>
+                <constraint firstItem="GzJ-fO-Wae" firstAttribute="centerY" secondItem="UA3-Th-Iqz" secondAttribute="centerY" id="6CT-JQ-eOA"/>
+                <constraint firstAttribute="bottom" secondItem="6GH-vB-0Iw" secondAttribute="bottom" id="DEK-py-eFb"/>
+                <constraint firstItem="GzJ-fO-Wae" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ki7-Dx-5LB"/>
+                <constraint firstItem="6GH-vB-0Iw" firstAttribute="top" secondItem="UA3-Th-Iqz" secondAttribute="top" id="MYN-TO-cbk"/>
+                <constraint firstItem="UA3-Th-Iqz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZmY-N4-FzM"/>
+                <constraint firstAttribute="trailing" secondItem="6GH-vB-0Iw" secondAttribute="trailing" constant="15" id="aIT-1d-mVV"/>
+                <constraint firstItem="UA3-Th-Iqz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lG7-v7-fuo"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="42.5" y="-27.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back_arrow_black.png" width="38" height="38"/>
+    </resources>
+</document>

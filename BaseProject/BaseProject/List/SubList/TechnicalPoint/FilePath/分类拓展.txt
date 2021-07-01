@@ -1,0 +1,27 @@
+
+----分类 Category------------------------
+
+    @interface(Category)
+    运行时
+    
+static void * ZSXJStatusChangeHUDKey = (void *)@"ZSXJStatusChangeHUDKey";
+
+@implementation UIViewController (OrderStatusChange)
+-(MBProgressHUD *)hud {
+    return objc_getAssociatedObject(self, ZSXJStatusChangeHUDKey);
+}
+-(void)setHud:(MBProgressHUD *)hud {
+    objc_setAssociatedObject(self, ZSXJStatusChangeHUDKey,hud, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+----类拓展 Extension------------------------
+
+    @interface UIView ()
+    匿名的分类  (为了给类添加属性和方法)
+    编译时 在相应的io里面直接编译添加
+
+
+------ 区别 ----------------------
+当前分类无法增加属性 而类拓展可以增加属性
+当分类需要添加属性 使用 objc_AssociatedObject
+
