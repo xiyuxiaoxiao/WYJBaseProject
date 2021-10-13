@@ -19,6 +19,12 @@
 		831E240C20592A2E00557A96 /* SortInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240420592A2E00557A96 /* SortInsert.m */; };
 		831E240D20592A2E00557A96 /* SortQuick.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240520592A2E00557A96 /* SortQuick.m */; };
 		831E240E20592A2E00557A96 /* SortRecursive.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240620592A2E00557A96 /* SortRecursive.m */; };
+		832C7A672716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A5C2716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m */; };
+		832C7A682716C20F00BE4C0F /* NavigationImitateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A612716C20F00BE4C0F /* NavigationImitateView.m */; };
+		832C7A692716C20F00BE4C0F /* back_arrow_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 832C7A632716C20F00BE4C0F /* back_arrow_black@3x.png */; };
+		832C7A6A2716C20F00BE4C0F /* NavigationImitateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832C7A642716C20F00BE4C0F /* NavigationImitateView.xib */; };
+		832C7A6B2716C20F00BE4C0F /* WYJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A652716C20F00BE4C0F /* WYJNavigationController.m */; };
+		832C7A6C2716C20F00BE4C0F /* WYJScreenTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A662716C20F00BE4C0F /* WYJScreenTool.m */; };
 		833222AD1F5562EC006627A5 /* LineAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 833222AC1F5562EC006627A5 /* LineAnimation.m */; };
 		833300A4231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333009E231CAE42003656A5 /* UITableView+FDTemplateLayoutCell.m */; };
 		833300A5231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 833300A0231CAE42003656A5 /* UITableView+FDKeyedHeightCache.m */; };
@@ -360,6 +366,17 @@
 		831E240420592A2E00557A96 /* SortInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortInsert.m; sourceTree = "<group>"; };
 		831E240520592A2E00557A96 /* SortQuick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortQuick.m; sourceTree = "<group>"; };
 		831E240620592A2E00557A96 /* SortRecursive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortRecursive.m; sourceTree = "<group>"; };
+		832C7A5B2716C20F00BE4C0F /* WYJNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJNavigation.h; sourceTree = "<group>"; };
+		832C7A5C2716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WYJ_NaviBarHidden.m"; sourceTree = "<group>"; };
+		832C7A5D2716C20F00BE4C0F /* NavigationImitateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationImitateView.h; sourceTree = "<group>"; };
+		832C7A5E2716C20F00BE4C0F /* WYJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJNavigationController.h; sourceTree = "<group>"; };
+		832C7A5F2716C20F00BE4C0F /* WYJScreenTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJScreenTool.h; sourceTree = "<group>"; };
+		832C7A602716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WYJ_NaviBarHidden.h"; sourceTree = "<group>"; };
+		832C7A612716C20F00BE4C0F /* NavigationImitateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationImitateView.m; sourceTree = "<group>"; };
+		832C7A632716C20F00BE4C0F /* back_arrow_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow_black@3x.png"; sourceTree = "<group>"; };
+		832C7A642716C20F00BE4C0F /* NavigationImitateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationImitateView.xib; sourceTree = "<group>"; };
+		832C7A652716C20F00BE4C0F /* WYJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJNavigationController.m; sourceTree = "<group>"; };
+		832C7A662716C20F00BE4C0F /* WYJScreenTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYJScreenTool.m; sourceTree = "<group>"; };
 		833222AB1F5562EC006627A5 /* LineAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineAnimation.h; sourceTree = "<group>"; };
 		833222AC1F5562EC006627A5 /* LineAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineAnimation.m; sourceTree = "<group>"; };
 		8333009C231CAE42003656A5 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -986,6 +1003,32 @@
 				83EF517F222CDA3E00B47F4E /* GCDMySummary.m */,
 			);
 			path = Dom;
+			sourceTree = "<group>";
+		};
+		832C7A5A2716C20E00BE4C0F /* WYJNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				832C7A5B2716C20F00BE4C0F /* WYJNavigation.h */,
+				832C7A5C2716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m */,
+				832C7A5D2716C20F00BE4C0F /* NavigationImitateView.h */,
+				832C7A5E2716C20F00BE4C0F /* WYJNavigationController.h */,
+				832C7A5F2716C20F00BE4C0F /* WYJScreenTool.h */,
+				832C7A602716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.h */,
+				832C7A612716C20F00BE4C0F /* NavigationImitateView.m */,
+				832C7A622716C20F00BE4C0F /* img */,
+				832C7A642716C20F00BE4C0F /* NavigationImitateView.xib */,
+				832C7A652716C20F00BE4C0F /* WYJNavigationController.m */,
+				832C7A662716C20F00BE4C0F /* WYJScreenTool.m */,
+			);
+			path = WYJNavigation;
+			sourceTree = "<group>";
+		};
+		832C7A622716C20F00BE4C0F /* img */ = {
+			isa = PBXGroup;
+			children = (
+				832C7A632716C20F00BE4C0F /* back_arrow_black@3x.png */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 		833222AA1F5562BB006627A5 /* LineAnimation */ = {
@@ -1803,6 +1846,7 @@
 		8399B2401E9B52CF0059B797 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				832C7A5A2716C20E00BE4C0F /* WYJNavigation */,
 				8399B2CF1E9B893B0059B797 /* AnimationEffect.h */,
 				8399B2D01E9B893B0059B797 /* AnimationEffect.m */,
 				8349E2971F5D3A99001FB473 /* CodeHtml */,
@@ -2634,6 +2678,7 @@
 				83750D041EFB57C90058BC2A /* SystemMapController.xib in Resources */,
 				833530661F459FFE00596581 /* YJCutMiddle.xib in Resources */,
 				83B30E9C20CA5A0A0090D264 /* NSOperation.htm in Resources */,
+				832C7A6A2716C20F00BE4C0F /* NavigationImitateView.xib in Resources */,
 				83751D6E1EFA444B004F2D49 /* yuanyuan.png in Resources */,
 				8399A34424877D890082EDC3 /* DazSmoke.png in Resources */,
 				8399B21D1E9B52AF0059B797 /* LaunchScreen.storyboard in Resources */,
@@ -2678,6 +2723,7 @@
 				83C8878F1F445041006B9A72 /* TaskNumber.xib in Resources */,
 				8399B2181E9B52AF0059B797 /* Main.storyboard in Resources */,
 				8399A34024877D890082EDC3 /* DazFlake.png in Resources */,
+				832C7A692716C20F00BE4C0F /* back_arrow_black@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2775,6 +2821,7 @@
 				839B7F3221F6B1D1008E7A8C /* View+MASAdditions.m in Sources */,
 				8399B2B41E9B52CF0059B797 /* UIImageView+AFNetworking.m in Sources */,
 				8399B2B61E9B52CF0059B797 /* UIRefreshControl+AFNetworking.m in Sources */,
+				832C7A6B2716C20F00BE4C0F /* WYJNavigationController.m in Sources */,
 				83B291F7234F2CC3006DC43E /* ImageTechnologyList.m in Sources */,
 				83B5543C206B767900439E66 /* MyTabBar.m in Sources */,
 				839B7F2D21F6B1D1008E7A8C /* ViewController+MASAdditions.m in Sources */,
@@ -2839,6 +2886,7 @@
 				8399B2D11E9B893B0059B797 /* AnimationEffect.m in Sources */,
 				8343BEA22180649B00C2BE0F /* BarChartView.m in Sources */,
 				8399B2121E9B52AF0059B797 /* AppDelegate.m in Sources */,
+				832C7A682716C20F00BE4C0F /* NavigationImitateView.m in Sources */,
 				83C8878E1F445041006B9A72 /* TaskNumber.m in Sources */,
 				8399B2B21E9B52CF0059B797 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				8399B2AF1E9B52CF0059B797 /* AFAutoPurgingImageCache.m in Sources */,
@@ -2881,6 +2929,7 @@
 				835C8AFE221273D00011EB91 /* SDWebImageDownloader.m in Sources */,
 				83669BCA211C2B6F0096EAB9 /* GradientColorController.m in Sources */,
 				8349E2D61F5D56DC001FB473 /* NSObject+SourcePathGroup.m in Sources */,
+				832C7A6C2716C20F00BE4C0F /* WYJScreenTool.m in Sources */,
 				83B14D6D1EFD0FAA00EF24A9 /* MapController.m in Sources */,
 				836C56B41F185ABF00E7C84E /* TechnicalPointEnterList.m in Sources */,
 				833530331F457F8900596581 /* WYJScanEnterList.m in Sources */,
@@ -2992,6 +3041,7 @@
 				836630801EE177370029AD91 /* CollectionViewCell.m in Sources */,
 				83E2BC5D24B6EE3300E7DF3A /* NSDate+Extension.m in Sources */,
 				8388690820BC0047006619B9 /* TestDataDatabase.m in Sources */,
+				832C7A672716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m in Sources */,
 				8349E2BC1F5D3AFA001FB473 /* SourceViewController.m in Sources */,
 				833530641F459FFE00596581 /* TimerWeakTarget.m in Sources */,
 				8399B29B1E9B52CF0059B797 /* FMDatabaseQueue.m in Sources */,
