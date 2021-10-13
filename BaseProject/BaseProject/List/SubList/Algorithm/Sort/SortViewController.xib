@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,46 +17,41 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0F-j4-Idr">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0F-j4-Idr">
                     <rect key="frame" x="156.5" y="40" width="62" height="30"/>
-                    <state key="normal" title="快速排序"/>
-                    <connections>
-                        <action selector="qicukSort" destination="-1" eventType="touchUpInside" id="2O6-TR-hRv"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3V-vC-C8m">
-                    <rect key="frame" x="156.5" y="85" width="62" height="30"/>
                     <state key="normal" title="冒泡排序"/>
-                    <connections>
-                        <action selector="bubbleSort" destination="-1" eventType="touchUpInside" id="m55-s1-3V3"/>
-                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaY-CO-lIY">
-                    <rect key="frame" x="156" y="130" width="62" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3V-vC-C8m">
+                    <rect key="frame" x="156.5" y="85" width="62" height="30"/>
+                    <state key="normal" title="选择排序"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaY-CO-lIY">
+                    <rect key="frame" x="156.5" y="130" width="62" height="30"/>
                     <state key="normal" title="插入排序"/>
-                    <connections>
-                        <action selector="insertionSort" destination="-1" eventType="touchUpInside" id="kll-Sa-3hS"/>
-                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnE-Ck-AeI">
-                    <rect key="frame" x="156" y="175" width="62" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnE-Ck-AeI">
+                    <rect key="frame" x="156.5" y="175" width="62" height="30"/>
                     <state key="normal" title="递归阶乘"/>
-                    <connections>
-                        <action selector="recursiveSort" destination="-1" eventType="touchUpInside" id="tLh-le-30q"/>
-                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuX-39-rWd">
+                    <rect key="frame" x="156.5" y="220" width="62" height="30"/>
+                    <state key="normal" title="快速排序"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="VuX-39-rWd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="08F-z3-V8u"/>
                 <constraint firstItem="xnE-Ck-AeI" firstAttribute="top" secondItem="NaY-CO-lIY" secondAttribute="bottom" constant="15" id="4AT-nD-FUE"/>
                 <constraint firstItem="NaY-CO-lIY" firstAttribute="centerX" secondItem="U3V-vC-C8m" secondAttribute="centerX" id="53t-XR-97y"/>
                 <constraint firstItem="xnE-Ck-AeI" firstAttribute="centerX" secondItem="NaY-CO-lIY" secondAttribute="centerX" id="5JP-rj-ajS"/>
+                <constraint firstItem="VuX-39-rWd" firstAttribute="top" secondItem="xnE-Ck-AeI" secondAttribute="bottom" constant="15" id="78A-fJ-sMd"/>
                 <constraint firstItem="S0F-j4-Idr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="7ee-te-5ya"/>
                 <constraint firstItem="NaY-CO-lIY" firstAttribute="top" secondItem="U3V-vC-C8m" secondAttribute="bottom" constant="15" id="Sfe-Mc-yO4"/>
                 <constraint firstItem="U3V-vC-C8m" firstAttribute="top" secondItem="S0F-j4-Idr" secondAttribute="bottom" constant="15" id="TCx-sk-IRy"/>
                 <constraint firstItem="S0F-j4-Idr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dYn-WK-hEj"/>
                 <constraint firstItem="U3V-vC-C8m" firstAttribute="centerX" secondItem="S0F-j4-Idr" secondAttribute="centerX" id="eHv-Du-Pyy"/>
             </constraints>
+            <point key="canvasLocation" x="30" y="49"/>
         </view>
     </objects>
 </document>

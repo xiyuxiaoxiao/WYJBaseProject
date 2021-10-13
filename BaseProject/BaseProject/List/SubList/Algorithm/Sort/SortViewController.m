@@ -16,23 +16,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"查看源码" style:(UIBarButtonItemStylePlain) target:self action:@selector(arraySort)];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
-- (IBAction)qicukSort {
-    [self pushSortControllerWithClassName:@"SortQuick"];
+
+- (void)arraySort {
+    [self pushSortControllerWithClassName:@"SortArray"];
 }
 
-- (IBAction)bubbleSort {
-    [self pushSortControllerWithClassName:@"SortBubble"];
-}
-
-- (IBAction)insertionSort {
-    [self pushSortControllerWithClassName:@"SortInsert"];
-}
-//递归
-- (IBAction)recursiveSort {
-    [self pushSortControllerWithClassName:@"SortRecursive"];
-}
 - (void)pushSortControllerWithClassName:(NSString *)className {
     SourceViewController *vc = [[SourceViewController alloc] init];
     vc.filePath = SourcePathByClassName(className);

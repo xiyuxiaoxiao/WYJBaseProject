@@ -15,10 +15,7 @@
 		831E240820592A2E00557A96 /* JSAndOC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E23FE20592A2E00557A96 /* JSAndOC.xib */; };
 		831E240920592A2E00557A96 /* LastRemainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240020592A2E00557A96 /* LastRemainObject.m */; };
 		831E240A20592A2E00557A96 /* LayoutConstraintCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240220592A2E00557A96 /* LayoutConstraintCodeView.m */; };
-		831E240B20592A2E00557A96 /* SortBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240320592A2E00557A96 /* SortBubble.m */; };
-		831E240C20592A2E00557A96 /* SortInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240420592A2E00557A96 /* SortInsert.m */; };
-		831E240D20592A2E00557A96 /* SortQuick.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240520592A2E00557A96 /* SortQuick.m */; };
-		831E240E20592A2E00557A96 /* SortRecursive.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240620592A2E00557A96 /* SortRecursive.m */; };
+		831E240B20592A2E00557A96 /* SortArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E240320592A2E00557A96 /* SortArray.m */; };
 		832C7A672716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A5C2716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m */; };
 		832C7A682716C20F00BE4C0F /* NavigationImitateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C7A612716C20F00BE4C0F /* NavigationImitateView.m */; };
 		832C7A692716C20F00BE4C0F /* back_arrow_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 832C7A632716C20F00BE4C0F /* back_arrow_black@3x.png */; };
@@ -362,10 +359,7 @@
 		831E240020592A2E00557A96 /* LastRemainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastRemainObject.m; sourceTree = "<group>"; };
 		831E240120592A2E00557A96 /* LayoutConstraintCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutConstraintCodeView.h; sourceTree = "<group>"; };
 		831E240220592A2E00557A96 /* LayoutConstraintCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutConstraintCodeView.m; sourceTree = "<group>"; };
-		831E240320592A2E00557A96 /* SortBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortBubble.m; sourceTree = "<group>"; };
-		831E240420592A2E00557A96 /* SortInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortInsert.m; sourceTree = "<group>"; };
-		831E240520592A2E00557A96 /* SortQuick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortQuick.m; sourceTree = "<group>"; };
-		831E240620592A2E00557A96 /* SortRecursive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortRecursive.m; sourceTree = "<group>"; };
+		831E240320592A2E00557A96 /* SortArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortArray.m; sourceTree = "<group>"; };
 		832C7A5B2716C20F00BE4C0F /* WYJNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYJNavigation.h; sourceTree = "<group>"; };
 		832C7A5C2716C20F00BE4C0F /* UIViewController+WYJ_NaviBarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WYJ_NaviBarHidden.m"; sourceTree = "<group>"; };
 		832C7A5D2716C20F00BE4C0F /* NavigationImitateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationImitateView.h; sourceTree = "<group>"; };
@@ -990,10 +984,7 @@
 				831E240020592A2E00557A96 /* LastRemainObject.m */,
 				831E240120592A2E00557A96 /* LayoutConstraintCodeView.h */,
 				831E240220592A2E00557A96 /* LayoutConstraintCodeView.m */,
-				831E240320592A2E00557A96 /* SortBubble.m */,
-				831E240420592A2E00557A96 /* SortInsert.m */,
-				831E240520592A2E00557A96 /* SortQuick.m */,
-				831E240620592A2E00557A96 /* SortRecursive.m */,
+				831E240320592A2E00557A96 /* SortArray.m */,
 				83735273205A4D47002F1824 /* CopyMemory.m */,
 				83735276205A7A6B002F1824 /* BlockPoint.m */,
 				836646CE225B232A00204C1F /* BlockPointCpp.m */,
@@ -2813,9 +2804,8 @@
 			files = (
 				8399B2151E9B52AF0059B797 /* ViewController.m in Sources */,
 				83969EAC21EDDC210032EAE7 /* BGTool.m in Sources */,
-				831E240B20592A2E00557A96 /* SortBubble.m in Sources */,
+				831E240B20592A2E00557A96 /* SortArray.m in Sources */,
 				833530381F4580BD00596581 /* ScanSysController.m in Sources */,
-				831E240D20592A2E00557A96 /* SortQuick.m in Sources */,
 				836A3D672202E5FC006BA323 /* UIImage+WYJChartImageStore.m in Sources */,
 				833222AD1F5562EC006627A5 /* LineAnimation.m in Sources */,
 				839B7F3221F6B1D1008E7A8C /* View+MASAdditions.m in Sources */,
@@ -2910,9 +2900,7 @@
 				8335308D1F45AC1A00596581 /* ChatEnterList.m in Sources */,
 				836507341F70EE25008F1B6F /* WebEnter.m in Sources */,
 				8399B2B51E9B52CF0059B797 /* UIProgressView+AFNetworking.m in Sources */,
-				831E240E20592A2E00557A96 /* SortRecursive.m in Sources */,
 				8399B29E1E9B52CF0059B797 /* InfoValidator.m in Sources */,
-				831E240C20592A2E00557A96 /* SortInsert.m in Sources */,
 				839A6F6D20C00178001EF130 /* KeyboardTool.m in Sources */,
 				83F379022240D2E00063B0AA /* WYJFileTool.m in Sources */,
 				833530691F459FFE00596581 /* YJRippleView.m in Sources */,
