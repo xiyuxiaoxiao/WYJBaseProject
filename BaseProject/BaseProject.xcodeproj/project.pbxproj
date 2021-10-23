@@ -2257,16 +2257,8 @@
 				83B14D681EFD0FAA00EF24A9 /* MapController.m */,
 				83B14D691EFD0FAA00EF24A9 /* MapData.h */,
 				83B14D6A1EFD0FAA00EF24A9 /* MapData.m */,
-				83B14D6B1EFD0FAA00EF24A9 /* View */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		83B14D6B1EFD0FAA00EF24A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		83B291F3234F2C2B006DC43E /* ImageTechnology */ = {
